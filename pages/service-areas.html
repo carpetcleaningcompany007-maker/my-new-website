@@ -32,7 +32,11 @@
 .local-cta-ghost{background:#eef5ff;color:#0f5fe6;border:1px solid rgba(15,95,230,.12)}
 .local-mini-points{display:grid;gap:10px;margin-top:18px}
 .local-mini-points div{background:#fff;border:1px solid rgba(18,38,58,.08);border-radius:14px;padding:12px 14px;color:#4f6479;font-weight:600}
-</style>
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    }
+  </style>
 
 
 <style>

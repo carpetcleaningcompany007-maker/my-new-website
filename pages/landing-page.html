@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>The Carpet Cleaning Company | Carpet Cleaning Ludlow and Shrewsbury</title>
+  <meta name="robots" content="index, follow" />
   <meta name="description" content="Professional carpet and upholstery cleaning in Ludlow, Shrewsbury and nearby areas with CRB agitation, hot water extraction and a 100 percent satisfaction guarantee." />
 
   <!-- Google tag (GA4) -->
@@ -25,7 +26,7 @@
   </script>
 
   <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
@@ -108,13 +109,13 @@
       100% { opacity:0; transform: scale(1.22); }
     }
 
-    [data-anim] { opacity: 0; transform: translateY(14px); }
+    [data-anim] { opacity: 1; transform: none; }
     .is-ready [data-anim="hero-title"] { animation: fadeUp 800ms ease-out forwards; }
     .is-ready [data-anim="hero-copy"]  { animation: fadeUp 820ms ease-out 120ms forwards; }
     .is-ready [data-anim="hero-points"]{ animation: fadeUp 860ms ease-out 180ms forwards; }
     .is-ready [data-anim="hero-cta"]   { animation: fadeUp 880ms ease-out 240ms forwards; }
     .is-ready [data-anim="hero-card"]  { animation: fadeUp 900ms ease-out 200ms forwards; }
-    .in-view[data-anim="reveal"] { animation: fadeUp 750ms ease-out forwards; }
+    .in-view[data-anim="reveal"] { animation: none; }
 
     .badge-wrap { position: relative; display: inline-grid; place-items: center; }
     .badge-wrap:before{
@@ -606,7 +607,7 @@
     <div class="mt-10 grid md:grid-cols-3 gap-6">
 
       <div class="rounded-2xl overflow-hidden bg-white shadow-soft lift soft-card">
-        <img src="../assets/img/hero-carpet-cleaning.webp" alt="Carpet Cleaning" class="h-52 w-full object-cover">
+        <img src="../assets/img/hero-carpet-cleaning.webp" alt="Carpet Cleaning" class="h-52 w-full object-cover" loading="lazy" decoding="async">
         <div class="p-6">
           <h3 class="text-xl font-extrabold">Carpet Cleaning</h3>
           <p class="mt-2 text-sm text-slate-600">
@@ -621,7 +622,7 @@
       </div>
 
       <div class="rounded-2xl overflow-hidden bg-white shadow-soft lift soft-card">
-        <img src="../assets/img/upholstery-cleaning.webp" alt="Upholstery Cleaning" class="h-52 w-full object-cover">
+        <img src="../assets/img/upholstery-cleaning.webp" alt="Upholstery Cleaning" class="h-52 w-full object-cover" loading="lazy" decoding="async">
         <div class="p-6">
           <h3 class="text-xl font-extrabold">Upholstery Cleaning</h3>
           <p class="mt-2 text-sm text-slate-600">
@@ -636,7 +637,7 @@
       </div>
 
       <div class="rounded-2xl overflow-hidden bg-white shadow-soft lift soft-card">
-        <img src="../assets/img/rug-cleaning.webp" alt="Rug Cleaning" class="h-52 w-full object-cover">
+        <img src="../assets/img/rug-cleaning.webp" alt="Rug Cleaning" class="h-52 w-full object-cover" loading="lazy" decoding="async">
         <div class="p-6">
           <h3 class="text-xl font-extrabold">Professional Rug Cleaning</h3>
           <p class="mt-2 text-sm text-slate-600">
@@ -655,7 +656,7 @@
     <div class="mt-8 grid md:grid-cols-3 gap-6">
 
       <div class="rounded-2xl overflow-hidden bg-white shadow-soft lift soft-card">
-        <img src="../assets/img/stain-removal.webp" alt="Advanced stain removal with UV light" class="h-52 w-full object-cover">
+        <img src="../assets/img/stain-removal.webp" alt="Advanced stain removal with UV light" class="h-52 w-full object-cover" loading="lazy" decoding="async">
         <div class="p-6">
           <h3 class="text-xl font-extrabold">Advanced stain removal</h3>
           <p class="mt-2 text-sm text-slate-600">
@@ -670,7 +671,7 @@
       </div>
 
       <div class="rounded-2xl overflow-hidden bg-white shadow-soft lift soft-card">
-        <img src="../assets/img/commercial-carpet-cleaning.webp" alt="Commercial carpet cleaning" class="h-52 w-full object-cover">
+        <img src="../assets/img/commercial-carpet-cleaning.webp" alt="Commercial carpet cleaning" class="h-52 w-full object-cover" loading="lazy" decoding="async">
         <div class="p-6">
           <h3 class="text-xl font-extrabold">Commercial carpet cleaning</h3>
           <p class="mt-2 text-sm text-slate-600">
@@ -685,7 +686,7 @@
       </div>
 
       <div class="rounded-2xl overflow-hidden bg-white shadow-soft lift soft-card">
-        <img src="../assets/img/tile-grout-cleaning.webp" alt="Hard floor cleaning" class="h-52 w-full object-cover">
+        <img src="../assets/img/tile-grout-cleaning.webp" alt="Hard floor cleaning" class="h-52 w-full object-cover" loading="lazy" decoding="async">
         <div class="p-6">
           <h3 class="text-xl font-extrabold">Hard floor cleaning</h3>
           <p class="mt-2 text-sm text-slate-600">

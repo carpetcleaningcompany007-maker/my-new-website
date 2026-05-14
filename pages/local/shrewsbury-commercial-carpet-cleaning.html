@@ -45,7 +45,11 @@
   .local-cta-panel{padding:18px}
   .local-cta-panel h3{font-size:22px}
 }
-</style>
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    }
+  </style>
 
 
 <style>

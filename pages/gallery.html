@@ -38,6 +38,10 @@
     .gallery-strip .hero-actions{margin-top:22px}
     @media (max-width:1100px){.gallery-top-wrap{grid-template-columns:1fr} .gallery-video-grid{grid-template-columns:1fr}}
     @media (max-width:760px){.gallery-panel{padding:22px} .gallery-panel h2{font-size:28px} .gallery-mini-grid{grid-template-columns:1fr} .gallery-video-frame iframe{min-height:420px}}
+  
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    }
   </style>
 
 <style>

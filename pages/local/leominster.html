@@ -56,7 +56,11 @@
 @media (max-width:760px){
   .local-float-bar{display:none}
 }
-</style>
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    }
+  </style>
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Service","serviceType":"Carpet Cleaning Leominster","provider":{"@type":"LocalBusiness","name":"The Carpet Cleaning Company","telephone":"07802563213","url":"https://www.thecarpetcleaningcrew.co.uk/"},"areaServed":["Leominster","Herefordshire"]}

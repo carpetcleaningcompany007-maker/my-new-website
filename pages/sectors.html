@@ -27,7 +27,11 @@
   .nav-links .nav-item,.nav-links .dropdown{display:none !important}
   .nav-links a{white-space:nowrap}
 }
-</style>
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    }
+  </style>
 
 
 
