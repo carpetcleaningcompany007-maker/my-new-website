@@ -1030,12 +1030,7 @@
         font-size:.96rem !important;
       }
     }
-  
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
-    }
   </style>
-
 <style>
 .hybrid-form-shell{background:#fff;border:1px solid rgba(18,38,58,.08);border-radius:28px;padding:28px;box-shadow:0 22px 48px rgba(8,20,40,.10)}
 .hybrid-form-shell label{display:block}
@@ -1054,8 +1049,6 @@
 }
 @media (max-width:760px){.hybrid-form-shell .grid2,.hybrid-form-shell .form-row{grid-template-columns:1fr}}
 </style>
-
-
 <style>
 @media (min-width: 1024px){
   .nav-links{display:flex !important;flex-wrap:wrap;gap:12px;align-items:center}
@@ -1063,13 +1056,6 @@
   .nav-links a{white-space:nowrap}
 }
 </style>
-
-
-
-
-
-
-
 <style id="robust-nav-fix">
 @media (min-width:1024px){
   header, .site-header { overflow: visible !important; z-index: 9999 !important; }
@@ -1137,45 +1123,38 @@
   }
 }
 </style>
-
 </head>
 <body>
 <header class="site-header">
-  <div class="container nav">
-    <a class="brand" href="../index.html">
-      <img class="brand-logo" src="../assets/img/logo.webp" alt="The Carpet Cleaning Company logo" loading="lazy" width="512" height="512">
-      <div class="brand-text">
-        <strong>The Carpet Cleaning Company</strong>
-        <span>Trusted local carpet and upholstery specialists</span>
-      </div>
-    </a>
-    <button class="mobile-toggle" aria-expanded="false">Menu</button>
-    
-
-
-
+<div class="container nav">
+<a class="brand" href="../index.html">
+<img alt="The Carpet Cleaning Company logo" class="brand-logo" decoding="async" fetchpriority="high" height="512" loading="eager" src="../assets/img/logo.webp" width="512"/>
+<div class="brand-text">
+<strong>The Carpet Cleaning Company</strong>
+<span>Trusted local carpet and upholstery specialists</span>
+</div>
+</a>
+<button aria-expanded="false" class="mobile-toggle">Menu</button>
 <nav class="nav-links">
-  <a href="../index.html">Home</a>
-  <a href="landing-page.html">Landing Page</a>
-
-  <div class="nav-item">
-    <a href="carpet-cleaning.html">Services</a>
-    <div class="dropdown">
-      <a href="carpet-cleaning.html">Carpet Cleaning</a>
-      <a href="upholstery-cleaning.html">Upholstery Cleaning</a>
-      <a href="rug-cleaning.html">Rug Cleaning</a>
-      <a href="stain-removal.html">Stain Removal</a>
-      <a href="hard-floor-cleaning.html">Hard Floor Cleaning</a>
-      <a href="commercial-carpet-cleaning.html">Commercial Cleaning</a>
-      <a href="pricing.html">Pricing</a>
-    </div>
-  </div>
-
-  <div class="nav-item">
-    <a href="service-areas.html">Areas</a>
-    <div class="dropdown">
-      <a href="service-areas.html">All Areas</a>
-      <a href="local/atcham.html">Atcham</a>
+<a href="../index.html">Home</a>
+<a href="landing-page.html">Landing Page</a>
+<div class="nav-item">
+<a href="carpet-cleaning.html">Services</a>
+<div class="dropdown">
+<a href="carpet-cleaning.html">Carpet Cleaning</a>
+<a href="upholstery-cleaning.html">Upholstery Cleaning</a>
+<a href="rug-cleaning.html">Rug Cleaning</a>
+<a href="stain-removal.html">Stain Removal</a>
+<a href="hard-floor-cleaning.html">Hard Floor Cleaning</a>
+<a href="commercial-carpet-cleaning.html">Commercial Cleaning</a>
+<a href="pricing.html">Pricing</a>
+</div>
+</div>
+<div class="nav-item">
+<a href="service-areas.html">Areas</a>
+<div class="dropdown">
+<a href="service-areas.html">All Areas</a>
+<a href="local/atcham.html">Atcham</a>
 <a href="local/baschurch.html">Baschurch</a>
 <a href="local/battlefield.html">Battlefield</a>
 <a href="local/bayston-hill.html">Bayston Hill</a>
@@ -1204,23 +1183,19 @@
 <a href="local/shrewsbury-upholstery-cleaning.html">Shrewsbury Upholstery Cleaning</a>
 <a href="local/shrewsbury.html">Shrewsbury</a>
 <a href="local/tenbury-wells.html">Tenbury Wells</a>
-    </div>
-  </div>
-
-  <a href="gallery.html">Gallery</a>
-  <a href="reviews.html">Reviews</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-  <a href="../carpet-cleaning-quote.html" class="nav-quote">Instant Quote</a>
+</div>
+</div>
+<a href="gallery.html">Gallery</a>
+<a href="reviews.html">Reviews</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a class="nav-quote" href="../carpet-cleaning-quote.html">Instant Quote</a>
 </nav>
-
-
-
-    <div class="nav-cta">
-      <a class="btn btn-call" href="tel:07802563213">Call 07802 563213</a>
-      <a class="btn-quote-right" href="../carpet-cleaning-quote.html">Instant Quote</a>
-    </div>
-  </div>
+<div class="nav-cta">
+<a class="btn btn-call" href="tel:07802563213">Call 07802 563213</a>
+<a class="btn-quote-right" href="../carpet-cleaning-quote.html">Instant Quote</a>
+</div>
+</div>
 </header>
 <section class="hero inner-hero">
 <div class="container pricing-hero">
@@ -1383,8 +1358,8 @@
       </div>
 </div>
 <div class="photo-frame reveal equipment-frame pricing-machine-frame">
-<img alt="Professional carpet cleaning machine" height="371" loading="lazy" src="../assets/img/machine-transparent.webp" width="286"/>
-</div>
+<img alt="Professional carpet cleaning machine" decoding="async" fetchpriority="low" height="371" loading="lazy" src="../assets/img/machine-transparent.webp" width="286">
+</img></div>
 </div>
 </section>
 <section class="section" id="contact-form">
@@ -1397,46 +1372,41 @@
 <h3>Get in touch for a proper quotation</h3>
 <p>Choose an option below or simply ask a question. Tell us how many rooms there are, whether stairs are included, and anything else that helps us guide you properly.</p>
 <form action="https://formspree.io/f/mblnzwpv" class="pricing-form hybrid-form-shell" method="POST" onsubmit="submitAnyQuote(event, this);">
-  <input name="_redirect" type="hidden" value="https://www.thecarpetcleaningcrew.co.uk/thank-you.html"/>
-  <input name="_subject" type="hidden" value="New Quote Request - Pricing Page"/>
-  <input name="_format" type="hidden" value="plain"/>
-  <input name="_page" type="hidden" value="pages/pricing.html"/>
-
-  <div class="form-row">
-    <input required name="name" placeholder="Your name" type="text"/>
-    <input required name="phone" placeholder="Phone number" type="tel"/>
-  </div>
-
-  <div class="form-row">
-    <input required name="email" placeholder="Email address" type="email"/>
-    <input required name="area" placeholder="Town or postcode" type="text"/>
-  </div>
-
-  <div class="form-row">
-    <select required name="option">
-      <option value="">Choose an option</option>
-      <option>Light Clean</option>
-      <option>Deluxe Deep Clean</option>
-      <option>Deep Clean + Protection</option>
-      <option>Upholstery Cleaning</option>
-      <option>Rug Cleaning</option>
-      <option>Stain Removal</option>
-      <option>Commercial Cleaning</option>
-      <option>Not sure, need advice</option>
-    </select>
-    <select required name="rooms_or_areas">
-      <option value="">Rooms or areas</option>
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5+</option>
-    </select>
-  </div>
-
-  <textarea name="message" placeholder="Tell us what needs cleaning, how many rooms, whether stairs are included, or ask any question"></textarea>
-
-  <button class="submit-btn" type="submit">Get my quote</button>
+<input name="_redirect" type="hidden" value="https://www.thecarpetcleaningcrew.co.uk/thank-you.html"/>
+<input name="_subject" type="hidden" value="New Quote Request - Pricing Page"/>
+<input name="_format" type="hidden" value="plain"/>
+<input name="_page" type="hidden" value="pages/pricing.html"/>
+<div class="form-row">
+<input name="name" placeholder="Your name" required="" type="text"/>
+<input name="phone" placeholder="Phone number" required="" type="tel"/>
+</div>
+<div class="form-row">
+<input name="email" placeholder="Email address" required="" type="email"/>
+<input name="area" placeholder="Town or postcode" required="" type="text"/>
+</div>
+<div class="form-row">
+<select name="option" required="">
+<option value="">Choose an option</option>
+<option>Light Clean</option>
+<option>Deluxe Deep Clean</option>
+<option>Deep Clean + Protection</option>
+<option>Upholstery Cleaning</option>
+<option>Rug Cleaning</option>
+<option>Stain Removal</option>
+<option>Commercial Cleaning</option>
+<option>Not sure, need advice</option>
+</select>
+<select name="rooms_or_areas" required="">
+<option value="">Rooms or areas</option>
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5+</option>
+</select>
+</div>
+<textarea name="message" placeholder="Tell us what needs cleaning, how many rooms, whether stairs are included, or ask any question"></textarea>
+<button class="submit-btn" type="submit">Get my quote</button>
 </form>
 </div>
 <aside class="contact-side-panel">
@@ -1470,7 +1440,7 @@
 <div class="container footer-grid">
 <div class="footer-brand">
 <a class="brand" href="../index.html">
-<img alt="The Carpet Cleaning Company logo" class="brand-logo" height="512" loading="lazy" src="../assets/img/logo.webp" width="512"/>
+<img alt="The Carpet Cleaning Company logo" class="brand-logo" decoding="async" fetchpriority="low" height="512" loading="lazy" src="../assets/img/logo.webp" width="512"/>
 <div class="brand-text">
 <strong>The Carpet Cleaning Company</strong>
 <span>Carpet, upholstery and floor cleaning</span>
@@ -1486,7 +1456,7 @@
 <a href="carpet-cleaning.html">Carpet Cleaning</a>
 <a href="upholstery-cleaning.html">Upholstery Cleaning</a>
 <a href="reviews.html">Reviews</a>
-      <a href="gallery.html">Gallery</a>
+<a href="gallery.html">Gallery</a>
 </div>
 </div>
 <div>
@@ -1500,14 +1470,12 @@
 </div>
 </div>
 <div class="container copy">© The Carpet Cleaning Company. All rights reserved.</div>
-
 <section class="section">
-  <div class="container seo-copy">
-    <h2>What this service helps with</h2>
-    <p>This service helps deal with built up dirt, stains, odours and everyday wear that builds up over time. Suitable for homes, rentals and commercial settings.</p>
-  </div>
+<div class="container seo-copy">
+<h2>What this service helps with</h2>
+<p>This service helps deal with built up dirt, stains, odours and everyday wear that builds up over time. Suitable for homes, rentals and commercial settings.</p>
+</div>
 </section>
-
 </footer>
 <div class="mobile-cta-bar">
 <a class="mobile-cta-call" href="tel:07802563213">
@@ -1519,7 +1487,7 @@
     WhatsApp
   </a>
 </div>
-<script src="../assets/app.js"></script>
+<script defer="" src="../assets/app.js"></script>
 <script>async function submitAnyQuote(e, form) {
   e.preventDefault();
   const btn = form.querySelector('button[type="submit"], input[type="submit"]');

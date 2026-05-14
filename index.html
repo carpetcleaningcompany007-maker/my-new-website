@@ -1,35 +1,37 @@
-<!doctype html>
-<html lang="en" class="scroll-smooth">
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <link rel="preload" as="image" href="assets/img/truckmount-hero.webp" fetchpriority="high" />
-  <link rel="preload" as="image" href="assets/img/logo.webp" />
-  <title>The Carpet Cleaning Company | Carpet Cleaning Ludlow and Shrewsbury</title>
-  <meta name="robots" content="index, follow" />
-  <meta name="description" content="Professional carpet and upholstery cleaning in Ludlow, Shrewsbury and nearby areas with CRB agitation, hot water extraction and a 100 percent satisfaction guarantee." />
-
-  <!-- Google tag (GA4) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R9CFDLD03L"></script>
-  <script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>The Carpet Cleaning Company | Carpet Cleaning Ludlow and Shrewsbury</title>
+<link as="image" href="assets/img/logo.webp" rel="preload"/>
+<link as="image" fetchpriority="high" href="assets/img/truckmount-hero.webp" rel="preload"/>
+<link crossorigin="" href="https://www.googletagmanager.com" rel="preconnect"/>
+<meta content="Professional carpet and upholstery cleaning in Ludlow, Shrewsbury and nearby areas with CRB agitation, hot water extraction and a 100 percent satisfaction guarantee." name="description"/>
+<!-- Performance: delay analytics until after first paint -->
+<script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-R9CFDLD03L');
+    (function(){
+      var loaded = false;
+      function loadTracking(){
+        if(loaded) return; loaded = true;
+        var s=document.createElement('script');
+        s.async=true;
+        s.src='https://www.googletagmanager.com/gtag/js?id=G-R9CFDLD03L';
+        document.head.appendChild(s);
+        gtag('js', new Date());
+        gtag('config','G-R9CFDLD03L');
+        gtag('config','AW-17385772946');
+      }
+      if('requestIdleCallback' in window){ requestIdleCallback(loadTracking,{timeout:2500}); }
+      else { window.addEventListener('load', function(){ setTimeout(loadTracking,1200); }); }
+    })();
   </script>
-
-  <!-- Google Ads tag (AW) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17385772946"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-17385772946');
-  </script>
-
-  <!-- Tailwind -->
-  <script defer src="https://cdn.tailwindcss.com"></script>
-  <script>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
     tailwind.config = {
       theme: {
         extend: {
@@ -45,12 +47,10 @@
       }
     }
   </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-
-  <style>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
     body { font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif; }
 
     html, body { width: 100%; max-width: 100%; overflow-x: clip; }
@@ -111,13 +111,13 @@
       100% { opacity:0; transform: scale(1.22); }
     }
 
-    [data-anim] { opacity: 1; transform: none; }
+    [data-anim] { opacity: 0; transform: translateY(14px); }
     .is-ready [data-anim="hero-title"] { animation: fadeUp 800ms ease-out forwards; }
     .is-ready [data-anim="hero-copy"]  { animation: fadeUp 820ms ease-out 120ms forwards; }
     .is-ready [data-anim="hero-points"]{ animation: fadeUp 860ms ease-out 180ms forwards; }
     .is-ready [data-anim="hero-cta"]   { animation: fadeUp 880ms ease-out 240ms forwards; }
     .is-ready [data-anim="hero-card"]  { animation: fadeUp 900ms ease-out 200ms forwards; }
-    .in-view[data-anim="reveal"] { animation: none; }
+    .in-view[data-anim="reveal"] { animation: fadeUp 750ms ease-out forwards; }
 
     .badge-wrap { position: relative; display: inline-grid; place-items: center; }
     .badge-wrap:before{
@@ -240,8 +240,7 @@
       .reveal-wrap { transition:none !important; max-height:none !important; opacity:1 !important; transform:none !important; }
     }
   </style>
-
-  <script>
+<script>
     (function () {
       try { if ("scrollRestoration" in history) history.scrollRestoration = "manual"; } catch (e) {}
 
@@ -278,12 +277,6 @@
       }, { passive: false });
     })();
   </script>
-
-
-
-
-
-
 <style id="robust-nav-fix">
 @media (min-width:1024px){
   header, .site-header { overflow: visible !important; z-index: 9999 !important; }
@@ -351,50 +344,39 @@
   }
 }
 </style>
-
 </head>
-
 <body class="bg-ink-900 text-slate-100 overflow-x-hidden">
-
-  <div class="pointer-events-none fixed inset-0 z-[1] opacity-[0.06] mix-blend-overlay"
-       style="background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%222%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22400%22 height=%22400%22 filter=%22url(%23n)%22 opacity=%220.25%22/%3E%3C/svg%3E');">
-  </div>
-
-  
+<div class="pointer-events-none fixed inset-0 z-[1] opacity-[0.06] mix-blend-overlay" style="background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%222%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22400%22 height=%22400%22 filter=%22url(%23n)%22 opacity=%220.25%22/%3E%3C/svg%3E');">
+</div>
 <header class="fixed top-0 left-0 right-0 z-50 bg-[#0f2741]/90 glass border-b border-white/10" style="overflow:visible">
-  <div class="mx-auto max-w-[1440px] px-4 py-1.5 flex items-center justify-between gap-4">
-    <div class="flex items-center gap-3 min-w-0">
-      <img src="assets/img/logo.webp" class="h-14 sm:h-20 w-auto object-contain shrink-0" alt="The Carpet Cleaning Company" />
-      <div class="leading-tight min-w-0">
-        <div class="font-extrabold text-base sm:text-lg truncate">The Carpet Cleaning Company</div>
-        <div class="text-[11px] sm:text-xs text-slate-200/90">Carpet and upholstery cleaning for homes and businesses</div>
-      </div>
-    </div>
-
-    
-
+<div class="mx-auto max-w-[1440px] px-4 py-1.5 flex items-center justify-between gap-4">
+<div class="flex items-center gap-3 min-w-0">
+<img alt="The Carpet Cleaning Company" class="h-14 sm:h-20 w-auto object-contain shrink-0" decoding="async" fetchpriority="high" loading="eager" src="assets/img/logo.webp"/>
+<div class="leading-tight min-w-0">
+<div class="font-extrabold text-base sm:text-lg truncate">The Carpet Cleaning Company</div>
+<div class="text-[11px] sm:text-xs text-slate-200/90">Carpet and upholstery cleaning for homes and businesses</div>
+</div>
+</div>
 <nav class="nav-links hidden lg:flex items-center gap-4 text-sm font-bold text-white/90">
-  <a href="index.html">Home</a>
-  <a href="pages/landing-page.html">Landing Page</a>
-
-  <div class="nav-item">
-    <a href="pages/carpet-cleaning.html">Services</a>
-    <div class="dropdown">
-      <a href="pages/carpet-cleaning.html">Carpet Cleaning</a>
-      <a href="pages/upholstery-cleaning.html">Upholstery Cleaning</a>
-      <a href="pages/rug-cleaning.html">Rug Cleaning</a>
-      <a href="pages/stain-removal.html">Stain Removal</a>
-      <a href="pages/hard-floor-cleaning.html">Hard Floor Cleaning</a>
-      <a href="pages/commercial-carpet-cleaning.html">Commercial Cleaning</a>
-      <a href="pages/pricing.html">Pricing</a>
-    </div>
-  </div>
-
-  <div class="nav-item">
-    <a href="pages/service-areas.html">Areas</a>
-    <div class="dropdown">
-      <a href="pages/service-areas.html">All Areas</a>
-      <a href="pages/local/atcham.html">Atcham</a>
+<a href="index.html">Home</a>
+<a href="pages/landing-page.html">Landing Page</a>
+<div class="nav-item">
+<a href="pages/carpet-cleaning.html">Services</a>
+<div class="dropdown">
+<a href="pages/carpet-cleaning.html">Carpet Cleaning</a>
+<a href="pages/upholstery-cleaning.html">Upholstery Cleaning</a>
+<a href="pages/rug-cleaning.html">Rug Cleaning</a>
+<a href="pages/stain-removal.html">Stain Removal</a>
+<a href="pages/hard-floor-cleaning.html">Hard Floor Cleaning</a>
+<a href="pages/commercial-carpet-cleaning.html">Commercial Cleaning</a>
+<a href="pages/pricing.html">Pricing</a>
+</div>
+</div>
+<div class="nav-item">
+<a href="pages/service-areas.html">Areas</a>
+<div class="dropdown">
+<a href="pages/service-areas.html">All Areas</a>
+<a href="pages/local/atcham.html">Atcham</a>
 <a href="pages/local/baschurch.html">Baschurch</a>
 <a href="pages/local/battlefield.html">Battlefield</a>
 <a href="pages/local/bayston-hill.html">Bayston Hill</a>
@@ -423,681 +405,484 @@
 <a href="pages/local/shrewsbury-upholstery-cleaning.html">Shrewsbury Upholstery Cleaning</a>
 <a href="pages/local/shrewsbury.html">Shrewsbury</a>
 <a href="pages/local/tenbury-wells.html">Tenbury Wells</a>
-    </div>
-  </div>
-
-  <a href="pages/gallery.html">Gallery</a>
-  <a href="pages/reviews.html">Reviews</a>
-  <a href="pages/about.html">About</a>
-  <a href="pages/contact.html">Contact</a>
-  <a href="carpet-cleaning-quote.html" class="nav-quote">Instant Quote</a>
+</div>
+</div>
+<a href="pages/gallery.html">Gallery</a>
+<a href="pages/reviews.html">Reviews</a>
+<a href="pages/about.html">About</a>
+<a href="pages/contact.html">Contact</a>
+<a class="nav-quote" href="carpet-cleaning-quote.html">Instant Quote</a>
 </nav>
-
-
-
-    <div class="flex items-center gap-3">
-      <a href="tel:07802563213" class="hidden sm:inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/15 px-4 py-2 text-sm font-semibold lift">
-        <span class="inline-block h-2 w-2 rounded-full bg-brand-300"></span>
+<div class="flex items-center gap-3">
+<a class="hidden sm:inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/15 px-4 py-2 text-sm font-semibold lift" href="tel:07802563213">
+<span class="inline-block h-2 w-2 rounded-full bg-brand-300"></span>
         07802 563213
       </a>
-    </div>
-  </div>
+</div>
+</div>
 </header>
-
-
-  <section class="relative pt-24 md:pt-28 pb-14 md:pb-20 overflow-hidden overflow-x-clip isolate">
-    <div class="absolute inset-0">
-      <img
-        id="heroImage"
-        class="absolute inset-0 w-full h-full object-cover opacity-100 saturate-125 contrast-110 brightness-90"
-        src="assets/img/truckmount-hero.webp"
-        alt="Professional carpet cleaning in Ludlow and Shrewsbury"
-        loading="eager"
-        fetchpriority="high"
-      />
-
-      <div class="absolute inset-0 bg-gradient-to-r from-ink-950/90 via-ink-900/55 to-ink-900/20"></div>
-      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-ink-950/20"></div>
-      <div id="heroGlow" class="absolute inset-0 bg-[radial-gradient(900px_500px_at_20%_25%,rgba(245,194,92,0.16),transparent_60%)]"></div>
-    </div>
-
-    <div class="relative mx-auto max-w-[1440px] px-4">
-      <div class="grid lg:grid-cols-2 gap-10 items-start">
-        <div class="pt-2">
-          <h1 data-anim="hero-title" class="mt-4 text-4xl md:text-5xl font-extrabold leading-tight">
-            Carpet Cleaning in
-            <span class="text-brand-300">Ludlow and Shrewsbury</span>
-            <span class="block text-white mt-2">Beautiful carpets. Fast quotes. Guaranteed results.</span>
-          </h1>
-
-          <p data-anim="hero-copy" class="mt-4 text-base md:text-lg text-white max-w-xl">
+<section class="relative pt-24 md:pt-28 pb-14 md:pb-20 overflow-hidden overflow-x-clip isolate">
+<div class="absolute inset-0">
+<img alt="Professional carpet cleaning in Ludlow and Shrewsbury" class="absolute inset-0 w-full h-full object-cover opacity-75" decoding="async" fetchpriority="high" id="heroImage" loading="eager" src="assets/img/truckmount-hero.webp"/>
+<div class="absolute inset-0 bg-gradient-to-b from-ink-900/40 via-ink-900/70 to-ink-900"></div>
+<div class="absolute inset-0 bg-[radial-gradient(1200px_700px_at_25%_20%,rgba(245,194,92,0.14),transparent_60%)]" id="heroGlow"></div>
+</div>
+<div class="relative mx-auto max-w-[1440px] px-4">
+<div class="grid lg:grid-cols-2 gap-10 items-start">
+<div class="pt-2">
+<h1 class="mt-4 text-4xl md:text-5xl font-extrabold leading-tight" data-anim="hero-title">
+            Carpet Cleaning in Ludlow and Shrewsbury
+            <span class="block text-slate-200 mt-2">Beautiful carpets. Fast quotes. Guaranteed results.</span>
+</h1>
+<p class="mt-4 text-base md:text-lg text-slate-200 max-w-xl" data-anim="hero-copy">
             CRB agitation lifts embedded soil, then hot water extraction with a neutralising rinse for soft, residue free fibres.
           </p>
-
-          <p data-anim="hero-copy" class="mt-3 text-sm md:text-base text-slate-100 max-w-2xl">
+<p class="mt-3 text-sm md:text-base text-slate-300 max-w-2xl" data-anim="hero-copy">
             We provide professional carpet and upholstery cleaning across Ludlow, Shrewsbury and nearby areas including Craven Arms, Church Stretton and Tenbury Wells.
           </p>
-
-          <div data-anim="hero-points" class="mt-5 space-y-2 text-sm text-white">
-            <div class="flex items-start gap-3">
-              <span class="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-300 text-slate-950 font-extrabold">✓</span>
-              <span>CRB agitation lifts embedded soil</span>
-            </div>
-            <div class="flex items-start gap-3">
-              <span class="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-300 text-slate-950 font-extrabold">✓</span>
-              <span>Steam cleaning up to 120 degrees for the best results</span>
-            </div>
-            <div class="flex items-start gap-3">
-              <span class="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-300 text-slate-950 font-extrabold">✓</span>
-              <span>Fully insured for your peace of mind</span>
-            </div>
-            <div class="flex items-start gap-3">
-              <span class="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-300 text-slate-950 font-extrabold">✓</span>
-              <span>Wool and synthetic safe process</span>
-            </div>
-          </div>
-
-          <div data-anim="hero-cta" class="mt-6 flex flex-wrap gap-3">
-            <a href="#heroQuoteForm" class="inline-flex items-center justify-center rounded-full bg-brand-300 hover:bg-brand-100 text-slate-950 px-6 py-3 text-sm font-extrabold shadow-soft lift">
+<div class="mt-5 space-y-2 text-sm text-slate-200" data-anim="hero-points">
+<div class="flex items-start gap-3">
+<span class="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-300 text-slate-950 font-extrabold">✓</span>
+<span>CRB agitation lifts embedded soil</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-300 text-slate-950 font-extrabold">✓</span>
+<span>Steam cleaning up to 120 degrees for the best results</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-300 text-slate-950 font-extrabold">✓</span>
+<span>Fully insured for your peace of mind</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-300 text-slate-950 font-extrabold">✓</span>
+<span>Wool and synthetic safe process</span>
+</div>
+</div>
+<div class="mt-6 flex flex-wrap gap-3" data-anim="hero-cta">
+<a class="inline-flex items-center justify-center rounded-full bg-brand-300 hover:bg-brand-100 text-slate-950 px-6 py-3 text-sm font-extrabold shadow-soft lift shimmer" href="#heroQuoteForm">
               Get my quote
             </a>
-            <a href="#services" class="inline-flex items-center justify-center rounded-full bg-white/10 border border-white/15 hover:bg-white/15 px-6 py-3 text-sm font-semibold lift">
+<a class="inline-flex items-center justify-center rounded-full bg-white/10 border border-white/15 hover:bg-white/15 px-6 py-3 text-sm font-semibold lift" href="#services">
               Watch videos
             </a>
-            <a href="#reviews" class="inline-flex items-center justify-center rounded-full bg-white/10 border border-white/15 hover:bg-white/15 px-6 py-3 text-sm font-semibold lift">
+<a class="inline-flex items-center justify-center rounded-full bg-white/10 border border-white/15 hover:bg-white/15 px-6 py-3 text-sm font-semibold lift" href="#reviews">
               Read reviews first
             </a>
-          </div>
-
-        </div>
-
-        <div class="lg:pt-2">
-          <div data-anim="hero-card" class="relative rounded-3xl bg-white text-slate-900 shadow-card border border-white/40 overflow-hidden lift max-w-full">
-            <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-r from-brand-50 via-white to-brand-50"></div>
-            <div class="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-brand-100 blur-3xl opacity-70"></div>
-
-            <div class="relative p-6 md:p-7">
-              <div class="flex items-start justify-between gap-4">
-                <div class="min-w-0">
-                  <div class="text-xl font-extrabold">Instant Quote Request</div>
-                  <p class="mt-1 text-sm text-slate-600">Fast fixed price quote and earliest available dates</p>
-                </div>
-
-                <span class="badge-wrap shrink-0">
-                  <img
-                    id="satisfactionBadge"
-                    src="https://raw.githubusercontent.com/carpetcleaningcompany007-maker/carpet-cleaning-showcase/main/satisfaction_badge_transparent.png"
-                    alt="100% Satisfaction Guaranteed"
-                    class="h-24 w-24 sm:h-32 sm:w-32 object-contain drop-shadow-xl"
-                  />
-                </span>
-              </div>
-
-              <form
-                id="heroQuoteForm"
-                class="mt-5"
-                action="https://formspree.io/f/mblnzwpv"
-                method="POST"
-                onsubmit="submitQuote(event, this);"
-              >
-        <input type="hidden" name="_redirect" value="https://www.thecarpetcleaningcrew.co.uk/thank-you.html">
-                <input type="hidden" name="_subject" value="New Quote Request - The Carpet Cleaning Company" />
-                <input type="hidden" name="_format" value="plain" />
-
-                <div class="space-y-4">
-
-                  <div class="grid sm:grid-cols-2 gap-4">
-                    <label class="block">
-                      <span class="text-sm font-semibold text-slate-700">Postcode <span class="text-rose-500">*</span></span>
-                      <input required name="postcode" autocomplete="postal-code"
-                        class="premium-field mt-1 w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm"
-                        placeholder="e.g. SY8 1AA" />
-                    </label>
-
-                    <label class="block">
-                      <span class="text-sm font-semibold text-slate-700">Rooms or areas</span>
-                      <select name="areas"
-                        class="premium-field mt-1 w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm bg-white">
-                        <option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option>
-                      </select>
-                    </label>
-                  </div>
-
-                  <label class="block">
-                    <span class="text-sm font-semibold text-slate-700">What do you need <span class="text-rose-500">*</span></span>
-                    <select required name="service"
-                      class="premium-field mt-1 w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm bg-white">
-                      <option value="" selected disabled>Select a service</option>
-                      <option>Carpet cleaning</option>
-                      <option>Upholstery cleaning</option>
-                      <option>Carpets and upholstery</option>
-                      <option>Commercial cleaning</option>
-                      <option>Rug cleaning</option>
-                    </select>
-                  </label>
-
-                  <label class="block">
-                    <span class="text-sm font-semibold text-slate-700">Full name <span class="text-rose-500">*</span></span>
-                    <input required name="name" autocomplete="name"
-                      class="premium-field mt-1 w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm"
-                      placeholder="Your name" />
-                  </label>
-
-                  <div class="grid sm:grid-cols-2 gap-4">
-                    <label class="block">
-                      <span class="text-sm font-semibold text-slate-700">Phone <span class="text-rose-500">*</span></span>
-                      <input required id="phoneField" name="phone" inputmode="tel" autocomplete="tel"
-                        class="premium-field mt-1 w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm"
-                        placeholder="07..." />
-                    </label>
-
-                    <label class="block">
-                      <span class="text-sm font-semibold text-slate-700">Email <span class="text-rose-500">*</span></span>
-                      <input required id="emailField" name="email" type="email" autocomplete="email"
-                        class="premium-field mt-1 w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm"
-                        placeholder="you@example.com" />
-                    </label>
-                  </div>
-
-                  <div id="extraFields" class="reveal-wrap">
-                    <div class="rounded-2xl border border-brand-100 bg-brand-50 px-4 py-4 shadow-soft">
-                      <div class="text-sm font-extrabold text-slate-900">Anything we should know</div>
-                      <div class="text-xs text-slate-700 mt-1">Stains, pets, parking, access, ideal days</div>
-
-                      <textarea name="notes" rows="3"
-                        class="premium-field mt-3 w-full rounded-xl border border-brand-100 bg-white px-3 py-2.5 text-sm"
-                        placeholder="Type here..."></textarea>
-
-                      <div class="mt-4 rounded-xl border border-brand-100 bg-white px-4 py-3">
-                        <div class="text-sm font-extrabold text-slate-900">Buy now pay later with Klarna</div>
-                        <div class="text-xs text-slate-600 mt-1">We can offer Klarna so you can spread the cost over 3 months. Interested?</div>
-
-                        <div class="mt-3 flex flex-wrap gap-3">
-                          <label class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-bold text-slate-700">
-                            <input type="radio" name="klarna_interest" value="Yes" class="h-4 w-4" />
+</div>
+</div>
+<div class="lg:pt-2">
+<div class="relative rounded-3xl bg-white text-slate-900 shadow-card border border-white/40 overflow-hidden lift max-w-full" data-anim="hero-card">
+<div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-r from-brand-50 via-white to-brand-50"></div>
+<div class="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-brand-100 blur-3xl opacity-70"></div>
+<div class="relative p-6 md:p-7">
+<div class="flex items-start justify-between gap-4">
+<div class="min-w-0">
+<div class="text-xl font-extrabold">Instant Quote Request</div>
+<p class="mt-1 text-sm text-slate-600">Fast fixed price quote and earliest available dates</p>
+</div>
+<span class="badge-wrap shrink-0">
+<img alt="100% Satisfaction Guaranteed" class="h-24 w-24 sm:h-32 sm:w-32 object-contain drop-shadow-xl" decoding="async" id="satisfactionBadge" loading="lazy" src="https://raw.githubusercontent.com/carpetcleaningcompany007-maker/carpet-cleaning-showcase/main/satisfaction_badge_transparent.png"/>
+</span>
+</div>
+<form action="https://formspree.io/f/mblnzwpv" class="mt-5" id="heroQuoteForm" method="POST" onsubmit="submitQuote(event, this);">
+<input name="_redirect" type="hidden" value="https://www.thecarpetcleaningcrew.co.uk/thank-you.html"/>
+<input name="_subject" type="hidden" value="New Quote Request - The Carpet Cleaning Company">
+<input name="_format" type="hidden" value="plain"/>
+<div class="space-y-4">
+<div class="grid sm:grid-cols-2 gap-4">
+<label class="block">
+<span class="text-sm font-semibold text-slate-700">Postcode <span class="text-rose-500">*</span></span>
+<input autocomplete="postal-code" class="premium-field mt-1 w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm" name="postcode" placeholder="e.g. SY8 1AA" required=""/>
+</label>
+<label class="block">
+<span class="text-sm font-semibold text-slate-700">Rooms or areas</span>
+<select class="premium-field mt-1 w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm bg-white" name="areas">
+<option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option>
+</select>
+</label>
+</div>
+<label class="block">
+<span class="text-sm font-semibold text-slate-700">What do you need <span class="text-rose-500">*</span></span>
+<select class="premium-field mt-1 w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm bg-white" name="service" required="">
+<option disabled="" selected="" value="">Select a service</option>
+<option>Carpet cleaning</option>
+<option>Upholstery cleaning</option>
+<option>Carpets and upholstery</option>
+<option>Commercial cleaning</option>
+<option>Rug cleaning</option>
+</select>
+</label>
+<label class="block">
+<span class="text-sm font-semibold text-slate-700">Full name <span class="text-rose-500">*</span></span>
+<input autocomplete="name" class="premium-field mt-1 w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm" name="name" placeholder="Your name" required=""/>
+</label>
+<div class="grid sm:grid-cols-2 gap-4">
+<label class="block">
+<span class="text-sm font-semibold text-slate-700">Phone <span class="text-rose-500">*</span></span>
+<input autocomplete="tel" class="premium-field mt-1 w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm" id="phoneField" inputmode="tel" name="phone" placeholder="07..." required=""/>
+</label>
+<label class="block">
+<span class="text-sm font-semibold text-slate-700">Email <span class="text-rose-500">*</span></span>
+<input autocomplete="email" class="premium-field mt-1 w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm" id="emailField" name="email" placeholder="you@example.com" required="" type="email"/>
+</label>
+</div>
+<div class="reveal-wrap" id="extraFields">
+<div class="rounded-2xl border border-brand-100 bg-brand-50 px-4 py-4 shadow-soft">
+<div class="text-sm font-extrabold text-slate-900">Anything we should know</div>
+<div class="text-xs text-slate-700 mt-1">Stains, pets, parking, access, ideal days</div>
+<textarea class="premium-field mt-3 w-full rounded-xl border border-brand-100 bg-white px-3 py-2.5 text-sm" name="notes" placeholder="Type here..." rows="3"></textarea>
+<div class="mt-4 rounded-xl border border-brand-100 bg-white px-4 py-3">
+<div class="text-sm font-extrabold text-slate-900">Buy now pay later with Klarna</div>
+<div class="text-xs text-slate-600 mt-1">We can offer Klarna so you can spread the cost over 3 months. Interested?</div>
+<div class="mt-3 flex flex-wrap gap-3">
+<label class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-bold text-slate-700">
+<input class="h-4 w-4" name="klarna_interest" type="radio" value="Yes"/>
                             Yes
                           </label>
-                          <label class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-bold text-slate-700">
-                            <input type="radio" name="klarna_interest" value="No" class="h-4 w-4" />
+<label class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-bold text-slate-700">
+<input class="h-4 w-4" name="klarna_interest" type="radio" value="No"/>
                             No
                           </label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <button id="submitBtn" type="submit"
-                    class="w-full rounded-2xl bg-ink-950 hover:bg-ink-800 text-white px-4 py-3.5 text-sm font-extrabold shadow-soft lift">
+</div>
+</div>
+</div>
+</div>
+<button class="w-full rounded-2xl bg-brand-300 hover:bg-brand-100 text-slate-950 px-4 py-3.5 text-sm font-extrabold shadow-soft lift shimmer" id="submitBtn" type="submit">
                     Get my quote
                   </button>
-
-                  <p class="text-xs text-slate-500 text-center">We will contact you from 07802 563213. No obligation.</p>
-                </div>
-              </form>
-
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <section class="py-8 bg-white text-slate-900 border-b border-slate-100">
-    <div class="mx-auto max-w-[1440px] px-4">
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <div class="flex items-center gap-4 rounded-2xl bg-white p-4 shadow-soft border border-slate-100">
-          <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-ink-950 text-brand-300 text-2xl">♧</div>
-          <div><div class="font-extrabold">Eco Friendly</div><p class="text-sm text-slate-600">Safe for kids, pets and the environment</p></div>
-        </div>
-        <div class="flex items-center gap-4 rounded-2xl bg-white p-4 shadow-soft border border-slate-100">
-          <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-ink-950 text-brand-300 text-2xl">✓</div>
-          <div><div class="font-extrabold">Fully Insured</div><p class="text-sm text-slate-600">Complete peace of mind for your property</p></div>
-        </div>
-        <div class="flex items-center gap-4 rounded-2xl bg-white p-4 shadow-soft border border-slate-100">
-          <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-ink-950 text-brand-300 text-2xl">◷</div>
-          <div><div class="font-extrabold">Fast Drying</div><p class="text-sm text-slate-600">Low moisture process for quicker drying times</p></div>
-        </div>
-        <div class="flex items-center gap-4 rounded-2xl bg-white p-4 shadow-soft border border-slate-100">
-          <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-ink-950 text-brand-300 text-2xl">★</div>
-          <div><div class="font-extrabold">Satisfaction Guaranteed</div><p class="text-sm text-slate-600">We are not happy until you are happy</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-12 lower-bright text-slate-900">
-    <div class="mx-auto max-w-[1440px] px-4">
-      <div class="grid md:grid-cols-3 gap-5">
-        <div data-anim="reveal" class="rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-soft lift soft-card">
-          <div class="text-lg font-extrabold">Professional equipment</div>
-          <p class="mt-2 text-sm text-slate-600">Airflex, Enforcer 400, Fusion heat system and a proper professional setup.</p>
-        </div>
-        <div data-anim="reveal" class="rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-soft lift soft-card">
-          <div class="text-lg font-extrabold">Clear options</div>
-          <p class="mt-2 text-sm text-slate-600">Honest advice on the right level of clean for the carpet and the result you want.</p>
-        </div>
-        <div data-anim="reveal" class="rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-soft lift soft-card">
-          <div class="text-lg font-extrabold">Domestic and commercial</div>
-          <p class="mt-2 text-sm text-slate-600">Homes, rentals, estate agents, hotels, offices and guest accommodation.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
+<p class="text-xs text-slate-500 text-center">We will contact you from 07802 563213. No obligation.</p>
+</div>
+</input></form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-12 lower-bright text-slate-900">
+<div class="mx-auto max-w-[1440px] px-4">
+<div class="grid md:grid-cols-3 gap-5">
+<div class="rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-soft lift soft-card" data-anim="reveal">
+<div class="text-lg font-extrabold">Professional equipment</div>
+<p class="mt-2 text-sm text-slate-600">Airflex, Enforcer 400, Fusion heat system and a proper professional setup.</p>
+</div>
+<div class="rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-soft lift soft-card" data-anim="reveal">
+<div class="text-lg font-extrabold">Clear options</div>
+<p class="mt-2 text-sm text-slate-600">Honest advice on the right level of clean for the carpet and the result you want.</p>
+</div>
+<div class="rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-soft lift soft-card" data-anim="reveal">
+<div class="text-lg font-extrabold">Domestic and commercial</div>
+<p class="mt-2 text-sm text-slate-600">Homes, rentals, estate agents, hotels, offices and guest accommodation.</p>
+</div>
+</div>
+</div>
+</section>
 <section class="py-14 lower-tint text-slate-900">
-  <div class="mx-auto max-w-[1440px] px-4 text-center">
-    <h2 class="text-3xl md:text-4xl font-extrabold">What do you need cleaning</h2>
-    <p class="mt-3 text-slate-600 max-w-2xl mx-auto">
+<div class="mx-auto max-w-[1440px] px-4 text-center">
+<h2 class="text-3xl md:text-4xl font-extrabold">What do you need cleaning</h2>
+<p class="mt-3 text-slate-600 max-w-2xl mx-auto">
       Choose your service below and get a fast quote in seconds.
     </p>
-
-    <div class="mt-10 grid md:grid-cols-3 gap-6">
-
-      <div class="rounded-2xl overflow-hidden bg-white shadow-soft lift soft-card">
-        <img src="assets/img/hero-carpet-cleaning.webp" alt="Carpet Cleaning" class="h-52 w-full object-cover" loading="lazy" decoding="async">
-        <div class="p-6">
-          <h3 class="text-xl font-extrabold">Carpet Cleaning</h3>
-          <p class="mt-2 text-sm text-slate-600">
+<div class="mt-10 grid md:grid-cols-3 gap-6">
+<div class="rounded-2xl overflow-hidden bg-white shadow-soft lift soft-card">
+<img alt="Carpet Cleaning" class="h-52 w-full object-cover" decoding="async" fetchpriority="low" loading="lazy" src="assets/img/hero-carpet-cleaning.webp"/>
+<div class="p-6">
+<h3 class="text-xl font-extrabold">Carpet Cleaning</h3>
+<p class="mt-2 text-sm text-slate-600">
             Deep cleaning that lifts dirt, stains and restores your carpets properly.
           </p>
-          <a href="#heroQuoteForm"
-             onclick="selectService('Carpet cleaning')"
-             class="mt-5 inline-block w-full rounded-full bg-brand-300 text-slate-950 py-3 font-extrabold shadow-soft transition hover:-translate-y-0.5">
+<a class="mt-5 inline-block w-full rounded-full bg-brand-300 text-slate-950 py-3 font-extrabold shadow-soft transition hover:-translate-y-0.5" href="#heroQuoteForm" onclick="selectService('Carpet cleaning')">
             Get quote
           </a>
-        </div>
-      </div>
-
-      <div class="rounded-2xl overflow-hidden bg-white shadow-soft lift soft-card">
-        <img src="assets/img/upholstery-cleaning.webp" alt="Upholstery Cleaning" class="h-52 w-full object-cover" loading="lazy" decoding="async">
-        <div class="p-6">
-          <h3 class="text-xl font-extrabold">Upholstery Cleaning</h3>
-          <p class="mt-2 text-sm text-slate-600">
+</div>
+</div>
+<div class="rounded-2xl overflow-hidden bg-white shadow-soft lift soft-card">
+<img alt="Upholstery Cleaning" class="h-52 w-full object-cover" decoding="async" fetchpriority="low" loading="lazy" src="assets/img/upholstery-cleaning.webp"/>
+<div class="p-6">
+<h3 class="text-xl font-extrabold">Upholstery Cleaning</h3>
+<p class="mt-2 text-sm text-slate-600">
             Sofas, chairs and fabrics cleaned safely with powerful results.
           </p>
-          <a href="#heroQuoteForm"
-             onclick="selectService('Upholstery cleaning')"
-             class="mt-5 inline-block w-full rounded-full bg-brand-300 text-slate-950 py-3 font-extrabold shadow-soft transition hover:-translate-y-0.5">
+<a class="mt-5 inline-block w-full rounded-full bg-brand-300 text-slate-950 py-3 font-extrabold shadow-soft transition hover:-translate-y-0.5" href="#heroQuoteForm" onclick="selectService('Upholstery cleaning')">
             Get quote
           </a>
-        </div>
-      </div>
-
-      <div class="rounded-2xl overflow-hidden bg-white shadow-soft lift soft-card">
-        <img src="assets/img/rug-cleaning.webp" alt="Rug Cleaning" class="h-52 w-full object-cover" loading="lazy" decoding="async">
-        <div class="p-6">
-          <h3 class="text-xl font-extrabold">Professional Rug Cleaning</h3>
-          <p class="mt-2 text-sm text-slate-600">
+</div>
+</div>
+<div class="rounded-2xl overflow-hidden bg-white shadow-soft lift soft-card">
+<img alt="Rug Cleaning" class="h-52 w-full object-cover" decoding="async" fetchpriority="low" loading="lazy" src="assets/img/rug-cleaning.webp"/>
+<div class="p-6">
+<h3 class="text-xl font-extrabold">Professional Rug Cleaning</h3>
+<p class="mt-2 text-sm text-slate-600">
             Careful cleaning for all rug types with proper fibre safe methods.
           </p>
-          <a href="#heroQuoteForm"
-             onclick="selectService('Rug cleaning')"
-             class="mt-5 inline-block w-full rounded-full bg-brand-300 text-slate-950 py-3 font-extrabold shadow-soft transition hover:-translate-y-0.5">
+<a class="mt-5 inline-block w-full rounded-full bg-brand-300 text-slate-950 py-3 font-extrabold shadow-soft transition hover:-translate-y-0.5" href="#heroQuoteForm" onclick="selectService('Rug cleaning')">
             Get quote
           </a>
-        </div>
-      </div>
-
-    </div>
-  </div>
+</div>
+</div>
+</div>
+</div>
 </section>
-
-
-
-  
 <section class="py-14 bg-white text-slate-900">
-  <div class="mx-auto max-w-[1440px] px-4">
-    
-
-
-
+<div class="mx-auto max-w-[1440px] px-4">
 <h2 class="text-3xl font-extrabold text-center">More cleaning services</h2>
-    <p class="mt-3 text-center text-slate-600">
+<p class="mt-3 text-center text-slate-600">
       Specialist cleaning options for stains, commercial spaces and hard floors.
     </p>
-
-    <div class="mt-10 grid md:grid-cols-3 gap-6">
-
-      <div class="rounded-2xl overflow-hidden bg-white shadow-soft lift soft-card">
-        <img src="assets/img/stain-removal.webp" alt="Advanced stain removal using specialist treatment" class="h-52 w-full object-cover" loading="lazy" decoding="async">
-        <div class="p-6">
-          <h3 class="text-xl font-extrabold">Advanced stain removal</h3>
-          <p class="mt-2 text-sm text-slate-600">
+<div class="mt-10 grid md:grid-cols-3 gap-6">
+<div class="rounded-2xl overflow-hidden bg-white shadow-soft lift soft-card">
+<img alt="Advanced stain removal using specialist treatment" class="h-52 w-full object-cover" decoding="async" fetchpriority="low" loading="lazy" src="assets/img/stain-removal.webp"/>
+<div class="p-6">
+<h3 class="text-xl font-extrabold">Advanced stain removal</h3>
+<p class="mt-2 text-sm text-slate-600">
             Specialist treatment for difficult stains, dye marks and problem areas.
           </p>
-          <a href="#heroQuoteForm"
-             class="mt-5 inline-block w-full rounded-full bg-brand-300 text-slate-950 py-3 font-extrabold shadow-soft transition hover:-translate-y-0.5 text-center">
+<a class="mt-5 inline-block w-full rounded-full bg-brand-300 text-slate-950 py-3 font-extrabold shadow-soft transition hover:-translate-y-0.5 text-center" href="#heroQuoteForm">
             Get quote
           </a>
-        </div>
-      </div>
-
-      <div class="rounded-2xl overflow-hidden bg-white shadow-soft lift soft-card">
-        <img src="assets/img/commercial-carpet-cleaning.webp" alt="Commercial carpet cleaning for offices and workplaces" class="h-52 w-full object-cover" loading="lazy" decoding="async">
-        <div class="p-6">
-          <h3 class="text-xl font-extrabold">Commercial carpet cleaning</h3>
-          <p class="mt-2 text-sm text-slate-600">
+</div>
+</div>
+<div class="rounded-2xl overflow-hidden bg-white shadow-soft lift soft-card">
+<img alt="Commercial carpet cleaning for offices and workplaces" class="h-52 w-full object-cover" decoding="async" fetchpriority="low" loading="lazy" src="assets/img/commercial-carpet-cleaning.webp"/>
+<div class="p-6">
+<h3 class="text-xl font-extrabold">Commercial carpet cleaning</h3>
+<p class="mt-2 text-sm text-slate-600">
             Offices, hotels and commercial spaces cleaned properly.
           </p>
-          <a href="#heroQuoteForm"
-             class="mt-5 inline-block w-full rounded-full bg-brand-300 text-slate-950 py-3 font-extrabold shadow-soft transition hover:-translate-y-0.5 text-center">
+<a class="mt-5 inline-block w-full rounded-full bg-brand-300 text-slate-950 py-3 font-extrabold shadow-soft transition hover:-translate-y-0.5 text-center" href="#heroQuoteForm">
             Get quote
           </a>
-        </div>
-      </div>
-
-      <div class="rounded-2xl overflow-hidden bg-white shadow-soft lift soft-card">
-        <img src="assets/img/tile-grout-cleaning.webp" alt="Hard floor cleaning" class="h-52 w-full object-cover" loading="lazy" decoding="async">
-        <div class="p-6">
-          <h3 class="text-xl font-extrabold">Hard floor cleaning</h3>
-          <p class="mt-2 text-sm text-slate-600">
+</div>
+</div>
+<div class="rounded-2xl overflow-hidden bg-white shadow-soft lift soft-card">
+<img alt="Hard floor cleaning" class="h-52 w-full object-cover" decoding="async" fetchpriority="low" loading="lazy" src="assets/img/tile-grout-cleaning.webp"/>
+<div class="p-6">
+<h3 class="text-xl font-extrabold">Hard floor cleaning</h3>
+<p class="mt-2 text-sm text-slate-600">
             Deep cleaning for tiles, safety flooring and hard surfaces.
           </p>
-          <a href="#heroQuoteForm"
-             class="mt-5 inline-block w-full rounded-full bg-brand-300 text-slate-950 py-3 font-extrabold shadow-soft transition hover:-translate-y-0.5 text-center">
+<a class="mt-5 inline-block w-full rounded-full bg-brand-300 text-slate-950 py-3 font-extrabold shadow-soft transition hover:-translate-y-0.5 text-center" href="#heroQuoteForm">
             Get quote
           </a>
-        </div>
-      </div>
-
-    </div>
-  </div>
+</div>
+</div>
+</div>
+</div>
 </section>
-
-
-
-
-
 <section class="py-14 lower-tint text-slate-900">
-    <div class="mx-auto max-w-[1440px] px-4">
-      <h2 data-anim="reveal" class="text-3xl font-extrabold">How the clean works</h2>
-      <p data-anim="reveal" class="mt-2 text-sm md:text-base text-slate-600 max-w-xl">
+<div class="mx-auto max-w-[1440px] px-4">
+<h2 class="text-3xl font-extrabold" data-anim="reveal">How the clean works</h2>
+<p class="mt-2 text-sm md:text-base text-slate-600 max-w-xl" data-anim="reveal">
         A simple method used in homes and workplaces so you know what to expect on the day.
       </p>
-
-      <div data-anim="reveal" class="mt-5 rounded-2xl px-5 py-4 shadow-soft lift section-panel">
-        <div class="text-xs font-semibold text-brand-700 uppercase">Best results</div>
-        <div class="mt-1 text-lg font-extrabold text-slate-900">Steam cleaning up to 120 degrees</div>
-        <div class="mt-1 text-sm text-slate-700">High heat helps break down grease, lift deep soil and leave fibres fresh and residue free.</div>
-      </div>
-
-      <div class="mt-8 grid md:grid-cols-3 gap-6">
-        <div data-anim="reveal" class="bg-slate-50 rounded-2xl border border-slate-200 shadow-soft p-6 lift soft-card">
-          <div class="text-xs font-semibold text-brand-700 uppercase">Step one</div>
-          <div class="mt-1 text-lg font-semibold">Survey and vacuum</div>
-          <p class="mt-2 text-sm text-slate-600">
+<div class="mt-5 rounded-2xl px-5 py-4 shadow-soft lift section-panel" data-anim="reveal">
+<div class="text-xs font-semibold text-brand-700 uppercase">Best results</div>
+<div class="mt-1 text-lg font-extrabold text-slate-900">Steam cleaning up to 120 degrees</div>
+<div class="mt-1 text-sm text-slate-700">High heat helps break down grease, lift deep soil and leave fibres fresh and residue free.</div>
+</div>
+<div class="mt-8 grid md:grid-cols-3 gap-6">
+<div class="bg-slate-50 rounded-2xl border border-slate-200 shadow-soft p-6 lift soft-card" data-anim="reveal">
+<div class="text-xs font-semibold text-brand-700 uppercase">Step one</div>
+<div class="mt-1 text-lg font-semibold">Survey and vacuum</div>
+<p class="mt-2 text-sm text-slate-600">
             Quick walk through, fibre check and a full dry vacuum to remove loose soil before any solution is applied.
           </p>
-        </div>
-
-        <div data-anim="reveal" class="bg-slate-50 rounded-2xl border border-slate-200 shadow-soft p-6 lift soft-card">
-          <div class="text-xs font-semibold text-brand-700 uppercase">Step two</div>
-          <div class="mt-1 text-lg font-semibold">Pre spray and CRB agitation</div>
-          <p class="mt-2 text-sm text-slate-600">
+</div>
+<div class="bg-slate-50 rounded-2xl border border-slate-200 shadow-soft p-6 lift soft-card" data-anim="reveal">
+<div class="text-xs font-semibold text-brand-700 uppercase">Step two</div>
+<div class="mt-1 text-lg font-semibold">Pre spray and CRB agitation</div>
+<p class="mt-2 text-sm text-slate-600">
             A fibre safe solution is chosen then worked into the pile with a counter rotating brush to lift and release soil.
           </p>
-        </div>
-
-        <div data-anim="reveal" class="bg-slate-50 rounded-2xl border border-slate-200 shadow-soft p-6 lift soft-card">
-          <div class="text-xs font-semibold text-brand-700 uppercase">Step three</div>
-          <div class="mt-1 text-lg font-semibold">120 degree steam rinse and finish</div>
-          <p class="mt-2 text-sm text-slate-600">
+</div>
+<div class="bg-slate-50 rounded-2xl border border-slate-200 shadow-soft p-6 lift soft-card" data-anim="reveal">
+<div class="text-xs font-semibold text-brand-700 uppercase">Step three</div>
+<div class="mt-1 text-lg font-semibold">120 degree steam rinse and finish</div>
+<p class="mt-2 text-sm text-slate-600">
             High heat extraction with a neutralising rinse removes residues so carpets dry clean and soft.
           </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="videos" class="py-14 lower-bright text-slate-900">
-    <div class="mx-auto max-w-[1440px] px-4">
-      <h2 data-anim="reveal" class="text-3xl font-extrabold">Watch the results</h2>
-      <p data-anim="reveal" class="mt-2 text-slate-600">A recent clean in action.</p>
-
-      <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">
-        <div data-anim="reveal" class="w-[267px] h-[476px] overflow-hidden rounded-2xl border border-slate-200 shadow-soft bg-black lift video-frame">
-          <iframe
-            src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F61559013150413%2Fvideos%2F1899520797292791%2F&show_text=false"
-            width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
-            allowfullscreen="true"
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-          ></iframe>
-        </div>
-
-        <div data-anim="reveal" class="w-[267px] h-[476px] overflow-hidden rounded-2xl border border-slate-200 shadow-soft bg-black lift video-frame">
-          <iframe
-            src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F61559013150413%2Fvideos%2F1162016885802464%2F&show_text=false"
-            width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
-            allowfullscreen="true"
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-          ></iframe>
-        </div>
-
-        <div data-anim="reveal" class="w-[267px] h-[476px] overflow-hidden rounded-2xl border border-slate-200 shadow-soft bg-black lift video-frame">
-          <iframe
-            src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F61559013150413%2Fvideos%2F1362198414861523%2F&show_text=false"
-            width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
-            allowfullscreen="true"
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-          ></iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-10 lower-tint text-slate-900">
-    <div class="mx-auto max-w-[1440px] px-4">
-      <div data-anim="reveal" class="mid-cta rounded-3xl px-6 py-6 text-white flex flex-col md:flex-row items-start md:items-center justify-between gap-4 lift">
-        <div>
-          <div class="text-xs font-semibold uppercase tracking-[0.18em] text-white/70">Quick quote</div>
-          <div class="mt-2 text-2xl font-extrabold">Send photos on WhatsApp for a fast fixed price.</div>
-        </div>
-        <a
-          href="https://wa.me/447802563213?text=Hi%20Paul%2C%20I%E2%80%99d%20like%20a%20quote%20please.%0AMy%20postcode%3A%20____%0AWhat%20needs%20cleaning%3A%20____"
-          target="_blank"
-          rel="noopener"
-          class="inline-flex items-center justify-center rounded-full bg-white text-slate-950 px-6 py-3 text-sm font-extrabold shadow-soft lift"
-        >Get my quote</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="reviews" class="py-14 review-shell text-slate-900">
-    <div class="mx-auto max-w-[1440px] px-4">
-      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-        <div>
-          <div data-anim="reveal" class="inline-flex items-center gap-2 rounded-full bg-white border border-brand-100 px-3 py-1 text-xs font-semibold text-brand-700 lift">
+</div>
+</div>
+</div>
+</section>
+<section class="py-14 lower-bright text-slate-900" id="videos">
+<div class="mx-auto max-w-[1440px] px-4">
+<h2 class="text-3xl font-extrabold" data-anim="reveal">Watch the results</h2>
+<p class="mt-2 text-slate-600" data-anim="reveal">A recent clean in action.</p>
+<div class="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">
+<div class="w-[267px] h-[476px] overflow-hidden rounded-2xl border border-slate-200 shadow-soft bg-black lift video-frame" data-anim="reveal">
+<iframe allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen="true" frameborder="0" height="476" scrolling="no" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F61559013150413%2Fvideos%2F1899520797292791%2F&amp;show_text=false" style="border:none;overflow:hidden" width="267"></iframe>
+</div>
+<div class="w-[267px] h-[476px] overflow-hidden rounded-2xl border border-slate-200 shadow-soft bg-black lift video-frame" data-anim="reveal">
+<iframe allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen="true" frameborder="0" height="476" scrolling="no" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F61559013150413%2Fvideos%2F1162016885802464%2F&amp;show_text=false" style="border:none;overflow:hidden" width="267"></iframe>
+</div>
+<div class="w-[267px] h-[476px] overflow-hidden rounded-2xl border border-slate-200 shadow-soft bg-black lift video-frame" data-anim="reveal">
+<iframe allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen="true" frameborder="0" height="476" scrolling="no" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F61559013150413%2Fvideos%2F1362198414861523%2F&amp;show_text=false" style="border:none;overflow:hidden" width="267"></iframe>
+</div>
+</div>
+</div>
+</section>
+<section class="py-10 lower-tint text-slate-900">
+<div class="mx-auto max-w-[1440px] px-4">
+<div class="mid-cta rounded-3xl px-6 py-6 text-white flex flex-col md:flex-row items-start md:items-center justify-between gap-4 lift" data-anim="reveal">
+<div>
+<div class="text-xs font-semibold uppercase tracking-[0.18em] text-white/70">Quick quote</div>
+<div class="mt-2 text-2xl font-extrabold">Send photos on WhatsApp for a fast fixed price.</div>
+</div>
+<a class="inline-flex items-center justify-center rounded-full bg-white text-slate-950 px-6 py-3 text-sm font-extrabold shadow-soft lift" href="https://wa.me/447802563213?text=Hi%20Paul%2C%20I%E2%80%99d%20like%20a%20quote%20please.%0AMy%20postcode%3A%20____%0AWhat%20needs%20cleaning%3A%20____" rel="noopener" target="_blank">Get my quote</a>
+</div>
+</div>
+</section>
+<section class="py-14 review-shell text-slate-900" id="reviews">
+<div class="mx-auto max-w-[1440px] px-4">
+<div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+<div>
+<div class="inline-flex items-center gap-2 rounded-full bg-white border border-brand-100 px-3 py-1 text-xs font-semibold text-brand-700 lift" data-anim="reveal">
             Google Reviews
           </div>
-          <h2 data-anim="reveal" class="mt-3 text-3xl font-extrabold">Look at our amazing 5 star Google reviews</h2>
-          <p data-anim="reveal" class="mt-2 text-sm md:text-base text-slate-700 max-w-2xl">
+<h2 class="mt-3 text-3xl font-extrabold" data-anim="reveal">Look at our amazing 5 star Google reviews</h2>
+<p class="mt-2 text-sm md:text-base text-slate-700 max-w-2xl" data-anim="reveal">
             We are proud of our genuine Google reviews. You can read the full review from each customer below.
           </p>
-        </div>
-
-        <div data-anim="reveal" class="rounded-3xl border border-brand-100 bg-white/95 px-5 py-4 shadow-soft w-full md:w-auto lift">
-          <div class="flex items-center gap-3">
-            <div class="text-3xl font-extrabold">5.0</div>
-            <div>
-              <div class="text-brand-500 text-sm leading-none">★★★★★</div>
-              <div class="text-xs text-slate-500 mt-1">30 plus Google reviews</div>
-            </div>
-          </div>
-
-          <div class="mt-3 flex flex-wrap gap-2">
-            <a href="#heroQuoteForm"
-              class="inline-flex items-center justify-center rounded-full bg-[#0f2741] hover:bg-[#17314c] text-white px-4 py-2 text-xs font-extrabold lift shimmer">
+</div>
+<div class="rounded-3xl border border-brand-100 bg-white/95 px-5 py-4 shadow-soft w-full md:w-auto lift" data-anim="reveal">
+<div class="flex items-center gap-3">
+<div class="text-3xl font-extrabold">5.0</div>
+<div>
+<div class="text-brand-500 text-sm leading-none">★★★★★</div>
+<div class="text-xs text-slate-500 mt-1">30 plus Google reviews</div>
+</div>
+</div>
+<div class="mt-3 flex flex-wrap gap-2">
+<a class="inline-flex items-center justify-center rounded-full bg-[#0f2741] hover:bg-[#17314c] text-white px-4 py-2 text-xs font-extrabold lift shimmer" href="#heroQuoteForm">
               Get a quick quote
             </a>
-            <button type="button" id="expandAllBtn"
-              class="inline-flex items-center justify-center rounded-full bg-white border border-slate-200 hover:bg-slate-50 px-4 py-2 text-xs font-bold lift">
+<button class="inline-flex items-center justify-center rounded-full bg-white border border-slate-200 hover:bg-slate-50 px-4 py-2 text-xs font-bold lift" id="expandAllBtn" type="button">
               Expand all
             </button>
-            <button type="button" id="collapseAllBtn"
-              class="inline-flex items-center justify-center rounded-full bg-white border border-slate-200 hover:bg-slate-50 px-4 py-2 text-xs font-bold lift">
+<button class="inline-flex items-center justify-center rounded-full bg-white border border-slate-200 hover:bg-slate-50 px-4 py-2 text-xs font-bold lift" id="collapseAllBtn" type="button">
               Collapse all
             </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="mt-8 grid md:grid-cols-2 xl:grid-cols-3 gap-6" id="reviewsGrid"></div>
-
-      <div class="mt-8 flex flex-col sm:flex-row gap-3">
-        <button type="button" id="loadMoreBtn"
-          class="inline-flex items-center justify-center rounded-full bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 text-sm font-extrabold lift">
+</div>
+</div>
+</div>
+<div class="mt-8 grid md:grid-cols-2 xl:grid-cols-3 gap-6" id="reviewsGrid"></div>
+<div class="mt-8 flex flex-col sm:flex-row gap-3">
+<button class="inline-flex items-center justify-center rounded-full bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 text-sm font-extrabold lift" id="loadMoreBtn" type="button">
           Load 10 more reviews
         </button>
-
-        <a href="#heroQuoteForm"
-          class="inline-flex items-center justify-center rounded-full bg-brand-300 hover:bg-brand-100 text-slate-950 px-6 py-3 text-sm font-extrabold lift shimmer">
+<a class="inline-flex items-center justify-center rounded-full bg-brand-300 hover:bg-brand-100 text-slate-950 px-6 py-3 text-sm font-extrabold lift shimmer" href="#heroQuoteForm">
           Get my quote
         </a>
-      </div>
-
-      <p class="mt-4 text-xs text-slate-600">
+</div>
+<p class="mt-4 text-xs text-slate-600">
         Reviews shown are copied from Google review text provided by the business and may include shortened display names exactly as shown on Google.
       </p>
-    </div>
-  </section>
-
-
-  <section class="py-14 lower-tint text-slate-900">
-    <div class="mx-auto max-w-[1440px] px-4">
-      <h2 data-anim="reveal" class="text-3xl font-extrabold">Professional cleaning with honest expectations</h2>
-      <p data-anim="reveal" class="mt-2 text-sm md:text-base text-slate-600 max-w-3xl">
+</div>
+</section>
+<section class="py-14 lower-tint text-slate-900">
+<div class="mx-auto max-w-[1440px] px-4">
+<h2 class="text-3xl font-extrabold" data-anim="reveal">Professional cleaning with honest expectations</h2>
+<p class="mt-2 text-sm md:text-base text-slate-600 max-w-3xl" data-anim="reveal">
         Customers usually want to know the same things. Will the carpet look cleaner, will marks improve, will it feel fresher, and what sort of result is realistic. We keep the advice honest before we begin.
       </p>
-
-      <div class="mt-8 grid md:grid-cols-2 xl:grid-cols-4 gap-6">
-        <div data-anim="reveal" class="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-soft lift soft-card">
-          <div class="text-lg font-extrabold">Cleaner appearance</div>
-          <p class="mt-2 text-sm text-slate-600">Traffic lanes, dull areas and general soiling are treated properly.</p>
-        </div>
-        <div data-anim="reveal" class="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-soft lift soft-card">
-          <div class="text-lg font-extrabold">Fresher feel</div>
-          <p class="mt-2 text-sm text-slate-600">Agitation and extraction help improve the overall finish of the carpet.</p>
-        </div>
-        <div data-anim="reveal" class="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-soft lift soft-card">
-          <div class="text-lg font-extrabold">Targeted stain treatment</div>
-          <p class="mt-2 text-sm text-slate-600">Spots and marks are treated individually where appropriate before the main clean.</p>
-        </div>
-        <div data-anim="reveal" class="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-soft lift soft-card">
-          <div class="text-lg font-extrabold">Honest advice</div>
-          <p class="mt-2 text-sm text-slate-600">You get realistic guidance on likely results before any work begins.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="guarantee" class="py-12 bg-white text-slate-900">
-    <div class="mx-auto max-w-[1440px] px-4 grid md:grid-cols-3 gap-8 items-center">
-      <div class="md:col-span-2">
-        <h2 data-anim="reveal" class="text-2xl font-extrabold">100 percent satisfaction guarantee</h2>
-        <p data-anim="reveal" class="mt-2 text-sm md:text-base text-slate-700 max-w-2xl">
+<div class="mt-8 grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+<div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-soft lift soft-card" data-anim="reveal">
+<div class="text-lg font-extrabold">Cleaner appearance</div>
+<p class="mt-2 text-sm text-slate-600">Traffic lanes, dull areas and general soiling are treated properly.</p>
+</div>
+<div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-soft lift soft-card" data-anim="reveal">
+<div class="text-lg font-extrabold">Fresher feel</div>
+<p class="mt-2 text-sm text-slate-600">Agitation and extraction help improve the overall finish of the carpet.</p>
+</div>
+<div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-soft lift soft-card" data-anim="reveal">
+<div class="text-lg font-extrabold">Targeted stain treatment</div>
+<p class="mt-2 text-sm text-slate-600">Spots and marks are treated individually where appropriate before the main clean.</p>
+</div>
+<div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-soft lift soft-card" data-anim="reveal">
+<div class="text-lg font-extrabold">Honest advice</div>
+<p class="mt-2 text-sm text-slate-600">You get realistic guidance on likely results before any work begins.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-12 bg-white text-slate-900" id="guarantee">
+<div class="mx-auto max-w-[1440px] px-4 grid md:grid-cols-3 gap-8 items-center">
+<div class="md:col-span-2">
+<h2 class="text-2xl font-extrabold" data-anim="reveal">100 percent satisfaction guarantee</h2>
+<p class="mt-2 text-sm md:text-base text-slate-700 max-w-2xl" data-anim="reveal">
           If you are not happy with the result in any area, it will be returned and cleaned again. If it still does not look as it should, the cost of that area will be refunded.
         </p>
-      </div>
-
-      <div class="flex md:justify-end">
-        <div data-anim="reveal" class="rounded-3xl bg-brand-50 border border-brand-100 shadow-soft px-6 py-6 text-center w-full md:w-auto lift">
-          <div class="text-xs font-semibold text-slate-500 uppercase">Satisfaction promise</div>
-          <div class="text-4xl font-extrabold text-brand-700 mt-1">100%</div>
-          <div class="text-xs text-slate-500 mt-1">Simple and written in plain English</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="py-12 bg-brand-50 text-slate-900">
-    <div class="mx-auto max-w-[1440px] px-4">
-      <div data-anim="reveal" class="rounded-3xl border border-brand-100 bg-white px-6 py-6 shadow-soft lift">
-        <div class="text-xs font-semibold text-brand-700 uppercase">Local coverage</div>
-        <h2 class="mt-2 text-2xl font-extrabold">Local carpet cleaning across Ludlow, Shrewsbury and surrounding areas</h2>
-        <p class="mt-2 text-sm md:text-base text-slate-600 max-w-3xl">We cover Ludlow, Shrewsbury and nearby towns for carpet cleaning, upholstery cleaning, stain removal, rug cleaning and commercial cleaning.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="quote" class="py-14 bg-ink-900">
-    <div class="mx-auto max-w-[1440px] px-4">
-      <div data-anim="reveal" class="rounded-3xl bg-white/5 border border-white/10 p-6 md:p-8 lift">
-        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <div>
-            <h2 class="text-2xl md:text-3xl font-extrabold">Want a fixed price quote</h2>
-            <p class="mt-1 text-slate-200 text-sm md:text-base">Use the form at the top and we will reply with a clear price and next available dates.</p>
-          </div>
-          <div class="flex gap-3 flex-wrap">
-            <a href="#heroQuoteForm"
-              class="rounded-full bg-brand-300 hover:bg-brand-100 text-slate-950 px-6 py-3 text-sm font-extrabold shadow-soft lift shimmer">
+</div>
+<div class="flex md:justify-end">
+<div class="rounded-3xl bg-brand-50 border border-brand-100 shadow-soft px-6 py-6 text-center w-full md:w-auto lift" data-anim="reveal">
+<div class="text-xs font-semibold text-slate-500 uppercase">Satisfaction promise</div>
+<div class="text-4xl font-extrabold text-brand-700 mt-1">100%</div>
+<div class="text-xs text-slate-500 mt-1">Simple and written in plain English</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-12 bg-brand-50 text-slate-900">
+<div class="mx-auto max-w-[1440px] px-4">
+<div class="rounded-3xl border border-brand-100 bg-white px-6 py-6 shadow-soft lift" data-anim="reveal">
+<div class="text-xs font-semibold text-brand-700 uppercase">Local coverage</div>
+<h2 class="mt-2 text-2xl font-extrabold">Local carpet cleaning across Ludlow, Shrewsbury and surrounding areas</h2>
+<p class="mt-2 text-sm md:text-base text-slate-600 max-w-3xl">We cover Ludlow, Shrewsbury and nearby towns for carpet cleaning, upholstery cleaning, stain removal, rug cleaning and commercial cleaning.</p>
+</div>
+</div>
+</section>
+<section class="py-14 bg-ink-900" id="quote">
+<div class="mx-auto max-w-[1440px] px-4">
+<div class="rounded-3xl bg-white/5 border border-white/10 p-6 md:p-8 lift" data-anim="reveal">
+<div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+<div>
+<h2 class="text-2xl md:text-3xl font-extrabold">Want a fixed price quote</h2>
+<p class="mt-1 text-slate-200 text-sm md:text-base">Use the form at the top and we will reply with a clear price and next available dates.</p>
+</div>
+<div class="flex gap-3 flex-wrap">
+<a class="rounded-full bg-brand-300 hover:bg-brand-100 text-slate-950 px-6 py-3 text-sm font-extrabold shadow-soft lift shimmer" href="#heroQuoteForm">
               Get a fast quote
             </a>
-            <a href="tel:07802563213"
-              class="rounded-full bg-white/10 border border-white/15 hover:bg-white/15 px-6 py-3 text-sm font-semibold lift">
+<a class="rounded-full bg-white/10 border border-white/15 hover:bg-white/15 px-6 py-3 text-sm font-semibold lift" href="tel:07802563213">
               Call 07802 563213
             </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  
+</div>
+</div>
+</div>
+</div>
+</section>
 <!-- SHREWSBURY_VISIBLE_LINKS_START -->
-<section class="shrewsbury-home-links" aria-labelledby="shrewsbury-links-title">
-  <div class="shrewsbury-home-links__inner">
-    <p class="shrewsbury-home-links__eyebrow">Local Shrewsbury Services</p>
-    <h2 id="shrewsbury-links-title">Carpet Cleaning Services in Shrewsbury</h2>
-    <p>Looking for carpet cleaning in Shrewsbury? These local pages cover our main Shrewsbury services, including carpets, upholstery, stain removal and commercial cleaning.</p>
-    <div class="shrewsbury-home-links__grid">
-      <a href="pages/local/shrewsbury-carpet-cleaning.html">Carpet Cleaning Shrewsbury</a>
-      <a href="pages/local/shrewsbury-upholstery-cleaning.html">Upholstery Cleaning Shrewsbury</a>
-      <a href="pages/local/shrewsbury-stain-removal.html">Stain Removal Shrewsbury</a>
-      <a href="pages/local/shrewsbury.html">All Shrewsbury Cleaning Services</a>
-    </div>
-  </div>
+<section aria-labelledby="shrewsbury-links-title" class="shrewsbury-home-links">
+<div class="shrewsbury-home-links__inner">
+<p class="shrewsbury-home-links__eyebrow">Local Shrewsbury Services</p>
+<h2 id="shrewsbury-links-title">Carpet Cleaning Services in Shrewsbury</h2>
+<p>Looking for carpet cleaning in Shrewsbury? These local pages cover our main Shrewsbury services, including carpets, upholstery, stain removal and commercial cleaning.</p>
+<div class="shrewsbury-home-links__grid">
+<a href="pages/local/shrewsbury-carpet-cleaning.html">Carpet Cleaning Shrewsbury</a>
+<a href="pages/local/shrewsbury-upholstery-cleaning.html">Upholstery Cleaning Shrewsbury</a>
+<a href="pages/local/shrewsbury-stain-removal.html">Stain Removal Shrewsbury</a>
+<a href="pages/local/shrewsbury.html">All Shrewsbury Cleaning Services</a>
+</div>
+</div>
 </section>
 <!-- SHREWSBURY_VISIBLE_LINKS_END -->
-
 <footer class="py-10 bg-ink-900 border-t border-white/10">
-    <div class="mx-auto max-w-[1440px] px-4 flex flex-col md:flex-row items-center justify-between gap-3 text-sm">
-      <div class="text-slate-200">
-        <div class="font-semibold">The Carpet Cleaning Company</div>
-        <div class="text-xs text-slate-400">Carpet and upholstery cleaning in Ludlow, Shropshire and nearby areas</div>
-      </div>
-      <div class="text-xs text-slate-500">
+<div class="mx-auto max-w-[1440px] px-4 flex flex-col md:flex-row items-center justify-between gap-3 text-sm">
+<div class="text-slate-200">
+<div class="font-semibold">The Carpet Cleaning Company</div>
+<div class="text-xs text-slate-400">Carpet and upholstery cleaning in Ludlow, Shropshire and nearby areas</div>
+</div>
+<div class="text-xs text-slate-500">
         © <span id="year">2025</span> The Carpet Cleaning Company. All rights reserved.
       </div>
-    </div>
-  
-
-
-
-
-
+</div>
 </footer>
-
-  <div class="fixed z-[90] flex flex-col gap-3"
-       style="right: max(1rem, env(safe-area-inset-right)); bottom: max(1rem, env(safe-area-inset-bottom)); max-width: 100vw;">
-    <a
-      href="https://wa.me/447802563213?text=Hi%20Paul%2C%20I%E2%80%99d%20like%20a%20quote%20please.%0AMy%20postcode%3A%20____%0AWhat%20needs%20cleaning%3A%20____"
-      target="_blank"
-      rel="noopener"
-      class="h-14 w-14 rounded-full shadow-card bg-[#25D366] grid place-items-center text-white text-2xl lift"
-      aria-label="WhatsApp"
-    >💬</a>
-
-    <a
-      href="tel:07802563213"
-      class="h-14 w-14 rounded-full shadow-card bg-brand-300 grid place-items-center text-slate-950 text-2xl lift"
-      aria-label="Call"
-    >☎</a>
-  </div>
-
-  <script>
+<div class="fixed z-[90] flex flex-col gap-3" style="right: max(1rem, env(safe-area-inset-right)); bottom: max(1rem, env(safe-area-inset-bottom)); max-width: 100vw;">
+<a aria-label="WhatsApp" class="h-14 w-14 rounded-full shadow-card bg-[#25D366] grid place-items-center text-white text-2xl lift" href="https://wa.me/447802563213?text=Hi%20Paul%2C%20I%E2%80%99d%20like%20a%20quote%20please.%0AMy%20postcode%3A%20____%0AWhat%20needs%20cleaning%3A%20____" rel="noopener" target="_blank">💬</a>
+<a aria-label="Call" class="h-14 w-14 rounded-full shadow-card bg-brand-300 grid place-items-center text-slate-950 text-2xl lift" href="tel:07802563213">☎</a>
+</div>
+<script>
     document.getElementById("year").textContent = new Date().getFullYear();
     window.addEventListener("load", () => document.documentElement.classList.add("is-ready"));
 

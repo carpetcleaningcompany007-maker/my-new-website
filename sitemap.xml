@@ -1,7 +1,7 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://www.thecarpetcleaningcrew.co.uk/carpet-cleaning-quote.html</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
-  <url><loc>https://www.thecarpetcleaningcrew.co.uk/</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>1.00</priority></url>
+  <url><loc>https://www.thecarpetcleaningcrew.co.uk/index.html</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.thecarpetcleaningcrew.co.uk/pages/about.html</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.thecarpetcleaningcrew.co.uk/pages/blog.html</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.thecarpetcleaningcrew.co.uk/pages/carpet-cleaning-quote.html</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
@@ -11,6 +11,7 @@
   <url><loc>https://www.thecarpetcleaningcrew.co.uk/pages/floor-restoration.html</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.thecarpetcleaningcrew.co.uk/pages/gallery.html</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.thecarpetcleaningcrew.co.uk/pages/hard-floor-cleaning.html</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.thecarpetcleaningcrew.co.uk/pages/index.html</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.thecarpetcleaningcrew.co.uk/pages/landing-page.html</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.thecarpetcleaningcrew.co.uk/pages/local/atcham.html</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.thecarpetcleaningcrew.co.uk/pages/local/baschurch.html</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
@@ -52,7 +53,9 @@
   <url><loc>https://www.thecarpetcleaningcrew.co.uk/pages/special-offers.html</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.thecarpetcleaningcrew.co.uk/pages/stain-removal.html</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.thecarpetcleaningcrew.co.uk/pages/sustainability.html</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.thecarpetcleaningcrew.co.uk/pages/thank-you.html</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.thecarpetcleaningcrew.co.uk/pages/tile-and-grout-cleaning.html</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.thecarpetcleaningcrew.co.uk/pages/upholstery-and-seating.html</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
   <url><loc>https://www.thecarpetcleaningcrew.co.uk/pages/upholstery-cleaning.html</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
-  </urlset>
+  <url><loc>https://www.thecarpetcleaningcrew.co.uk/thank-you.html</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+</urlset>
