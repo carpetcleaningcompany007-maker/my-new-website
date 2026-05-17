@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+
+<html lang="en-GB">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="msapplication-TileImage" content="/site-icon-512.png">
+<title>Carpet Cleaning Reviews Ludlow and Shrewsbury | The Carpet Cleaning Company</title>
+<meta content="Read real carpet cleaning, upholstery cleaning and rug cleaning reviews from customers in Ludlow, Shrewsbury and nearby areas." name="description"/>
+<meta content="index,follow" name="robots"/>
+<link href="https://www.thecarpetcleaningcrew.co.uk/pages/reviews.html" rel="canonical"/>
+<meta content="https://www.thecarpetcleaningcrew.co.uk/assets/img/hero-carpet-cleaning.webp" property="og:image"/>
+<meta content="https://www.thecarpetcleaningcrew.co.uk/assets/img/hero-carpet-cleaning.webp" name="twitter:image"/>
+<meta content="Read real customer reviews for The Carpet Cleaning Company, covering carpet cleaning, upholstery cleaning and rug cleaning in Ludlow, Shrewsbury and nearby areas." name="twitter:description"/>
+<meta content="Carpet Cleaning Reviews Ludlow and Shrewsbury | The Carpet Cleaning Company" name="twitter:title"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://www.thecarpetcleaningcrew.co.uk/pages/reviews.html" property="og:url"/>
+<meta content="article" property="og:type"/>
+<meta content="Read real customer reviews for The Carpet Cleaning Company, covering carpet cleaning, upholstery cleaning and rug cleaning in Ludlow, Shrewsbury and nearby areas." property="og:description"/>
+<meta content="Carpet Cleaning Reviews Ludlow and Shrewsbury | The Carpet Cleaning Company" property="og:title"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/style.css" rel="stylesheet"/>
+<style>
+    .reviews-hero{
+      background-image:
+        linear-gradient(90deg, rgba(4,16,30,.86) 0%, rgba(4,16,30,.60) 48%, rgba(4,16,30,.24) 100%),
+        url('../assets/img/hero-carpet-cleaning.webp');
+    }
+
+    .reviews-wrap{
+      max-width:1180px;
+      margin:0 auto;
+    }
+
+    .reviews-top{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:end;
+      justify-content:space-between;
+      gap:24px;
+      margin-bottom:30px;
+    }
+
+    .reviews-kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 14px;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid #dbe6f1;
+      color:#17446f;
+      font-size:.82rem;
+      font-weight:800;
+      letter-spacing:.02em;
+      text-transform:uppercase;
+      box-shadow:0 10px 24px rgba(12,31,51,.06);
+    }
+
+    .reviews-intro{
+      max-width:760px;
+    }
+
+    .reviews-score{
+      background:#fff;
+      border:1px solid #dbe6f1;
+      border-radius:24px;
+      padding:18px 22px;
+      box-shadow:0 12px 30px rgba(12,31,51,.08);
+      min-width:280px;
+    }
+
+    .reviews-score-row{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .reviews-number{
+      font-size:2rem;
+      font-weight:800;
+      line-height:1;
+      color:#0f172a;
+    }
+
+    .reviews-stars{
+      color:#f59e0b;
+      font-size:1rem;
+      letter-spacing:.08em;
+      line-height:1;
+    }
+
+    .reviews-count{
+      font-size:.85rem;
+      color:#64748b;
+      margin-top:4px;
+    }
+
+    .reviews-cta{
+      margin-top:14px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .reviews-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+    }
+
+    .review-card-real{
+      background:#fff;
+      border:1px solid #dbe6f1;
+      border-radius:24px;
+      padding:24px;
+      box-shadow:0 12px 30px rgba(12,31,51,.08);
+      height:100%;
+    }
+
+    .review-card-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:12px;
+    }
+
+    .review-name{
+      display:block;
+      color:#0f172a;
+      font-weight:800;
+      font-size:1rem;
+    }
+
+    .review-source{
+      font-size:.85rem;
+      color:#64748b;
+      margin-top:4px;
+    }
+
+    .review-source.fb{
+      display:inline-block;
+      background:#1877f2;
+      color:#fff;
+      font-size:12px;
+      font-weight:700;
+      padding:4px 10px;
+      border-radius:999px;
+      margin-top:6px;
+    }
+
+    .review-source.google{
+      display:inline-block;
+      background:#f8fafc;
+      color:#334155;
+      border:1px solid #dbe6f1;
+      font-size:12px;
+      font-weight:700;
+      padding:4px 10px;
+      border-radius:999px;
+      margin-top:6px;
+    }
+
+    .review-copy{
+      margin-top:14px;
+      line-height:1.7;
+      color:#334155;
+    }
+
+    .review-hidden{
+      display:none;
+    }
+
+    .review-hidden.show{
+      display:block;
+    }
+
+    .reviews-controls{
+      margin-top:28px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      justify-content:center;
+    }
+
+    .reviews-more-btn,
+    .reviews-google-btn{
+      min-height:52px;
+      padding:0 22px;
+      border-radius:999px;
+      font-weight:800;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+
+    .reviews-more-btn{
+      border:none;
+      cursor:pointer;
+      background:linear-gradient(135deg,#1f6fff,#1456d3);
+      color:#fff;
+      box-shadow:0 12px 28px rgba(31,111,255,.24);
+    }
+
+    .reviews-google-btn{
+      background:#fff;
+      color:#123250;
+      border:1px solid #dbe6f1;
+      box-shadow:0 10px 24px rgba(12,31,51,.08);
+    }
+
+    .reviews-more-btn:hover,
+    .reviews-google-btn:hover{
+      transform:translateY(-2px);
+    }
+
+    .review-bottom-band{
+      margin-top:38px;
+      background:linear-gradient(135deg,#0f2d4d 0%, #17446f 100%);
+      color:#fff;
+      border-radius:28px;
+      padding:28px;
+      box-shadow:0 16px 38px rgba(12,31,51,.18);
+    }
+
+    .review-bottom-band h2{
+      color:#fff;
+      margin-bottom:8px;
+    }
+
+    .review-bottom-band p{
+      color:rgba(255,255,255,.88);
+      max-width:780px;
+      margin-bottom:0;
+    }
+
+    .review-bottom-actions{
+      margin-top:18px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    .review-bottom-actions .btn{
+      min-height:50px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:0 20px;
+      border-radius:999px;
+      font-weight:800;
+    }
+
+    .btn-outline-light{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.18);
+      color:#fff;
+      text-decoration:none;
+    }
+
+    .btn-outline-light:hover{
+      background:rgba(255,255,255,.14);
+    }
+
+    .nav-item{
+      position:relative;
+    }
+
+    .nav-links .dropdown{
+      background:#ffffff;
+      border:1px solid #dbe6f1;
+      box-shadow:0 14px 30px rgba(0,0,0,.12);
+      z-index:999;
+    }
+
+    .nav-links .dropdown a{
+      color:#123250 !important;
+      display:block;
+      padding:12px 16px;
+    }
+
+    .nav-links .dropdown a:hover{
+      background:#f3f7fb;
+      color:#0b5cff !important;
+    }
+
+    @media (max-width: 980px){
+      .reviews-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+    }
+
+    @media (max-width: 640px){
+      .reviews-grid{
+        grid-template-columns:1fr;
+      }
+
+      .reviews-score{
+        width:100%;
+      }
+
+      .review-bottom-band{
+        padding:22px;
+      }
+
+      .review-bottom-actions,
+      .reviews-controls,
+      .reviews-cta{
+        flex-direction:column;
+      }
+
+      .review-bottom-actions .btn,
+      .reviews-controls a,
+      .reviews-controls button,
+      .reviews-cta a{
+        width:100%;
+      }
+    }
+  </style>
+<style>
+@media (min-width: 1024px){
+  .nav-links{display:flex !important;flex-wrap:wrap;gap:12px;align-items:center}
+  .nav-links .nav-item,.nav-links .dropdown{display:none !important}
+  .nav-links a{white-space:nowrap}
+}
+</style>
+<style id="robust-nav-fix">
+@media (min-width:1024px){
+  header, .site-header { overflow: visible !important; z-index: 9999 !important; }
+  .nav, .nav-links { overflow: visible !important; }
+  .nav-links{
+    display:flex !important;
+    align-items:center !important;
+    gap:18px !important;
+    flex-wrap:nowrap !important;
+    position:relative !important;
+  }
+  .nav-links > a,
+  .nav-links > .nav-item > a{
+    white-space:nowrap !important;
+    font-weight:700 !important;
+  }
+  .nav-links > a,
+  .nav-links > .nav-item > a,
+  .nav-links > .nav-quote{
+    pointer-events:auto !important;
+    position:relative !important;
+    z-index:10001 !important;
+  }
+  .nav-links .nav-item{
+    position:relative !important;
+    display:flex !important;
+    align-items:center !important;
+    padding-bottom:16px !important;
+    margin-bottom:-16px !important;
+    z-index:10002 !important;
+  }
+  .nav-links .dropdown{
+    display:none !important;
+    position:absolute !important;
+    top:100% !important;
+    left:0 !important;
+    margin-top:0 !important;
+    min-width:260px !important;
+    max-height:70vh !important;
+    overflow:auto !important;
+    background:#fff !important;
+    border:1px solid rgba(18,38,58,.10) !important;
+    border-radius:18px !important;
+    box-shadow:0 24px 54px rgba(8,20,40,.18) !important;
+    padding:10px !important;
+    z-index:10003 !important;
+    pointer-events:auto !important;
+  }
+  .nav-links .dropdown a{
+    display:block !important;
+    padding:10px 12px !important;
+    border-radius:12px !important;
+    color:#12304f !important;
+    font-weight:700 !important;
+    white-space:nowrap !important;
+    pointer-events:auto !important;
+  }
+  .nav-links .dropdown a:hover{
+    background:#f3f8ff !important;
+    color:#0f5fe6 !important;
+  }
+  .nav-links .nav-item:hover > .dropdown,
+  .nav-links .nav-item:focus-within > .dropdown{
+    display:block !important;
+  }
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+<div class="container nav">
+<a class="brand" href="../index.html">
+<img alt="The Carpet Cleaning Company logo" class="brand-logo" decoding="async" fetchpriority="high" height="512" loading="eager" src="../assets/img/logo.webp" width="512"/>
+<div class="brand-text">
+<strong>The Carpet Cleaning Company</strong>
+<span>Trusted local carpet and upholstery specialists</span>
+</div>
+</a>
+<button aria-expanded="false" class="mobile-toggle">Menu</button>
+<nav class="nav-links">
+<a href="../index.html">Home</a>
+<a href="landing-page.html">Landing Page</a>
+<div class="nav-item">
+<a href="carpet-cleaning.html">Services</a>
+<div class="dropdown">
+<a href="carpet-cleaning.html">Carpet Cleaning</a>
+<a href="upholstery-cleaning.html">Upholstery Cleaning</a>
+<a href="rug-cleaning.html">Rug Cleaning</a>
+<a href="stain-removal.html">Stain Removal</a>
+<a href="hard-floor-cleaning.html">Hard Floor Cleaning</a>
+<a href="commercial-carpet-cleaning.html">Commercial Cleaning</a>
+<a href="pricing.html">Pricing</a>
+</div>
+</div>
+<div class="nav-item">
+<a href="service-areas.html">Areas</a>
+<div class="dropdown">
+<a href="service-areas.html">All Areas</a>
+<a href="local/atcham.html">Atcham</a>
+<a href="local/baschurch.html">Baschurch</a>
+<a href="local/battlefield.html">Battlefield</a>
+<a href="local/bayston-hill.html">Bayston Hill</a>
+<a href="local/belle-vue.html">Belle Vue</a>
+<a href="local/bicton.html">Bicton</a>
+<a href="local/bomere-heath.html">Bomere Heath</a>
+<a href="local/bridgnorth.html">Bridgnorth</a>
+<a href="local/church-stretton.html">Church Stretton</a>
+<a href="local/clee-hill.html">Clee Hill</a>
+<a href="local/cleobury-mortimer.html">Cleobury Mortimer</a>
+<a href="local/condover.html">Condover</a>
+<a href="local/craven-arms.html">Craven Arms</a>
+<a href="local/diddlebury.html">Diddlebury</a>
+<a href="local/leominster.html">Leominster</a>
+<a href="local/ludlow.html">Ludlow</a>
+<a href="local/meole-brace.html">Meole Brace</a>
+<a href="local/monkmoor.html">Monkmoor</a>
+<a href="local/pontesbury.html">Pontesbury</a>
+<a href="local/radbrook.html">Radbrook</a>
+<a href="local/shrewsbury-carpet-cleaning.html">Shrewsbury Carpet Cleaning</a>
+<a href="local/shrewsbury-commercial-carpet-cleaning.html">Shrewsbury Commercial Carpet Cleaning</a>
+<a href="local/shrewsbury-hard-floor-cleaning.html">Shrewsbury Hard Floor Cleaning</a>
+<a href="local/shrewsbury-moth-treatment.html">Shrewsbury Moth Treatment</a>
+<a href="local/shrewsbury-rug-cleaning.html">Shrewsbury Rug Cleaning</a>
+<a href="local/shrewsbury-stain-removal.html">Shrewsbury Stain Removal</a>
+<a href="local/shrewsbury-upholstery-cleaning.html">Shrewsbury Upholstery Cleaning</a>
+<a href="local/shrewsbury.html">Shrewsbury</a>
+<a href="local/tenbury-wells.html">Tenbury Wells</a>
+</div>
+</div>
+<a href="gallery.html">Gallery</a>
+<a href="reviews.html">Reviews</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a class="nav-quote" href="../carpet-cleaning-quote.html">Instant Quote</a>
+</nav>
+<div class="nav-cta">
+<a class="btn btn-call" href="tel:07802563213">Call 07802 563213</a>
+<a class="btn-quote-right" href="../carpet-cleaning-quote.html">Instant Quote</a>
+</div>
+</div>
+</header>
+<section class="hero inner-hero reviews-hero">
+<div class="container hero-grid">
+<div class="hero-copy reveal">
+<span class="kicker">Reviews</span>
+<h1>Real reviews from customers who trusted us with their carpets, rugs and upholstery.</h1>
+<p>We are focused on doing the kind of work that brings repeat business, referrals and proper five star feedback from customers who want a professional result.</p>
+</div>
+</div>
+</section>
+<section class="section alt">
+<div class="container">
+<div class="reviews-wrap">
+<div class="reviews-top">
+<div class="reviews-intro">
+<span class="reviews-kicker">Google and Facebook Reviews</span>
+<h2 style="margin-top:14px;">Look at our genuine customer reviews</h2>
+<p class="lead">Real reviews help customers trust the work before they enquire. These reviews are taken from your Google Business Profile and Facebook recommendations.</p>
+</div>
+<div class="reviews-score">
+<div class="reviews-score-row">
+<div class="reviews-number">5.0</div>
+<div>
+<div class="reviews-stars">★★★★★</div>
+<div class="reviews-count">38 Google reviews plus Facebook recommendations</div>
+</div>
+</div>
+<div class="reviews-cta">
+<a class="btn btn-call" href="https://share.google/Ft339WWUuRYmQQtdp" rel="noreferrer" target="_blank">See Google Reviews</a>
+<a class="btn btn-secondary" href="https://www.facebook.com/profile.php?id=61559013150413&amp;sk=reviews" rel="noreferrer" target="_blank">See Facebook Reviews</a>
+</div>
+</div>
+</div>
+<div class="reviews-grid" id="reviewsGrid">
+<article class="review-card-real reveal">
+<div class="review-card-head">
+<div>
+<strong class="review-name">Sabina Sanzio</strong>
+<div class="review-source google">Google review · a week ago</div>
+</div>
+<div class="reviews-stars">★★★★★</div>
+</div>
+<p class="review-copy">Paul is professional, friendly, arrives on time, takes pride in his work, works hard and does a fantastic job. What more can you ask for. He is so informative both before and after the job and responds quickly to emails and calls. If you need your carpets cleaning, do not waste your time researching other companies. You will not find anyone better. Just call Paul now.</p>
+</article>
+<article class="review-card-real reveal">
+<div class="review-card-head">
+<div>
+<strong class="review-name">Barbara Sheen</strong>
+<div class="review-source google">Google review · 4 weeks ago</div>
+</div>
+<div class="reviews-stars">★★★★★</div>
+</div>
+<p class="review-copy">Was considering buying new carpets but decided to go with getting them cleaned and I am so very pleased I did. Stairs and landing look like new and sitting room and bedrooms are not far off either. Fantastic job, not overly loud either. Will definitely use again and I can highly recommend using him. Great price too.</p>
+</article>
+<article class="review-card-real reveal">
+<div class="review-card-head">
+<div>
+<strong class="review-name">shabeela shane</strong>
+<div class="review-source google">Google review · a month ago</div>
+</div>
+<div class="reviews-stars">★★★★★</div>
+</div>
+<p class="review-copy">Excellent service from start to finish. Very professional, friendly, and reliable. The carpet came up beautifully clean and fresh, and the whole job was done to a really high standard. You can tell Paul takes pride in his work and pays attention to detail. I am really pleased with the results and would highly recommend him to anyone looking for a trustworthy carpet cleaner.</p>
+</article>
+<article class="review-card-real reveal">
+<div class="review-card-head">
+<div>
+<strong class="review-name">Hannah Phillips</strong>
+<div class="review-source fb">Recommended on Facebook</div>
+</div>
+<div class="reviews-stars">★★★★★</div>
+</div>
+<p class="review-copy">If you need your carpets cleaned do not look any further. Paul was amazing with my grandparents. He came in and explained the process, friendly, lovely man, he was there all day and the end result was amazing. We will definitely have him back in the future.</p>
+</article>
+<article class="review-card-real reveal">
+<div class="review-card-head">
+<div>
+<strong class="review-name">Nicola KS</strong>
+<div class="review-source fb">Recommended on Facebook</div>
+</div>
+<div class="reviews-stars">★★★★★</div>
+</div>
+<p class="review-copy">Very happy with our carpets which were cleaned by Paul. He telephoned me first to have a chat about my requirements and he explained comprehensively what he could do and how he would do this with his machine. Will definitely use Paul again.</p>
+</article>
+<article class="review-card-real reveal">
+<div class="review-card-head">
+<div>
+<strong class="review-name">Alex Whittles</strong>
+<div class="review-source fb">Recommended on Facebook</div>
+</div>
+<div class="reviews-stars">★★★★★</div>
+</div>
+<p class="review-copy">I have used The Carpet Cleaning Company twice for different jobs. Outstanding quality of work and service both times, I will use again. Not just top quality equipment, but also the knowledge and experience that ensures the right process is used for each job. Highly recommended.</p>
+</article>
+<article class="review-card-real reveal review-hidden">
+<div class="review-card-head">
+<div>
+<strong class="review-name">Helen Carlos</strong>
+<div class="review-source google">Google review · a month ago</div>
+</div>
+<div class="reviews-stars">★★★★★</div>
+</div>
+<p class="review-copy">Paul cleaned our stairs and bedroom carpet and they looked great. Thanks.</p>
+</article>
+<article class="review-card-real reveal review-hidden">
+<div class="review-card-head">
+<div>
+<strong class="review-name">Jo Churcher</strong>
+<div class="review-source google">Google review · a month ago</div>
+</div>
+<div class="reviews-stars">★★★★★</div>
+</div>
+<p class="review-copy">Paul did a thorough and professional job. Very engaging and offered a friendly and efficient service. Will definitely use again.</p>
+</article>
+<article class="review-card-real reveal review-hidden">
+<div class="review-card-head">
+<div>
+<strong class="review-name">Simon Schofield</strong>
+<div class="review-source google">Google review · a month ago</div>
+</div>
+<div class="reviews-stars">★★★★★</div>
+</div>
+<p class="review-copy">Paul went above and beyond in terms of time and effort to remove some really stubborn stain. Kept me up to date at each stage. Really good results and excellent service. Definitely recommend.</p>
+</article>
+<article class="review-card-real reveal review-hidden">
+<div class="review-card-head">
+<div>
+<strong class="review-name">Anne Douthwaite</strong>
+<div class="review-source google">Google review · a month ago</div>
+</div>
+<div class="reviews-stars">★★★★★</div>
+</div>
+<p class="review-copy">Excellent service. Can highly recommend. Two rugs cleaned and they look brand new again. Very reasonably priced and will definitely use again.</p>
+</article>
+<article class="review-card-real reveal review-hidden">
+<div class="review-card-head">
+<div>
+<strong class="review-name">Carolyn Mills</strong>
+<div class="review-source google">Google review · 2 months ago</div>
+</div>
+<div class="reviews-stars">★★★★★</div>
+</div>
+<p class="review-copy">Paul did a super job. Very thorough. Moved all the furniture, left no stone unturned. Had a lot of carpet cleaning equipment to do a good job. Very pleasant hard working chap and reasonably priced for the work involved. Deserves the five stars.</p>
+</article>
+<article class="review-card-real reveal review-hidden">
+<div class="review-card-head">
+<div>
+<strong class="review-name">Diana Roach</strong>
+<div class="review-source google">Google review · 2 months ago</div>
+</div>
+<div class="reviews-stars">★★★★★</div>
+</div>
+<p class="review-copy">Being new to the area we feel very fortunate to have chosen Paul of The Carpet Cleaning Company. From the first point of contact through to completion Paul was highly professional and very clear on pricing. We had recently moved to a large house whose carpets were good quality but with a variety of unsightly stains. We were amazed at how Paul managed to remove all the incredibly stubborn stains which had seemingly ruined the carpets. We are delighted with the results and have saved a fortune not having to replace them.</p>
+</article>
+<article class="review-card-real reveal review-hidden">
+<div class="review-card-head">
+<div>
+<strong class="review-name">Chantal Matthews</strong>
+<div class="review-source fb">Recommended on Facebook</div>
+</div>
+<div class="reviews-stars">★★★★★</div>
+</div>
+<p class="review-copy">Paul cleaned our office carpets and what a transformation, no more stains and smelling fresh.</p>
+</article>
+<article class="review-card-real reveal review-hidden">
+<div class="review-card-head">
+<div>
+<strong class="review-name">Tamara Uyan</strong>
+<div class="review-source fb">Recommended on Facebook</div>
+</div>
+<div class="reviews-stars">★★★★★</div>
+</div>
+<p class="review-copy">Great service, my carpets look fantastic. Thank you.</p>
+</article>
+</div>
+<div class="reviews-controls">
+<button class="reviews-more-btn" id="loadMoreReviewsBtn" type="button">View 10 more reviews</button>
+<a class="reviews-google-btn" href="https://share.google/Ft339WWUuRYmQQtdp" rel="noreferrer" target="_blank">See all Google reviews</a>
+<a class="reviews-google-btn" href="https://www.facebook.com/profile.php?id=61559013150413&amp;sk=reviews" rel="noreferrer" target="_blank">See all Facebook reviews</a>
+</div>
+<div class="review-bottom-band reveal">
+<h2>Need a quote after reading the reviews?</h2>
+<p>If you want honest advice on the best option for your carpets, upholstery or rugs, get in touch and we will point you in the right direction.</p>
+<div class="review-bottom-actions">
+<a class="btn btn-call" href="../carpet-cleaning-quote.html">Get a Quote</a>
+<a class="btn btn-outline-light" href="tel:07802563213">Call 07802 563213</a>
+<a class="btn btn-outline-light" href="https://wa.me/447802563213" rel="noreferrer" target="_blank">WhatsApp Us</a>
+<a class="btn btn-outline-light" href="https://share.google/Ft339WWUuRYmQQtdp" rel="noreferrer" target="_blank">Google Reviews</a>
+<a class="btn btn-outline-light" href="https://www.facebook.com/profile.php?id=61559013150413&amp;sk=reviews" rel="noreferrer" target="_blank">Facebook Reviews</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="footer">
+<div class="container footer-grid">
+<div>
+<a class="brand footer-brand" href="../index.html">
+<img alt="The Carpet Cleaning Company logo" class="brand-logo" decoding="async" fetchpriority="high" height="512" loading="eager" src="../assets/img/logo.webp" width="512"/>
+<div class="brand-text">
+<strong>The Carpet Cleaning Company</strong>
+<span>Trusted local carpet and upholstery specialists</span>
+</div>
+</a>
+<p>The Carpet Cleaning Company is based in Ludlow and covers Ludlow, Shrewsbury and nearby towns for carpet cleaning, upholstery cleaning, stain removal, rug cleaning, hard floor cleaning, licensed moth treatment and commercial work.</p>
+</div>
+<div>
+<h3>Services</h3>
+<div class="footer-links">
+<a href="carpet-cleaning.html">Carpet Cleaning</a>
+<a href="pricing.html">Pricing</a>
+<a href="upholstery-cleaning.html">Upholstery Cleaning</a>
+<a href="stain-removal.html">Advanced Stain Removal</a>
+<a href="rug-cleaning.html">Professional Rug Cleaning</a>
+<a href="hard-floor-cleaning.html">Hard Floor Cleaning</a>
+<a href="moth-treatment.html">Moth Treatment</a>
+</div>
+</div>
+<div>
+<h3>Contact</h3>
+<div class="footer-links">
+<a href="tel:07802563213">07802 563213</a>
+<div>Ludlow, Shropshire</div>
+<div>Klarna available on suitable jobs</div>
+<a href="../carpet-cleaning-quote.html">Request a Quote</a>
+</div>
+</div>
+</div>
+<div class="container copy">© 2026 The Carpet Cleaning Company. All rights reserved.</div>
+<section class="section">
+<div class="container seo-copy">
+<h2>What this service helps with</h2>
+<p>This service helps deal with built up dirt, stains, odours and everyday wear that builds up over time. Suitable for homes, rentals and commercial settings.</p>
+</div>
+</section>
+</footer>
+<div class="mobile-cta-bar">
+<a class="mobile-cta-call" href="tel:07802563213">Call now</a>
+<a class="mobile-cta-wa" href="https://wa.me/447802563213" rel="noreferrer" target="_blank">WhatsApp</a>
+</div>
+<script defer="" src="../assets/app.js"></script>
+<script>
+  (function () {
+    const hiddenReviews = Array.from(document.querySelectorAll('.review-hidden'));
+    const loadMoreBtn = document.getElementById('loadMoreReviewsBtn');
+    let shownCount = 0;
+    const batchSize = 10;
+
+    function showMoreReviews() {
+      const nextBatch = hiddenReviews.slice(shownCount, shownCount + batchSize);
+      nextBatch.forEach(card => card.classList.add('show'));
+      shownCount += nextBatch.length;
+
+      if (shownCount >= hiddenReviews.length) {
+        loadMoreBtn.style.display = 'none';
+      }
+    }
+
+    if (loadMoreBtn) {
+      loadMoreBtn.addEventListener('click', showMoreReviews);
+    }
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+Open index.html to preview the site locally, or upload the full folder to hosting or GitHub Pages. This cleaned build is focused on The Carpet Cleaning Company with Ludlow, Shrewsbury and surrounding UK service areas only.

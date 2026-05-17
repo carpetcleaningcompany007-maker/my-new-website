@@ -1,0 +1,15 @@
+Speed-only rebuild.
+
+Changed:
+- Kept colours, hero overlay and visual styling intact.
+- Delayed Google Analytics and Google Ads loading until after first paint.
+- Preloaded the homepage hero image and logo.
+- Added lazy loading and async decoding to non-critical images.
+- Deferred local app.js files.
+- Added content-visibility for off-screen sections to reduce initial rendering work.
+- Optimised WebP files only where the file size could be reduced.
+
+Not changed:
+- No colour palette changes.
+- No hero brightening/lightening.
+- No layout redesign.

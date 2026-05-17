@@ -1,0 +1,11 @@
+Changes made:
+- Removed duplicate pages/pages folder.
+- Added sitemap.xml and robots.txt.
+- Expanded pages/local/shrewsbury-carpet-cleaning.html into a stronger Shrewsbury SEO page.
+- Added FAQ schema for Shrewsbury carpet cleaning.
+- Added homepage internal link to the Shrewsbury carpet cleaning page.
+
+Next steps after upload:
+1. Submit sitemap in Google Search Console.
+2. Request indexing for /pages/local/shrewsbury-carpet-cleaning.html.
+3. Add new Google Business Profile photos and request recent Shrewsbury reviews.

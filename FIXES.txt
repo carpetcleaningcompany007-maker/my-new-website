@@ -1,0 +1,3 @@
+Fixed links in local and main pages.
+Missing local pages after patch: None
+Pricing, Contact and Special Offers links normalised.

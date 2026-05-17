@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+
+<html lang="en-GB">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="msapplication-TileImage" content="/site-icon-512.png">
+<title>Special Offers | The Carpet Cleaning Company</title>
+<meta content="Current carpet cleaning special offers in Ludlow and Shrewsbury, including our deep clean package and 50% off stain guard protection." name="description"/>
+<meta content="index,follow" name="robots"/>
+<link href="https://www.thecarpetcleaningcrew.co.uk/pages/special-offers.html" rel="canonical"/>
+<meta content="Special Offers | The Carpet Cleaning Company" property="og:title"/>
+<meta content="Current carpet cleaning special offers in Ludlow and Shrewsbury, including our deep clean package and 50% off stain guard protection." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.thecarpetcleaningcrew.co.uk/pages/special-offers.html" property="og:url"/>
+<meta content="https://www.thecarpetcleaningcrew.co.uk/assets/img/hero-carpet-cleaning.webp" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Special Offers | The Carpet Cleaning Company" name="twitter:title"/>
+<meta content="Current carpet cleaning special offers in Ludlow and Shrewsbury, including our deep clean package and 50% off stain guard protection." name="twitter:description"/>
+<meta content="https://www.thecarpetcleaningcrew.co.uk/assets/img/hero-carpet-cleaning.webp" name="twitter:image"/>
+<link as="image" href="../assets/img/hero-carpet-cleaning.webp" rel="preload"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/style.css" rel="stylesheet"/>
+<style>
+    :root{
+      --navy:#102844;
+      --navy-2:#173a63;
+      --gold:#f3c45b;
+      --gold-2:#e0aa36;
+      --soft:#f5f8fc;
+      --line:#d9e4ef;
+      --text:#12263a;
+      --muted:#5f7388;
+      --shadow:0 22px 54px rgba(12,31,51,.10);
+    }
+    body{
+      font-family:"Inter",sans-serif;
+      background:linear-gradient(180deg,#eff4f9 0%, #e9f0f8 100%);
+      color:var(--text);
+    }
+    .hero.inner-hero{
+      background-image:url('../assets/img/hero-carpet-cleaning.webp');
+      background-size:cover;
+      background-position:center;
+      position:relative;
+      padding-top:56px;
+      padding-bottom:56px;
+    }
+    .hero.inner-hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(120deg, rgba(7,18,33,.48) 0%, rgba(7,18,33,.20) 54%, rgba(7,18,33,.08) 100%);
+    }
+    .offers-hero{
+      position:relative;
+      z-index:1;
+      max-width:760px;
+      color:#fff;
+    }
+    .offers-hero .kicker{
+      display:inline-flex;
+      align-items:center;
+      min-height:34px;
+      padding:0 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.18);
+      color:#fff;
+      font-size:.78rem;
+      font-weight:800;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+    }
+    .offers-hero h1{
+      margin:16px 0 14px;
+      font-size:clamp(2.2rem, 5vw, 4rem);
+      line-height:.98;
+      color:#fff;
+      letter-spacing:-.04em;
+    }
+    .offers-hero p{
+      max-width:640px;
+      font-size:1.05rem;
+      line-height:1.65;
+      color:rgba(255,255,255,.94);
+    }
+    .section{padding:74px 0;}
+    .offers-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:26px;
+    }
+    .offer-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:26px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+    }
+    .offer-card-head{
+      padding:22px 24px 18px;
+      background:linear-gradient(135deg,var(--navy) 0%, var(--navy-2) 100%);
+      color:#fff;
+      position:relative;
+    }
+    .offer-chip{
+      display:inline-flex;
+      align-items:center;
+      min-height:30px;
+      padding:0 12px;
+      border-radius:999px;
+      background:rgba(243,196,91,.14);
+      border:1px solid rgba(243,196,91,.22);
+      color:#ffe7b6;
+      font-size:.74rem;
+      font-weight:800;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+    }
+    .offer-card-head h2{
+      margin:14px 0 10px;
+      color:#fff;
+      font-size:2rem;
+      line-height:1.02;
+      letter-spacing:-.03em;
+    }
+    .offer-big{
+      margin:0;
+      color:#fff;
+      font-size:1.25rem;
+      font-weight:800;
+      line-height:1.2;
+      max-width:420px;
+    }
+    .offer-body{
+      padding:24px;
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+      flex:1;
+    }
+    .offer-body p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.65;
+    }
+    .offer-list{
+      margin:0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:10px;
+    }
+    .offer-list li{
+      background:var(--soft);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:12px 14px;
+      font-weight:700;
+      color:#17314c;
+    }
+    .offer-actions{
+      margin-top:auto;
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+    .offer-btn{
+      min-height:50px;
+      border-radius:999px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:0 20px;
+      text-decoration:none;
+      font-weight:800;
+      box-shadow:0 12px 28px rgba(12,31,51,.10);
+    }
+    .offer-btn.primary{
+      background:linear-gradient(135deg,var(--gold),var(--gold-2));
+      color:#17314c;
+    }
+    .offer-btn.secondary{
+      background:#fff;
+      color:#17314c;
+      border:1px solid var(--line);
+    }
+    .offers-note{
+      margin-top:26px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      box-shadow:var(--shadow);
+      padding:22px 24px;
+      color:#17314c;
+    }
+    .offers-note strong{color:#0f2741;}
+    .offers-band{
+      margin-top:26px;
+      padding:26px;
+      border-radius:28px;
+      background:linear-gradient(135deg,#0f2d4d 0%, #17446f 100%);
+      color:#fff;
+      box-shadow:var(--shadow);
+    }
+    .offers-band h2{
+      margin:0 0 10px;
+      color:#fff;
+    }
+    .offers-band p{
+      margin:0;
+      max-width:760px;
+      color:rgba(255,255,255,.92);
+      line-height:1.7;
+    }
+    @media (max-width: 900px){
+      .offers-grid{grid-template-columns:1fr;}
+    }
+    @media (max-width: 640px){
+      .section{padding:54px 0;}
+      .offer-card-head h2{font-size:1.7rem;}
+      .offer-big{font-size:1.08rem;}
+      .offer-body{padding:20px;}
+    }
+  </style>
+<style>
+@media (min-width: 1024px){
+  .nav-links{display:flex !important;flex-wrap:wrap;gap:12px;align-items:center}
+  .nav-links .nav-item,.nav-links .dropdown{display:none !important}
+  .nav-links a{white-space:nowrap}
+}
+</style>
+<style id="robust-nav-fix">
+@media (min-width:1024px){
+  header, .site-header { overflow: visible !important; z-index: 9999 !important; }
+  .nav, .nav-links { overflow: visible !important; }
+  .nav-links{
+    display:flex !important;
+    align-items:center !important;
+    gap:18px !important;
+    flex-wrap:nowrap !important;
+    position:relative !important;
+  }
+  .nav-links > a,
+  .nav-links > .nav-item > a{
+    white-space:nowrap !important;
+    font-weight:700 !important;
+  }
+  .nav-links > a,
+  .nav-links > .nav-item > a,
+  .nav-links > .nav-quote{
+    pointer-events:auto !important;
+    position:relative !important;
+    z-index:10001 !important;
+  }
+  .nav-links .nav-item{
+    position:relative !important;
+    display:flex !important;
+    align-items:center !important;
+    padding-bottom:16px !important;
+    margin-bottom:-16px !important;
+    z-index:10002 !important;
+  }
+  .nav-links .dropdown{
+    display:none !important;
+    position:absolute !important;
+    top:100% !important;
+    left:0 !important;
+    margin-top:0 !important;
+    min-width:260px !important;
+    max-height:70vh !important;
+    overflow:auto !important;
+    background:#fff !important;
+    border:1px solid rgba(18,38,58,.10) !important;
+    border-radius:18px !important;
+    box-shadow:0 24px 54px rgba(8,20,40,.18) !important;
+    padding:10px !important;
+    z-index:10003 !important;
+    pointer-events:auto !important;
+  }
+  .nav-links .dropdown a{
+    display:block !important;
+    padding:10px 12px !important;
+    border-radius:12px !important;
+    color:#12304f !important;
+    font-weight:700 !important;
+    white-space:nowrap !important;
+    pointer-events:auto !important;
+  }
+  .nav-links .dropdown a:hover{
+    background:#f3f8ff !important;
+    color:#0f5fe6 !important;
+  }
+  .nav-links .nav-item:hover > .dropdown,
+  .nav-links .nav-item:focus-within > .dropdown{
+    display:block !important;
+  }
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+<div class="container nav">
+<a class="brand" href="../index.html">
+<img alt="The Carpet Cleaning Company logo" class="brand-logo" decoding="async" fetchpriority="high" height="512" loading="eager" src="../assets/img/logo.webp" width="512"/>
+<div class="brand-text">
+<strong>The Carpet Cleaning Company</strong>
+<span>Trusted local carpet and upholstery specialists</span>
+</div>
+</a>
+<button aria-expanded="false" class="mobile-toggle">Menu</button>
+<nav class="nav-links">
+<a href="../index.html">Home</a>
+<a href="landing-page.html">Landing Page</a>
+<div class="nav-item">
+<a href="carpet-cleaning.html">Services</a>
+<div class="dropdown">
+<a href="carpet-cleaning.html">Carpet Cleaning</a>
+<a href="upholstery-cleaning.html">Upholstery Cleaning</a>
+<a href="rug-cleaning.html">Rug Cleaning</a>
+<a href="stain-removal.html">Stain Removal</a>
+<a href="hard-floor-cleaning.html">Hard Floor Cleaning</a>
+<a href="commercial-carpet-cleaning.html">Commercial Cleaning</a>
+<a href="pricing.html">Pricing</a>
+</div>
+</div>
+<div class="nav-item">
+<a href="service-areas.html">Areas</a>
+<div class="dropdown">
+<a href="service-areas.html">All Areas</a>
+<a href="local/atcham.html">Atcham</a>
+<a href="local/baschurch.html">Baschurch</a>
+<a href="local/battlefield.html">Battlefield</a>
+<a href="local/bayston-hill.html">Bayston Hill</a>
+<a href="local/belle-vue.html">Belle Vue</a>
+<a href="local/bicton.html">Bicton</a>
+<a href="local/bomere-heath.html">Bomere Heath</a>
+<a href="local/bridgnorth.html">Bridgnorth</a>
+<a href="local/church-stretton.html">Church Stretton</a>
+<a href="local/clee-hill.html">Clee Hill</a>
+<a href="local/cleobury-mortimer.html">Cleobury Mortimer</a>
+<a href="local/condover.html">Condover</a>
+<a href="local/craven-arms.html">Craven Arms</a>
+<a href="local/diddlebury.html">Diddlebury</a>
+<a href="local/leominster.html">Leominster</a>
+<a href="local/ludlow.html">Ludlow</a>
+<a href="local/meole-brace.html">Meole Brace</a>
+<a href="local/monkmoor.html">Monkmoor</a>
+<a href="local/pontesbury.html">Pontesbury</a>
+<a href="local/radbrook.html">Radbrook</a>
+<a href="local/shrewsbury-carpet-cleaning.html">Shrewsbury Carpet Cleaning</a>
+<a href="local/shrewsbury-commercial-carpet-cleaning.html">Shrewsbury Commercial Carpet Cleaning</a>
+<a href="local/shrewsbury-hard-floor-cleaning.html">Shrewsbury Hard Floor Cleaning</a>
+<a href="local/shrewsbury-moth-treatment.html">Shrewsbury Moth Treatment</a>
+<a href="local/shrewsbury-rug-cleaning.html">Shrewsbury Rug Cleaning</a>
+<a href="local/shrewsbury-stain-removal.html">Shrewsbury Stain Removal</a>
+<a href="local/shrewsbury-upholstery-cleaning.html">Shrewsbury Upholstery Cleaning</a>
+<a href="local/shrewsbury.html">Shrewsbury</a>
+<a href="local/tenbury-wells.html">Tenbury Wells</a>
+</div>
+</div>
+<a href="gallery.html">Gallery</a>
+<a href="reviews.html">Reviews</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a class="nav-quote" href="../carpet-cleaning-quote.html">Instant Quote</a>
+</nav>
+<div class="nav-cta">
+<a class="btn btn-call" href="tel:07802563213">Call 07802 563213</a>
+<a class="btn-quote-right" href="../carpet-cleaning-quote.html">Instant Quote</a>
+</div>
+</div>
+</header>
+<section class="hero inner-hero">
+<div class="container">
+<div class="offers-hero">
+<span class="kicker">Current offers</span>
+<h1>Current special offers</h1>
+<p>These are the live offers we are currently running. If you would like to check availability or ask a quick question, send us a message on WhatsApp or use the quote page.</p>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<div class="offers-grid">
+<article class="offer-card">
+<div class="offer-card-head">
+<span class="offer-chip">Limited time offer</span>
+<h2>Deep Clean Package</h2>
+<p class="offer-big">Hall, stairs, landing + 1 room for £120</p>
+</div>
+<div class="offer-body">
+<p>A strong value deep clean package for customers who want a  across the main walkway areas and one extra room in the same visit.</p>
+<ul class="offer-list">
+<li>Professional deep clean process</li>
+<li>Ideal for larger bookings</li>
+<li>Simple package pricing</li>
+</ul>
+<div class="offer-actions">
+<a class="offer-btn primary" href="../carpet-cleaning-quote.html">Get this offer</a>
+<a class="offer-btn secondary" href="https://wa.me/447802563213" rel="noreferrer" target="_blank">WhatsApp us</a>
+</div>
+</div>
+</article>
+<article class="offer-card">
+<div class="offer-card-head">
+<span class="offer-chip">Limited time offer</span>
+<h2>Stain Guard Protection</h2>
+<p class="offer-big">50% off stain guard protection</p>
+</div>
+<div class="offer-body">
+<p>Add stain guard after your clean to help reduce future soiling, make maintenance easier, and help spills sit on the surface for longer.</p>
+<ul class="offer-list">
+<li>Added after cleaning</li>
+<li>Better for busy homes and pet owners</li>
+<li>Available with our deep clean service</li>
+</ul>
+<div class="offer-actions">
+<a class="offer-btn primary" href="../carpet-cleaning-quote.html">Get this offer</a>
+<a class="offer-btn secondary" href="https://wa.me/447802563213" rel="noreferrer" target="_blank">WhatsApp us</a>
+</div>
+</div>
+</article>
+</div>
+<div class="offers-note">
+<strong>Please note:</strong> offers are subject to availability and may be withdrawn or changed. If you want to claim one, the best thing to do is send us a quick message and we will confirm whether it is still available.
+    </div>
+<div class="offers-band">
+<h2>Want a quick answer?</h2>
+<p>Send us a couple of photos on WhatsApp and we’ll tell you whether the offer suits your carpets and what the next best step is.</p>
+</div>
+</div>
+</section>
+<footer class="footer">
+<div class="container footer-grid">
+<div class="footer-brand">
+<a class="brand" href="../index.html">
+<img alt="The Carpet Cleaning Company logo" class="brand-logo" decoding="async" fetchpriority="high" height="64" loading="eager" src="../assets/img/logo.webp" width="64"/>
+<div class="brand-text">
+<strong>The Carpet Cleaning Company</strong>
+<span>Carpet, upholstery and floor cleaning</span>
+</div>
+</a>
+<p>Professional carpet cleaning across Ludlow, Shrewsbury and nearby areas with honest advice and powerful results.</p>
+</div>
+<div>
+<h3>Popular pages</h3>
+<div class="footer-links">
+<a href="../index.html">Home</a>
+<a href="pricing.html">Pricing</a>
+<a href="special-offers.html">Special Offers</a>
+<a href="carpet-cleaning.html">Carpet Cleaning</a>
+<a href="reviews.html">Reviews</a>
+<a href="gallery.html">Gallery</a>
+</div>
+</div>
+<div>
+<h3>Contact</h3>
+<div class="footer-links">
+<a href="tel:07802563213">07802 563213</a>
+<a href="https://wa.me/447802563213" rel="noreferrer" target="_blank">WhatsApp</a>
+<a href="contact.html">Contact Page</a>
+<a href="../carpet-cleaning-quote.html">Instant Quote</a>
+</div>
+</div>
+</div>
+<div class="container copy">© The Carpet Cleaning Company. All rights reserved.</div>
+<section class="section">
+<div class="container seo-copy">
+<h2>What this service helps with</h2>
+<p>This service helps deal with built up dirt, stains, odours and everyday wear that builds up over time. Suitable for homes, rentals and commercial settings.</p>
+</div>
+</section>
+</footer>
+<script defer="" src="../assets/app.js"></script>
+</body>
+</html>
