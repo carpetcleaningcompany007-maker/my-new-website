@@ -302,7 +302,7 @@
 </div>
 <div class="mini-band"><strong style="display:block;font-size:14px;">Call</strong><span style="font-size:13px;color:var(--lp-muted);">07802 563213</span></div>
 </div>
-<form action="https://formspree.io/f/mblnzwpv" class="quote-form hybrid-form-shell" method="POST" onsubmit="submitQuote(event, this)">
+<form action="https://racing-analysis-platform-web.onrender.com/carpet-quote/submit" class="quote-form hybrid-form-shell" data-formspree-url="https://formspree.io/f/mblnzwpv" method="POST" onsubmit="submitQuote(event, this)">
 <input name="_redirect" type="hidden" value="https://www.thecarpetcleaningcrew.co.uk/thank-you.html"/>
 <input name="_subject" type="hidden" value="New Quote Request - Instant Quote Page"/>
 <input name="_format" type="hidden" value="plain"/>
@@ -311,9 +311,10 @@
 <label><span>Phone</span><input name="phone" placeholder="07..." required="" type="tel"/></label>
 </div>
 <div class="grid2">
-<label><span>Email</span><input name="email" placeholder="you@example.com" type="email"/></label>
+<label><span>Email</span><input name="email" placeholder="you@example.com" required="" type="email"/></label>
 <label><span>Postcode or town</span><input name="postcode" placeholder="Ludlow, Shrewsbury, SY8..." required="" type="text"/></label>
 </div>
+<label><span>Full address</span><input name="address" placeholder="House number, street, town" type="text"/></label>
 <div class="grid2">
 <label><span>Service</span>
 <select name="service" required="">
@@ -437,6 +438,8 @@ async function submitQuote(e, form){
       headers: { 'Accept': 'application/json' }
     });
     if (!res.ok) throw new Error('Submit failed');
+    const result = await res.json();
+    if (!result.ok) throw new Error(result.message || 'Submit failed');
     window.location.href = './thank-you.html';
   } catch (err){
     alert('Sorry, it did not send. Please try again or call 07802 563213.');
