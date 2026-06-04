@@ -302,10 +302,11 @@
 </div>
 <div class="mini-band"><strong style="display:block;font-size:14px;">Call</strong><span style="font-size:13px;color:var(--lp-muted);">07802 563213</span></div>
 </div>
-<form action="https://formspree.io/f/mblnzwpv" class="quote-form hybrid-form-shell" method="POST" onsubmit="submitQuote(event, this)">
+<form action="http://127.0.0.1:5000/website-form" class="quote-form hybrid-form-shell" method="POST">
 <input name="_redirect" type="hidden" value="https://www.thecarpetcleaningcrew.co.uk/thank-you.html"/>
 <input name="_subject" type="hidden" value="New Quote Request - Instant Quote Page"/>
 <input name="_format" type="hidden" value="plain"/>
+<input name="source" type="hidden" value="Website instant quote page copy"/>
 <div class="grid2">
 <label><span>Name</span><input name="name" placeholder="Your name" required="" type="text"/></label>
 <label><span>Phone</span><input name="phone" placeholder="07..." required="" type="tel"/></label>
@@ -327,7 +328,7 @@
 </select>
 </label>
 <label><span>Rooms or areas</span>
-<select name="areas">
+<select name="rooms">
 <option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option>
 </select>
 </label>

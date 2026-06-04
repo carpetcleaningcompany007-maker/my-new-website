@@ -266,17 +266,18 @@
 <div class="contact-panel">
 <div style="font-size:1.5rem;font-weight:800;">Send your enquiry</div>
 <p style="margin-top:6px;color:#5f7388;">Tell us what needs cleaning and we’ll get back to you.</p>
-<form action="https://formspree.io/f/mblnzwpv" class="contact-form hybrid-form-shell" method="POST" onsubmit="submitContact(event, this)">
+<form action="http://127.0.0.1:5000/website-form" class="contact-form hybrid-form-shell" method="POST">
 <input name="_redirect" type="hidden" value="https://www.thecarpetcleaningcrew.co.uk/thank-you.html"/>
 <input name="_subject" type="hidden" value="New Contact Form Enquiry - Website Contact Page"/>
 <input name="_format" type="hidden" value="plain"/>
+<input name="source" type="hidden" value="Website contact page"/>
 <div class="grid2">
 <label><span>Name</span><input name="name" placeholder="Your name" required="" type="text"/></label>
 <label><span>Phone</span><input name="phone" placeholder="07..." required="" type="tel"/></label>
 </div>
 <div class="grid2">
 <label><span>Email</span><input name="email" placeholder="you@example.com" type="email"/></label>
-<label><span>Postcode or town</span><input name="area" placeholder="Ludlow, Shrewsbury, SY8..." type="text"/></label>
+<label><span>Postcode or town</span><input name="postcode" placeholder="Ludlow, Shrewsbury, SY8..." type="text"/></label>
 </div>
 <label><span>Service</span>
 <select name="service">

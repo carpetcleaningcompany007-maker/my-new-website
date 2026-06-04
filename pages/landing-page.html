@@ -432,10 +432,11 @@
 <img alt="100% Satisfaction Guaranteed" class="h-24 w-24 sm:h-32 sm:w-32 object-contain drop-shadow-xl" decoding="async" id="satisfactionBadge" loading="lazy" src="https://raw.githubusercontent.com/carpetcleaningcompany007-maker/carpet-cleaning-showcase/main/satisfaction_badge_transparent.png"/>
 </span>
 </div>
-<form action="https://formspree.io/f/mblnzwpv" class="mt-5" id="heroQuoteForm" method="POST" onsubmit="submitQuote(event, this);">
+<form action="http://127.0.0.1:5000/website-form" class="mt-5" id="heroQuoteForm" method="POST">
 <input name="_redirect" type="hidden" value="https://www.thecarpetcleaningcrew.co.uk/thank-you.html"/>
 <input name="_subject" type="hidden" value="New Quote Request - The Carpet Cleaning Company">
 <input name="_format" type="hidden" value="plain"/>
+<input name="source" type="hidden" value="Website landing page quick quote"/>
 <div class="space-y-4">
 <div class="grid sm:grid-cols-2 gap-4">
 <label class="block">
@@ -444,7 +445,7 @@
 </label>
 <label class="block">
 <span class="text-sm font-semibold text-slate-700">Rooms or areas</span>
-<select class="premium-field mt-1 w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm bg-white" name="areas">
+<select class="premium-field mt-1 w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm bg-white" name="rooms">
 <option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option>
 </select>
 </label>
@@ -478,7 +479,7 @@
 <div class="rounded-2xl border border-brand-100 bg-brand-50 px-4 py-4 shadow-soft">
 <div class="text-sm font-extrabold text-slate-900">Anything we should know</div>
 <div class="text-xs text-slate-700 mt-1">Stains, pets, parking, access, ideal days</div>
-<textarea class="premium-field mt-3 w-full rounded-xl border border-brand-100 bg-white px-3 py-2.5 text-sm" name="notes" placeholder="Type here..." rows="3"></textarea>
+<textarea class="premium-field mt-3 w-full rounded-xl border border-brand-100 bg-white px-3 py-2.5 text-sm" name="additional_notes" placeholder="Type here..." rows="3"></textarea>
 <div class="mt-4 rounded-xl border border-brand-100 bg-white px-4 py-3">
 <div class="text-sm font-extrabold text-slate-900">Buy now pay later with Klarna</div>
 <div class="text-xs text-slate-600 mt-1">We can offer Klarna so you can spread the cost over 3 months. Interested?</div>
@@ -898,7 +899,7 @@
         if (!res.ok) {
           let msg = "";
           try { msg = await res.text(); } catch(e){}
-          throw new Error("Formspree submit failed: " + res.status + " " + msg);
+          throw new Error("CRM submit failed: " + res.status + " " + msg);
         }
 
         window.location.href = "./thank-you.html";

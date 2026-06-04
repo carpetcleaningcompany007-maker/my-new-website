@@ -552,7 +552,7 @@
 <span>Professional carpet and upholstery cleaning quotes</span>
 </div>
 </img></div>
-<form action="https://formspree.io/f/mblnzwpv" class="quote-form" method="POST" onsubmit="submitAnyQuote(event, this);"><input name="_redirect" type="hidden" value="https://www.thecarpetcleaningcrew.co.uk/thank-you.html"/><input name="_subject" type="hidden" value="New Quote Request - Website Home Page"/><input name="_format" type="hidden" value="plain"/><input name="_page" type="hidden" value="index.html"/>
+<form action="http://127.0.0.1:5000/website-form" class="quote-form" method="POST"><input name="_redirect" type="hidden" value="https://www.thecarpetcleaningcrew.co.uk/thank-you.html"/><input name="_subject" type="hidden" value="New Quote Request - Website Home Page"/><input name="_format" type="hidden" value="plain"/><input name="_page" type="hidden" value="index.html"/><input name="source" type="hidden" value="Website home page copy desktop"/>
 <div class="form-row">
 <label for="name">Name</label>
 <input id="name" name="name" placeholder="Your name" required="" type="text"/>
@@ -567,7 +567,7 @@
 </div>
 <div class="form-row">
 <label for="area">Postcode or town</label>
-<input id="area" name="area" placeholder="Ludlow, Shrewsbury, postcode etc" type="text"/>
+<input id="area" name="postcode" placeholder="Ludlow, Shrewsbury, postcode etc" type="text"/>
 </div>
 <div class="form-row">
 <label for="service">What would you like cleaned?</label>
@@ -602,7 +602,7 @@
 <span>Professional carpet and upholstery cleaning quotes</span>
 </div>
 </div>
-<form action="https://formspree.io/f/mblnzwpv" class="quote-form" method="POST" onsubmit="submitAnyQuote(event, this);"><input name="_redirect" type="hidden" value="https://www.thecarpetcleaningcrew.co.uk/thank-you.html"/><input name="_subject" type="hidden" value="New Quote Request - Website Home Page"/><input name="_format" type="hidden" value="plain"/><input name="_page" type="hidden" value="index.html"/>
+<form action="http://127.0.0.1:5000/website-form" class="quote-form" method="POST"><input name="_redirect" type="hidden" value="https://www.thecarpetcleaningcrew.co.uk/thank-you.html"/><input name="_subject" type="hidden" value="New Quote Request - Website Home Page"/><input name="_format" type="hidden" value="plain"/><input name="_page" type="hidden" value="index.html"/><input name="source" type="hidden" value="Website home page copy mobile"/>
 <div class="form-row">
 <label for="mobile-name">Name</label>
 <input id="mobile-name" name="name" placeholder="Your name" required="" type="text"/>
@@ -617,7 +617,7 @@
 </div>
 <div class="form-row">
 <label for="mobile-area">Postcode or town</label>
-<input id="mobile-area" name="area" placeholder="Ludlow, Shrewsbury, postcode etc" type="text"/>
+<input id="mobile-area" name="postcode" placeholder="Ludlow, Shrewsbury, postcode etc" type="text"/>
 </div>
 <div class="form-row">
 <label for="mobile-service">What would you like cleaned?</label>
@@ -997,7 +997,7 @@
     if (!res.ok) {
       let msg = '';
       try { msg = await res.text(); } catch(e) {}
-      throw new Error('Formspree submit failed: ' + res.status + ' ' + msg);
+      throw new Error('CRM submit failed: ' + res.status + ' ' + msg);
     }
 
     window.location.href = './thank-you.html';
