@@ -1376,22 +1376,21 @@
 <div class="bottom-form-card">
 <h3>Get in touch for a proper quotation</h3>
 <p>Choose an option below or simply ask a question. Tell us how many rooms there are, whether stairs are included, and anything else that helps us guide you properly.</p>
-<form action="http://127.0.0.1:5000/website-form" class="pricing-form hybrid-form-shell" method="POST">
+<form action="https://formspree.io/f/mblnzwpv" class="pricing-form hybrid-form-shell" method="POST" onsubmit="submitAnyQuote(event, this);">
 <input name="_redirect" type="hidden" value="https://www.thecarpetcleaningcrew.co.uk/thank-you.html"/>
 <input name="_subject" type="hidden" value="New Quote Request - Pricing Page"/>
 <input name="_format" type="hidden" value="plain"/>
 <input name="_page" type="hidden" value="pages/pricing.html"/>
-<input name="source" type="hidden" value="Website pricing page"/>
 <div class="form-row">
 <input name="name" placeholder="Your name" required="" type="text"/>
 <input name="phone" placeholder="Phone number" required="" type="tel"/>
 </div>
 <div class="form-row">
 <input name="email" placeholder="Email address" required="" type="email"/>
-<input name="postcode" placeholder="Town or postcode" required="" type="text"/>
+<input name="area" placeholder="Town or postcode" required="" type="text"/>
 </div>
 <div class="form-row">
-<select name="service" required="">
+<select name="option" required="">
 <option value="">Choose an option</option>
 <option>Light Clean</option>
 <option>Deluxe Deep Clean</option>
@@ -1402,7 +1401,7 @@
 <option>Commercial Cleaning</option>
 <option>Not sure, need advice</option>
 </select>
-<select name="rooms" required="">
+<select name="rooms_or_areas" required="">
 <option value="">Rooms or areas</option>
 <option>1</option>
 <option>2</option>
@@ -1411,7 +1410,7 @@
 <option>5+</option>
 </select>
 </div>
-<textarea name="additional_notes" placeholder="Tell us what needs cleaning, how many rooms, whether stairs are included, or ask any question"></textarea>
+<textarea name="message" placeholder="Tell us what needs cleaning, how many rooms, whether stairs are included, or ask any question"></textarea>
 <button class="submit-btn" type="submit">Get my quote</button>
 </form>
 </div>
@@ -1515,7 +1514,7 @@
     if (!res.ok) {
       let msg = '';
       try { msg = await res.text(); } catch(e) {}
-      throw new Error('CRM submit failed: ' + res.status + ' ' + msg);
+      throw new Error('Formspree submit failed: ' + res.status + ' ' + msg);
     }
 
     window.location.href = '../thank-you.html';
