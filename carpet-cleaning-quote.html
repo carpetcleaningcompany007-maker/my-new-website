@@ -315,6 +315,7 @@
 <label><span>Email</span><input name="email" placeholder="you@example.com" type="email"/></label>
 <label><span>Postcode or town</span><input name="postcode" placeholder="Ludlow, Shrewsbury, SY8..." required="" type="text"/></label>
 </div>
+<label><span>Address</span><input name="address" placeholder="House number and street" type="text"/></label>
 <div class="grid2">
 <label><span>Service</span>
 <select name="service" required="">
@@ -333,8 +334,26 @@
 </select>
 </label>
 </div>
+<div class="grid2">
+<label><span>Any upholstery?</span>
+<select name="upholstery"><option value="">Choose</option><option>No</option><option>Yes</option><option>Not sure</option></select>
+</label>
+<label><span>Any rugs?</span>
+<select name="rugs"><option value="">Choose</option><option>No</option><option>Yes</option><option>Not sure</option></select>
+</label>
+</div>
+<div class="grid2">
+<label><span>Pets in the property?</span>
+<select name="pets"><option value="">Choose</option><option>No</option><option>Yes</option></select>
+</label>
+<label><span>Preferred days or times</span><input name="preferred_days_times" placeholder="e.g. mornings, Fridays" type="text"/></label>
+</div>
+<label><span>Parking information</span><input name="parking" placeholder="Driveway, street parking, access notes" type="text"/></label>
+<label><span>Stains or problem areas</span>
+<textarea name="stains" placeholder="Tell us about stains, marks, odours or problem areas"></textarea>
+</label>
 <label><span>Anything we should know</span>
-<textarea name="message" placeholder="Stains, pets, parking, stairs, room sizes or anything else helpful"></textarea>
+<textarea name="additional_notes" placeholder="Stairs, room sizes, access notes or anything else helpful"></textarea>
 </label>
 <button class="btn btn-primary" id="quoteSubmitBtn" style="width:100%;" type="submit">Get my quote</button>
 <p style="margin:0;text-align:center;font-size:13px;color:var(--lp-muted);">No obligation. We’ll reply as soon as we can.</p>

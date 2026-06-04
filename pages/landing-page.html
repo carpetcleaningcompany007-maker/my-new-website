@@ -465,6 +465,10 @@
 <span class="text-sm font-semibold text-slate-700">Full name <span class="text-rose-500">*</span></span>
 <input autocomplete="name" class="premium-field mt-1 w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm" name="name" placeholder="Your name" required=""/>
 </label>
+<label class="block">
+<span class="text-sm font-semibold text-slate-700">Address</span>
+<input autocomplete="street-address" class="premium-field mt-1 w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm" name="address" placeholder="House number and street"/>
+</label>
 <div class="grid sm:grid-cols-2 gap-4">
 <label class="block">
 <span class="text-sm font-semibold text-slate-700">Phone <span class="text-rose-500">*</span></span>
@@ -479,6 +483,32 @@
 <div class="rounded-2xl border border-brand-100 bg-brand-50 px-4 py-4 shadow-soft">
 <div class="text-sm font-extrabold text-slate-900">Anything we should know</div>
 <div class="text-xs text-slate-700 mt-1">Stains, pets, parking, access, ideal days</div>
+<div class="grid sm:grid-cols-2 gap-3 mt-3">
+<label class="block">
+<span class="text-xs font-bold text-slate-700">Any upholstery?</span>
+<select class="premium-field mt-1 w-full rounded-xl border border-brand-100 bg-white px-3 py-2.5 text-sm" name="upholstery"><option value="">Choose</option><option>No</option><option>Yes</option><option>Not sure</option></select>
+</label>
+<label class="block">
+<span class="text-xs font-bold text-slate-700">Any rugs?</span>
+<select class="premium-field mt-1 w-full rounded-xl border border-brand-100 bg-white px-3 py-2.5 text-sm" name="rugs"><option value="">Choose</option><option>No</option><option>Yes</option><option>Not sure</option></select>
+</label>
+<label class="block">
+<span class="text-xs font-bold text-slate-700">Pets in the property?</span>
+<select class="premium-field mt-1 w-full rounded-xl border border-brand-100 bg-white px-3 py-2.5 text-sm" name="pets"><option value="">Choose</option><option>No</option><option>Yes</option></select>
+</label>
+<label class="block">
+<span class="text-xs font-bold text-slate-700">Preferred days or times</span>
+<input class="premium-field mt-1 w-full rounded-xl border border-brand-100 bg-white px-3 py-2.5 text-sm" name="preferred_days_times" placeholder="e.g. mornings, Fridays"/>
+</label>
+</div>
+<label class="block mt-3">
+<span class="text-xs font-bold text-slate-700">Parking information</span>
+<input class="premium-field mt-1 w-full rounded-xl border border-brand-100 bg-white px-3 py-2.5 text-sm" name="parking" placeholder="Driveway, street parking, access notes"/>
+</label>
+<label class="block mt-3">
+<span class="text-xs font-bold text-slate-700">Stains or problem areas</span>
+<textarea class="premium-field mt-1 w-full rounded-xl border border-brand-100 bg-white px-3 py-2.5 text-sm" name="stains" placeholder="Tell us about stains, marks, odours or problem areas" rows="2"></textarea>
+</label>
 <textarea class="premium-field mt-3 w-full rounded-xl border border-brand-100 bg-white px-3 py-2.5 text-sm" name="additional_notes" placeholder="Type here..." rows="3"></textarea>
 <div class="mt-4 rounded-xl border border-brand-100 bg-white px-4 py-3">
 <div class="text-sm font-extrabold text-slate-900">Buy now pay later with Klarna</div>
