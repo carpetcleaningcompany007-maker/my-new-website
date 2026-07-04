@@ -21,6 +21,8 @@ body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-seri
 a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
 button,input,textarea,select{font:inherit}
+.consent-inline{display:flex!important;align-items:flex-start!important;gap:14px!important;border:1px solid rgba(18,38,58,.10)!important;border-radius:16px!important;background:#f8fbff!important;padding:16px 18px!important;color:#334155!important;font-weight:700!important;cursor:pointer!important}
+.consent-inline input[type="checkbox"]{appearance:auto!important;box-sizing:border-box!important;width:28px!important;min-width:28px!important;max-width:28px!important;height:28px!important;min-height:28px!important;max-height:28px!important;flex:0 0 28px!important;margin:0!important;padding:0!important;accent-color:#1d7af3!important}
 .container{width:min(var(--max),calc(100% - 32px));margin:0 auto}
 .topbar{background:#04101e;color:#d8e6f3;font-size:14px}
 .topbar .container{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:10px 0;flex-wrap:wrap}
