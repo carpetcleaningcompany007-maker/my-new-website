@@ -435,9 +435,12 @@ async function submitQuote(e, form){
   const oldText = btn ? btn.textContent : '';
   if (btn){ btn.disabled = true; btn.textContent = 'Sending...'; }
   try {
+    const payload = new FormData(form);
+    const rooms = form.querySelector('[name="areas"], [name="rooms_or_areas"], [name="rooms_or_items"], [name="number_rooms"]');
+    if (rooms && rooms.value) payload.set('rooms_or_items', rooms.value);
     const res = await fetch(form.action, {
       method: 'POST',
-      body: new FormData(form),
+      body: payload,
       headers: { 'Accept': 'application/json' }
     });
     if (!res.ok) throw new Error('Submit failed');
