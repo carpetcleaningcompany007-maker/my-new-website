@@ -57,9 +57,17 @@
 <style>
     body { font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif; }
 
-    html, body { width: 100%; max-width: 100%; overflow-x: clip; }
+    html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
     body { position: relative; }
     * { min-width: 0; }
+    *, *::before, *::after { box-sizing: border-box; }
+    img, video, iframe, table, input, select, textarea { max-width: 100%; }
+    @media (max-width: 768px) {
+      html, body { overflow-x: hidden !important; max-width: 100% !important; }
+      section, header, main, footer, .container, .grid, form { max-width: 100% !important; }
+      .fixed { max-width: calc(100vw - 24px) !important; }
+      .video-frame, .video-frame iframe { max-width: calc(100vw - 32px) !important; }
+    }
     img, video, svg { max-width: 100%; height: auto; }
     :root { scroll-padding-top: 74px; }
 

@@ -668,6 +668,22 @@ button,input,textarea,select{font:inherit}
 @media (max-width: 760px){
   html, body{
     overflow-x:hidden !important;
+    max-width:100% !important;
+    width:100% !important;
+    position:relative;
+  }
+  *,*::before,*::after{
+    box-sizing:border-box;
+    min-width:0;
+  }
+  img,video,iframe,table,select,textarea,input{
+    max-width:100% !important;
+  }
+  .container,.nav,.hero,.section,.footer-grid,.grid,.cards,.quote-form,.contact-form,.pricing-form,.hybrid-form-shell{
+    max-width:100% !important;
+  }
+  .mobile-cta,.mobile-cta-wa,.wa,.local-float-wa,.fixed{
+    max-width:calc(100vw - 24px) !important;
   }
   .site-header{
     position:relative;
