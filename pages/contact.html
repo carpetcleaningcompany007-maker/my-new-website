@@ -266,7 +266,7 @@
 <div class="contact-panel">
 <div style="font-size:1.5rem;font-weight:800;">Send your enquiry</div>
 <p style="margin-top:6px;color:#5f7388;">Tell us what needs cleaning and we’ll get back to you.</p>
-<form action="https://carpet-cleaning-crm.onrender.com/api/website-form" class="contact-form hybrid-form-shell" method="POST" onsubmit="submitContact(event, this)">
+<form action="https://carpet-cleaning-crm.onrender.com/api/website-form" class="contact-form hybrid-form-shell" method="POST" enctype="multipart/form-data" onsubmit="submitContact(event, this)">
 <input name="_redirect" type="hidden" value="https://www.thecarpetcleaningcrew.co.uk/thank-you.html"/>
 <input name="_subject" type="hidden" value="New Contact Form Enquiry - Website Contact Page"/>
 <input name="_format" type="hidden" value="plain"/>
@@ -289,7 +289,9 @@
 <option>General enquiry</option>
 </select>
 </label>
-<label><span>Message</span>
+<label><span>Can we contact you by phone?</span><select name="phone_permission"><option>Yes, phone is fine</option><option>Please use another method</option></select></label>
+<label><span>Preferred contact method if not phone</span><input name="preferred_contact_other" placeholder="Email, WhatsApp, text, or best time to call" type="text"/></label>
+<label><span>Photos if useful</span><input accept="image/*" multiple name="photos" type="file"/></label><label><span>Message</span>
 <textarea name="message" placeholder="Tell us what needs cleaning, how many rooms or areas, whether stairs are included, or anything else helpful"></textarea>
 </label>
 <button class="btn btn-primary" id="contactSubmitBtn" style="width:100%;" type="submit">Send message</button>

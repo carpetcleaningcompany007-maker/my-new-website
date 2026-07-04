@@ -302,7 +302,7 @@
 </div>
 <div class="mini-band"><strong style="display:block;font-size:14px;">Call</strong><span style="font-size:13px;color:var(--lp-muted);">07802 563213</span></div>
 </div>
-<form action="https://carpet-cleaning-crm.onrender.com/api/website-form" class="quote-form hybrid-form-shell" method="POST" onsubmit="submitQuote(event, this)">
+<form action="https://carpet-cleaning-crm.onrender.com/api/website-form" class="quote-form hybrid-form-shell" method="POST" enctype="multipart/form-data" onsubmit="submitQuote(event, this)">
 <input name="_redirect" type="hidden" value="https://www.thecarpetcleaningcrew.co.uk/thank-you.html"/>
 <input name="_subject" type="hidden" value="New Quote Request - Instant Quote Page"/>
 <input name="_format" type="hidden" value="plain"/>
@@ -332,7 +332,9 @@
 </select>
 </label>
 </div>
-<label><span>Anything we should know</span>
+<label><span>Can we contact you by phone?</span><select name="phone_permission"><option>Yes, phone is fine</option><option>Please use another method</option></select></label>
+<label><span>Preferred contact method if not phone</span><input name="preferred_contact_other" placeholder="Email, WhatsApp, text, or best time to call" type="text"/></label>
+<label><span>Photos if useful</span><input accept="image/*" multiple name="photos" type="file"/></label><label><span>Anything we should know</span>
 <textarea name="message" placeholder="Stains, pets, parking, stairs, room sizes or anything else helpful"></textarea>
 </label>
 <button class="btn btn-primary" id="quoteSubmitBtn" style="width:100%;" type="submit">Get my quote</button>
