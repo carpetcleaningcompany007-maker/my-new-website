@@ -432,7 +432,7 @@
 <img alt="100% Satisfaction Guaranteed" class="h-24 w-24 sm:h-32 sm:w-32 object-contain drop-shadow-xl" decoding="async" id="satisfactionBadge" loading="lazy" src="https://raw.githubusercontent.com/carpetcleaningcompany007-maker/carpet-cleaning-showcase/main/satisfaction_badge_transparent.png"/>
 </span>
 </div>
-<form action="https://carpet-cleaning-crm.onrender.com/api/website-form" class="mt-5" id="heroQuoteForm" method="POST" enctype="multipart/form-data" onsubmit="submitQuote(event, this);">
+<form action="https://carpet-cleaning-crm.onrender.com/api/website-form" class="mt-5" id="heroQuoteForm" method="POST" onsubmit="submitQuote(event, this);">
 <input name="_redirect" type="hidden" value="https://www.thecarpetcleaningcrew.co.uk/thank-you.html"/>
 <input name="_subject" type="hidden" value="New Quote Request - The Carpet Cleaning Company">
 <input name="_format" type="hidden" value="plain"/>
@@ -475,13 +475,10 @@
 </label>
 </div>
 <div class="rounded-2xl border border-brand-100 bg-white px-4 py-4 shadow-soft">
-<div class="text-sm font-extrabold text-slate-900">Can we contact you by phone?</div>
-<div class="mt-3 flex flex-wrap gap-3">
-<label class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-bold text-slate-700"><input class="h-4 w-4" name="phone_permission" type="radio" value="Yes, phone is fine" checked/> Yes, phone is fine</label>
-<label class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-bold text-slate-700"><input class="h-4 w-4" name="phone_permission" type="radio" value="Please use another method"/> Prefer another method</label>
-</div>
-<label class="mt-3 block"><span class="text-sm font-semibold text-slate-700">Preferred contact method if not phone</span><input class="premium-field mt-1 w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm" name="preferred_contact_other" placeholder="Email, WhatsApp, text, or best time to call"/></label>
-<label class="mt-3 block"><span class="text-sm font-semibold text-slate-700">Photos if useful</span><input accept="image/*" class="premium-field mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm" multiple name="photos" type="file"/><span class="mt-1 block text-xs text-slate-500">You can add a few photos of the rooms, stains, rugs or upholstery.</span></label>
+<label class="flex items-start gap-3 text-sm font-semibold text-slate-700">
+<input class="mt-1 h-4 w-4" name="contact_consent" required="" type="checkbox" value="Yes"/>
+<span>I consent to The Carpet Cleaning Company contacting me about this enquiry by phone, text or email.</span>
+</label>
 </div>
 <div class="reveal-wrap" id="extraFields">
 <div class="rounded-2xl border border-brand-100 bg-brand-50 px-4 py-4 shadow-soft">
