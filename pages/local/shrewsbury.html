@@ -378,4 +378,15 @@ body{overflow-y:visible!important;overscroll-behavior-y:auto;touch-action:pan-y}
 <a class="local-float-wa" href="https://wa.me/447802563213" rel="noreferrer" target="_blank">WhatsApp</a>
 </div>
 <script defer="" src="../../assets/app.js"></script>
+<script>
+if (window.matchMedia('(min-width: 761px)').matches) {
+  window.addEventListener('wheel', function (event) {
+    if (event.ctrlKey || event.defaultPrevented) return;
+    const openMenu = event.target.closest && event.target.closest('.nav-links.is-open');
+    if (openMenu) return;
+    event.preventDefault();
+    window.scrollBy({ top: event.deltaY, left: 0, behavior: 'auto' });
+  }, { passive: false });
+}
+</script>
 </body></html>
