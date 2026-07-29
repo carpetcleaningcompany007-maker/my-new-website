@@ -381,12 +381,14 @@ body{overflow-y:visible!important;overscroll-behavior-y:auto;touch-action:pan-y}
 <script>
 if (window.matchMedia('(min-width: 761px)').matches) {
   window.addEventListener('wheel', function (event) {
-    if (event.ctrlKey || event.defaultPrevented) return;
+    if (event.ctrlKey) return;
     const openMenu = event.target.closest && event.target.closest('.nav-links.is-open');
     if (openMenu) return;
     event.preventDefault();
-    window.scrollBy({ top: event.deltaY, left: 0, behavior: 'auto' });
-  }, { passive: false });
+    const root = document.scrollingElement || document.documentElement;
+    const unit = event.deltaMode === 1 ? 24 : event.deltaMode === 2 ? window.innerHeight : 1;
+    root.scrollTop = Math.max(0, root.scrollTop + (event.deltaY * unit));
+  }, { passive: false, capture: true });
 }
 </script>
 </body></html>
