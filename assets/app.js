@@ -12,6 +12,14 @@
   window.gtag('config', 'AW-17385772946');
 })();
 
+// Pricing is temporarily private. Hide public links and redirect direct visits.
+(() => {
+  document.querySelectorAll('a[href$="pricing.html"]').forEach(link => link.remove());
+  if (/\/pages\/pricing\.html$/.test(window.location.pathname)) {
+    window.location.replace('/carpet-cleaning-quote.html');
+  }
+})();
+
 // === MOBILE_MENU_BUTTON_AND_TOP_LAYER_FIX_20260427B ===
 (() => {
   document.querySelectorAll('nav.nav-links').forEach(menu => {
