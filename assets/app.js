@@ -1,3 +1,17 @@
+// Google Analytics and Google Ads tag — loaded sitewide from the shared script.
+(() => {
+  if (document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) return;
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
+  const tagScript = document.createElement('script');
+  tagScript.async = true;
+  tagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-R9CFDLD03L';
+  document.head.appendChild(tagScript);
+  window.gtag('js', new Date());
+  window.gtag('config', 'G-R9CFDLD03L');
+  window.gtag('config', 'AW-17385772946');
+})();
+
 // === MOBILE_MENU_BUTTON_AND_TOP_LAYER_FIX_20260427B ===
 (() => {
   document.querySelectorAll('nav.nav-links').forEach(menu => {
