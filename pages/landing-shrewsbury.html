@@ -913,6 +913,26 @@
           throw new Error("Formspree submit failed: " + res.status + " " + msg);
         }
 
+        const trackerPayload = new URLSearchParams();
+        const service = String(payload.get("service") || "");
+        const areaCount = parseInt(String(payload.get("areas") || "0"), 10) || 0;
+        ["name", "phone", "email", "postcode", "service", "notes", "landing_area", "landing_page"]
+          .forEach((key) => trackerPayload.set(key, String(payload.get(key) || "")));
+        trackerPayload.set("rooms", /carpet/i.test(service) ? String(areaCount) : "0");
+        trackerPayload.set("status", "New lead");
+        const clickParams = new URLSearchParams(window.location.search);
+        ["gclid", "gbraid", "wbraid", "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"]
+          .forEach((key) => trackerPayload.set(key, clickParams.get(key) || ""));
+        try {
+          await fetch("https://script.google.com/macros/s/AKfycbxlgw9Fbb5DAx1gBeoK7F84MACP6S1N-_i9HKH1fSsasPS8QEzfJSLwIT9g60kNN0y9/exec", {
+            method: "POST",
+            mode: "no-cors",
+            body: trackerPayload
+          });
+        } catch (trackingError) {
+          console.warn("Lead tracker copy failed", trackingError);
+        }
+
         window.location.href = "./thank-you.html";
         return;
 

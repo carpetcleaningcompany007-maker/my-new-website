@@ -1,4 +1,4 @@
-const SHEET_NAME = "Sheet1";
+const SHEET_NAME = "Lead Tracker";
 
 function doPost(e) {
   const lock = LockService.getScriptLock();
@@ -11,7 +11,13 @@ function doPost(e) {
     const upholsteryValue = seats * 40;
     const serverEstimate = carpetValue + upholsteryValue;
     const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_NAME);
-    sheet.appendRow([
+    if (!sheet) throw new Error(`Sheet "${SHEET_NAME}" was not found.`);
+    const timestampCells = sheet
+      .getRange(2, 1, Math.max(1, sheet.getMaxRows() - 1), 1)
+      .getValues();
+    const firstEmptyIndex = timestampCells.findIndex((row) => !row[0]);
+    const targetRow = firstEmptyIndex === -1 ? sheet.getMaxRows() + 1 : firstEmptyIndex + 2;
+    sheet.getRange(targetRow, 1, 1, 22).setValues([[
       new Date(),
       data.name || "",
       data.phone || "",
@@ -34,7 +40,7 @@ function doPost(e) {
       data.utm_term || "",
       data.utm_content || "",
       data.notes || ""
-    ]);
+    ]]);
     return ContentService
       .createTextOutput(JSON.stringify({ok: true, estimated_value: serverEstimate}))
       .setMimeType(ContentService.MimeType.JSON);
