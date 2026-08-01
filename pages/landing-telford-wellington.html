@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="msapplication-TileImage" content="/site-icon-512.png">
+<title>Carpet &amp; Upholstery Cleaning in Telford &amp; Wellington | The Carpet Cleaning Company</title>
+<link href="https://www.thecarpetcleaningcrew.co.uk/pages/landing-telford-wellington.html" rel="canonical"/>
+<link as="image" fetchpriority="high" href="../assets/img/truckmount-hero.webp" rel="preload"/>
+<link crossorigin="" href="https://www.googletagmanager.com" rel="preconnect"/>
+<meta content="Professional carpet and upholstery cleaning in Telford, Wellington and nearby areas, with CRB agitation, hot water extraction and a satisfaction guarantee." name="description"/>
+<!-- Performance: delay analytics until after first paint -->
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    (function(){
+      var loaded = false;
+      function loadTracking(){
+        if(loaded) return; loaded = true;
+        var s=document.createElement('script');
+        s.async=true;
+        s.src='https://www.googletagmanager.com/gtag/js?id=G-R9CFDLD03L';
+        document.head.appendChild(s);
+        gtag('js', new Date());
+        gtag('config','G-R9CFDLD03L');
+        gtag('config','AW-17385772946');
+      }
+      if('requestIdleCallback' in window){ requestIdleCallback(loadTracking,{timeout:2500}); }
+      else { window.addEventListener('load', function(){ setTimeout(loadTracking,1200); }); }
+    })();
+  </script>
+<link href="../assets/landing-tailwind.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif; }
+
+    html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
+    body { position: relative; }
+    * { min-width: 0; }
+    *, *::before, *::after { box-sizing: border-box; }
+    img, video, iframe, table, input, select, textarea { max-width: 100%; }
+    @media (max-width: 768px) {
+      html, body { overflow-x: hidden !important; max-width: 100% !important; }
+      section, header, main, footer, .container, .grid, form { max-width: 100% !important; }
+      .fixed { max-width: calc(100vw - 24px) !important; }
+      .video-frame, .video-frame iframe { max-width: calc(100vw - 32px) !important; }
+      .landing-hero-title { font-size: 2rem !important; line-height: 1.08 !important; margin-top: .5rem !important; }
+      .landing-hero-subtitle { font-size: 1.15rem !important; margin-top: .5rem !important; }
+      .landing-mobile-detail { display:none !important; }
+      .landing-hero-points { display:none !important; }
+      .landing-hero-cta a:not(:first-child) { display:none !important; }
+      .landing-hero-cta { margin-top: 1rem !important; }
+      .landing-form-column { margin-top: 1.25rem !important; }
+      .landing-hero-section { padding-top: 5.25rem !important; padding-bottom: 2rem !important; }
+      #videos .video-frame:nth-child(n+2) { display:none !important; }
+    }
+    img, video, svg { max-width: 100%; height: auto; }
+    :root { scroll-padding-top: 74px; }
+
+    .glass { backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+    input, select, textarea { font-size: 16px; }
+
+    .lift { transition: transform .18s ease, box-shadow .18s ease; }
+    .lift:hover { transform: translateY(-2px); }
+
+    .premium-field:focus {
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(233,178,65,.22);
+      border-color: rgba(216,154,31,.95);
+    }
+
+    .shimmer { position: relative; overflow: hidden; }
+    .shimmer:after{
+      content:"";
+      position:absolute;
+      inset:-40% -60%;
+      transform: rotate(20deg);
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.25), transparent);
+      animation: shimmer 3.5s infinite;
+      pointer-events:none;
+    }
+    @keyframes shimmer {
+      0% { transform: translateX(-40%) rotate(20deg); opacity:0; }
+      10% { opacity:1; }
+      50% { transform: translateX(40%) rotate(20deg); opacity:0; }
+      100% { opacity:0; }
+    }
+
+    @keyframes fadeUp {
+      0% { opacity:0; transform: translateY(16px); }
+      100% { opacity:1; transform: translateY(0); }
+    }
+
+    @keyframes popFloatIn {
+      0%   { opacity:0; transform: scale(.78) translateY(10px); filter: blur(6px); }
+      60%  { opacity:1; transform: scale(1.04) translateY(-2px); filter: blur(0); }
+      100% { opacity:1; transform: scale(1) translateY(0); }
+    }
+
+    @keyframes floaty {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-7px); }
+    }
+
+    @keyframes pulseRing {
+      0%   { opacity:0; transform: scale(.85); }
+      20%  { opacity:.9; }
+      70%  { opacity:0; transform: scale(1.22); }
+      100% { opacity:0; transform: scale(1.22); }
+    }
+
+    [data-anim] { opacity: 0; transform: translateY(14px); }
+    .is-ready [data-anim="hero-title"] { animation: fadeUp 800ms ease-out forwards; }
+    .is-ready [data-anim="hero-copy"]  { animation: fadeUp 820ms ease-out 120ms forwards; }
+    .is-ready [data-anim="hero-points"]{ animation: fadeUp 860ms ease-out 180ms forwards; }
+    .is-ready [data-anim="hero-cta"]   { animation: fadeUp 880ms ease-out 240ms forwards; }
+    .is-ready [data-anim="hero-card"]  { animation: fadeUp 900ms ease-out 200ms forwards; }
+    .in-view[data-anim="reveal"] { animation: fadeUp 750ms ease-out forwards; }
+
+    .badge-wrap { position: relative; display: inline-grid; place-items: center; }
+    .badge-wrap:before{
+      content:"";
+      position:absolute;
+      width: 120%;
+      height: 120%;
+      border-radius: 999px;
+      border: 2px solid rgba(233,178,65,.35);
+      opacity: 0;
+    }
+    .is-ready .badge-wrap:before{ animation: pulseRing 1.7s ease-out .55s 1; }
+
+    #satisfactionBadge { opacity: 0; transform: scale(.9) translateY(8px); }
+    .is-ready #satisfactionBadge{
+      opacity: 1;
+      animation: popFloatIn 900ms cubic-bezier(.2,.8,.2,1) forwards, floaty 4.6s ease-in-out 1.1s infinite;
+      transform-origin: 70% 30%;
+    }
+
+    #heroGlow { will-change: transform; transition: transform .15s ease-out; }
+
+    .rev-card { transition: transform .2s ease, box-shadow .2s ease; }
+    .rev-card:hover { transform: translateY(-6px); box-shadow: 0 34px 95px rgba(2,6,23,.18); }
+    .clamp-3 {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .reveal-wrap {
+      max-height: 0;
+      opacity: 0;
+      transform: translateY(-6px);
+      overflow: hidden;
+      transition: max-height .35s ease, opacity .25s ease, transform .25s ease;
+    }
+    .reveal-wrap.is-open { max-height: 560px; opacity: 1; transform: translateY(0); }
+
+
+
+    .guarantee-panel {
+      border: 1px solid rgba(216,179,106,.30);
+      background: linear-gradient(135deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
+      box-shadow: 0 16px 40px rgba(2,6,23,.22);
+    }
+    .guarantee-panel.light {
+      background: linear-gradient(180deg, #fffefb 0%, #f9f3e7 100%);
+      border: 1px solid rgba(216,179,106,.35);
+      box-shadow: 0 16px 34px rgba(6,12,24,.10);
+    }
+    .guarantee-badge-img {
+      display:block;
+      width: 96px;
+      height: auto;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,.18));
+    }
+    .guarantee-badge-img.hero {
+      width: 110px;
+    }
+    .luxury-chip {
+      border: 1px solid rgba(216,179,106,.28);
+      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.06));
+      color: #f7f0e3;
+      box-shadow: 0 12px 28px rgba(2,6,23,.18);
+    }
+
+
+    .lower-bright {
+      background:
+        radial-gradient(980px 420px at 100% 0%, rgba(216,179,106,.22), transparent 46%),
+        radial-gradient(760px 320px at 0% 100%, rgba(58,120,214,.14), transparent 44%),
+        linear-gradient(180deg,#ffffff 0%, #f5f9ff 55%, #edf5ff 100%);
+    }
+    .lower-tint {
+      background:
+        radial-gradient(820px 340px at 100% 0%, rgba(58,120,214,.16), transparent 46%),
+        radial-gradient(680px 260px at 0% 100%, rgba(216,179,106,.10), transparent 42%),
+        linear-gradient(180deg,#f9fbff 0%, #f1f7ff 52%, #e9f2ff 100%);
+    }
+    .soft-card {
+      background:
+        radial-gradient(520px 180px at 100% 0%, rgba(216,179,106,.10), transparent 46%),
+        linear-gradient(180deg,#ffffff 0%, #fbfdff 100%);
+      border-color: rgba(31,111,255,.12) !important;
+      box-shadow: 0 20px 48px rgba(8,20,40,.09);
+    }
+    .soft-card:hover { box-shadow: 0 26px 58px rgba(8,20,40,.14); }
+    .section-panel {
+      background:
+        radial-gradient(900px 320px at 100% 0%, rgba(216,179,106,.20), transparent 48%),
+        radial-gradient(620px 220px at 0% 100%, rgba(58,120,214,.10), transparent 42%),
+        linear-gradient(180deg,#ffffff 0%, #f8fbff 100%);
+      border:1px solid rgba(31,111,255,.12);
+      box-shadow:0 24px 54px rgba(8,20,40,.10);
+    }
+    .video-frame {
+      border-color: rgba(31,111,255,.12) !important;
+      box-shadow: 0 22px 48px rgba(8,20,40,.10);
+    }
+    .review-shell {
+      background:
+        radial-gradient(920px 380px at 100% 0%, rgba(216,179,106,.24), transparent 48%),
+        radial-gradient(760px 260px at 0% 100%, rgba(58,120,214,.12), transparent 42%),
+        linear-gradient(180deg,#fffef9 0%, #f8fbff 58%, #eef5ff 100%);
+    }
+    .mid-cta {
+      background:
+        radial-gradient(520px 180px at 100% 0%, rgba(255,255,255,.14), transparent 42%),
+        linear-gradient(135deg,#214d82 0%, #2d7cff 100%);
+      box-shadow: 0 22px 56px rgba(20,58,102,.26);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      [data-anim], #satisfactionBadge { opacity: 1 !important; transform: none !important; animation: none !important; }
+      .badge-wrap:before { display:none !important; }
+      #heroGlow { transition: none !important; }
+      .shimmer:after { animation: none !important; }
+      .reveal-wrap { transition:none !important; max-height:none !important; opacity:1 !important; transform:none !important; }
+    }
+  </style>
+<script>
+    (function () {
+      try { if ("scrollRestoration" in history) history.scrollRestoration = "manual"; } catch (e) {}
+
+      function clearHash() {
+        if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+      }
+
+      function hardTop() {
+        clearHash();
+        window.scrollTo(0, 0);
+        requestAnimationFrame(() => window.scrollTo(0, 0));
+        setTimeout(() => window.scrollTo(0, 0), 50);
+        setTimeout(() => window.scrollTo(0, 0), 200);
+      }
+
+      hardTop();
+      window.addEventListener("load", hardTop);
+      window.addEventListener("pageshow", function (e) {
+        if (e.persisted) hardTop();
+        setTimeout(hardTop, 0);
+      });
+
+      document.addEventListener("click", function (e) {
+        const a = e.target.closest('a[href^="#"]');
+        if (!a) return;
+
+        const id = a.getAttribute("href").slice(1);
+        const target = document.getElementById(id);
+        if (!target) return;
+
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        setTimeout(clearHash, 10);
+      }, { passive: false });
+    })();
+  </script>
+<style id="robust-nav-fix">
+@media (min-width:1024px){
+  header, .site-header { overflow: visible !important; z-index: 9999 !important; }
+  .nav, .nav-links { overflow: visible !important; }
+  .nav-links{
+    display:flex !important;
+    align-items:center !important;
+    gap:18px !important;
+    flex-wrap:nowrap !important;
+    position:relative !important;
+  }
+  .nav-links > a,
+  .nav-links > .nav-item > a{
+    white-space:nowrap !important;
+    font-weight:700 !important;
+  }
+  .nav-links > a,
+  .nav-links > .nav-item > a,
+  .nav-links > .nav-quote{
+    pointer-events:auto !important;
+    position:relative !important;
+    z-index:10001 !important;
+  }
+  .nav-links .nav-item{
+    position:relative !important;
+    display:flex !important;
+    align-items:center !important;
+    padding-bottom:16px !important;
+    margin-bottom:-16px !important;
+    z-index:10002 !important;
+  }
+  .nav-links .dropdown{
+    display:none !important;
+    position:absolute !important;
+    top:100% !important;
+    left:0 !important;
+    margin-top:0 !important;
+    min-width:260px !important;
+    max-height:70vh !important;
+    overflow:auto !important;
+    background:#fff !important;
+    border:1px solid rgba(18,38,58,.10) !important;
+    border-radius:18px !important;
+    box-shadow:0 24px 54px rgba(8,20,40,.18) !important;
+    padding:10px !important;
+    z-index:10003 !important;
+    pointer-events:auto !important;
+  }
+  .nav-links .dropdown a{
+    display:block !important;
+    padding:10px 12px !important;
+    border-radius:12px !important;
+    color:#12304f !important;
+    font-weight:700 !important;
+    white-space:nowrap !important;
+    pointer-events:auto !important;
+  }
+  .nav-links .dropdown a:hover{
+    background:#f3f8ff !important;
+    color:#0f5fe6 !important;
+  }
+  .nav-links .nav-item:hover > .dropdown,
+  .nav-links .nav-item:focus-within > .dropdown{
+    display:block !important;
+  }
+}
+</style>
+</head>
+<body class="bg-ink-900 text-slate-100 overflow-x-hidden">
+<div class="pointer-events-none fixed inset-0 z-[1] opacity-[0.06] mix-blend-overlay" style="background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%222%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22400%22 height=%22400%22 filter=%22url(%23n)%22 opacity=%220.25%22/%3E%3C/svg%3E');">
+</div>
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#0f2741]/90 glass border-b border-white/10" style="overflow:visible">
+<div class="mx-auto max-w-6xl px-4 py-1.5 flex items-center justify-between gap-4">
+<div class="flex items-center gap-3 min-w-0">
+<img alt="The Carpet Cleaning Company" class="h-14 sm:h-20 w-auto object-contain shrink-0" decoding="async" fetchpriority="high" loading="eager" src="../assets/img/logo.webp"/>
+<div class="leading-tight min-w-0">
+<div class="font-extrabold text-base sm:text-lg truncate">The Carpet Cleaning Company</div>
+<div class="text-[11px] sm:text-xs text-slate-200/90">Carpet and upholstery cleaning for homes and businesses</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<a class="hidden sm:inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/15 px-4 py-2 text-sm font-semibold lift" href="tel:07802563213">
+<span class="inline-block h-2 w-2 rounded-full bg-brand-300"></span>
+          07802 563213
+        </a>
+</div>
+</div>
+</header>
+<section class="landing-hero-section relative pt-24 md:pt-28 pb-14 md:pb-20 overflow-hidden overflow-x-clip isolate">
+<div class="absolute inset-0">
+<img alt="Professional carpet and upholstery cleaning in Telford and Wellington" class="absolute inset-0 w-full h-full object-cover opacity-75" decoding="async" fetchpriority="high" id="heroImage" loading="eager" src="../assets/img/truckmount-hero.webp"/>
+<div class="absolute inset-0 bg-gradient-to-b from-ink-900/40 via-ink-900/70 to-ink-900"></div>
+<div class="absolute inset-0 bg-[radial-gradient(1200px_700px_at_25%_20%,rgba(245,194,92,0.14),transparent_60%)]" id="heroGlow"></div>
+</div>
+<div class="relative mx-auto max-w-6xl px-4">
+<div class="grid lg:grid-cols-2 gap-10 items-start">
+<div class="pt-2">
+<h1 class="landing-hero-title mt-4 text-4xl md:text-5xl font-extrabold leading-tight" data-anim="hero-title">
+            Carpet &amp; Upholstery Cleaning in Telford &amp; Wellington
+            <span class="landing-hero-subtitle block text-slate-200 mt-2">Fast local quotes. Satisfaction guaranteed.</span>
+</h1>
+<p class="mt-4 text-base md:text-lg text-slate-200 max-w-xl" data-anim="hero-copy">
+            CRB agitation lifts embedded soil, then hot water extraction with a neutralising rinse for soft, residue free fibres.
+          </p>
+<p class="landing-mobile-detail mt-3 text-sm md:text-base text-slate-300 max-w-2xl" data-anim="hero-copy">
+            We provide professional carpet and upholstery cleaning across Telford, Wellington and nearby areas.
+          </p>
+<div class="landing-hero-points mt-5 space-y-2 text-sm text-slate-200" data-anim="hero-points">
+<div class="flex items-start gap-3">
+<span class="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-300 text-slate-950 font-extrabold">✓</span>
+<span>CRB agitation lifts embedded soil</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-300 text-slate-950 font-extrabold">✓</span>
+<span>Steam cleaning up to 120 degrees for the best results</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-300 text-slate-950 font-extrabold">✓</span>
+<span>Fully insured for your peace of mind</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-300 text-slate-950 font-extrabold">✓</span>
+<span>Wool and synthetic safe process</span>
+</div>
+</div>
+<div class="landing-hero-cta mt-6 flex flex-wrap gap-3" data-anim="hero-cta">
+<a class="inline-flex items-center justify-center rounded-full bg-brand-300 hover:bg-brand-100 text-slate-950 px-6 py-3 text-sm font-extrabold shadow-soft lift shimmer" href="#heroQuoteForm">
+              Get my quote
+            </a>
+<a class="inline-flex items-center justify-center rounded-full bg-white/10 border border-white/15 hover:bg-white/15 px-6 py-3 text-sm font-semibold lift" href="#videos">
+              Watch videos
+            </a>
+<a class="inline-flex items-center justify-center rounded-full bg-white/10 border border-white/15 hover:bg-white/15 px-6 py-3 text-sm font-semibold lift" href="#reviews">
+              Read reviews first
+            </a>
+</div>
+</div>
+<div class="landing-form-column lg:pt-2">
+<div class="relative rounded-3xl bg-white text-slate-900 shadow-card border border-white/40 overflow-hidden lift max-w-full" data-anim="hero-card">
+<div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-r from-brand-50 via-white to-brand-50"></div>
+<div class="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-brand-100 blur-3xl opacity-70"></div>
+<div class="relative p-6 md:p-7">
+<div class="flex items-start justify-between gap-4">
+<div class="min-w-0">
+<div class="text-xl font-extrabold">Instant Quote Request</div>
+<p class="mt-1 text-sm text-slate-600">Fast fixed price quote and earliest available dates</p>
+</div>
+<span class="badge-wrap shrink-0">
+<img alt="100% Satisfaction Guaranteed" class="h-24 w-24 sm:h-32 sm:w-32 object-contain drop-shadow-xl" decoding="async" id="satisfactionBadge" loading="lazy" src="https://raw.githubusercontent.com/carpetcleaningcompany007-maker/carpet-cleaning-showcase/main/satisfaction_badge_transparent.png"/>
+</span>
+</div>
+<form action="https://carpet-cleaning-crm.onrender.com/api/website-form" class="mt-5" id="heroQuoteForm" method="POST" onsubmit="submitQuote(event, this);">
+<input name="_redirect" type="hidden" value="https://www.thecarpetcleaningcrew.co.uk/thank-you.html"/>
+<input name="_subject" type="hidden" value="New Telford &amp; Wellington Quote Request - The Carpet Cleaning Company">
+<input name="_format" type="hidden" value="plain"/>
+<input name="landing_area" type="hidden" value="Telford &amp; Wellington"/>
+<input name="landing_page" type="hidden" value="landing-telford-wellington.html"/>
+<div class="space-y-4">
+<div class="grid sm:grid-cols-2 gap-4">
+<label class="block">
+<span class="text-sm font-semibold text-slate-700">Postcode <span class="text-rose-500">*</span></span>
+<input autocomplete="postal-code" class="premium-field mt-1 w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm" name="postcode" placeholder="e.g. TF1 1AA" required=""/>
+</label>
+<label class="block">
+<span class="text-sm font-semibold text-slate-700">Rooms or areas</span>
+<select class="premium-field mt-1 w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm bg-white" name="areas">
+<option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option>
+</select>
+</label>
+</div>
+<label class="block">
+<span class="text-sm font-semibold text-slate-700">What do you need <span class="text-rose-500">*</span></span>
+<select class="premium-field mt-1 w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm bg-white" name="service" required="">
+<option disabled="" selected="" value="">Select a service</option>
+<option>Carpet cleaning</option>
+<option>Upholstery cleaning</option>
+<option>Carpets and upholstery</option>
+<option>Commercial cleaning</option>
+<option>Rug cleaning</option>
+</select>
+</label>
+<label class="block">
+<span class="text-sm font-semibold text-slate-700">Full name <span class="text-rose-500">*</span></span>
+<input autocomplete="name" class="premium-field mt-1 w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm" name="name" placeholder="Your name" required=""/>
+</label>
+<div class="grid sm:grid-cols-2 gap-4">
+<label class="block">
+<span class="text-sm font-semibold text-slate-700">Phone <span class="text-slate-400">(phone or email)</span></span>
+<input autocomplete="tel" class="premium-field mt-1 w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm" id="phoneField" inputmode="tel" name="phone" placeholder="07..."/>
+</label>
+<label class="block">
+<span class="text-sm font-semibold text-slate-700">Email <span class="text-slate-400">(phone or email)</span></span>
+<input autocomplete="email" class="premium-field mt-1 w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm" id="emailField" name="email" placeholder="you@example.com" type="email"/>
+</label>
+</div>
+<p class="hidden text-sm font-semibold text-rose-600" id="contactError">Please enter a phone number or email address.</p>
+<div class="rounded-2xl border border-brand-100 bg-white px-4 py-4 shadow-soft">
+<label class="flex items-start gap-3 text-sm font-semibold text-slate-700">
+<input class="mt-0.5 h-7 w-7 shrink-0 accent-brand-600" name="contact_consent" required="" type="checkbox" value="Yes"/>
+<span>I consent to The Carpet Cleaning Company contacting me about this enquiry by phone, text or email.</span>
+</label>
+</div>
+<div class="reveal-wrap" id="extraFields">
+<div class="rounded-2xl border border-brand-100 bg-brand-50 px-4 py-4 shadow-soft">
+<div class="text-sm font-extrabold text-slate-900">Anything we should know</div>
+<div class="text-xs text-slate-700 mt-1">Stains, pets, parking, access, ideal days</div>
+<textarea class="premium-field mt-3 w-full rounded-xl border border-brand-100 bg-white px-3 py-2.5 text-sm" name="notes" placeholder="Type here..." rows="3"></textarea>
+</div>
+</div>
+<button class="w-full rounded-2xl bg-brand-300 hover:bg-brand-100 text-slate-950 px-4 py-3.5 text-sm font-extrabold shadow-soft lift shimmer" id="submitBtn" type="submit">
+                    Get my quote
+                  </button>
+<p class="text-xs text-slate-500 text-center">We will contact you from 07802 563213. No obligation.</p>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-12 lower-bright text-slate-900">
+<div class="mx-auto max-w-6xl px-4">
+<div class="grid md:grid-cols-3 gap-5">
+<div class="rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-soft lift soft-card" data-anim="reveal">
+<div class="text-lg font-extrabold">Professional equipment</div>
+<p class="mt-2 text-sm text-slate-600">Airflex, Enforcer 400, Fusion heat system and a proper professional setup.</p>
+</div>
+<div class="rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-soft lift soft-card" data-anim="reveal">
+<div class="text-lg font-extrabold">Clear options</div>
+<p class="mt-2 text-sm text-slate-600">Honest advice on the right level of clean for the carpet and the result you want.</p>
+</div>
+<div class="rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-soft lift soft-card" data-anim="reveal">
+<div class="text-lg font-extrabold">Domestic and commercial</div>
+<p class="mt-2 text-sm text-slate-600">Homes, rentals, estate agents, hotels, offices and guest accommodation.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-14 lower-tint text-slate-900">
+<div class="mx-auto max-w-6xl px-4 text-center">
+<h2 class="text-3xl md:text-4xl font-extrabold">What do you need cleaning</h2>
+<p class="mt-3 text-slate-600 max-w-2xl mx-auto">
+      Choose your service below and get a fast quote in seconds.
+    </p>
+<div class="mt-10 grid md:grid-cols-3 gap-6">
+<div class="rounded-2xl overflow-hidden bg-white shadow-soft lift soft-card">
+<img alt="Carpet Cleaning" class="h-52 w-full object-cover" decoding="async" fetchpriority="low" loading="lazy" src="../assets/img/hero-carpet-cleaning.webp"/>
+<div class="p-6">
+<h3 class="text-xl font-extrabold">Carpet Cleaning</h3>
+<p class="mt-2 text-sm text-slate-600">
+            Deep cleaning that lifts dirt, stains and restores your carpets properly.
+          </p>
+<a class="mt-5 inline-block w-full rounded-full bg-brand-300 text-slate-950 py-3 font-extrabold shadow-soft transition hover:-translate-y-0.5" href="#heroQuoteForm" onclick="selectService('Carpet cleaning')">
+            Get quote
+          </a>
+</div>
+</div>
+<div class="rounded-2xl overflow-hidden bg-white shadow-soft lift soft-card">
+<img alt="Upholstery Cleaning" class="h-52 w-full object-cover" decoding="async" fetchpriority="low" loading="lazy" src="../assets/img/upholstery-cleaning.webp"/>
+<div class="p-6">
+<h3 class="text-xl font-extrabold">Upholstery Cleaning</h3>
+<p class="mt-2 text-sm text-slate-600">
+            Sofas, chairs and fabrics cleaned safely with powerful results.
+          </p>
+<a class="mt-5 inline-block w-full rounded-full bg-brand-300 text-slate-950 py-3 font-extrabold shadow-soft transition hover:-translate-y-0.5" href="#heroQuoteForm" onclick="selectService('Upholstery cleaning')">
+            Get quote
+          </a>
+</div>
+</div>
+<div class="rounded-2xl overflow-hidden bg-white shadow-soft lift soft-card">
+<img alt="Rug Cleaning" class="h-52 w-full object-cover" decoding="async" fetchpriority="low" loading="lazy" src="../assets/img/rug-cleaning.webp"/>
+<div class="p-6">
+<h3 class="text-xl font-extrabold">Professional Rug Cleaning</h3>
+<p class="mt-2 text-sm text-slate-600">
+            Careful cleaning for all rug types with proper fibre safe methods.
+          </p>
+<a class="mt-5 inline-block w-full rounded-full bg-brand-300 text-slate-950 py-3 font-extrabold shadow-soft transition hover:-translate-y-0.5" href="#heroQuoteForm" onclick="selectService('Rug cleaning')">
+            Get quote
+          </a>
+</div>
+</div>
+</div>
+<div class="mt-8 grid md:grid-cols-3 gap-6">
+<div class="rounded-2xl overflow-hidden bg-white shadow-soft lift soft-card">
+<img alt="Advanced stain removal with UV light" class="h-52 w-full object-cover" decoding="async" fetchpriority="low" loading="lazy" src="../assets/img/stain-removal.webp"/>
+<div class="p-6">
+<h3 class="text-xl font-extrabold">Advanced stain removal</h3>
+<p class="mt-2 text-sm text-slate-600">
+            Specialist treatment for difficult stains, dye marks and problem areas.
+          </p>
+<a class="mt-5 inline-block w-full rounded-full bg-brand-300 text-slate-950 py-3 font-extrabold shadow-soft transition hover:-translate-y-0.5" href="#heroQuoteForm" onclick="selectService('Carpet cleaning')">
+            Get quote
+          </a>
+</div>
+</div>
+<div class="rounded-2xl overflow-hidden bg-white shadow-soft lift soft-card">
+<img alt="Commercial carpet cleaning" class="h-52 w-full object-cover" decoding="async" fetchpriority="low" loading="lazy" src="../assets/img/commercial-carpet-cleaning.webp"/>
+<div class="p-6">
+<h3 class="text-xl font-extrabold">Commercial carpet cleaning</h3>
+<p class="mt-2 text-sm text-slate-600">
+            Offices, hotels and commercial spaces cleaned properly.
+          </p>
+<a class="mt-5 inline-block w-full rounded-full bg-brand-300 text-slate-950 py-3 font-extrabold shadow-soft transition hover:-translate-y-0.5" href="#heroQuoteForm" onclick="selectService('Commercial cleaning')">
+            Get quote
+          </a>
+</div>
+</div>
+<div class="rounded-2xl overflow-hidden bg-white shadow-soft lift soft-card">
+<img alt="Hard floor cleaning" class="h-52 w-full object-cover" decoding="async" fetchpriority="low" loading="lazy" src="../assets/img/tile-grout-cleaning.webp"/>
+<div class="p-6">
+<h3 class="text-xl font-extrabold">Hard floor cleaning</h3>
+<p class="mt-2 text-sm text-slate-600">
+            Deep cleaning for tiles, safety flooring and hard surfaces.
+          </p>
+<a class="mt-5 inline-block w-full rounded-full bg-brand-300 text-slate-950 py-3 font-extrabold shadow-soft transition hover:-translate-y-0.5" href="#heroQuoteForm" onclick="selectService('Commercial cleaning')">
+            Get quote
+          </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-14 lower-tint text-slate-900">
+<div class="mx-auto max-w-6xl px-4">
+<h2 class="text-3xl font-extrabold" data-anim="reveal">How the clean works</h2>
+<p class="mt-2 text-sm md:text-base text-slate-600 max-w-xl" data-anim="reveal">
+        A simple method used in homes and workplaces so you know what to expect on the day.
+      </p>
+<div class="mt-5 rounded-2xl px-5 py-4 shadow-soft lift section-panel" data-anim="reveal">
+<div class="text-xs font-semibold text-brand-700 uppercase">Best results</div>
+<div class="mt-1 text-lg font-extrabold text-slate-900">Steam cleaning up to 120 degrees</div>
+<div class="mt-1 text-sm text-slate-700">High heat helps break down grease, lift deep soil and leave fibres fresh and residue free.</div>
+</div>
+<div class="mt-8 grid md:grid-cols-3 gap-6">
+<div class="bg-slate-50 rounded-2xl border border-slate-200 shadow-soft p-6 lift soft-card" data-anim="reveal">
+<div class="text-xs font-semibold text-brand-700 uppercase">Step one</div>
+<div class="mt-1 text-lg font-semibold">Survey and vacuum</div>
+<p class="mt-2 text-sm text-slate-600">
+            Quick walk through, fibre check and a full dry vacuum to remove loose soil before any solution is applied.
+          </p>
+</div>
+<div class="bg-slate-50 rounded-2xl border border-slate-200 shadow-soft p-6 lift soft-card" data-anim="reveal">
+<div class="text-xs font-semibold text-brand-700 uppercase">Step two</div>
+<div class="mt-1 text-lg font-semibold">Pre spray and CRB agitation</div>
+<p class="mt-2 text-sm text-slate-600">
+            A fibre safe solution is chosen then worked into the pile with a counter rotating brush to lift and release soil.
+          </p>
+</div>
+<div class="bg-slate-50 rounded-2xl border border-slate-200 shadow-soft p-6 lift soft-card" data-anim="reveal">
+<div class="text-xs font-semibold text-brand-700 uppercase">Step three</div>
+<div class="mt-1 text-lg font-semibold">120 degree steam rinse and finish</div>
+<p class="mt-2 text-sm text-slate-600">
+            High heat extraction with a neutralising rinse removes residues so carpets dry clean and soft.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-14 lower-bright text-slate-900" id="videos">
+<div class="mx-auto max-w-6xl px-4">
+<h2 class="text-3xl font-extrabold" data-anim="reveal">Watch the results</h2>
+<p class="mt-2 text-slate-600" data-anim="reveal">A recent clean in action.</p>
+<div class="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">
+<div class="w-[267px] h-[476px] overflow-hidden rounded-2xl border border-slate-200 shadow-soft bg-black lift video-frame" data-anim="reveal">
+<iframe allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen="true" frameborder="0" height="476" loading="lazy" scrolling="no" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F61559013150413%2Fvideos%2F1899520797292791%2F&amp;show_text=false" style="border:none;overflow:hidden" title="Professional carpet cleaning video one" width="267"></iframe>
+</div>
+<div class="w-[267px] h-[476px] overflow-hidden rounded-2xl border border-slate-200 shadow-soft bg-black lift video-frame" data-anim="reveal">
+<iframe allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen="true" frameborder="0" height="476" loading="lazy" scrolling="no" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F61559013150413%2Fvideos%2F1162016885802464%2F&amp;show_text=false" style="border:none;overflow:hidden" title="Professional carpet cleaning video two" width="267"></iframe>
+</div>
+<div class="w-[267px] h-[476px] overflow-hidden rounded-2xl border border-slate-200 shadow-soft bg-black lift video-frame" data-anim="reveal">
+<iframe allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen="true" frameborder="0" height="476" loading="lazy" scrolling="no" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F61559013150413%2Fvideos%2F1362198414861523%2F&amp;show_text=false" style="border:none;overflow:hidden" title="Professional carpet cleaning video three" width="267"></iframe>
+</div>
+</div>
+</div>
+</section>
+<section class="py-10 lower-tint text-slate-900">
+<div class="mx-auto max-w-6xl px-4">
+<div class="mid-cta rounded-3xl px-6 py-6 text-white flex flex-col md:flex-row items-start md:items-center justify-between gap-4 lift" data-anim="reveal">
+<div>
+<div class="text-xs font-semibold uppercase tracking-[0.18em] text-white/70">Quick quote</div>
+<div class="mt-2 text-2xl font-extrabold">Send photos on WhatsApp for a fast fixed price.</div>
+</div>
+<a class="inline-flex items-center justify-center rounded-full bg-white text-slate-950 px-6 py-3 text-sm font-extrabold shadow-soft lift" href="#heroQuoteForm">Get my quote</a>
+</div>
+</div>
+</section>
+<section class="py-14 review-shell text-slate-900" id="reviews">
+<div class="mx-auto max-w-6xl px-4">
+<div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+<div>
+<div class="inline-flex items-center gap-2 rounded-full bg-white border border-brand-100 px-3 py-1 text-xs font-semibold text-brand-700 lift" data-anim="reveal">
+            Google Reviews
+          </div>
+<h2 class="mt-3 text-3xl font-extrabold" data-anim="reveal">Look at our amazing 5 star Google reviews</h2>
+<p class="mt-2 text-sm md:text-base text-slate-700 max-w-2xl" data-anim="reveal">
+            We are proud of our genuine Google reviews. You can read the full review from each customer below.
+          </p>
+</div>
+<div class="rounded-3xl border border-brand-100 bg-white/95 px-5 py-4 shadow-soft w-full md:w-auto lift" data-anim="reveal">
+<div class="flex items-center gap-3">
+<div class="text-3xl font-extrabold">5.0</div>
+<div>
+<div class="text-brand-500 text-sm leading-none">★★★★★</div>
+<div class="text-xs text-slate-500 mt-1">30 plus Google reviews</div>
+</div>
+</div>
+<div class="mt-3 flex flex-wrap gap-2">
+<a class="inline-flex items-center justify-center rounded-full bg-[#0f2741] hover:bg-[#17314c] text-white px-4 py-2 text-xs font-extrabold lift shimmer" href="#heroQuoteForm">
+              Get a quick quote
+            </a>
+<button class="inline-flex items-center justify-center rounded-full bg-white border border-slate-200 hover:bg-slate-50 px-4 py-2 text-xs font-bold lift" id="expandAllBtn" type="button">
+              Expand all
+            </button>
+<button class="inline-flex items-center justify-center rounded-full bg-white border border-slate-200 hover:bg-slate-50 px-4 py-2 text-xs font-bold lift" id="collapseAllBtn" type="button">
+              Collapse all
+            </button>
+</div>
+</div>
+</div>
+<div class="mt-8 grid md:grid-cols-2 xl:grid-cols-3 gap-6" id="reviewsGrid"></div>
+<div class="mt-8 flex flex-col sm:flex-row gap-3">
+<button class="inline-flex items-center justify-center rounded-full bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 text-sm font-extrabold lift" id="loadMoreBtn" type="button">
+          Load 10 more reviews
+        </button>
+<a class="inline-flex items-center justify-center rounded-full bg-brand-300 hover:bg-brand-100 text-slate-950 px-6 py-3 text-sm font-extrabold lift shimmer" href="#heroQuoteForm">
+          Get my quote
+        </a>
+</div>
+<p class="mt-4 text-xs text-slate-600">
+        Reviews shown are copied from Google review text provided by the business and may include shortened display names exactly as shown on Google.
+      </p>
+</div>
+</section>
+<section class="py-14 lower-tint text-slate-900">
+<div class="mx-auto max-w-6xl px-4">
+<h2 class="text-3xl font-extrabold" data-anim="reveal">Professional cleaning with honest expectations</h2>
+<p class="mt-2 text-sm md:text-base text-slate-600 max-w-3xl" data-anim="reveal">
+        Customers usually want to know the same things. Will the carpet look cleaner, will marks improve, will it feel fresher, and what sort of result is realistic. We keep the advice honest before we begin.
+      </p>
+<div class="mt-8 grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+<div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-soft lift soft-card" data-anim="reveal">
+<div class="text-lg font-extrabold">Cleaner appearance</div>
+<p class="mt-2 text-sm text-slate-600">Traffic lanes, dull areas and general soiling are treated properly.</p>
+</div>
+<div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-soft lift soft-card" data-anim="reveal">
+<div class="text-lg font-extrabold">Fresher feel</div>
+<p class="mt-2 text-sm text-slate-600">Agitation and extraction help improve the overall finish of the carpet.</p>
+</div>
+<div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-soft lift soft-card" data-anim="reveal">
+<div class="text-lg font-extrabold">Targeted stain treatment</div>
+<p class="mt-2 text-sm text-slate-600">Spots and marks are treated individually where appropriate before the main clean.</p>
+</div>
+<div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-soft lift soft-card" data-anim="reveal">
+<div class="text-lg font-extrabold">Honest advice</div>
+<p class="mt-2 text-sm text-slate-600">You get realistic guidance on likely results before any work begins.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-12 bg-white text-slate-900" id="guarantee">
+<div class="mx-auto max-w-6xl px-4 grid md:grid-cols-3 gap-8 items-center">
+<div class="md:col-span-2">
+<h2 class="text-2xl font-extrabold" data-anim="reveal">100 percent satisfaction guarantee</h2>
+<p class="mt-2 text-sm md:text-base text-slate-700 max-w-2xl" data-anim="reveal">
+          If you are not happy with the result in any area, it will be returned and cleaned again. If it still does not look as it should, the cost of that area will be refunded.
+        </p>
+</div>
+<div class="flex md:justify-end">
+<div class="rounded-3xl bg-brand-50 border border-brand-100 shadow-soft px-6 py-6 text-center w-full md:w-auto lift" data-anim="reveal">
+<div class="text-xs font-semibold text-slate-500 uppercase">Satisfaction promise</div>
+<div class="text-4xl font-extrabold text-brand-700 mt-1">100%</div>
+<div class="text-xs text-slate-500 mt-1">Simple and written in plain English</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-12 bg-brand-50 text-slate-900">
+<div class="mx-auto max-w-6xl px-4">
+<div class="rounded-3xl border border-brand-100 bg-white px-6 py-6 shadow-soft lift" data-anim="reveal">
+<div class="text-xs font-semibold text-brand-700 uppercase">Local coverage</div>
+<h2 class="mt-2 text-2xl font-extrabold">Local carpet cleaning across Telford, Wellington and surrounding areas</h2>
+<p class="mt-2 text-sm md:text-base text-slate-600 max-w-3xl">We cover Telford, Wellington, Newport, Ironbridge and nearby areas for carpet cleaning, upholstery cleaning, stain removal, rug cleaning and commercial cleaning.</p>
+</div>
+</div>
+</section>
+<section class="py-14 bg-ink-900" id="quote">
+<div class="mx-auto max-w-6xl px-4">
+<div class="rounded-3xl bg-white/5 border border-white/10 p-6 md:p-8 lift" data-anim="reveal">
+<div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+<div>
+<h2 class="text-2xl md:text-3xl font-extrabold">Want a fixed price quote</h2>
+<p class="mt-1 text-slate-200 text-sm md:text-base">Use the form at the top and we will reply with a clear price and next available dates.</p>
+</div>
+<div class="flex gap-3 flex-wrap">
+<a class="rounded-full bg-brand-300 hover:bg-brand-100 text-slate-950 px-6 py-3 text-sm font-extrabold shadow-soft lift shimmer" href="#heroQuoteForm">
+              Get a fast quote
+            </a>
+<a class="rounded-full bg-white/10 border border-white/15 hover:bg-white/15 px-6 py-3 text-sm font-semibold lift" href="tel:07802563213">
+              Call 07802 563213
+            </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="py-10 bg-ink-900 border-t border-white/10">
+<div class="mx-auto max-w-6xl px-4 flex flex-col md:flex-row items-center justify-between gap-3 text-sm">
+<div class="text-slate-200">
+<div class="font-semibold">The Carpet Cleaning Company</div>
+<div class="text-xs text-slate-400">Carpet and upholstery cleaning in Telford, Wellington and nearby areas</div>
+</div>
+<div class="text-xs text-slate-500">
+        © <span id="year">2025</span> The Carpet Cleaning Company. All rights reserved.
+      </div>
+</div>
+<section style="padding:40px 20px;text-align:center;background:linear-gradient(180deg,#f8fbff 0%, #eef5ff 100%);color:#2b3c4d;">
+<p style="font-size:16px;margin-bottom:10px;font-weight:600;">
+    Want to see more before you decide?
+  </p>
+<p style="font-size:14px;margin-bottom:18px;">
+    You're currently on our quick quote page. You can also explore our full website with more photos, reviews and detailed services.
+  </p>
+<a href="../index.html" style="display:inline-block;padding:12px 24px;border-radius:999px;background:#1f6fff;color:white;font-weight:700;text-decoration:none;">
+    View full website
+  </a>
+</section>
+<section class="section">
+<div class="container seo-copy">
+<h2>What this service helps with</h2>
+<p>This service helps deal with built up dirt, stains, odours and everyday wear that builds up over time. Suitable for homes, rentals and commercial settings.</p>
+</div>
+</section>
+</footer>
+<div class="fixed z-[90] flex flex-col gap-3" style="right: max(1rem, env(safe-area-inset-right)); bottom: max(1rem, env(safe-area-inset-bottom)); max-width: 100vw;">
+<a aria-label="WhatsApp" class="h-14 w-14 rounded-full shadow-card bg-[#25D366] grid place-items-center text-white text-2xl lift" href="https://wa.me/447802563213?text=Hi%20Paul%2C%20I%E2%80%99d%20like%20a%20quote%20please.%0AMy%20postcode%3A%20____%0AWhat%20needs%20cleaning%3A%20____" rel="noopener" target="_blank">💬</a>
+<a aria-label="Call" class="h-14 w-14 rounded-full shadow-card bg-brand-300 grid place-items-center text-slate-950 text-2xl lift" href="tel:07802563213">☎</a>
+</div>
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    window.addEventListener("load", () => document.documentElement.classList.add("is-ready"));
+
+    (function () {
+      const els = Array.from(document.querySelectorAll('[data-anim="reveal"]'));
+      if (!els.length) return;
+
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("in-view");
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.14 });
+
+      els.forEach(el => io.observe(el));
+    })();
+
+    (function () {
+      const glow = document.getElementById("heroGlow");
+      if (!glow) return;
+      const isCoarse = window.matchMedia && window.matchMedia("(pointer: coarse)").matches;
+      if (isCoarse) return;
+
+      const maxX = 18, maxY = 12;
+      window.addEventListener("mousemove", (e) => {
+        const x = (e.clientX / window.innerWidth) - 0.5;
+        const y = (e.clientY / window.innerHeight) - 0.5;
+        glow.style.transform = `translate(${x * maxX}px, ${y * maxY}px)`;
+      }, { passive: true });
+    })();
+
+    (function () {
+      const phone = document.getElementById("phoneField");
+      const email = document.getElementById("emailField");
+      const wrap  = document.getElementById("extraFields");
+      if (!phone || !email || !wrap) return;
+
+      function shouldOpen() {
+        const phoneOk = phone.value.trim().length >= 8;
+        const emailOk = email.value.trim().length > 0 && email.checkValidity();
+        return phoneOk || emailOk;
+      }
+
+      function sync() { wrap.classList.toggle("is-open", shouldOpen()); }
+
+      ["input","blur","change"].forEach(evt => {
+        phone.addEventListener(evt, sync, { passive: true });
+        email.addEventListener(evt, sync, { passive: true });
+      });
+
+      sync();
+    })();
+
+    async function submitQuote(e, form) {
+      e.preventDefault();
+
+      const btn = document.getElementById("submitBtn");
+      const oldText = btn ? btn.textContent : "";
+      const phone = form.querySelector('[name="phone"]');
+      const email = form.querySelector('[name="email"]');
+      const contactError = document.getElementById("contactError");
+      const phoneOk = phone && phone.value.trim().length >= 8;
+      const emailOk = email && email.value.trim().length > 0 && email.checkValidity();
+
+      if (!phoneOk && !emailOk) {
+        if (contactError) contactError.classList.remove("hidden");
+        (phone || email)?.focus();
+        return;
+      }
+
+      if (contactError) contactError.classList.add("hidden");
+
+      if (btn) { btn.disabled = true; btn.textContent = "Sending..."; }
+
+      try {
+        const payload = new FormData(form);
+        const rooms = form.querySelector('[name="areas"], [name="rooms"], [name="number_rooms"]');
+        if (rooms && rooms.value) payload.set("rooms_or_items", rooms.value);
+        const res = await fetch(form.action, {
+          method: "POST",
+          body: payload,
+          headers: { "Accept": "application/json" }
+        });
+
+        if (!res.ok) {
+          let msg = "";
+          try { msg = await res.text(); } catch(e){}
+          throw new Error("Formspree submit failed: " + res.status + " " + msg);
+        }
+
+        const trackerPayload = new URLSearchParams();
+        const service = String(payload.get("service") || "");
+        const areaCount = parseInt(String(payload.get("areas") || "0"), 10) || 0;
+        ["name", "phone", "email", "postcode", "service", "notes", "landing_area", "landing_page"]
+          .forEach((key) => trackerPayload.set(key, String(payload.get(key) || "")));
+        trackerPayload.set("rooms", /carpet/i.test(service) ? String(areaCount) : "0");
+        trackerPayload.set("status", "New lead");
+        const clickParams = new URLSearchParams(window.location.search);
+        ["gclid", "gbraid", "wbraid", "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"]
+          .forEach((key) => trackerPayload.set(key, clickParams.get(key) || ""));
+        try {
+          await fetch("https://script.google.com/macros/s/AKfycbxlgw9Fbb5DAx1gBeoK7F84MACP6S1N-_i9HKH1fSsasPS8QEzfJSLwIT9g60kNN0y9/exec", {
+            method: "POST",
+            mode: "no-cors",
+            body: trackerPayload
+          });
+        } catch (trackingError) {
+          console.warn("Lead tracker copy failed", trackingError);
+        }
+
+        window.location.href = "./thank-you.html";
+        return;
+
+      } catch (err) {
+        alert("Sorry, it didn’t send. Please try again, or call 07802 563213.");
+        console.error(err);
+        if (btn) { btn.disabled = false; btn.textContent = oldText || "Get my quote"; }
+      }
+    }
+
+    const REVIEWS = [
+      { name:"Diana Roach", when:"2 weeks ago", stars:5, text:"Being new to the area we feel very fortunate to have chosen Paul of the Carpet Cleaning Company. From the 1st point of contact through to completion Paul was highly professional and very clear on pricing. We'd recently moved to a large house whose carpets were good quality but with a variety of unsightly stains. We were amazed at how Paul managed to remove all the incredibly stubborn stains which had seemingly ruined the carpets. We are so delighted with the results and have saved a fortune not having to replace them. Also more sustainable! We highly recommend Paul and what a lovely man he is too!" },
+      { name:"Carolyn Mills", when:"a week ago", stars:5, text:"Paul did a super job. Very thorough. Moved all the furniture, left no stone unturned. Had a lot of carpet cleaning equipment to do a good job. Very pleasant hard working chap and reasonably priced for the work involved. Deserves the five stars." },
+      { name:"kerrie glanville", when:"2 months ago", stars:5, text:"Paul visited me today 3/12/25.. did an absolute fantastic job on my stairs. They smell so fresh and look clean making my house feel cleaner! There is also a stain that he magically got out of my kids rooms that has been there years and …More" },
+      { name:"jac P", when:"3 months ago", stars:5, text:"Had my carpets cleaned by Paul a few days ago. I was reassured through out the whole process. Paul was punctual, polite and very knowledgeable as I asked about the products and equipment he used. My carpets look amazing 👏. Paul is a genuine professional and nice guy. I have recommended him to colleagues. Great experience from start to finish 👌" },
+      { name:"suzanne powell", when:"3 months ago", stars:5, text:"Had Paul over today to clean my large sofa. Lounge, stairs, landing and bedroom carpet. Superb service from start to finish. On time, polite and hardworking. Everything looks brand new!! Was thinking of having a new carpet, but so glad I contacted Paul, he's saved me a fortune!! Highly recommended and superb service." },
+      { name:"Eluned Harrison", when:"a month ago", stars:5, text:"Great job done on our Lime green sofas this week, all stains gone and looking so much better and brighter. Paul took great care with the fabric and in ensuring I was happy with everything before leaving. Would highly recommend." },
+      { name:"Patrick Maslin", when:"5 months ago", stars:5, text:"Paul provided a fantastic service. He was polite, friendly, on time and he worked quickly and efficiently. It was great value for money. My carpets were cleaned to a high professional standard and look amazing-so clean and bright. I highly recommend the Carpet Cleaning Company." },
+      { name:"jenna Hamar", when:"2 months ago", stars:5, text:"Paul cleaned all the carpets in my holiday let on Thursday and did a fantastic job, carpets spotless and fresh smelling. Excellent service, explains the process and quotes a price before doing the job. Would highly recommend." },
+      { name:"James Wilson", when:"4 months ago", stars:5, text:"I had my carpets cleaned by The Carpet Cleaning Company in Shrewsbury, and I’m really pleased with the results. Paul did an excellent job — he managed to remove all the stains and left the carpets looking like new. He was also very polite and professional throughout. I’d definitely recommend this company!" },
+      { name:"David Beardsall", when:"3 months ago", stars:5, text:"Paul did a very thorough job and worked hard to fit around our schedule. We had moved into a house with some old and stained carpets so we had low expectations but Paul's excellent work made them look so much better. He went above and beyond with every detail, staying late to make sure he got rid of every stain. Would highly recommend his work" },
+      { name:"kim nicholas", when:"a month ago", stars:5, text:"I had the carpet cleaning company come today at short notice . Paul was courteous and efficient and made my rug and carpet look brand new. Really happy with the results." },
+      { name:"Harry Hancock Davies", when:"5 months ago", stars:5, text:"Paul did an excellent job on our carpets throughout our house. We had multiple stains caused by our pets and such stains were deeply engrained into our carpet as they had been there for some time. When Paul finished the carpet was like …More" },
+      { name:"Chris Atherton", when:"4 months ago", stars:5, text:"Paul was friendly, professional and efficient. He went above and beyond to make sure that the finished result was perfect. We couldn’t be more pleased, the carpet looks like new. We will definitely be happy to have Paul back again when needed." },
+      { name:"Gourmet Vanilla", when:"3 months ago", stars:5, text:"Paul from the Carpet Cleaning Company has just finished dry cleaning our big sofa and two armchairs in Ludlow. He’s done a brilliant job, what an improvement! Paul was a pleasure to deal with. Thank you!" },
+      { name:"JANE WOOD", when:"3 months ago", stars:5, text:"Wouldn’t highly recommend this company Paul was professional throughout his visit, he was punctual, he explained the process and the products he would use to achieve the best results as a hygienic clean was required. The results were fantastic, I would highly recommend this company, I am extremely impressed and pleased. Thanks Paul." },
+      { name:"Alison Benbow", when:"a month ago", stars:5, text:"Paul tackled our farmhouse with enthusiasm , expertise and bags of energy for our big rooms . He has top quality machines and solutions and what a difference it has made . Thank you" },
+      { name:"Ellie may darkes (ellie)", when:"4 months ago", stars:5, text:"Came in and cleaned my carpets, did a fantastic job carpets look brand new I highly recommend! Thank you Paul" },
+      { name:"idris thomas", when:"5 months ago", stars:5, text:"Paul arrived today and cleaned three bedroom carpets, did a fantastic job would recommend.." },
+      { name:"E Stock", when:"a month ago", stars:5, text:"Lovely chap - definitely recommend the deep clean! Worth the small amount extra for a job excellently done. High end equipment and professional service. Highly recommend 😊" },
+      { name:"Ross Doodson", when:"a month ago", stars:5, text:"Superb and efficient service from start to finish. I thoroughly recommend Paul. A professional, trustworthy and high effective service. Thank you very much indeed!" },
+      { name:"Jonathan O’Rourke", when:"7 months ago", stars:5, text:"Amazing service provided and will definitely be using again. My carpets and sofa look brand new for a very reasonable price. Can’t recommend enough." },
+      { name:"Bodhi Hughes", when:"4 months ago", stars:5, text:"The carpet cleaning company are true professionals. My expectations with what could be done with my carpets was far exceeded. Thank you so much" },
+      { name:"Donna Jones", when:"a month ago", stars:5, text:"Absolutely amazing service carried out by Paul!\n\nPaul carried out a carpet clean at Shrewsbury and done a amazing job!!" },
+      { name:"Melanie Riches", when:"3 months ago", stars:5, text:"Very trustworthy, professional and reliable service. Would highly recommend, carpet and sofa came up as as new." },
+      { name:"Jenny James", when:"2 months ago", stars:5, text:"Very impressed with Paul's prompt and effective service - he got rid of everything including the impossible!" },
+      { name:"Robin Nicholas", when:"8 months ago", stars:5, text:"Saved a fortune, was going to get new carpets until a friend in Ludlow recommended this company. The carpets are like new. An excellent Company." },
+      { name:"Caroline Martin", when:"8 months ago", stars:5, text:"So happy with this company; Paul is chatty and approachable, knows his business very well and does a thorough job for a very reasonable price. No hesitation in recommending him." },
+      { name:"Christine Bourne", when:"7 months ago", stars:5, text:"An excellent job carried out very professionally. Really pleased with three piece suite and carpets. Ludlow should be proud of it’s trades people." },
+      { name:"Victor Munsanje", when:"6 months ago", stars:5, text:"Excellent service, will definitely hire them again. If you are looking for a professional service, honest and sincere, you are here." },
+      { name:"carol rowley", when:"4 months ago", stars:5, text:"Efficient,friendly and carpet looks new again. Would definitely recommend 👌" },
+      { name:"Chris Jennings", when:"4 months ago", stars:5, text:"Very good service from start to finish, would highly recommend." },
+      { name:"Anne Douthwaite", when:"5 hours ago", stars:5, text:"Excellent service. Can highly recommend! Two rugs cleaned and they look brand new again! Very reasonably priced and will definitely use again. Thank you!" }
+    ];
+
+    function starString(n){
+      const r = Math.max(0, Math.min(5, Math.round(Number(n) || 0)));
+      return "★★★★★".slice(0, r) + "☆☆☆☆☆".slice(0, 5 - r);
+    }
+
+    function escapeHtml(s){
+      return String(s || "").replace(/[&<>"']/g, (m) => ({
+        "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+      }[m]));
+    }
+
+    function makePreview(text, maxChars){
+      const t = String(text || "").replace(/\s+/g, " ").trim();
+      if (t.length <= maxChars) return t;
+      return t.slice(0, maxChars).trimEnd() + "…";
+    }
+
+    function renderReviewCard(r, idx){
+      const full = escapeHtml(r.text);
+      const preview = escapeHtml(makePreview(r.text, 220));
+      const name = escapeHtml(r.name);
+      const when = escapeHtml(r.when || "");
+      const stars = starString(r.stars || 5);
+
+      return `
+        <article class="rev-card relative rounded-3xl border border-brand-100 bg-white shadow-soft p-6 lift"
+                 data-review-idx="${idx}">
+          <div class="absolute pointer-events-none inset-0 rounded-3xl"
+               style="box-shadow: 0 0 0 1px rgba(216,154,31,.08) inset;"></div>
+
+          <div class="flex items-start justify-between gap-4 relative">
+            <div>
+              <div class="font-extrabold text-slate-900">${name}</div>
+              <div class="text-xs text-slate-500 mt-0.5">${when}</div>
+            </div>
+            <div class="text-brand-500 text-sm">${stars}</div>
+          </div>
+
+          <div class="mt-3 text-sm text-slate-700 relative">
+            <div class="reviewText clamp-3" id="reviewText_${idx}"
+                 data-preview="${preview}"
+                 data-full="${full}">${preview}</div>
+          </div>
+
+          <div class="mt-4 flex items-center justify-between gap-3 relative">
+            <div class="text-xs text-brand-700 font-semibold">Genuine Google review</div>
+            <button type="button"
+              class="toggleBtn text-xs font-extrabold text-slate-900 hover:text-brand-700"
+              onclick="toggleFullReview(${idx})">
+              Read full review
+            </button>
+          </div>
+        </article>
+      `;
+    }
+
+    let shown = 0;
+    const INITIAL_SHOW = 6;
+    const LOAD_MORE = 10;
+
+    function updateLoadMoreButton(){
+      const btn = document.getElementById("loadMoreBtn");
+      if (!btn) return;
+
+      const remaining = REVIEWS.length - shown;
+
+      if (remaining <= 0) {
+        btn.textContent = "All reviews shown";
+        btn.disabled = true;
+        btn.classList.add("opacity-60");
+        return;
+      }
+
+      const next = Math.min(LOAD_MORE, remaining);
+      btn.textContent = `Load ${next} more reviews`;
+      btn.disabled = false;
+      btn.classList.remove("opacity-60");
+    }
+
+    function paintReviews(count){
+      const grid = document.getElementById("reviewsGrid");
+      if (!grid) return;
+
+      const toShow = Math.min(count, REVIEWS.length);
+      let html = "";
+      for (let i = 0; i < toShow; i++){
+        html += renderReviewCard(REVIEWS[i], i);
+      }
+      grid.innerHTML = html;
+      shown = toShow;
+      updateLoadMoreButton();
+    }
+
+    window.toggleFullReview = function(idx){
+      const el = document.getElementById("reviewText_" + idx);
+      if (!el) return;
+
+      const card = document.querySelector(`[data-review-idx="${idx}"]`);
+      const btn = card ? card.querySelector(".toggleBtn") : null;
+
+      const isClamped = el.classList.contains("clamp-3");
+      if (isClamped){
+        el.classList.remove("clamp-3");
+        el.innerHTML = el.getAttribute("data-full") || el.innerHTML;
+        if (btn) btn.textContent = "Collapse";
+      } else {
+        el.classList.add("clamp-3");
+        el.innerHTML = el.getAttribute("data-preview") || el.innerHTML;
+        if (btn) btn.textContent = "Read full review";
+      }
+    };
+
+    function expandAll(){
+      for (let i = 0; i < shown; i++){
+        const el = document.getElementById("reviewText_" + i);
+        if (!el) continue;
+        el.classList.remove("clamp-3");
+        el.innerHTML = el.getAttribute("data-full") || el.innerHTML;
+
+        const card = document.querySelector(`[data-review-idx="${i}"]`);
+        const btn = card ? card.querySelector(".toggleBtn") : null;
+        if (btn) btn.textContent = "Collapse";
+      }
+    }
+
+    function collapseAll(){
+      for (let i = 0; i < shown; i++){
+        const el = document.getElementById("reviewText_" + i);
+        if (!el) continue;
+        el.classList.add("clamp-3");
+        el.innerHTML = el.getAttribute("data-preview") || el.innerHTML;
+
+        const card = document.querySelector(`[data-review-idx="${i}"]`);
+        const btn = card ? card.querySelector(".toggleBtn") : null;
+        if (btn) btn.textContent = "Read full review";
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      paintReviews(INITIAL_SHOW);
+
+      const loadBtn = document.getElementById("loadMoreBtn");
+      if (loadBtn){
+        loadBtn.addEventListener("click", () => paintReviews(shown + LOAD_MORE));
+      }
+
+      const expAll = document.getElementById("expandAllBtn");
+      if (expAll) expAll.addEventListener("click", expandAll);
+
+      const colAll = document.getElementById("collapseAllBtn");
+      if (colAll) colAll.addEventListener("click", collapseAll);
+    });
+  </script>
+<style id="mobile-menu-top-layer-only-fix-20260427b">
+@media (min-width:1024px){.mobile-toggle{display:none!important}}
+@media (max-width:1023px){header{overflow:visible!important;z-index:99999!important}header>div{position:relative!important;overflow:visible!important}.mobile-toggle{display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:42px!important;padding:9px 15px!important;border-radius:999px!important;border:1px solid rgba(255,255,255,.35)!important;background:rgba(255,255,255,.14)!important;color:#fff!important;font-weight:800!important;cursor:pointer!important;margin-left:auto!important;position:relative!important;z-index:100020!important}.nav-links{display:none!important}.nav-links.is-open,.nav-links.open,.mobile-toggle[aria-expanded="true"]+.nav-links{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:4px!important;position:absolute!important;top:calc(100% + 10px)!important;right:12px!important;left:auto!important;width:min(320px,calc(100vw - 24px))!important;max-height:calc(100vh - 105px)!important;overflow:auto!important;background:#fff!important;color:#12304f!important;border:1px solid rgba(18,38,58,.12)!important;border-radius:22px!important;padding:14px!important;box-shadow:0 24px 58px rgba(0,0,0,.28)!important;z-index:100010!important;visibility:visible!important;opacity:1!important;pointer-events:auto!important}.nav-links>a,.nav-links .nav-item>a,.nav-links .nav-quote{color:#12304f!important;opacity:1!important;display:block!important;padding:12px 14px!important;border-radius:14px!important;font-weight:800!important;text-decoration:none!important;background:transparent!important}.nav-links .nav-item{width:100%!important;display:block!important}.nav-links .dropdown{position:static!important;box-shadow:none!important;border:0!important;background:transparent!important;padding:4px 0 6px 12px!important;margin:0!important}.nav-item:not(.open)>.dropdown{display:none!important}.nav-item.open>.dropdown{display:block!important}}
+</style>
+<script id="mobile-menu-button-fix-20260427b">
+(()=>{document.querySelectorAll('nav.nav-links').forEach(menu=>{const header=menu.closest('header')||document.querySelector('header');if(!header)return;let btn=header.querySelector('.mobile-toggle');if(!btn){btn=document.createElement('button');btn.type='button';btn.className='mobile-toggle';btn.setAttribute('aria-expanded','false');btn.setAttribute('aria-label','Open menu');btn.textContent='Menu';menu.insertAdjacentElement('beforebegin',btn)}if(btn.dataset.mobileMenuReady==='1')return;btn.dataset.mobileMenuReady='1';btn.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();const open=!menu.classList.contains('is-open');menu.classList.toggle('is-open',open);menu.classList.toggle('open',open);header.classList.toggle('nav-open',open);btn.setAttribute('aria-expanded',open?'true':'false')})})})();
+</script>
+</body>
+</html>
