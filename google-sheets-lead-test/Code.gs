@@ -1,10 +1,45 @@
 const SHEET_NAME = "Lead Tracker";
+const INTENT_SHEET_NAME = "Website Intent";
 
 function doPost(e) {
   const lock = LockService.getScriptLock();
   lock.waitLock(10000);
   try {
     const data = e && e.parameter ? e.parameter : {};
+    if (data.event_type === "website_intent" || data.event_type === "lead_contact_click") {
+      const intentSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(INTENT_SHEET_NAME);
+      if (!intentSheet) throw new Error(`Sheet "${INTENT_SHEET_NAME}" was not found.`);
+      const choiceLabels = {
+        carpet: "Interested in carpet cleaning",
+        upholstery: "Interested in upholstery cleaning",
+        browsing: "Just browsing / here by accident"
+      };
+      const isContactClick = data.event_type === "lead_contact_click";
+      const interaction = isContactClick ? "Contact button click" : "Visitor choice";
+      const visitorChoice = isContactClick
+        ? (data.contact_method === "call" ? "Call now clicked" : "Message us clicked")
+        : (choiceLabels[data.visitor_intent] || data.visitor_intent || "Unknown choice");
+      const classification = isContactClick
+        ? "Click lead — contact details not supplied"
+        : (data.visitor_intent === "browsing" ? "Browsing / accidental visit" : "Interested visitor");
+      intentSheet.appendRow([
+        new Date(),
+        data.landing_area || "",
+        data.landing_page || "",
+        interaction,
+        visitorChoice,
+        classification,
+        data.gclid || "",
+        data.gbraid || "",
+        data.wbraid || "",
+        data.utm_source || "",
+        data.utm_campaign || "",
+        data.status || ""
+      ]);
+      return ContentService
+        .createTextOutput(JSON.stringify({ok: true, routed_to: INTENT_SHEET_NAME}))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
     const rooms = Math.max(0, Number(data.rooms || 0));
     const seats = Math.max(0, Number(data.upholstery_seats || 0));
     const carpetValue = rooms > 0 ? 75 + (Math.max(0, rooms - 1) * 45) : 0;
