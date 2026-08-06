@@ -8,6 +8,44 @@
     ? field("landing_page").value
     : location.pathname.split("/").pop();
   const recorded = new Set();
+  const productionHost = "www.thecarpetcleaningcrew.co.uk";
+  const sessionKey = "ccc_engagement_session";
+  const alertedKey = "ccc_engagement_alert_sent";
+  let visitorSession = sessionStorage.getItem(sessionKey);
+  if (!visitorSession) {
+    visitorSession = `${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 14)}`;
+    sessionStorage.setItem(sessionKey, visitorSession);
+  }
+  const eligibleAt = Date.now() + 30000;
+  let pendingAlert = "";
+
+  function sendEngagementAlert(trigger) {
+    if (location.hostname !== productionHost || sessionStorage.getItem(alertedKey)) return;
+    if (Date.now() < eligibleAt) {
+      pendingAlert = pendingAlert || trigger;
+      setTimeout(() => sendEngagementAlert(pendingAlert), eligibleAt - Date.now() + 50);
+      return;
+    }
+    sessionStorage.setItem(alertedKey, "1");
+    const query = new URLSearchParams(location.search);
+    const payload = new URLSearchParams({
+      session_id: visitorSession,
+      landing_area: area,
+      landing_page: page,
+      trigger,
+      utm_source: query.get("utm_source") || "",
+      gclid: query.get("gclid") || "",
+      gbraid: query.get("gbraid") || "",
+      wbraid: query.get("wbraid") || "",
+      company_website: "",
+    });
+    fetch("https://carpet-cleaning-crm.onrender.com/api/website-engagement", {
+      method: "POST",
+      mode: "cors",
+      body: payload,
+      keepalive: true,
+    }).catch(() => sessionStorage.removeItem(alertedKey));
+  }
 
   function record(eventName, details, onceKey) {
     if (onceKey && recorded.has(onceKey)) return;
@@ -28,6 +66,7 @@
         const available = document.documentElement.scrollHeight - innerHeight;
         if (available > 0 && (scrollY / available) * 100 >= depth) {
           record("scroll_depth", { percent_scrolled: depth }, `scroll:${depth}`);
+          if (depth >= 75) sendEngagementAlert("deep_scroll");
         }
       },
       { passive: true },
@@ -35,7 +74,10 @@
   });
 
   if (form) {
-    form.addEventListener("focusin", () => record("form_start", {}, "form:start"));
+    form.addEventListener("focusin", () => {
+      record("form_start", {}, "form:start");
+      sendEngagementAlert("form_started");
+    });
   }
 
   if ("IntersectionObserver" in window) {
@@ -48,6 +90,7 @@
               { section_name: entry.target.id },
               `section:${entry.target.id}`,
             );
+            if (entry.target.id === "reviews") sendEngagementAlert("reviews_viewed");
           }
         });
       },
@@ -88,10 +131,11 @@
     frame.addEventListener(
       "touchstart",
       () =>
-        record("video_embed_interaction", {
+        (record("video_embed_interaction", {
           video_title: frame.title || "Facebook cleaning video",
           interaction_precision: "embed interaction; play cannot be verified",
         }),
+        sendEngagementAlert("video_interaction")),
       { passive: true },
     );
   });
@@ -102,6 +146,7 @@
         video_title: frame.title || "Facebook cleaning video",
         interaction_precision: "embed interaction; play cannot be verified",
       });
+      sendEngagementAlert("video_interaction");
     }
   });
 
