@@ -1765,6 +1765,42 @@
       @media(max-width:600px){
         .nav{min-height:70px}.brand img{width:60px;height:54px}.hero{padding-top:24px}.hero h1{font-size:2.2rem}.hero .lead{font-size:1rem;margin-bottom:20px}.hero-proof-images{height:300px}.hero-proof b{font-size:.78rem}.hero-photo .quote{padding:0 18px 20px}.hero-photo .quote-head{margin:0 -18px 18px}.instant-trust{grid-template-columns:1fr}.header-phone{display:none}.extras-grid{grid-template-columns:1fr 1fr}
       }
+      main > section:not(.hero):not(.quote-band):not(.reference-content) { display:none !important; }
+      .reference-content { background:#fff; }
+      .reference-content .block { padding:70px 0; }
+      .reference-content .block.alt { background:#eef8fd; }
+      .reference-content .center { max-width:860px; margin:0 auto 38px; text-align:center; }
+      .reference-content .center h2 { margin:8px 0 12px; color:#092c4c; font-size:clamp(2rem,4vw,3rem); line-height:1.08; }
+      .reference-content .center p { color:#607789; font-size:1.08rem; }
+      .review-strip,.benefit-grid,.service-grid,.process-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+      .proof-card,.benefit,.service-tile,.process-card { background:#fff; border:1px solid #d9e6ef; border-radius:10px; padding:25px; box-shadow:0 12px 28px rgba(32,79,110,.08); }
+      .proof-card .stars { font-size:1.15rem; }
+      .proof-card p { color:#41596b; }
+      .proof-card strong { color:#092c4c; }
+      .benefit { text-align:center; }
+      .benefit b { display:grid; place-items:center; width:58px; height:58px; margin:0 auto 14px; border-radius:50%; background:#e1f4fd; color:#0879c9; font-size:1.35rem; }
+      .benefit h3,.service-tile h3,.process-card h3 { color:#092c4c; }
+      .service-tile { min-height:210px; border-top:6px solid #0879c9; }
+      .process-card { position:relative; padding-top:36px; }
+      .process-card .num { position:absolute; top:-20px; left:24px; display:grid; place-items:center; width:44px; height:44px; border-radius:50%; background:#ef3f52; color:#fff; font-weight:900; }
+      .packages { overflow-x:auto; }
+      .package-table { width:100%; min-width:760px; border-collapse:separate; border-spacing:0; overflow:hidden; border:1px solid #cfdde6; border-radius:12px; background:#fff; box-shadow:0 16px 36px rgba(32,79,110,.1); }
+      .package-table th { padding:20px 14px; background:#092c4c; color:#fff; font-size:1.2rem; }
+      .package-table th:nth-child(3) { background:#0879c9; }
+      .package-table td { padding:14px; border-top:1px solid #dce7ee; border-right:1px solid #dce7ee; text-align:center; }
+      .package-table td:first-child { text-align:left; font-weight:700; color:#29465a; }
+      .package-table .yes { color:#198754; font-size:1.25rem; font-weight:900; }
+      .package-table .optional { color:#0879c9; font-size:.82rem; font-weight:800; }
+      .package-note { margin-top:18px; color:#607789; text-align:center; }
+      .results-pair { display:grid; grid-template-columns:1fr 1fr; gap:8px; max-width:900px; margin:auto; }
+      .results-pair figure { position:relative; margin:0; height:520px; overflow:hidden; }
+      .results-pair img { height:100%; object-fit:cover; }
+      .results-pair b { position:absolute; left:18px; bottom:18px; padding:9px 16px; border:3px solid #fff; border-radius:999px; background:#26394a; color:#fff; }
+      .big-cta { background:#092c4c; color:#fff; text-align:center; padding:60px 20px; }
+      .big-cta h2 { margin:0 0 12px; font-size:2.5rem; }
+      .big-cta p { margin:0 auto 24px; max-width:700px; color:#cbe6f5; }
+      .big-cta .button { margin:5px; }
+      @media(max-width:780px){.review-strip,.benefit-grid,.service-grid,.process-grid{grid-template-columns:1fr}.results-pair figure{height:360px}.reference-content .block{padding:52px 0}.big-cta h2{font-size:2rem}}
     </style>
   </head>
   <body>
@@ -1784,9 +1820,8 @@
           ></a
         >
         <nav class="links">
-          <a href="#services">Cleaning Options</a><a href="#results">Results</a
-          ><a href="#process">How it works</a><a href="#reviews">Reviews</a
-          ><a href="#faq">Questions</a>
+          <a href="#new-packages">Packages</a><a href="#new-results">Results</a
+          ><a href="#new-process">How it works</a><a href="#new-reviews">Reviews</a>
         </nav>
         <div class="header-proof"><div class="google-rating"><b>G</b><div><strong>Google Rating 5.0</strong><span>★★★★★</span></div></div><div class="header-phone"><small>Call For A Friendly Quote:</small><a href="tel:07802563213">07802 563213</a></div></div>
       </div>
@@ -1961,6 +1996,50 @@
             </form>
           </div>
         </div>
+      </section>
+      <section class="reference-content">
+        <div class="block" id="new-reviews"><div class="wrap"><div class="center"><div class="eyebrow">Genuine customer feedback</div><h2>What our customers say</h2><p>Real feedback from customers who chose The Carpet Cleaning Company.</p></div><div class="review-strip">
+          <article class="proof-card"><div class="stars">★★★★★</div><p>“Paul was punctual, polite and very knowledgeable. My carpets look amazing and smell fresh. I would definitely recommend him.”</p><strong>Jac P · Google review</strong></article>
+          <article class="proof-card"><div class="stars">★★★★★</div><p>“Superb service from start to finish. On time, polite and hardworking. Everything looks brand new!”</p><strong>Suzanne Powell · Google review</strong></article>
+          <article class="proof-card"><div class="stars">★★★★★</div><p>“A professional, trustworthy and highly effective service. Thank you very much indeed!”</p><strong>Ross Doodson · Google review</strong></article>
+        </div></div></div>
+
+        <div class="block alt"><div class="wrap"><div class="center"><div class="eyebrow">Professional local service</div><h2>Punctual, trustworthy, quality carpet cleaning</h2></div><div class="benefit-grid">
+          <article class="benefit"><b>✓</b><h3>Satisfaction promise</h3><p>We inspect the finished work with you and want you to be delighted with the result.</p></article>
+          <article class="benefit"><b>☺</b><h3>Friendly, personal service</h3><p>Deal directly with Paul for straightforward advice and respectful care in your property.</p></article>
+          <article class="benefit"><b>£</b><h3>Clear quotations</h3><p>The recommended process and price are discussed before arranging your clean.</p></article>
+        </div></div></div>
+
+        <div class="block" id="new-process"><div class="wrap"><div class="center"><div class="eyebrow">How it works</div><h2>From quotation to beautifully clean carpets</h2></div><div class="process-grid">
+          <article class="process-card"><span class="num">1</span><h3>Tell us what needs cleaning</h3><p>Choose the property type, number of rooms, stains and any additional areas.</p></article>
+          <article class="process-card"><span class="num">2</span><h3>Receive clear advice and a quote</h3><p>Paul discusses the job, confirms the suitable process and agrees the price with you.</p></article>
+          <article class="process-card"><span class="num">3</span><h3>Professional deep clean</h3><p>Inspection, targeted pre-spray, mechanical agitation and high-pressure hot-water extraction.</p></article>
+        </div></div></div>
+
+        <div class="block alt"><div class="wrap"><div class="center"><div class="eyebrow">Our cleaning services</div><h2>Professional deep-cleaning options</h2></div><div class="service-grid">
+          <article class="service-tile"><h3>Carpet cleaning</h3><p>Residential and commercial carpet cleaning using professional agitation and extraction equipment.</p></article>
+          <article class="service-tile"><h3>Upholstery cleaning</h3><p>Careful cleaning for sofas and chairs, chosen for the specific fabric and condition.</p></article>
+          <article class="service-tile"><h3>Stains and odours</h3><p>Targeted treatment with honest advice about what improvement is realistically achievable.</p></article>
+        </div></div></div>
+
+        <div class="block" id="new-packages"><div class="wrap"><div class="center"><div class="eyebrow">Cleaning packages</div><h2>Bronze, Silver and Gold options</h2><p>Choose the level of care that suits your carpet. Paul will confirm suitability and quote before booking.</p></div><div class="packages"><table class="package-table">
+          <thead><tr><th>What is included</th><th>Bronze<br><small>Essential clean</small></th><th>Silver<br><small>Deep clean</small></th><th>Gold<br><small>Complete care</small></th></tr></thead>
+          <tbody>
+            <tr><td>Inspection and walkthrough</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>Professional pre-vacuum where required</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>Targeted pre-spray</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>Mechanical agitation</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>Hot-water extraction</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>Additional targeted stain treatment</td><td>—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>Odour treatment where suitable</td><td>—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>Enhanced intensive treatment</td><td>—</td><td>—</td><td class="yes">✓</td></tr>
+            <tr><td>Optional carpet protector</td><td>—</td><td class="optional">Available</td><td class="optional">Available</td></tr>
+          </tbody>
+        </table></div><p class="package-note">No invented fixed prices: every quotation reflects room sizes, fibre, condition and treatment required.</p></div></div>
+
+        <div class="block alt" id="new-results"><div class="wrap"><div class="center"><div class="eyebrow">Genuine customer work</div><h2>Our customer before and after</h2><p>Your own genuine photographs—never stock comparisons or artificially enhanced results.</p></div><div class="results-pair"><figure><img src="../assets/img/carpet-before-genuine.png" alt="Carpet before professional cleaning"><b>Before</b></figure><figure><img src="../assets/img/carpet-after-genuine.png" alt="Carpet after professional cleaning"><b>After</b></figure></div></div></div>
+
+        <div class="big-cta"><h2>Get your free Shrewsbury cleaning quote</h2><p>Tell us what needs cleaning and receive friendly, no-obligation advice directly from Paul.</p><a class="button" href="#quote">Get Your Carpet Cleaning Quote</a><a class="button alt" style="color:#fff;border-color:#fff" href="tel:07802563213">Call 07802 563213</a></div>
       </section>
       <section class="section white" id="services">
         <div class="wrap">
