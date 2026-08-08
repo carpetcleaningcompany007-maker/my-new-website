@@ -1656,6 +1656,54 @@
           grid-column: 1;
         }
       }
+
+      /* Clean, direct blue-and-white conversion design inspired by the
+         reference page, using The Carpet Cleaning Company's own identity. */
+      :root {
+        --ink: #17324a;
+        --muted: #607789;
+        --cream: #ffffff;
+        --blush: #eaf6fd;
+        --rose: #ef3f52;
+        --sage: #092c4c;
+        --line: #d9e6ef;
+        --shadow: 0 20px 50px rgba(32, 79, 110, 0.14);
+      }
+      body { background: #fff; font-family: Arial, Helvetica, sans-serif; }
+      h1, h2, h3 { font-family: Arial, Helvetica, sans-serif; }
+      .topnote { background: #0879c9; padding: 9px 16px; font-weight: 700; }
+      header { background: #fff; border-bottom: 1px solid var(--line); }
+      .nav { padding: 13px 0; }
+      .brand img { border-radius: 50%; }
+      .brand small { color: #607789; }
+      .button { border-radius: 7px; background: #ef3f52; box-shadow: 0 9px 20px rgba(239,63,82,.22); }
+      .button.alt { border-radius: 7px; border-color: #9bb1c1; }
+      .button.whatsapp { background: #198754; }
+      .hero { background: linear-gradient(135deg,#fff 0%,#f2f9fd 100%); }
+      .hero h1 { color: #092c4c; font-weight: 900; line-height: 1.03; }
+      .hero h1 em { color: #0879c9; font-style: normal; }
+      .eyebrow { color: #0879c9; }
+      .tick:before { background: #dff2fd; color: #0879c9; }
+      .hero-proof, .hero-photo .quote { border-radius: 14px; }
+      .hero-proof figure { border-radius: 8px; }
+      .hero-photo .quote { border-top-color: #ef3f52; }
+      .hero-photo .quote-head h2 { color: #092c4c; font-weight: 900; }
+      .hero-photo .quote-head span { color: #0879c9; }
+      .hero-photo input, .hero-photo select { border-radius: 6px; border-color: #b8cad7; min-height: 50px; }
+      .instant-trust span { background: #eaf6fd; }
+      .section.white, .section { background: #fff; }
+      .section:nth-of-type(even) { background: #f1f8fc; }
+      .card, .review-card, .step, details { border-radius: 12px; border-color: #d9e6ef; box-shadow: 0 12px 28px rgba(32,79,110,.08); }
+      .head h2, .section h2 { color: #092c4c; font-weight: 900; }
+      .final { background: #092c4c !important; }
+      #reviews { background: #eaf6fd !important; }
+      .stars { color: #ffb000; }
+      .mobile-contact a { border-radius: 8px; }
+      @media (max-width: 700px) {
+        .links { display: none; }
+        .nav > .button { display: none; }
+        .topnote { font-size: .8rem; }
+      }
     </style>
   </head>
   <body>
@@ -2522,6 +2570,33 @@ Hi Paul, I’d like some help with carpet cleaning.</textarea
       </div>
     </aside>
     <script>
+      (function () {
+        const form = document.getElementById("warmQuote");
+        if (!form) return;
+        form.method = "get";
+        form.action = "landing-shrewsbury-quote.html";
+        const current = new URLSearchParams(location.search);
+        const trackingKeys = ["gclid","gbraid","wbraid","utm_source","utm_medium","utm_campaign","utm_term","utm_content"];
+        form.innerHTML = `
+          <input type="hidden" name="landing_area" value="Shrewsbury">
+          <div class="fields">
+            <div class="field wide"><label>What type of property is this for? *</label><select name="building_type" required><option value="">Please choose</option><option>Private home or residence</option><option>Commercial premises</option><option>Other</option></select></div>
+            <div class="field"><label>How many rooms need cleaning? *</label><select name="rooms" required><option value="">Please choose</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6–8</option><option>9 or more</option><option>Other</option></select></div>
+            <div class="field"><label>What needs treating? *</label><select name="stains" required><option value="">Please choose</option><option>No particular stains</option><option>Dirt / traffic marks</option><option>Food or drink</option><option>Pet stains or odours</option><option>Oil or grease</option><option>Paint or ink</option><option>A combination</option><option>Other / unsure</option></select></div>
+            <div class="field wide"><label>Anything else to include?</label><select name="extras"><option value="None selected">Nothing else</option><option>Stairs or landing</option><option>Hallway</option><option>Upholstery</option><option>Rugs</option><option>Mattress</option><option>Several of these</option></select></div>
+            <div class="field wide"><button class="button" type="submit" style="width:100%">Get My Free Cleaning Quote →</button></div>
+          </div>
+          <p class="privacy">Step 1 of 2 · No contact details needed until the next page.</p>
+        `;
+        trackingKeys.forEach((key) => {
+          if (!current.get(key)) return;
+          const input = document.createElement("input");
+          input.type = "hidden";
+          input.name = key;
+          input.value = current.get(key);
+          form.appendChild(input);
+        });
+      })();
       (function () {
         const quoteBand = document.querySelector(".quote-band");
         const quoteCard = quoteBand && quoteBand.querySelector(".quote");
