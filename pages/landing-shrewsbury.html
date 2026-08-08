@@ -1502,6 +1502,160 @@
           margin-bottom: 8px;
         }
       }
+
+      /* Conversion-first Shrewsbury hero: local offer and genuine proof beside
+         the existing working CRM quote form. */
+      .hero {
+        padding: 42px 0 72px;
+      }
+      .hero-grid {
+        grid-template-columns: minmax(0, 1.04fr) minmax(390px, 0.96fr);
+        gap: 42px;
+        align-items: start;
+      }
+      .hero h1 {
+        font-size: clamp(2.85rem, 5.2vw, 4.9rem);
+      }
+      .hero-proof {
+        margin: 26px 0 22px;
+        padding: 12px;
+        border-radius: 24px;
+        background: #fff;
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+      }
+      .hero-proof-images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+      .hero-proof figure {
+        position: relative;
+        margin: 0;
+        overflow: hidden;
+        border-radius: 17px;
+        aspect-ratio: 4 / 3;
+      }
+      .hero-proof img {
+        height: 100%;
+        object-fit: cover;
+      }
+      .hero-proof b {
+        position: absolute;
+        left: 12px;
+        top: 12px;
+        padding: 7px 12px;
+        border-radius: 999px;
+        background: rgba(41, 52, 48, 0.9);
+        color: #fff;
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
+      }
+      .hero-proof figure:last-child b {
+        background: rgba(170, 102, 104, 0.94);
+      }
+      .hero-proof-caption {
+        display: flex;
+        justify-content: space-between;
+        gap: 14px;
+        padding: 12px 5px 3px;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+      .hero-proof-caption strong {
+        color: var(--ink);
+      }
+      .hero-photo {
+        position: sticky;
+        top: 18px;
+      }
+      .hero-photo > img,
+      .hero-photo > .float {
+        display: none;
+      }
+      .hero-photo .quote {
+        padding: 28px;
+        border-radius: 24px;
+        border-top: 6px solid var(--rose);
+        box-shadow: 0 24px 65px rgba(53, 62, 57, 0.16);
+      }
+      .hero-photo .quote-head {
+        display: block;
+        margin-bottom: 20px;
+      }
+      .hero-photo .quote-head h2 {
+        margin: 4px 0 3px;
+        font-size: 2rem;
+      }
+      .hero-photo .quote-head span {
+        display: inline-flex;
+        margin-top: 5px;
+        color: var(--sage);
+        font-weight: 700;
+      }
+      .hero-photo .fields {
+        grid-template-columns: 1fr 1fr;
+        gap: 13px;
+      }
+      .hero-photo .field.wide,
+      .hero-photo .field.full {
+        grid-column: 1 / -1;
+      }
+      .quote-band.is-relocated {
+        display: none;
+      }
+      .instant-trust {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        margin-top: 15px;
+      }
+      .instant-trust span {
+        padding: 10px 7px;
+        border-radius: 12px;
+        background: #f7eee9;
+        color: var(--ink);
+        font-size: 0.76rem;
+        font-weight: 700;
+        text-align: center;
+      }
+      @media (max-width: 900px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero-photo {
+          position: static;
+        }
+      }
+      @media (max-width: 600px) {
+        .hero {
+          padding-top: 24px;
+        }
+        .hero h1 {
+          font-size: clamp(2.5rem, 13vw, 3.6rem);
+        }
+        .hero-proof {
+          margin-top: 20px;
+        }
+        .hero-proof-caption {
+          display: block;
+        }
+        .hero-proof-caption span {
+          display: block;
+          margin-top: 4px;
+        }
+        .hero-photo .quote {
+          padding: 22px 18px;
+        }
+        .hero-photo .fields {
+          grid-template-columns: 1fr;
+        }
+        .hero-photo .field,
+        .hero-photo .field.wide,
+        .hero-photo .field.full {
+          grid-column: 1;
+        }
+      }
     </style>
   </head>
   <body>
@@ -1532,15 +1686,20 @@
       <section class="hero">
         <div class="wrap hero-grid">
           <div>
-            <div class="eyebrow">
-              Beautiful Shrewsbury · beautifully cared for
-            </div>
-            <h1>Professional carpet &amp; upholstery cleaning.</h1>
+            <div class="eyebrow">Professional local cleaning · Shrewsbury</div>
+            <h1>Deep carpet &amp; upholstery cleaning in <em>Shrewsbury.</em></h1>
             <p class="lead">
-              Professional residential and commercial carpet and upholstery
-              cleaning across Shrewsbury. Clear advice, respectful service and a
-              deep clean that leaves every space feeling genuinely refreshed.
+              A thorough professional clean for homes and businesses—inspection,
+              targeted pre-spray, mechanical agitation and high-pressure hot-water
+              extraction for visibly cleaner, fresher results.
             </p>
+            <div class="hero-proof" aria-label="Genuine carpet cleaning before and after result">
+              <div class="hero-proof-images">
+                <figure><img src="../assets/img/carpet-before-genuine.png" alt="Heavily soiled carpet before professional cleaning" /><b>BEFORE</b></figure>
+                <figure><img src="../assets/img/carpet-after-genuine.png" alt="The same carpet after professional deep cleaning" /><b>AFTER</b></figure>
+              </div>
+              <div class="hero-proof-caption"><strong>Genuine customer result</strong><span>Real work · no stock comparison · results vary</span></div>
+            </div>
             <div class="ticks">
               <div class="tick">Residential &amp; commercial work</div>
               <div class="tick">Family and pet considerate</div>
@@ -1580,10 +1739,10 @@
           <div class="quote">
             <div class="quote-head">
               <div>
-                <div class="eyebrow">No pressure, no obligation</div>
-                <h2>Tell us what needs a little love</h2>
+                <div class="eyebrow">Free, no-obligation quotation</div>
+                <h2>Get your Shrewsbury cleaning quote</h2>
               </div>
-              <span>Usually replied to promptly</span>
+              <span>Quick details · friendly reply from Paul</span>
             </div>
             <form
               action="https://carpet-cleaning-crm.onrender.com/api/website-form"
@@ -1685,6 +1844,9 @@
                 Your details are used only to answer your enquiry. We will
                 contact you from 07802 563213.
               </p>
+              <div class="instant-trust" aria-label="Quote reassurance">
+                <span>✓ No pressure</span><span>✓ Upfront advice</span><span>✓ Local service</span>
+              </div>
               <div class="status" role="status" aria-live="polite"></div>
             </form>
           </div>
@@ -2360,6 +2522,15 @@ Hi Paul, I’d like some help with carpet cleaning.</textarea
       </div>
     </aside>
     <script>
+      (function () {
+        const quoteBand = document.querySelector(".quote-band");
+        const quoteCard = quoteBand && quoteBand.querySelector(".quote");
+        const heroPanel = document.querySelector(".hero-photo");
+        if (quoteCard && heroPanel) {
+          heroPanel.appendChild(quoteCard);
+          quoteBand.classList.add("is-relocated");
+        }
+      })();
       sessionStorage.removeItem("warmHelpAnswered");
       document.getElementById("simpleWelcome").querySelector("button").onclick =
         () => (document.getElementById("simpleWelcome").hidden = true);
