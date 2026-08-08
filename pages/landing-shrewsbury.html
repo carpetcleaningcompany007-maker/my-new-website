@@ -1699,6 +1699,7 @@
       #reviews { background: #eaf6fd !important; }
       .stars { color: #ffb000; }
       .mobile-contact a { border-radius: 8px; }
+      .help-prompt, .quick-chat, #simpleWelcome { display: none !important; }
       @media (max-width: 700px) {
         .links { display: none; }
         .nav > .button { display: none; }
@@ -2575,6 +2576,7 @@ Hi Paul, I’d like some help with carpet cleaning.</textarea
         if (!form) return;
         form.method = "get";
         form.action = "landing-shrewsbury-quote.html";
+        form.id = "quoteStepOne";
         const current = new URLSearchParams(location.search);
         const trackingKeys = ["gclid","gbraid","wbraid","utm_source","utm_medium","utm_campaign","utm_term","utm_content"];
         form.innerHTML = `
@@ -2595,6 +2597,9 @@ Hi Paul, I’d like some help with carpet cleaning.</textarea
           input.name = key;
           input.value = current.get(key);
           form.appendChild(input);
+        });
+        form.addEventListener("submit", () => {
+          if (typeof gtag === "function") gtag("event", "quote_step_one_complete", { landing_area: "Shrewsbury" });
         });
       })();
       (function () {
@@ -2958,8 +2963,7 @@ Hi Paul, I’d like some help with carpet cleaning.</textarea
           a.addEventListener("click", () => reportContactClick("message")),
         );
       document
-        .getElementById("warmQuote")
-        .addEventListener("submit", async function (e) {
+        .getElementById("warmQuote")?.addEventListener("submit", async function (e) {
           e.preventDefault();
           const f = this,
             b = f.querySelector("button[type=submit]"),
