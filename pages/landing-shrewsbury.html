@@ -1705,6 +1705,61 @@
         .nav > .button { display: none; }
         .topnote { font-size: .8rem; }
       }
+
+      /* Reference-matched first screen */
+      .topnote { display: none; }
+      header { position: relative; z-index: 5; }
+      .nav { min-height: 92px; }
+      .brand img { width: 76px; height: 66px; }
+      .brand span { display: none; }
+      .links { margin-left: auto; }
+      .links a { padding: 10px 8px; font-size: .95rem; }
+      .links a:first-child { border-top: 4px solid #4fb66d; }
+      .header-proof { display: flex; align-items: center; gap: 18px; margin-left: 14px; }
+      .google-rating { display: flex; align-items: center; gap: 7px; font-size: .72rem; line-height: 1.15; }
+      .google-rating b { color: #4285f4; font-size: 1.75rem; }
+      .google-rating strong { display: block; color: #092c4c; }
+      .google-rating span { color: #ff9f00; letter-spacing: 1px; }
+      .header-phone { text-align: center; line-height: 1.05; }
+      .header-phone small { display: block; color: #17324a; font-size: .82rem; }
+      .header-phone a { display: block; margin-top: 5px; color: #092c4c; font-size: 1.65rem; font-weight: 900; }
+      .nav > .button { display: none; }
+      .hero { position: relative; overflow: hidden; padding: 32px 0 64px; background: #d9ecf8; }
+      .hero:before { content:""; position:absolute; inset:0; background:linear-gradient(rgba(219,238,249,.86),rgba(219,238,249,.9)),url("../assets/img/hero-carpet-cleaning.webp") center/cover; filter: blur(1px); }
+      .hero-grid { position:relative; display:grid; grid-template-columns:minmax(0,1.04fr) minmax(410px,.84fr); grid-template-rows:auto auto auto; gap:0 20px; align-items:start; }
+      .hero-grid > div:first-child { display:contents; }
+      .hero .eyebrow { display:none; }
+      .hero h1 { grid-column:1/-1; grid-row:1; margin:0 0 10px; text-align:center; font-size:clamp(2.3rem,4vw,3.45rem); line-height:1.05; color:#222; }
+      .hero h1 em { color:inherit; }
+      .hero .lead { grid-column:1/-1; grid-row:2; max-width:900px; margin:0 auto 28px; text-align:center; color:#334d60; font-size:1.28rem; line-height:1.45; }
+      .hero-proof { grid-column:1; grid-row:3; margin:0; padding:0; border:0; border-radius:0; box-shadow:none; background:transparent; position:relative; }
+      .hero-proof-images { gap:4px; height:440px; }
+      .hero-proof figure { border-radius:0; aspect-ratio:auto; }
+      .hero-proof img { object-position:center; }
+      .hero-proof b { top:auto; bottom:14px; left:16px; background:#26394a; border:3px solid #fff; font-size:1rem; }
+      .hero-proof figure:last-child b { background:#26394a; }
+      .hero-proof-caption { background:#fff; padding:13px 15px; color:#17324a; }
+      .guarantee-badge { position:absolute; z-index:3; right:calc(50% - 74px); top:-66px; width:148px; height:148px; display:grid; place-items:center; padding:18px; border:4px solid #2ba9df; border-radius:50%; background:#fff; color:#2ba9df; text-align:center; font-size:1rem; font-weight:900; line-height:1.2; box-shadow:0 8px 20px rgba(0,0,0,.12); }
+      .hero .ticks, .hero .contact-actions { display:none; }
+      .hero-photo { grid-column:2; grid-row:3; position:static; }
+      .hero-photo .quote { padding:0 27px 24px; border:0; border-radius:0; background:#f6f6f6; box-shadow:0 10px 30px rgba(0,0,0,.15); }
+      .hero-photo .quote-head { margin:0 -27px 22px; padding:18px 24px 17px; background:#25336f; color:#fff; text-align:center; }
+      .hero-photo .quote-head .eyebrow { display:none; }
+      .hero-photo .quote-head h2 { color:#fff; margin:0 0 4px; font-size:1.75rem; }
+      .hero-photo .quote-head span { display:block; color:#fff; font-size:.98rem; font-weight:500; }
+      .hero-photo .fields { display:grid; grid-template-columns:1fr; gap:12px; }
+      .hero-photo .field, .hero-photo .field.wide { grid-column:1; }
+      .hero-photo .field label { color:#172f43; font-size:.9rem; }
+      .hero-photo .button { margin-top:4px; min-height:56px; background:#ef3f52; font-size:1.05rem; }
+      .hero-photo .privacy { margin:10px 0 0; text-align:center; }
+      .instant-trust { grid-template-columns:repeat(3,1fr); }
+      .instant-trust span { background:#fff; border:1px solid #d8e2e8; }
+      @media(max-width:900px){
+        .header-proof{display:none}.hero-grid{grid-template-columns:1fr;grid-template-rows:auto auto auto auto}.hero h1{grid-row:1}.hero .lead{grid-row:2}.hero-proof{grid-column:1;grid-row:3;margin-bottom:20px}.hero-photo{grid-column:1;grid-row:4}.guarantee-badge{top:-45px;width:112px;height:112px;right:14px;font-size:.8rem}.hero-proof-images{height:390px}
+      }
+      @media(max-width:600px){
+        .nav{min-height:70px}.brand img{width:60px;height:54px}.hero{padding-top:24px}.hero h1{font-size:2.2rem}.hero .lead{font-size:1rem;margin-bottom:20px}.hero-proof-images{height:300px}.hero-proof b{font-size:.78rem}.hero-photo .quote{padding:0 18px 20px}.hero-photo .quote-head{margin:0 -18px 18px}.instant-trust{grid-template-columns:1fr}.header-phone{display:none}
+      }
     </style>
   </head>
   <body>
@@ -1728,7 +1783,7 @@
           ><a href="#process">How it works</a><a href="#reviews">Reviews</a
           ><a href="#faq">Questions</a>
         </nav>
-        <a class="button" href="#quote">Get a free quote</a>
+        <div class="header-proof"><div class="google-rating"><b>G</b><div><strong>Google Rating 5.0</strong><span>★★★★★</span></div></div><div class="header-phone"><small>Call For A Friendly Quote:</small><a href="tel:07802563213">07802 563213</a></div></div>
       </div>
     </header>
     <main id="top">
@@ -1736,13 +1791,13 @@
         <div class="wrap hero-grid">
           <div>
             <div class="eyebrow">Professional local cleaning · Shrewsbury</div>
-            <h1>Deep carpet &amp; upholstery cleaning in <em>Shrewsbury.</em></h1>
+            <h1>Professional Carpet &amp; Upholstery Cleaning Shrewsbury</h1>
             <p class="lead">
-              A thorough professional clean for homes and businesses—inspection,
-              targeted pre-spray, mechanical agitation and high-pressure hot-water
-              extraction for visibly cleaner, fresher results.
+              Professional deep cleaning that removes embedded soil, tackles stains
+              and odours, and leaves carpets and upholstery looking beautifully refreshed.
             </p>
             <div class="hero-proof" aria-label="Genuine carpet cleaning before and after result">
+              <div class="guarantee-badge">Your satisfaction matters to us</div>
               <div class="hero-proof-images">
                 <figure><img src="../assets/img/carpet-before-genuine.png" alt="Heavily soiled carpet before professional cleaning" /><b>BEFORE</b></figure>
                 <figure><img src="../assets/img/carpet-after-genuine.png" alt="The same carpet after professional deep cleaning" /><b>AFTER</b></figure>
