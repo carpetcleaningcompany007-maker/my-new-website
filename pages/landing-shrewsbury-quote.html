@@ -40,7 +40,7 @@
   <a class="mobile-call" href="tel:07802563213">☎ Call Paul</a>
   <script>
     const params=new URLSearchParams(location.search);const labels={building_type:'Building',rooms:'Rooms',stains:'Stains',extras:'Extras'};const summary=document.getElementById('summaryList');const carry=document.getElementById('carryFields');
-    Object.entries(labels).forEach(([key,label])=>{const value=params.get(key)||'Not specified';const row=document.createElement('div');row.className='summary-row';row.innerHTML='<small>'+label+'</small><strong></strong>';row.querySelector('strong').textContent=value;summary.appendChild(row);const input=document.createElement('input');input.type='hidden';input.name=key;input.value=value;carry.appendChild(input)});
+    Object.entries(labels).forEach(([key,label])=>{const values=params.getAll(key).filter(Boolean);const value=values.length?values.join(', '):'Not specified';const row=document.createElement('div');row.className='summary-row';row.innerHTML='<small>'+label+'</small><strong></strong>';row.querySelector('strong').textContent=value;summary.appendChild(row);const input=document.createElement('input');input.type='hidden';input.name=key;input.value=value;carry.appendChild(input)});
     ['gclid','gbraid','wbraid','utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(key=>{if(!params.get(key))return;const input=document.createElement('input');input.type='hidden';input.name=key;input.value=params.get(key);carry.appendChild(input)});
     document.getElementById('backLink').href='landing-shrewsbury.html?'+params.toString()+'#quote';
   </script>

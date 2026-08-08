@@ -1725,7 +1725,7 @@
       .header-phone a { display: block; margin-top: 5px; color: #092c4c; font-size: 1.65rem; font-weight: 900; }
       .nav > .button { display: none; }
       .hero { position: relative; overflow: hidden; padding: 32px 0 64px; background: #d9ecf8; }
-      .hero:before { content:""; position:absolute; inset:0; background:linear-gradient(rgba(219,238,249,.86),rgba(219,238,249,.9)),url("../assets/img/hero-carpet-cleaning.webp") center/cover; filter: blur(1px); }
+      .hero:before { content:""; position:absolute; inset:0; background:linear-gradient(rgba(219,238,249,.84),rgba(219,238,249,.9)),url("https://s0.geograph.org.uk/geophotos/08/30/20/8302004_b40df6b5.jpg") center/cover; filter: blur(1px); transform:scale(1.01); }
       .hero-grid { position:relative; display:grid; grid-template-columns:minmax(0,1.04fr) minmax(410px,.84fr); grid-template-rows:auto auto auto; gap:0 20px; align-items:start; }
       .hero-grid > div:first-child { display:contents; }
       .hero .eyebrow { display:none; }
@@ -1750,7 +1750,12 @@
       .hero-photo .fields { display:grid; grid-template-columns:1fr; gap:12px; }
       .hero-photo .field, .hero-photo .field.wide { grid-column:1; }
       .hero-photo .field label { color:#172f43; font-size:.9rem; }
+      .extras-label { display:block; margin:2px 0 6px; color:#172f43; font-size:.9rem; font-weight:800; }
+      .extras-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+      .extra-check { display:flex; align-items:center; gap:7px; padding:9px 8px; background:#fff; border:1px solid #c9d7e0; font-size:.8rem; font-weight:700; }
+      .extra-check input { width:18px; min-height:18px; margin:0; }
       .hero-photo .button { margin-top:4px; min-height:56px; background:#ef3f52; font-size:1.05rem; }
+      .photo-credit { position:absolute; right:10px; bottom:5px; z-index:2; color:#49677a; font-size:.62rem; }
       .hero-photo .privacy { margin:10px 0 0; text-align:center; }
       .instant-trust { grid-template-columns:repeat(3,1fr); }
       .instant-trust span { background:#fff; border:1px solid #d8e2e8; }
@@ -1758,7 +1763,7 @@
         .header-proof{display:none}.hero-grid{grid-template-columns:1fr;grid-template-rows:auto auto auto auto}.hero h1{grid-row:1}.hero .lead{grid-row:2}.hero-proof{grid-column:1;grid-row:3;margin-bottom:20px}.hero-photo{grid-column:1;grid-row:4}.guarantee-badge{top:-45px;width:112px;height:112px;right:14px;font-size:.8rem}.hero-proof-images{height:390px}
       }
       @media(max-width:600px){
-        .nav{min-height:70px}.brand img{width:60px;height:54px}.hero{padding-top:24px}.hero h1{font-size:2.2rem}.hero .lead{font-size:1rem;margin-bottom:20px}.hero-proof-images{height:300px}.hero-proof b{font-size:.78rem}.hero-photo .quote{padding:0 18px 20px}.hero-photo .quote-head{margin:0 -18px 18px}.instant-trust{grid-template-columns:1fr}.header-phone{display:none}
+        .nav{min-height:70px}.brand img{width:60px;height:54px}.hero{padding-top:24px}.hero h1{font-size:2.2rem}.hero .lead{font-size:1rem;margin-bottom:20px}.hero-proof-images{height:300px}.hero-proof b{font-size:.78rem}.hero-photo .quote{padding:0 18px 20px}.hero-photo .quote-head{margin:0 -18px 18px}.instant-trust{grid-template-columns:1fr}.header-phone{display:none}.extras-grid{grid-template-columns:1fr 1fr}
       }
     </style>
   </head>
@@ -1779,7 +1784,7 @@
           ></a
         >
         <nav class="links">
-          <a href="#services">Services</a><a href="#results">Results</a
+          <a href="#services">Cleaning Options</a><a href="#results">Results</a
           ><a href="#process">How it works</a><a href="#reviews">Reviews</a
           ><a href="#faq">Questions</a>
         </nav>
@@ -1791,13 +1796,13 @@
         <div class="wrap hero-grid">
           <div>
             <div class="eyebrow">Professional local cleaning · Shrewsbury</div>
-            <h1>Professional Carpet &amp; Upholstery Cleaning Shrewsbury</h1>
+            <h1>Professional &amp; Affordable Carpet Cleaning Shrewsbury</h1>
             <p class="lead">
-              Professional deep cleaning that removes embedded soil, tackles stains
-              and odours, and leaves carpets and upholstery looking beautifully refreshed.
+              Professional carpet cleaning that safely and effectively tackles stains and
+              odours, leaving your carpets clean, fresh and beautifully revived.
             </p>
             <div class="hero-proof" aria-label="Genuine carpet cleaning before and after result">
-              <div class="guarantee-badge">Your satisfaction matters to us</div>
+              <div class="guarantee-badge">100% satisfaction promise</div>
               <div class="hero-proof-images">
                 <figure><img src="../assets/img/carpet-before-genuine.png" alt="Heavily soiled carpet before professional cleaning" /><b>BEFORE</b></figure>
                 <figure><img src="../assets/img/carpet-after-genuine.png" alt="The same carpet after professional deep cleaning" /><b>AFTER</b></figure>
@@ -1837,6 +1842,7 @@
             </div>
           </div>
         </div>
+        <a class="photo-credit" href="https://www.geograph.org.uk/photo/8302004" target="_blank" rel="noopener">Shrewsbury background: Peter Evans / CC BY-SA 2.0</a>
       </section>
       <section class="quote-band" id="quote">
         <div class="wrap">
@@ -1844,9 +1850,9 @@
             <div class="quote-head">
               <div>
                 <div class="eyebrow">Free, no-obligation quotation</div>
-                <h2>Get your Shrewsbury cleaning quote</h2>
+                <h2>Carpet Cleaning Quote</h2>
               </div>
-              <span>Quick details · friendly reply from Paul</span>
+              <span>Tell us what you need cleaned and we’ll prepare your free quote</span>
             </div>
             <form
               action="https://carpet-cleaning-crm.onrender.com/api/website-form"
@@ -2640,8 +2646,8 @@ Hi Paul, I’d like some help with carpet cleaning.</textarea
             <div class="field wide"><label>What type of property is this for? *</label><select name="building_type" required><option value="">Please choose</option><option>Private home or residence</option><option>Commercial premises</option><option>Other</option></select></div>
             <div class="field"><label>How many rooms need cleaning? *</label><select name="rooms" required><option value="">Please choose</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6–8</option><option>9 or more</option><option>Other</option></select></div>
             <div class="field"><label>What needs treating? *</label><select name="stains" required><option value="">Please choose</option><option>No particular stains</option><option>Dirt / traffic marks</option><option>Food or drink</option><option>Pet stains or odours</option><option>Oil or grease</option><option>Paint or ink</option><option>A combination</option><option>Other / unsure</option></select></div>
-            <div class="field wide"><label>Anything else to include?</label><select name="extras"><option value="None selected">Nothing else</option><option>Stairs or landing</option><option>Hallway</option><option>Upholstery</option><option>Rugs</option><option>Mattress</option><option>Several of these</option></select></div>
-            <div class="field wide"><button class="button" type="submit" style="width:100%">Get My Free Cleaning Quote →</button></div>
+            <div class="field wide"><span class="extras-label">Extras required?</span><div class="extras-grid"><label class="extra-check"><input type="checkbox" name="extras" value="Stairs">Stairs</label><label class="extra-check"><input type="checkbox" name="extras" value="Hallway">Hallway</label><label class="extra-check"><input type="checkbox" name="extras" value="Upholstery">Upholstery</label><label class="extra-check"><input type="checkbox" name="extras" value="Rugs">Rugs</label><label class="extra-check"><input type="checkbox" name="extras" value="Mattress">Mattress</label><label class="extra-check"><input type="checkbox" name="extras" value="Landing">Landing</label></div></div>
+            <div class="field wide"><button class="button" type="submit" style="width:100%">Get Your Carpet Cleaning Quote →</button></div>
           </div>
           <p class="privacy">Step 1 of 2 · No contact details needed until the next page.</p>
         `;
