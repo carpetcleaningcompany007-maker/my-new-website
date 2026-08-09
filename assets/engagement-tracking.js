@@ -1,7 +1,9 @@
 (function () {
   "use strict";
 
-  const form = document.getElementById("warmQuote");
+  const form =
+    document.getElementById("warmQuote") ||
+    document.getElementById("quoteStepOne");
   const field = (name) => form && form.querySelector(`[name="${name}"]`);
   const area = field("landing_area") ? field("landing_area").value : "";
   const page = field("landing_page")
