@@ -1981,6 +1981,7 @@
       .hero-proof-caption { margin: 26px 24px 0; padding: 20px 24px; border-radius: 3px; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,.1); }
       .hero-review p { font-size: .9rem; }
       .guarantee-badge { display:none !important; }
+      .hero-guarantee-image { position:absolute; z-index:4; top:18px; left:50%; width:128px; height:auto !important; max-height:112px; object-fit:contain !important; mix-blend-mode:multiply; transform:translateX(-50%); filter:drop-shadow(0 7px 10px rgba(0,0,0,.22)); }
 
       .hero-photo .quote { width:415px; max-width:100%; padding: 0 29.5px 0; border: 0; border-radius: 0; background: #f5f5f5; box-shadow: 0 5px 15px rgba(0,0,0,.14); }
       .hero-photo .quote-head { box-sizing:border-box; display:flex; height:130px; min-height:130px; margin:0 -29.5px 27px; padding:20px 24px; flex-direction:column; align-items:center; justify-content:center; background:#212d66; }
@@ -2042,6 +2043,7 @@
         .hero .lead { font-size: 1rem; margin-bottom: 64px; }
         .hero-proof-images { height: 300px; }
         .hero-proof-caption { padding: 17px 18px; }
+        .hero-guarantee-image { top:14px; width:100px; }
         .hero-photo .quote { width:100%; padding:0 18px; }
         .hero-photo .quote-head { min-height:116px; margin:0 -18px 22px; }
         .reference-proof { margin:13px -18px 0; }
@@ -2195,7 +2197,8 @@
               and odours—leaving your carpets smelling fresh and looking beautifully revived.
             </p>
             <div class="hero-proof" aria-label="Genuine carpet cleaning before and after result">
-              <div class="hero-proof-images">
+            <img class="hero-guarantee-image" src="../assets/satisfaction-guarantee.png" alt="100% customer satisfaction guaranteed" />
+            <div class="hero-proof-images">
                 <figure><img src="../assets/img/carpet-before-genuine.png" alt="Heavily soiled carpet before professional cleaning" /><b>BEFORE</b></figure>
                 <figure><img src="../assets/img/carpet-after-genuine.png" alt="The same carpet after professional deep cleaning" /><b>AFTER</b></figure>
               </div>
