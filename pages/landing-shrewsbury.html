@@ -2154,9 +2154,14 @@
       #new-reviews .proof-card p { min-height: 150px; margin: 0; color: #222; font-size: .92rem; line-height: 1.75; }
       #new-reviews .review-foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 18px; padding-top: 18px; border-top: 1px solid #ddd; }
       #new-reviews .review-foot strong { color: #222; font-size: .82rem; }
-      #new-reviews .review-foot strong:first-letter { display: inline-grid; place-items: center; }
+      #new-reviews .review-person { display:flex; align-items:center; gap:10px; color:#111; font-size:.82rem; font-weight:700; }
+      #new-reviews .review-avatar { display:grid; place-items:center; width:40px; height:40px; border-radius:50%; color:#fff; font-size:1.15rem; font-weight:500; }
+      #new-reviews .review-avatar.purple { background:#8255cf; }
+      #new-reviews .review-avatar.teal { background:#0d9ca9; }
+      #new-reviews .review-avatar.orange { background:#f05228; }
       .google-review-summary { display:flex; flex-direction:column; align-items:center; gap:2px; padding:24px 0 0; }
-      .google-review-summary strong { color:#4285f4; font-size:2rem; letter-spacing:-.06em; }
+      .google-review-summary strong { font-size:2.55rem; line-height:1; letter-spacing:-.08em; font-weight:600; }
+      .google-review-summary strong .g-blue { color:#4285f4; }.google-review-summary strong .g-red { color:#ea4335; }.google-review-summary strong .g-yellow { color:#fbbc05; }.google-review-summary strong .g-green { color:#34a853; }
       .google-review-summary span { color:#f2a900; font-weight:700; }
       .google-review-summary small { color:#555; }
       .final-reference-cta { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:24px 38px; min-height:245px; padding:48px 30px; background:linear-gradient(rgba(39,53,115,.93),rgba(39,53,115,.93)),url("../assets/img/hero-carpet-cleaning.webp") center/cover; color:#fff; text-align:center; }
@@ -2393,10 +2398,10 @@
       <section class="reference-content">
         <div class="trust-ribbon" aria-label="Service promises"><span><b>✓</b>Always punctual</span><span><b>✓</b>Clear quotations</span><span><b>✓</b>Friendly local service</span><span><b>✓</b>Satisfaction promise</span></div>
         <div class="block" id="new-reviews"><div class="wrap"><div class="center"><h2>What Our Valued Customers Say About Us</h2></div><div class="review-strip">
-          <article class="proof-card"><h3>“Carpets Look Amazing”</h3><p>“Paul was punctual, polite and very knowledgeable. My carpets look amazing and smell fresh. I would definitely recommend him.”</p><div class="review-foot"><strong>J · Jac P</strong><span class="stars">★★★★★</span></div></article>
-          <article class="proof-card"><h3>“Everything Looks Brand New”</h3><p>“Superb service from start to finish. On time, polite and hardworking. Everything looks brand new!”</p><div class="review-foot"><strong>S · Suzanne Powell</strong><span class="stars">★★★★★</span></div></article>
-          <article class="proof-card"><h3>“Professional &amp; Trustworthy”</h3><p>“A professional, trustworthy and highly effective service. Thank you very much indeed!”</p><div class="review-foot"><strong>R · Ross Doodson</strong><span class="stars">★★★★★</span></div></article>
-        </div><div class="google-review-summary"><strong>Google</strong><span>Reviews ★★★★★</span><small>Rated 5/5 from genuine customer feedback</small></div></div></div>
+          <article class="proof-card"><h3>“Carpets Look Amazing”</h3><p>“Paul was punctual, polite and very knowledgeable. My carpets look amazing and smell fresh. I would definitely recommend him.”</p><div class="review-foot"><span class="review-person"><span class="review-avatar purple">J</span>Jac P</span><span class="stars">★★★★★</span></div></article>
+          <article class="proof-card"><h3>“Everything Looks Brand New”</h3><p>“Superb service from start to finish. On time, polite and hardworking. Everything looks brand new!”</p><div class="review-foot"><span class="review-person"><span class="review-avatar teal">S</span>Suzanne Powell</span><span class="stars">★★★★★</span></div></article>
+          <article class="proof-card"><h3>“Professional &amp; Trustworthy”</h3><p>“A professional, trustworthy and highly effective service. Thank you very much indeed!”</p><div class="review-foot"><span class="review-person"><span class="review-avatar orange">R</span>Ross Doodson</span><span class="stars">★★★★★</span></div></article>
+        </div><div class="google-review-summary"><strong aria-label="Google"><span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span></strong><span>Reviews ★★★★★</span><small>Rated 5/5 based on over 50 Google reviews</small></div></div></div>
 
         <div class="final-reference-cta"><div><h2>Get Your Free Carpet Cleaning Quote</h2><p>Tell us what you need cleaned and we’ll prepare your quotation.</p></div><a class="button" href="#quote">Get Your Carpet Cleaning Quote</a><strong>Call For A Friendly Quote: <a href="tel:07802563213">07802 563213</a></strong></div>
 
