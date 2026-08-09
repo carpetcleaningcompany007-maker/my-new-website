@@ -2160,6 +2160,12 @@
       #new-reviews .review-avatar.purple { background:#8255cf; }
       #new-reviews .review-avatar.teal { background:#0d9ca9; }
       #new-reviews .review-avatar.orange { background:#f05228; }
+      .post-form-review { box-sizing:border-box; width:100%; margin:24px 0 0; padding:22px 20px; border:1px solid #e0e0e0; border-radius:4px; background:#fff; box-shadow:0 8px 20px rgba(0,0,0,.1); color:#222; }
+      .post-form-review p { margin:0 0 17px; font-size:.9rem; line-height:1.55; }
+      .post-form-review div { display:flex; align-items:center; gap:10px; }
+      .post-form-review .post-form-avatar { display:grid; width:38px; height:38px; flex:0 0 38px; place-items:center; border-radius:50%; background:#8255cf; color:#fff; }
+      .post-form-review strong { color:#222; font-size:.82rem; }
+      .post-form-review .stars { margin-left:auto; color:#ffad0a; letter-spacing:2px; white-space:nowrap; }
       .google-review-summary { display:flex; flex-direction:column; align-items:center; gap:2px; padding:24px 0 0; }
       .google-review-summary strong { font-size:2.55rem; line-height:1; letter-spacing:-.08em; font-weight:600; }
       .google-review-summary strong .g-blue { color:#4285f4; }.google-review-summary strong .g-red { color:#ea4335; }.google-review-summary strong .g-yellow { color:#fbbc05; }.google-review-summary strong .g-green { color:#34a853; }
@@ -2256,7 +2262,7 @@
         .hero-grid { display:flex !important; flex-direction:column; align-items:center; margin-left:auto; margin-right:auto; }
         .hero-grid > div,.hero-proof,.hero-photo,.hero-photo .quote { box-sizing:border-box; width:100%; max-width:100%; min-width:0; }
         .hero h1 { max-width:330px; margin:0 auto 10px; font-size:1.34rem; line-height:1.2; }
-        .hero .lead { max-width:325px; margin:0 auto 40px; font-size:.82rem; line-height:1.42; }
+        .hero .lead { max-width:325px; margin:0 auto 76px; font-size:.82rem; line-height:1.42; }
         .hero-proof { width:320px !important; max-width:100%; margin:0 auto 18px !important; align-self:center; justify-self:center; }
         .hero-proof-images { width:100%; max-width:100%; height:230px; }
         .hero-proof-images figure { min-width:0; }
@@ -2279,8 +2285,14 @@
         .hero-photo select { height:37px; min-height:37px; font-size:13px; }
         .hero-photo .button { height:50px; min-height:50px; font-size:14px; }
         .literal-form-footer { margin:10px -14px 0; }
+        .post-form-review { width:320px; max-width:100%; margin:22px auto 0; padding:20px 18px; }
+        .post-form-review p { font-size:.8rem; line-height:1.5; }
 
-        .trust-ribbon { grid-template-columns:1fr 1fr; padding:14px 18px; gap:8px 12px; font-size:.72rem; }
+        .trust-ribbon { grid-template-columns:1fr 1fr; padding:16px 24px; gap:12px 18px; font-size:.72rem; }
+        .trust-ribbon span { display:flex; min-width:0; align-items:center; justify-content:flex-start; gap:7px; text-align:left; }
+        .trust-ribbon span b { display:inline-grid; width:18px; min-width:18px; place-items:center; margin:0; }
+        .extras-grid label { display:flex; align-items:center; gap:7px; line-height:1.25; }
+        .extras-grid input[type="checkbox"] { width:15px; height:15px; margin:0; flex:0 0 15px; }
         #new-packages { padding:32px 0 6px; }
         #new-packages .wrap { width:calc(100% - 28px); }
         #new-packages .literal-packages-image { display:none; }
@@ -2574,6 +2586,10 @@
               </div>
               <div class="status" role="status" aria-live="polite"></div>
             </form>
+            <article class="post-form-review" aria-label="Genuine customer review">
+              <p>“Paul was punctual, polite and very knowledgeable. My carpets look amazing and smell fresh. I would definitely recommend him.”</p>
+              <div><span class="post-form-avatar">J</span><strong>Jac P</strong><span class="stars">★★★★★</span></div>
+            </article>
           </div>
         </div>
       </section>
@@ -2608,18 +2624,18 @@
           <article class="service-tile"><img src="../assets/img/rug-cleaning.webp" alt="Rug and stain treatment"><h3>Rug &amp; Stain<br>Treatment</h3></article>
         </div></div></div>
 
-        <div class="block" id="new-packages"><div class="wrap"><img class="literal-packages-image" src="../assets/packages-reference.png" alt="Affordable carpet cleaning packages comparison"><div class="package-recreation"><div class="center"><div class="eyebrow">Carpet Cleaning Packages</div><h2>Affordable, Great Value For Money Carpet Cleaning</h2><p>Our quotations are transparent and competitive. There are no hidden fees—we agree the price before booking.</p></div><div class="packages"><table class="package-table">
+        <div class="block" id="new-packages"><div class="wrap"><img class="literal-packages-image" src="../assets/packages-reference.png" alt="Affordable carpet cleaning packages comparison"><div class="package-recreation"><div class="center"><div class="eyebrow">Carpet Cleaning Packages</div><h2>Affordable, Great Value For Money Carpet Cleaning</h2><p>Our quotations are transparent and competitive. There are no hidden fees. We agree the price before booking.</p></div><div class="packages"><table class="package-table">
           <thead><tr><th>What is included</th><th>Bronze<br><small>Essential clean</small></th><th>Silver<br><small>Deep clean</small></th><th>Gold<br><small>Complete care</small></th></tr></thead>
           <tbody>
             <tr><td>Inspection and walkthrough</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
             <tr><td>Professional pre-vacuum where required</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
             <tr><td>Targeted pre-spray</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><td>Mechanical agitation</td><td>—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>Mechanical agitation</td><td></td><td class="yes">✓</td><td class="yes">✓</td></tr>
             <tr><td>Hot-water extraction</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><td>Additional targeted stain treatment</td><td>—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><td>Odour treatment where suitable</td><td>—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-            <tr><td>Enhanced intensive treatment</td><td>—</td><td>—</td><td class="yes">✓</td></tr>
-            <tr><td>Optional carpet protector</td><td>—</td><td class="optional">Available</td><td class="optional">Available</td></tr>
+            <tr><td>Additional targeted stain treatment</td><td></td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>Odour treatment where suitable</td><td></td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>Enhanced intensive treatment</td><td></td><td></td><td class="yes">✓</td></tr>
+            <tr><td>Optional carpet protector</td><td></td><td class="optional">Available</td><td class="yes">✓</td></tr>
           </tbody>
         </table></div><p class="package-note">No invented fixed prices: every quotation reflects room sizes, fibre, condition and treatment required.</p></div></div></div>
 
