@@ -1792,25 +1792,20 @@
       .package-table .yes { color:#198754; font-size:1.25rem; font-weight:900; }
       .package-table .optional { color:#0879c9; font-size:.82rem; font-weight:800; }
       .package-note { margin-top:18px; color:#607789; text-align:center; }
-      .results-pair { display:grid; grid-template-columns:1fr 1fr; gap:8px; max-width:900px; margin:auto; }
-      .results-pair figure { position:relative; margin:0; height:520px; overflow:hidden; }
-      .results-pair img { height:100%; object-fit:cover; }
-      .results-pair b { position:absolute; left:18px; bottom:18px; padding:9px 16px; border:3px solid #fff; border-radius:999px; background:#26394a; color:#fff; }
-      .results-gallery { display:grid; gap:34px; }
-      .result-set { padding:14px; border:1px solid #d7e4ec; border-radius:12px; background:#fff; box-shadow:0 14px 34px rgba(32,79,110,.09); }
-      .result-set h3 { margin:16px 8px 5px; color:#092c4c; font-size:1.25rem; }
-      .result-set p { margin:0 8px 10px; color:#607789; }
-      .more-results { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:30px; }
-      .more-result { overflow:hidden; border:1px solid #d7e4ec; border-radius:10px; background:#fff; box-shadow:0 12px 28px rgba(32,79,110,.08); }
-      .more-result img { height:250px; object-fit:cover; }
-      .more-result div { padding:16px; }
-      .more-result strong { display:block; color:#092c4c; }
-      .more-result span { color:#607789; font-size:.9rem; }
+      .results-gallery { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; max-width:970px; margin:34px auto 0; }
+      .result-set { display:grid; grid-template-columns:1fr 1fr; gap:3px; background:#fff; overflow:hidden; }
+      .result-set figure { position:relative; margin:0; height:210px; overflow:hidden; background:#e9edf0; }
+      .result-set img { width:100%; height:100%; object-fit:cover; }
+      .result-set b { position:absolute; left:8px; bottom:8px; padding:5px 9px; border:2px solid #fff; border-radius:999px; background:#26394a; color:#fff; font-size:.76rem; line-height:1; box-shadow:0 1px 4px rgba(0,0,0,.25); }
+      .result-set.detail-high img { object-position:center 25%; transform:scale(1.16); }
+      .result-set.detail-low img { object-position:center 78%; transform:scale(1.16); }
+      .result-set.detail-centre img { object-position:center center; transform:scale(1.22); }
+      .results-note { margin:18px auto 0; max-width:760px; text-align:center; color:#607789; font-size:.92rem; }
       .big-cta { background:#092c4c; color:#fff; text-align:center; padding:60px 20px; }
       .big-cta h2 { margin:0 0 12px; font-size:2.5rem; }
       .big-cta p { margin:0 auto 24px; max-width:700px; color:#cbe6f5; }
       .big-cta .button { margin:5px; }
-      @media(max-width:780px){.review-strip,.benefit-grid,.service-grid,.process-grid{grid-template-columns:1fr}.results-pair figure{height:360px}.more-results{grid-template-columns:1fr}.more-result img{height:280px}.reference-content .block{padding:52px 0}.big-cta h2{font-size:2rem}}
+      @media(max-width:780px){.review-strip,.benefit-grid,.service-grid,.process-grid{grid-template-columns:1fr}.results-gallery{grid-template-columns:1fr;gap:10px}.result-set figure{height:260px}.reference-content .block{padding:52px 0}.big-cta h2{font-size:2rem}}
     </style>
   </head>
   <body>
@@ -2047,10 +2042,14 @@
           </tbody>
         </table></div><p class="package-note">No invented fixed prices: every quotation reflects room sizes, fibre, condition and treatment required.</p></div></div>
 
-        <div class="block alt" id="new-results"><div class="wrap"><div class="center"><div class="eyebrow">Genuine customer work</div><h2>More genuine before-and-after results</h2><p>Your own customer-work photographs—never stock comparisons or artificially enhanced results.</p></div><div class="results-gallery">
-          <article class="result-set"><div class="results-pair"><figure><img src="../assets/img/carpet-before-genuine.png" alt="Heavily soiled lounge carpet before professional cleaning"><b>Before</b></figure><figure><img src="../assets/img/carpet-after-genuine.png" alt="The same lounge carpet after professional cleaning"><b>After</b></figure></div><h3>A dramatic residential carpet transformation</h3><p>Heavy soiling removed through a complete professional deep-clean process.</p></article>
-          <article class="result-set"><div class="results-pair"><figure><img src="../assets/img/facebook-before-after-1.jpg" alt="Kitchen entrance carpet before professional cleaning"><b>Before</b></figure><figure><img src="../assets/img/facebook-before-after-2.jpg" alt="The same kitchen entrance carpet after professional cleaning"><b>After</b></figure></div><h3>Kitchen entrance carpet brought back to life</h3><p>Targeted treatment, mechanical agitation and professional hot-water extraction.</p></article>
-        </div><div class="more-results"><article class="more-result"><img src="../assets/img/rug-cleaning.webp" alt="Professionally cleaned rug and carpet result"><div><strong>Fresh, carefully cleaned fibres</strong><span>Cleaning selected for the material and condition.</span></div></article><article class="more-result"><img src="../assets/img/upholstery-cleaning.webp" alt="Professional upholstery cleaning result"><div><strong>Upholstery cleaning</strong><span>Careful treatment for sofas and chairs.</span></div></article><article class="more-result"><img src="../assets/img/stain-removal.webp" alt="Professional stain treatment result"><div><strong>Targeted stain treatment</strong><span>Honest advice and professional treatment.</span></div></article></div></div></div>
+        <div class="block alt" id="new-results"><div class="wrap"><div class="center"><div class="eyebrow">Genuine customer work</div><h2>Our Customer Before &amp; Afters</h2><p>Real customer-work photographs—never stock comparisons or artificially enhanced results.</p></div><div class="results-gallery">
+          <article class="result-set"><figure><img src="../assets/img/carpet-before-genuine.png" alt="Heavily soiled lounge carpet before professional cleaning"><b>Before</b></figure><figure><img src="../assets/img/carpet-after-genuine.png" alt="The same lounge carpet after professional cleaning"><b>After</b></figure></article>
+          <article class="result-set detail-high"><figure><img src="../assets/img/carpet-before-genuine.png" alt="Close detail of lounge carpet before professional cleaning"><b>Before</b></figure><figure><img src="../assets/img/carpet-after-genuine.png" alt="Close detail of the same lounge carpet after cleaning"><b>After</b></figure></article>
+          <article class="result-set detail-low"><figure><img src="../assets/img/carpet-before-genuine.png" alt="Lower carpet area before professional cleaning"><b>Before</b></figure><figure><img src="../assets/img/carpet-after-genuine.png" alt="Lower carpet area after professional cleaning"><b>After</b></figure></article>
+          <article class="result-set"><figure><img src="../assets/img/facebook-before-after-1.jpg" alt="Kitchen entrance carpet before professional cleaning"><b>Before</b></figure><figure><img src="../assets/img/facebook-before-after-2.jpg" alt="The same kitchen entrance carpet after professional cleaning"><b>After</b></figure></article>
+          <article class="result-set detail-high"><figure><img src="../assets/img/facebook-before-after-1.jpg" alt="Close detail of kitchen entrance carpet before cleaning"><b>Before</b></figure><figure><img src="../assets/img/facebook-before-after-2.jpg" alt="Close detail of the kitchen entrance carpet after cleaning"><b>After</b></figure></article>
+          <article class="result-set detail-centre"><figure><img src="../assets/img/facebook-before-after-1.jpg" alt="Traffic lane detail before professional cleaning"><b>Before</b></figure><figure><img src="../assets/img/facebook-before-after-2.jpg" alt="Traffic lane detail after professional cleaning"><b>After</b></figure></article>
+        </div><p class="results-note">Two genuine customer transformations shown as full-room and close-detail comparisons.</p></div></div>
 
         <div class="big-cta"><h2>Get your free Shrewsbury cleaning quote</h2><p>Tell us what needs cleaning and receive friendly, no-obligation advice directly from Paul.</p><a class="button" href="#quote">Get Your Carpet Cleaning Quote</a><a class="button alt" style="color:#fff;border-color:#fff" href="tel:07802563213">Call 07802 563213</a></div>
       </section>
