@@ -2007,10 +2007,11 @@
       .reference-rating { box-sizing:border-box; position:relative; display:grid; grid-template-columns:132px 1fr; height:83px; min-height:83px; padding:29px 20px 8px; align-items:center; gap:15px; border-top:1px solid #ddd; background:#fff; color:#343434; font:13px/1.25 Poppins,Arial,sans-serif; }
       .reference-rating:before { content:""; position:absolute; top:10px; left:50%; width:278px; height:6px; transform:translateX(-50%); border:1px solid #bbb; background:linear-gradient(90deg,#009bd4 0 50%,#fff 50%); }
       .rating-brand { display:flex; align-items:center; gap:7px; color:#333; font-size:10px; line-height:1.05; }
-      .rating-brand strong { color:#4285f4; font:bold 22px Arial,sans-serif; }
+      .rating-brand > img { width:25px; height:25px; object-fit:contain; }
       .rating-brand b { display:block; font-size:10px; }
       .rating-brand span { color:#ff9f00; font-size:11px; letter-spacing:.6px; }
-      .reference-rating p { margin:0; color:#444; font-size:12px; }
+      .reference-rating p { margin:0; color:#26343b; font-size:12px; }
+      .reference-rating p strong { color:#18784b; font-size:14px; }
       .reference-guarantee { display:grid; grid-template-columns:118px 1fr; align-items:center; gap:16px; min-height:140px; padding:10px 23px 11px 15px; background:#e1e1e1; color:#222; font:12px/1.5 Poppins,Arial,sans-serif; }
       .promise-shield { position:relative; isolation:isolate; display:grid; width:112px; height:126px; padding:20px 14px 28px; place-items:center; align-content:center; background:#d4251b; clip-path:polygon(3% 0,97% 0,100% 78%,50% 100%,0 78%); color:#171717; text-align:center; filter:drop-shadow(0 3px 2px rgba(0,0,0,.18)); transform:rotate(-2deg); }
       .promise-shield:before { content:""; position:absolute; z-index:-1; inset:7px; background:#f4f4f4; clip-path:polygon(3% 0,97% 0,100% 77%,50% 100%,0 77%); }
@@ -2632,12 +2633,12 @@
               </p>
               <div class="reference-proof" aria-label="Quote reassurance">
                 <div class="reference-rating">
-                  <div class="rating-brand"><strong>G</strong><div><b>Google Rating 5.0</b><span>★★★★★</span></div></div>
-                  <p><strong>Trusted local service</strong><br>Rated 5.0 from genuine Google reviews</p>
+                  <div class="rating-brand"><img src="../assets/img/google-g-logo.png" alt=""><div><b>Google Rating 5.0</b><span>★★★★★</span></div></div>
+                  <p><strong>✓ Trusted local carpet cleaning service</strong><br>Backed by genuine Google customer reviews</p>
                 </div>
                 <div class="reference-guarantee">
-                  <div class="promise-shield" aria-label="100% satisfaction promise"><strong>100%</strong><span>SATISFACTION<br>PROMISE</span></div>
-                  <span>We inspect the finished work with you and want you to be delighted with the result.</span>
+                  <div class="promise-shield" aria-label="100% money back promise"><strong>100%</strong><span>MONEY BACK<br>PROMISE</span></div>
+                  <span>We only expect payment once the job is done. If you are not happy, we will return and reclean your carpets free of charge.</span>
                 </div>
               </div>
               <div class="literal-form-footer" aria-label="Quote reassurance and customer promise">
@@ -3426,8 +3427,8 @@ Hi Paul, I’d like some help with carpet cleaning.</textarea
           </div>
           <p class="privacy">Step 1 of 2 · No contact details needed until the next page.</p>
           <div class="reference-proof" aria-label="Quote reassurance">
-            <div class="reference-rating"><div class="rating-brand"><strong>G</strong><div><b>Google Rating 5.0</b><span>★★★★★</span></div></div><p><strong>Trusted local service</strong><br>Rated 5.0 from genuine Google reviews</p></div>
-            <div class="reference-guarantee"><div class="promise-shield" aria-label="100% satisfaction promise"><strong>100%</strong><span>SATISFACTION<br>PROMISE</span></div><span>We inspect the finished work with you and want you to be delighted with the result.</span></div>
+            <div class="reference-rating"><div class="rating-brand"><img src="../assets/img/google-g-logo.png" alt=""><div><b>Google Rating 5.0</b><span>★★★★★</span></div></div><p><strong>✓ Trusted local carpet cleaning service</strong><br>Backed by genuine Google customer reviews</p></div>
+            <div class="reference-guarantee"><div class="promise-shield" aria-label="100% money back promise"><strong>100%</strong><span>MONEY BACK<br>PROMISE</span></div><span>We only expect payment once the job is done. If you are not happy, we will return and reclean your carpets free of charge.</span></div>
           </div>
           <div class="literal-form-footer" aria-label="Quote reassurance and customer promise"><img src="../assets/form-footer-reference.png?v=83df66f" alt="Quote button, review rating and 100% customer promise"><button class="literal-form-submit" type="submit" aria-label="Get Your Carpet Cleaning Quote">Get Your Carpet Cleaning Quote</button></div>
         `;
