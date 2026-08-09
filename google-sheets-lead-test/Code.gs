@@ -47,15 +47,21 @@ function doPost(e) {
     const serverEstimate = carpetValue + upholsteryValue;
     const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_NAME);
     if (!sheet) throw new Error(`Sheet "${SHEET_NAME}" was not found.`);
-    const timestampCells = sheet
-      .getRange(2, 1, Math.max(1, sheet.getMaxRows() - 1), 1)
-      .getValues();
-    const firstEmptyIndex = timestampCells.findIndex((row) => !row[0]);
-    const targetRow = firstEmptyIndex === -1 ? sheet.getMaxRows() + 1 : firstEmptyIndex + 2;
+    // Always write after the last genuinely used row. Looking only for an
+    // empty timestamp can reuse a partially populated economics row and make
+    // an older profitability note appear to belong to a new enquiry.
+    const targetRow = sheet.getLastRow() + 1;
+    if (targetRow > sheet.getMaxRows()) {
+      sheet.insertRowsAfter(sheet.getMaxRows(), 1);
+    }
+    const cleanRow = sheet.getRange(targetRow, 1, 1, 39);
+    cleanRow.clearContent();
+    // Telephone numbers must be stored as text so UK leading zeroes survive.
+    sheet.getRange(targetRow, 3).setNumberFormat("@");
     sheet.getRange(targetRow, 1, 1, 22).setValues([[
       new Date(),
       data.name || "",
-      data.phone || "",
+      String(data.phone || "").trim(),
       data.email || "",
       data.postcode || "",
       data.service || "",
