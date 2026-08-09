@@ -2174,6 +2174,20 @@
       .hero-proof .post-form-review { margin:18px 0 0; text-align:left; }
       .hero-proof .post-form-review p { color:#26343b; }
       .mobile-form-review { display:none; }
+      .hero-photo .quote-head { min-height:130px; padding:22px 25px; }
+      .hero-photo .quote-head .eyebrow,
+      .hero-photo .quote-head > span { display:none; }
+      .hero-photo .quote-head h2 { max-width:360px; margin:0 auto; font-size:1.85rem; line-height:1.08; text-align:center; }
+      .hero-photo .fields { grid-template-columns:1fr; gap:15px; }
+      .hero-photo .field,
+      .hero-photo .field.wide,
+      .hero-photo .field.full { grid-column:1; }
+      .hero-photo .field label { margin-bottom:6px; color:#242424; font-size:.92rem; font-weight:700; }
+      .hero-photo .field label small { color:#60676b; font-size:.65rem; font-weight:500; }
+      .hero-photo input,
+      .hero-photo select { height:44px; min-height:44px; border:1px solid #aaa; border-radius:0; font-size:.95rem; }
+      .hero-photo .field.full label { font-size:.76rem; font-weight:500; line-height:1.35; }
+      .hero-photo form > .privacy { margin:13px 0 3px; font-size:.68rem; text-align:center; }
       .quote-band { padding-bottom:28px; }
       .hero { padding-bottom:28px; }
       .customer-reaction-section { order:4; padding:64px 24px; background:linear-gradient(135deg,#172f57,#263474); color:#fff; }
@@ -2511,7 +2525,7 @@
             <div class="quote-head">
               <div>
                 <div class="eyebrow">Free, no-obligation quotation</div>
-                <h2>Carpet Cleaning Quote</h2>
+                <h2>Last Step, Where Should We Send Your Quote?</h2>
               </div>
               <span>Tell us about what you need cleaned we'll send you an instant quote</span>
             </div>
@@ -2539,8 +2553,14 @@
               />
               <div class="fields">
                 <div class="field">
-                  <label>Your full name *</label
-                  ><input name="name" autocomplete="name" required />
+                  <label>Your first name *</label
+                  ><input name="name" autocomplete="given-name" placeholder="Jane" required />
+                </div>
+                <div class="field">
+                  <label
+                    >Email address
+                    <small>(phone or email required)</small></label
+                  ><input name="email" type="email" autocomplete="email" placeholder="j.smith@gmail.com" />
                 </div>
                 <div class="field">
                   <label
@@ -2551,13 +2571,8 @@
                     type="tel"
                     inputmode="tel"
                     autocomplete="tel"
+                    placeholder="07912 345678"
                   />
-                </div>
-                <div class="field">
-                  <label
-                    >Email address
-                    <small>(phone or email required)</small></label
-                  ><input name="email" type="email" autocomplete="email" />
                 </div>
                 <div class="field">
                   <label>Postcode *</label
@@ -2607,7 +2622,7 @@
                 </div>
                 <div class="field wide" style="display: flex; align-items: end">
                   <button class="button" type="submit" style="width: 100%">
-                    Send my quote request
+                    Get Your Carpet Cleaning Quote
                   </button>
                 </div>
               </div>
