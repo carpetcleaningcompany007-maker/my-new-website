@@ -2173,6 +2173,7 @@
       .post-form-review .stars { margin-left:auto; color:#fbbc04; font-size:1.08rem; letter-spacing:2px; white-space:nowrap; text-shadow:0 1px 1px rgba(0,0,0,.08); }
       .hero-proof .post-form-review { margin:18px 0 0; text-align:left; }
       .hero-proof .post-form-review p { color:#26343b; }
+      .mobile-form-review { display:none; }
       .quote-band { padding-bottom:28px; }
       .hero { padding-bottom:28px; }
       .customer-reaction-section { order:4; padding:64px 24px; background:linear-gradient(135deg,#172f57,#263474); color:#fff; }
@@ -2313,6 +2314,8 @@
         .literal-form-footer { margin:10px -14px 0; }
         .post-form-review { width:320px; max-width:100%; margin:12px auto 0; padding:20px 18px; }
         .post-form-review p { font-size:.8rem; line-height:1.5; }
+        .hero-review-card { display:none; }
+        .mobile-form-review { display:block; }
         .quote-band { padding-bottom:20px; }
         .hero { padding-bottom:20px; }
         .customer-reaction-section { padding:42px 17px 46px; }
@@ -2461,8 +2464,8 @@
                 <figure><img src="../assets/img/carpet-before-genuine.png" alt="Heavily soiled carpet before professional cleaning" /><b>BEFORE</b></figure>
                 <figure><img src="../assets/img/carpet-after-genuine.png" alt="The same carpet after professional deep cleaning" /><b>AFTER</b></figure>
               </div>
-              <article class="post-form-review" aria-label="Five-star Google customer review">
-                <div class="google-review-kicker"><span class="google-g" aria-hidden="true"><img src="../assets/img/google-g-logo.png" alt=""></span><strong>5-star Google review</strong></div>
+              <article class="post-form-review hero-review-card" aria-label="Five star Google customer review">
+                <div class="google-review-kicker"><span class="google-g" aria-hidden="true"><img src="../assets/img/google-g-logo.png" alt=""></span><strong>5 star Google review</strong></div>
                 <p>“Paul was punctual, polite and very knowledgeable. My carpets look amazing and smell fresh. I would definitely recommend him.”</p>
                 <div class="reviewer-row"><span class="post-form-avatar">J</span><strong class="reviewer-name">Jac P<small>Genuine Google customer review</small></strong><span class="stars" aria-label="Five stars">★★★★★</span></div>
               </article>
@@ -2628,6 +2631,11 @@
               </div>
               <div class="status" role="status" aria-live="polite"></div>
             </form>
+            <article class="post-form-review mobile-form-review" aria-label="Five star Google customer review">
+              <div class="google-review-kicker"><span class="google-g" aria-hidden="true"><img src="../assets/img/google-g-logo.png" alt=""></span><strong>5 star Google review</strong></div>
+              <p>“Paul was punctual, polite and very knowledgeable. My carpets look amazing and smell fresh. I would definitely recommend him.”</p>
+              <div class="reviewer-row"><span class="post-form-avatar">J</span><strong class="reviewer-name">Jac P<small>Genuine Google customer review</small></strong><span class="stars" aria-label="Five stars">★★★★★</span></div>
+            </article>
           </div>
         </div>
       </section>
@@ -2649,7 +2657,7 @@
                 <source src="../assets/video/genuine-customer-reaction-clean.mp4" type="video/mp4" />
                 Your browser does not support the video player.
               </video>
-              <span class="customer-reaction-note">Filmed after a genuine customer clean · language edited for the website</span>
+              <span class="customer-reaction-note">Genuine customer reaction · shortened for the website</span>
             </div>
           </div>
         </section>
