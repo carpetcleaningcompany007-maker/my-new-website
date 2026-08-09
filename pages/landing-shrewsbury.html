@@ -1998,12 +1998,18 @@
       .hero-photo .button { width:100%; height:63px; min-height:63px; margin:0; border-radius:100px; background:#ed260d; font:600 18px/22px Poppins,Arial,sans-serif; box-shadow:none; }
       .hero-photo .privacy { display:none; }
       .reference-proof { margin:13px -29.5px 0; }
-      .reference-rating { box-sizing:border-box; position:relative; display:flex; height:83px; min-height:83px; padding-top:12px; align-items:center; justify-content:center; gap:12px; border-top:1px solid #ddd; background:#fff; color:#343434; font-size:.78rem; }
-      .reference-rating:before { content:""; position:absolute; top:10px; left:50%; width:126px; height:4px; transform:translateX(-50%); background:linear-gradient(90deg,#26aeda 0 58%,#e7e7e7 58%); }
-      .reference-rating strong { color:#4285f4; font-size:1.05rem; }
-      .reference-rating span { color:#ff9f00; letter-spacing:1px; }
-      .reference-guarantee { display:grid; grid-template-columns:148px 1fr; align-items:center; gap:14px; min-height:154px; padding:10px 18px 11px 10px; background:#e7e7e7; color:#333; font-size:.78rem; line-height:1.48; }
-      .guarantee-seal { display:block; width:148px; height:128px; object-fit:contain; }
+      .reference-rating { box-sizing:border-box; position:relative; display:grid; grid-template-columns:132px 1fr; height:83px; min-height:83px; padding:29px 20px 8px; align-items:center; gap:15px; border-top:1px solid #ddd; background:#fff; color:#343434; font:13px/1.25 Poppins,Arial,sans-serif; }
+      .reference-rating:before { content:""; position:absolute; top:10px; left:50%; width:278px; height:6px; transform:translateX(-50%); border:1px solid #bbb; background:linear-gradient(90deg,#009bd4 0 50%,#fff 50%); }
+      .rating-brand { display:flex; align-items:center; gap:7px; color:#333; font-size:10px; line-height:1.05; }
+      .rating-brand strong { color:#4285f4; font:bold 22px Arial,sans-serif; }
+      .rating-brand b { display:block; font-size:10px; }
+      .rating-brand span { color:#ff9f00; font-size:11px; letter-spacing:.6px; }
+      .reference-rating p { margin:0; color:#444; font-size:12px; }
+      .reference-guarantee { display:grid; grid-template-columns:118px 1fr; align-items:center; gap:16px; min-height:140px; padding:10px 23px 11px 15px; background:#e1e1e1; color:#222; font:12px/1.5 Poppins,Arial,sans-serif; }
+      .promise-shield { position:relative; isolation:isolate; display:grid; width:112px; height:126px; padding:20px 14px 28px; place-items:center; align-content:center; background:#d4251b; clip-path:polygon(3% 0,97% 0,100% 78%,50% 100%,0 78%); color:#171717; text-align:center; filter:drop-shadow(0 3px 2px rgba(0,0,0,.18)); transform:rotate(-2deg); }
+      .promise-shield:before { content:""; position:absolute; z-index:-1; inset:7px; background:#f4f4f4; clip-path:polygon(3% 0,97% 0,100% 77%,50% 100%,0 77%); }
+      .promise-shield strong { display:block; font:900 24px/.88 Arial,sans-serif; letter-spacing:-1px; }
+      .promise-shield span { display:block; margin-top:5px; font:900 11px/.95 Arial,sans-serif; letter-spacing:.2px; }
       .photo-credit { opacity: .7; }
       .trust-ribbon { margin-top: 0; border-top: 1px solid #eee; background: #f8f8f8; }
       .trust-ribbon span { padding: 18px 10px; color: #202020; font-size: .88rem; }
@@ -2351,12 +2357,11 @@
               </p>
               <div class="reference-proof" aria-label="Quote reassurance">
                 <div class="reference-rating">
-                  <strong>G</strong>
-                  <div><b>Google Rating 5.0</b><br /><span>★★★★★</span></div>
-                  <small>Genuine customer reviews</small>
+                  <div class="rating-brand"><strong>G</strong><div><b>Google Rating 5.0</b><span>★★★★★</span></div></div>
+                  <p>5.0 from genuine Google reviews</p>
                 </div>
                 <div class="reference-guarantee">
-                  <img class="guarantee-seal" src="../assets/satisfaction-guarantee-transparent.png" alt="100% customer satisfaction guaranteed" />
+                  <div class="promise-shield" aria-label="100% satisfaction promise"><strong>100%</strong><span>SATISFACTION<br>PROMISE</span></div>
                   <span>We inspect the finished work with you and want you to be delighted with the result.</span>
                 </div>
               </div>
@@ -3117,8 +3122,8 @@ Hi Paul, I’d like some help with carpet cleaning.</textarea
           </div>
           <p class="privacy">Step 1 of 2 · No contact details needed until the next page.</p>
           <div class="reference-proof" aria-label="Quote reassurance">
-            <div class="reference-rating"><strong>G</strong><div><b>Google Rating 5.0</b><br><span>★★★★★</span></div><small>Genuine customer reviews</small></div>
-            <div class="reference-guarantee"><img class="guarantee-seal" src="../assets/satisfaction-guarantee-transparent.png" alt="100% customer satisfaction guaranteed"><span>We inspect the finished work with you and want you to be delighted with the result.</span></div>
+            <div class="reference-rating"><div class="rating-brand"><strong>G</strong><div><b>Google Rating 5.0</b><span>★★★★★</span></div></div><p>5.0 from genuine Google reviews</p></div>
+            <div class="reference-guarantee"><div class="promise-shield" aria-label="100% satisfaction promise"><strong>100%</strong><span>SATISFACTION<br>PROMISE</span></div><span>We inspect the finished work with you and want you to be delighted with the result.</span></div>
           </div>
         `;
         trackingKeys.forEach((key) => {
