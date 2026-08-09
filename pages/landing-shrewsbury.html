@@ -2225,41 +2225,46 @@
 
       /* Mobile composition matched to the supplied full-page reference set. */
       @media (max-width: 600px) {
-        body { background:#fff; }
+        html,body { margin:0; padding:0; background:#fff; }
+        body { overflow-x:hidden; }
         .topnote {
-          position:sticky; top:0; z-index:90; padding:9px 10px;
-          background:#ed2b0b; color:#fff; font:700 12px/1.2 Poppins,Arial,sans-serif;
+          position:sticky; top:0; z-index:90; min-height:26px; padding:6px 10px;
+          background:#e73517; color:#fff; font:700 11px/1.2 Poppins,Arial,sans-serif;
         }
         .topnote { font-size:0; }
-        .topnote a { font-size:12px; }
+        .topnote a { font-size:11px; }
         .topnote a:before { content:"Call Now: "; }
         header { position:relative; z-index:20; background:#fff; box-shadow:none; }
-        header .nav { min-height:72px; padding:7px 12px 4px; }
+        header .nav { display:grid; grid-template-columns:90px minmax(0,1fr); width:100%; max-width:390px; align-items:center; min-height:70px; padding:7px 10px; }
         header .brand span, header .header-phone, header .links { display:none !important; }
+        header .brand { justify-self:center; }
         header .brand img { width:66px; height:54px; }
-        header .header-proof { margin-left:auto; }
-        header .google-rating { padding:5px 8px; transform:scale(.92); transform-origin:right center; }
+        header .header-proof { justify-self:center; margin:0; }
+        header .google-rating { width:146px; max-width:100%; margin:0 auto; padding:5px 7px; transform:none; }
 
         .hero { padding:20px 0 0; background-position:center !important; }
         .hero:before {
-          background-image:linear-gradient(rgba(225,240,248,.68),rgba(225,240,248,.68)),url("../assets/img/shrewsbury-street-background.jpg") !important;
-          background-size:cover !important; background-position:center !important;
-          filter:blur(7px); transform:scale(1.07);
+          background-image:linear-gradient(rgba(225,240,248,.43),rgba(225,240,248,.48)),url("../assets/img/shrewsbury-street-background.jpg") !important;
+          background-size:auto 900px !important; background-position:center top !important; background-repeat:repeat-y !important;
+          filter:blur(5px); transform:scale(1.055);
         }
-        .hero .wrap { width:calc(100% - 34px); }
+        .hero .wrap,.hero-grid { box-sizing:border-box; width:calc(100% - 34px); max-width:100%; min-width:0; }
+        .hero-grid > div,.hero-proof,.hero-photo,.hero-photo .quote { box-sizing:border-box; width:100%; max-width:100%; min-width:0; }
         .hero h1 { max-width:330px; margin:0 auto 8px; font-size:1.42rem; line-height:1.18; }
         .hero .lead { max-width:330px; margin:0 auto 32px; font-size:.85rem; line-height:1.38; }
         .hero-proof { margin:0 auto 18px; }
-        .hero-proof-images { height:255px; }
+        .hero-proof-images { width:100%; max-width:100%; height:255px; }
+        .hero-proof-images figure { min-width:0; }
+        .hero-proof-images img { width:100%; max-width:100%; }
         .hero-guarantee-image { top:-42px; width:92px; max-height:92px; }
         .hero-proof b { left:7px; bottom:7px; padding:5px 8px; font-size:.66rem; }
         .hero-proof-caption { margin:12px 0 17px; padding:13px 14px; border-radius:2px; }
         .hero-review p { margin-bottom:8px; font-size:.72rem; line-height:1.45; }
         .hero-review div { flex-direction:row; align-items:center; gap:8px; font-size:.68rem; }
-        .hero-photo .quote { padding:0 14px; box-shadow:0 6px 16px rgba(0,0,0,.13); }
+        .hero-photo .quote { overflow:hidden; padding:0 14px; box-shadow:0 6px 16px rgba(0,0,0,.13); }
         .hero-photo .quote-head { min-height:104px; margin:0 -14px 16px; padding:14px; }
         .hero-photo .quote-head h2 { font-size:1.3rem; }
-        .hero-photo .quote-head span { font-size:.76rem; line-height:1.3; }
+        .hero-photo .quote-head span { max-width:290px; margin:0 auto; font-size:.76rem; line-height:1.3; }
         .hero-photo form { font-size:12px; }
         .hero-photo .fields { gap:11px; }
         .hero-photo .field label,.extras-label { height:auto; font-size:12px; line-height:14px; }
@@ -2313,11 +2318,19 @@
         #new-process .wrap { width:calc(100% - 44px); }
         #new-process .center { margin-bottom:40px; }
         #new-process .center h2 { font-size:1.25rem; line-height:1.2; }
-        #new-process .process-grid { gap:52px; }
-        #new-process .process-card { margin:0; padding:44px 22px 20px; text-align:left; }
-        #new-process .process-card .num { top:-35px; left:calc(50% - 34px); width:68px; height:68px; font-size:1.25rem; }
-        #new-process .process-card h3 { font-size:1rem; }
-        #new-process .process-card p { font-size:.78rem; }
+        #new-process .process-grid { gap:58px; }
+        #new-process .process-card { margin:0; padding:47px 22px 23px; border:1px solid #d5d5d5; border-bottom:4px solid #193d67; background:#fff; text-align:left; }
+        #new-process .process-card .num { top:-37px; left:calc(50% - 36px); width:72px; height:72px; border:1px solid #cfcfcf; background:#fff; color:#111; font-size:0; }
+        #new-process .process-card .num:after { display:block; color:#111; font:400 30px/1 Arial,sans-serif; }
+        #new-process .process-card:nth-child(1) .num:after { content:"☏"; }
+        #new-process .process-card:nth-child(2) .num:after { content:"✦"; }
+        #new-process .process-card:nth-child(3) .num:after { content:"▤"; }
+        #new-process .process-card:before { display:block; margin-bottom:5px; color:#35a8e0; font-size:.72rem; font-weight:700; }
+        #new-process .process-card:nth-child(1):before { content:"Step 1"; }
+        #new-process .process-card:nth-child(2):before { content:"Step 2"; }
+        #new-process .process-card:nth-child(3):before { content:"Step 3"; }
+        #new-process .process-card h3 { margin-top:0; font-size:1rem; line-height:1.35; }
+        #new-process .process-card p { margin:12px 0 0; font-size:.78rem; line-height:1.4; }
 
         #new-services { order:6; padding:28px 0 34px; }
         #new-services .service-grid { grid-template-columns:repeat(2,1fr); gap:24px 14px; }
@@ -2329,14 +2342,25 @@
         .reference-content > .mid-cta .button { width:max-content; margin:15px auto 0; padding:13px 18px; font-size:.75rem; }
 
         #new-reviews { order:8; padding:34px 0 26px; }
-        #new-reviews .proof-card { text-align:center; border-radius:0; box-shadow:none; }
-        #new-reviews .proof-card p { font-size:.78rem; line-height:1.55; }
-        #new-reviews .review-foot { font-size:.7rem; }
-        .final-quote-banner { min-height:245px; padding:34px 20px; background-position:center; }
+        #new-reviews .wrap,#new-reviews .center { text-align:center; }
+        #new-reviews .review-strip { max-width:355px; margin:0 auto; }
+        #new-reviews .proof-card { width:100%; padding:20px 18px; text-align:center; border-radius:0; box-shadow:none; }
+        #new-reviews .proof-card h3 { margin-bottom:10px; }
+        #new-reviews .proof-card p { max-width:290px; margin:0 auto; font-size:.78rem; line-height:1.55; }
+        #new-reviews .review-foot { align-items:center; font-size:.7rem; text-align:left; }
+        #new-reviews .google-review-summary { align-items:center; justify-content:center; padding:18px 0 0; text-align:center; }
+        #new-reviews .google-review-summary strong { margin:0 auto; }
+        .final-reference-cta { margin:0; padding:0; }
+        .final-quote-banner { min-height:220px; margin:0; padding:30px 20px; background-position:center; }
         .final-reference-cta h2 { font-size:1.5rem; }
         .final-reference-cta p { margin-bottom:22px; font-size:.86rem; }
         .final-quote-actions .button { padding:14px 18px; font-size:.78rem; }
         .final-quote-actions strong,.final-quote-actions strong a { font-size:.9rem; }
+        .final-site-footer { gap:12px; padding:20px 18px 14px; }
+        .final-site-footer p { font-size:.72rem; line-height:1.4; }
+        .final-legal { margin:0; padding:12px 18px 16px; }
+        .photo-credit { display:none; }
+        main,.reference-content,.final-reference-cta { padding-bottom:0 !important; margin-bottom:0 !important; }
       }
     </style>
   </head>
