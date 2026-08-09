@@ -2159,13 +2159,17 @@
       #new-reviews .review-avatar.purple { background:#8255cf; }
       #new-reviews .review-avatar.teal { background:#0d9ca9; }
       #new-reviews .review-avatar.orange { background:#f05228; }
-      .post-form-review { box-sizing:border-box; width:100%; margin:12px 0 0; padding:22px 20px; border:1px solid #d8dde2; border-radius:6px; background:#fff; box-shadow:0 5px 14px rgba(0,0,0,.06); color:#222; }
-      .post-form-review:before { content:"GENUINE GOOGLE REVIEW"; display:block; margin:0 0 12px; color:#2f6f55; font-size:.62rem; font-weight:900; letter-spacing:.1em; }
-      .post-form-review p { margin:0 0 17px; font-size:.9rem; line-height:1.55; }
-      .post-form-review div { display:flex; align-items:center; gap:10px; }
+      .post-form-review { position:relative; box-sizing:border-box; width:100%; margin:12px 0 0; overflow:hidden; padding:22px 22px 20px; border:1px solid #d9e1e5; border-top:4px solid #34a853; border-radius:10px; background:linear-gradient(180deg,#fff,#fbfcfd); box-shadow:0 8px 20px rgba(27,48,63,.1); color:#222; }
+      .post-form-review:after { content:"“"; position:absolute; top:36px; right:18px; color:#eef2f4; font:700 5rem/1 Georgia,serif; pointer-events:none; }
+      .google-review-kicker { position:relative; z-index:1; display:flex; align-items:center; gap:9px; margin:0 0 14px; }
+      .google-review-kicker .google-g { display:grid; width:28px; height:28px; place-items:center; border-radius:50%; background:#fff; box-shadow:0 1px 5px rgba(0,0,0,.18); color:#4285f4; font:800 1.12rem/1 Arial,sans-serif; }
+      .google-review-kicker strong { color:#34515d; font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; }
+      .post-form-review p { position:relative; z-index:1; margin:0 0 19px; font-size:.93rem; line-height:1.58; }
+      .post-form-review .reviewer-row { display:flex; position:relative; z-index:1; align-items:center; gap:10px; padding-top:15px; border-top:1px solid #e7ecef; }
       .post-form-review .post-form-avatar { display:grid; width:38px; height:38px; flex:0 0 38px; place-items:center; border-radius:50%; background:#8255cf; color:#fff; }
-      .post-form-review strong { color:#222; font-size:.82rem; }
-      .post-form-review .stars { margin-left:auto; color:#ffad0a; letter-spacing:2px; white-space:nowrap; }
+      .post-form-review .reviewer-name { display:flex; flex-direction:column; color:#222; font-size:.84rem; }
+      .post-form-review .reviewer-name small { margin-top:2px; color:#6b747a; font-size:.64rem; font-weight:600; }
+      .post-form-review .stars { margin-left:auto; color:#fbbc04; font-size:1.08rem; letter-spacing:2px; white-space:nowrap; text-shadow:0 1px 1px rgba(0,0,0,.08); }
       .quote-band { padding-bottom:28px; }
       .hero { padding-bottom:28px; }
       .customer-reaction-section { order:4; padding:64px 24px; background:linear-gradient(135deg,#172f57,#263474); color:#fff; }
@@ -2618,8 +2622,9 @@
               <div class="status" role="status" aria-live="polite"></div>
             </form>
             <article class="post-form-review" aria-label="Genuine customer review">
+              <div class="google-review-kicker"><span class="google-g" aria-hidden="true">G</span><strong>5-star Google review</strong></div>
               <p>“Paul was punctual, polite and very knowledgeable. My carpets look amazing and smell fresh. I would definitely recommend him.”</p>
-              <div><span class="post-form-avatar">J</span><strong>Jac P</strong><span class="stars">★★★★★</span></div>
+              <div class="reviewer-row"><span class="post-form-avatar">J</span><strong class="reviewer-name">Jac P<small>Genuine customer review</small></strong><span class="stars" aria-label="Five stars">★★★★★</span></div>
             </article>
           </div>
         </div>
