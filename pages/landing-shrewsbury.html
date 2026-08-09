@@ -2158,9 +2158,10 @@
       #new-reviews .proof-card { min-height: 325px; padding: 26px 28px; border: 0; background: #fff; text-align: center; }
       #new-reviews .proof-card h3 { margin: 0 0 23px; color: #111; font-size: 1rem; }
       #new-reviews .proof-card p { min-height: 150px; margin: 0; color: #222; font-size: .92rem; line-height: 1.75; }
-      .google-review-carousel { position:relative; max-width:760px; margin:28px auto 0; padding:0 62px; }
-      .google-review-carousel .proof-card { display:flex; min-height:285px; flex-direction:column; justify-content:center; border:1px solid #dbe3e8 !important; border-top:5px solid #34a853 !important; border-radius:16px !important; box-shadow:0 18px 42px rgba(9,44,76,.12) !important; }
-      .google-review-carousel .proof-card p { min-height:0 !important; font-size:1.05rem !important; line-height:1.7 !important; }
+      .google-review-carousel { position:relative; max-width:1120px; margin:28px auto 0; padding:0 58px; }
+      .google-review-carousel-track { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; align-items:stretch; }
+      .google-review-carousel .proof-card { display:flex; min-height:355px; flex-direction:column; justify-content:center; border:1px solid #dbe3e8 !important; border-top:5px solid #34a853 !important; border-radius:16px !important; box-shadow:0 18px 42px rgba(9,44,76,.12) !important; }
+      .google-review-carousel .proof-card p { display:-webkit-box; min-height:0 !important; overflow:hidden; font-size:.92rem !important; line-height:1.62 !important; -webkit-box-orient:vertical; -webkit-line-clamp:9; }
       .google-review-carousel .review-foot { margin-top:24px; padding-top:18px; border-top:1px solid #e4e8eb; }
       .review-carousel-arrow { position:absolute; z-index:2; top:50%; width:44px; height:44px; border:0; border-radius:50%; background:#212d66; color:#fff; font-size:1.6rem; line-height:1; cursor:pointer; transform:translateY(-50%); box-shadow:0 6px 16px rgba(0,0,0,.18); }
       .review-carousel-arrow:hover,.review-carousel-arrow:focus-visible { background:#142052; outline:3px solid rgba(66,133,244,.3); }
@@ -2171,6 +2172,7 @@
       .review-carousel-status { margin:10px 0 0; color:#687681; font-size:.78rem; text-align:center; }
       @media (max-width:780px) {
         .google-review-carousel { max-width:390px; padding:0 0 54px; }
+        .google-review-carousel-track { grid-template-columns:1fr; }
         .google-review-carousel .proof-card { min-height:330px; padding:28px 24px !important; text-align:left !important; }
         .google-review-carousel .proof-card p { font-size:.96rem !important; line-height:1.62 !important; }
         .review-carousel-arrow { top:auto; bottom:0; transform:none; }
@@ -2723,7 +2725,7 @@
         </section>
         <div class="block" id="new-reviews"><div class="wrap"><div class="center"><h2>What Our Valued Customers Say About Us</h2><p>Real feedback from genuine Google customers.</p></div><div class="google-review-carousel" id="googleReviewCarousel" aria-roledescription="carousel" aria-label="Genuine Google customer reviews">
           <button class="review-carousel-arrow review-carousel-prev" type="button" aria-label="Previous review">‹</button>
-          <article class="proof-card" aria-live="polite"><h3 id="carouselReviewTitle">Genuine five-star Google review</h3><p id="carouselReviewText"></p><div class="review-foot"><span class="review-person"><span class="review-avatar purple" id="carouselReviewAvatar">J</span><span id="carouselReviewName">Jac P</span></span><span class="stars" aria-label="Five stars">★★★★★</span></div></article>
+          <div class="google-review-carousel-track" id="googleReviewCarouselTrack" aria-live="polite"></div>
           <button class="review-carousel-arrow review-carousel-next" type="button" aria-label="Next review">›</button>
           <div class="review-carousel-dots" id="reviewCarouselDots" aria-label="Choose a review"></div>
           <p class="review-carousel-status" id="reviewCarouselStatus"></p>
@@ -3684,38 +3686,70 @@ Hi Paul, I’d like some help with carpet cleaning.</textarea
       (() => {
         const carousel = document.getElementById("googleReviewCarousel");
         if (!carousel) return;
-        const reviews = [2, 3, 4, 6, 9, 10, 13, 14, 17, 19].map(
-          (index) => GOOGLE_REVIEWS[index],
-        );
-        const reviewText = document.getElementById("carouselReviewText");
-        const reviewName = document.getElementById("carouselReviewName");
-        const reviewAvatar = document.getElementById("carouselReviewAvatar");
+        const reviews = GOOGLE_REVIEWS;
+        const track = document.getElementById("googleReviewCarouselTrack");
         const reviewStatus = document.getElementById("reviewCarouselStatus");
         const dots = document.getElementById("reviewCarouselDots");
-        let current = 0;
+        const mobileQuery = window.matchMedia("(max-width: 780px)");
+        let currentPage = 0;
         let timer;
         const reducedMotion = window.matchMedia(
           "(prefers-reduced-motion: reduce)",
         ).matches;
 
-        reviews.forEach((review, index) => {
-          const dot = document.createElement("button");
-          dot.className = "review-carousel-dot";
-          dot.type = "button";
-          dot.setAttribute("aria-label", `Show review ${index + 1}`);
-          dot.addEventListener("click", () => showReview(index, true));
-          dots.appendChild(dot);
-        });
+        const pageSize = () => (mobileQuery.matches ? 1 : 3);
+        const pageCount = () => Math.ceil(reviews.length / pageSize());
 
-        function showReview(index, restart) {
-          current = (index + reviews.length) % reviews.length;
-          const review = reviews[current];
-          reviewText.textContent = `“${review.text}”`;
-          reviewName.textContent = review.name;
-          reviewAvatar.textContent = review.name.charAt(0).toUpperCase();
-          reviewStatus.textContent = `Review ${current + 1} of ${reviews.length} · Genuine Google review`;
+        function reviewCardElement(review) {
+          const card = document.createElement("article");
+          card.className = "proof-card";
+          const title = document.createElement("h3");
+          title.textContent = "Genuine five-star Google review";
+          const text = document.createElement("p");
+          text.textContent = `“${review.text}”`;
+          text.title = review.text;
+          const footer = document.createElement("div");
+          footer.className = "review-foot";
+          const person = document.createElement("span");
+          person.className = "review-person";
+          const avatar = document.createElement("span");
+          avatar.className = "review-avatar purple";
+          avatar.setAttribute("aria-hidden", "true");
+          avatar.textContent = review.name.charAt(0).toUpperCase();
+          person.append(avatar, document.createTextNode(review.name));
+          const stars = document.createElement("span");
+          stars.className = "stars";
+          stars.setAttribute("aria-label", "Five stars");
+          stars.textContent = "★★★★★";
+          footer.append(person, stars);
+          card.append(title, text, footer);
+          return card;
+        }
+
+        function buildDots() {
+          dots.replaceChildren();
+          for (let index = 0; index < pageCount(); index += 1) {
+            const dot = document.createElement("button");
+            dot.className = "review-carousel-dot";
+            dot.type = "button";
+            dot.setAttribute("aria-label", `Show review group ${index + 1}`);
+            dot.addEventListener("click", () => showPage(index, true));
+            dots.appendChild(dot);
+          }
+        }
+
+        function showPage(index, restart) {
+          currentPage = (index + pageCount()) % pageCount();
+          const first = currentPage * pageSize();
+          const visible = reviews.slice(first, first + pageSize());
+          track.replaceChildren(...visible.map(reviewCardElement));
+          const last = first + visible.length;
+          reviewStatus.textContent = `Showing reviews ${first + 1}–${last} of ${reviews.length} · Genuine Google reviews`;
           [...dots.children].forEach((dot, dotIndex) =>
-            dot.setAttribute("aria-current", dotIndex === current ? "true" : "false"),
+            dot.setAttribute(
+              "aria-current",
+              dotIndex === currentPage ? "true" : "false",
+            ),
           );
           if (restart) startRotation();
         }
@@ -3723,20 +3757,27 @@ Hi Paul, I’d like some help with carpet cleaning.</textarea
         function startRotation() {
           clearInterval(timer);
           if (!reducedMotion)
-            timer = setInterval(() => showReview(current + 1, false), 6500);
+            timer = setInterval(() => showPage(currentPage + 1, false), 6500);
         }
 
         carousel
           .querySelector(".review-carousel-prev")
-          .addEventListener("click", () => showReview(current - 1, true));
+          .addEventListener("click", () => showPage(currentPage - 1, true));
         carousel
           .querySelector(".review-carousel-next")
-          .addEventListener("click", () => showReview(current + 1, true));
+          .addEventListener("click", () => showPage(currentPage + 1, true));
         carousel.addEventListener("mouseenter", () => clearInterval(timer));
         carousel.addEventListener("mouseleave", startRotation);
         carousel.addEventListener("focusin", () => clearInterval(timer));
         carousel.addEventListener("focusout", startRotation);
-        showReview(0, false);
+        mobileQuery.addEventListener("change", () => {
+          currentPage = 0;
+          buildDots();
+          showPage(0, false);
+          startRotation();
+        });
+        buildDots();
+        showPage(0, false);
         startRotation();
       })();
       let visibleReviews = 6;
