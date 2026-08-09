@@ -1962,10 +1962,11 @@
       .hero { padding: 54px 0 0; background: #d8edf8; }
       .hero:before {
         background:
-          linear-gradient(rgba(216,235,246,.58), rgba(232,241,246,.72)),
-          url("../assets/shrewsbury-homes-blurred.png") center/cover;
-        filter: blur(1.5px) saturate(.9);
-        transform: scale(1.025);
+          radial-gradient(circle at 20% 12%,rgba(255,255,255,.92),transparent 34%),
+          radial-gradient(circle at 86% 28%,rgba(255,255,255,.66),transparent 30%),
+          linear-gradient(145deg,#d9edf8 0%,#edf6fa 48%,#dcecf3 100%);
+        filter:none;
+        transform:none;
       }
       .hero-grid { grid-template-columns: 505px 415px; gap: 0 22px; max-width: 942px; }
       .hero h1 { margin: 0 auto 12px; color: #1d1d1d; font-size: 2.25rem; font-weight: 800; letter-spacing: -.018em; }
@@ -1979,9 +1980,7 @@
       .hero-proof figure:last-child b { background: #333; }
       .hero-proof-caption { margin: 26px 24px 0; padding: 20px 24px; border-radius: 3px; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,.1); }
       .hero-review p { font-size: .9rem; }
-      .guarantee-badge { top:-25px; right:calc(50% - 118px); width:236px; height:50px; padding:0 18px; border:3px solid #fff; border-radius:999px; outline:0; display:flex; align-items:center; justify-content:center; gap:7px; background:#20366f; color:#fff; box-shadow:0 8px 18px rgba(15,37,75,.25); transform:none; font:800 .82rem/1 Poppins,Arial,sans-serif; letter-spacing:.2px; }
-      .guarantee-badge:before { content:"✓"; position:static; display:grid; width:25px; height:25px; border-radius:50%; place-items:center; background:#5cbf9d; color:#fff; font-size:.85rem; }
-      .guarantee-badge strong { color:#fff; font:900 1rem/1 Poppins,Arial,sans-serif; letter-spacing:0; }
+      .guarantee-badge { display:none !important; }
 
       .hero-photo .quote { width:415px; max-width:100%; padding: 0 29.5px 0; border: 0; border-radius: 0; background: #f5f5f5; box-shadow: 0 5px 15px rgba(0,0,0,.14); }
       .hero-photo .quote-head { box-sizing:border-box; display:flex; height:130px; min-height:130px; margin:0 -29.5px 27px; padding:20px 24px; flex-direction:column; align-items:center; justify-content:center; background:#212d66; }
@@ -2044,8 +2043,6 @@
         .hero h1 { font-size: 1.95rem; }
         .hero .lead { font-size: 1rem; margin-bottom: 64px; }
         .hero-proof-images { height: 300px; }
-        .guarantee-badge { top:-23px; right:14px; width:214px; height:46px; padding:0 14px; border-width:3px; font-size:.72rem; }
-        .guarantee-badge strong { font-size:.88rem; }
         .hero-proof-caption { padding: 17px 18px; }
         .hero-photo .quote { width:100%; padding:0 18px; }
         .hero-photo .quote-head { min-height:116px; margin:0 -18px 22px; }
@@ -2200,7 +2197,6 @@
               and odours—leaving your carpets smelling fresh and looking beautifully revived.
             </p>
             <div class="hero-proof" aria-label="Genuine carpet cleaning before and after result">
-              <div class="guarantee-badge" aria-label="100% satisfaction promise"><strong>100% Satisfaction Promise</strong></div>
               <div class="hero-proof-images">
                 <figure><img src="../assets/img/carpet-before-genuine.png" alt="Heavily soiled carpet before professional cleaning" /><b>BEFORE</b></figure>
                 <figure><img src="../assets/img/carpet-after-genuine.png" alt="The same carpet after professional deep cleaning" /><b>AFTER</b></figure>
