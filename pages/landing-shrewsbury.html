@@ -2166,6 +2166,14 @@
       .post-form-review .post-form-avatar { display:grid; width:38px; height:38px; flex:0 0 38px; place-items:center; border-radius:50%; background:#8255cf; color:#fff; }
       .post-form-review strong { color:#222; font-size:.82rem; }
       .post-form-review .stars { margin-left:auto; color:#ffad0a; letter-spacing:2px; white-space:nowrap; }
+      .customer-reaction-section { order:0; padding:54px 20px 60px; background:#edf6f1; text-align:center; }
+      .customer-reaction-section .reaction-wrap { max-width:760px; margin:0 auto; }
+      .customer-reaction-section .eyebrow { color:#b9686b; }
+      .customer-reaction-section h2 { margin:7px 0 10px; color:#27332f; font-size:2.1rem; }
+      .customer-reaction-section p { max-width:600px; margin:0 auto 25px; color:#64736d; }
+      .customer-reaction-player { box-sizing:border-box; width:100%; max-width:390px; padding:14px; border:1px solid #e4c1bc; border-radius:22px; background:#fffaf7; box-shadow:0 18px 45px rgba(43,66,56,.16); }
+      .customer-reaction-player video { display:block; width:100%; aspect-ratio:9/16; border-radius:14px; background:#111; object-fit:cover; }
+      .customer-reaction-note { display:block; margin-top:13px; color:#8a5b5d; font-size:.82rem; font-weight:700; }
       .google-review-summary { display:flex; flex-direction:column; align-items:center; gap:2px; padding:24px 0 0; }
       .google-review-summary strong { font-size:2.55rem; line-height:1; letter-spacing:-.08em; font-weight:600; }
       .google-review-summary strong .g-blue { color:#4285f4; }.google-review-summary strong .g-red { color:#ea4335; }.google-review-summary strong .g-yellow { color:#fbbc05; }.google-review-summary strong .g-green { color:#34a853; }
@@ -2287,6 +2295,10 @@
         .literal-form-footer { margin:10px -14px 0; }
         .post-form-review { width:320px; max-width:100%; margin:22px auto 0; padding:20px 18px; }
         .post-form-review p { font-size:.8rem; line-height:1.5; }
+        .customer-reaction-section { padding:38px 17px 44px; }
+        .customer-reaction-section h2 { font-size:1.55rem; }
+        .customer-reaction-section p { margin-bottom:20px; font-size:.82rem; line-height:1.45; }
+        .customer-reaction-player { max-width:320px; padding:10px; border-radius:17px; }
 
         .trust-ribbon { grid-template-columns:1fr 1fr; padding:16px 24px; gap:12px 18px; font-size:.72rem; }
         .trust-ribbon span { display:flex; min-width:0; align-items:center; justify-content:flex-start; gap:7px; text-align:left; }
@@ -2595,6 +2607,20 @@
       </section>
       <section class="reference-content">
         <div class="trust-ribbon" aria-label="Service promises"><span><b>✓</b>Always punctual</span><span><b>✓</b>Clear quotations</span><span><b>✓</b>Friendly local service</span><span><b>✓</b>Satisfaction promise</span></div>
+        <section class="customer-reaction-section" id="customer-reaction" aria-labelledby="customer-reaction-title">
+          <div class="reaction-wrap">
+            <div class="eyebrow">A real customer. A real result.</div>
+            <h2 id="customer-reaction-title">Genuine customer reaction</h2>
+            <p>Hear a customer’s spontaneous reaction after seeing the finished carpet-cleaning result.</p>
+            <div class="customer-reaction-player">
+              <video id="customerReactionVideo" controls playsinline preload="metadata" poster="../assets/video/genuine-customer-reaction-poster.jpg">
+                <source src="../assets/video/genuine-customer-reaction-clean.mp4" type="video/mp4" />
+                Your browser does not support the video player.
+              </video>
+              <span class="customer-reaction-note">Filmed after a genuine customer clean · language edited for the website</span>
+            </div>
+          </div>
+        </section>
         <div class="block" id="new-reviews"><div class="wrap"><div class="center"><h2>What Our Valued Customers Say About Us</h2></div><div class="review-strip">
           <article class="proof-card"><h3>“Carpets Look Amazing”</h3><p>“Paul was punctual, polite and very knowledgeable. My carpets look amazing and smell fresh. I would definitely recommend him.”</p><div class="review-foot"><span class="review-person"><span class="review-avatar purple">J</span>Jac P</span><span class="stars">★★★★★</span></div></article>
           <article class="proof-card"><h3>“Everything Looks Brand New”</h3><p>“Superb service from start to finish. On time, polite and hardworking. Everything looks brand new!”</p><div class="review-foot"><span class="review-person"><span class="review-avatar teal">S</span>Suzanne Powell</span><span class="stars">★★★★★</span></div></article>
@@ -3932,5 +3958,22 @@ Hi Paul, I’d like some help with carpet cleaning.</textarea
       chatObserver.observe(document.getElementById("faq"));
     </script>
     <script src="../assets/engagement-tracking.js" defer></script>
+    <script>
+      (() => {
+        const video = document.getElementById("customerReactionVideo");
+        if (!video) return;
+        let recorded = false;
+        video.addEventListener("play", () => {
+          if (recorded) return;
+          recorded = true;
+          if (typeof window.gtag === "function") {
+            window.gtag("event", "customer_reaction_video_play", {
+              landing_area: "Shrewsbury",
+              video_title: "Genuine customer reaction"
+            });
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
