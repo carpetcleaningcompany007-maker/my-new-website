@@ -2137,7 +2137,7 @@
       #new-services .wrap { max-width: 880px; }
       #new-services .center { margin-bottom: 26px; }
       #new-services .center h2 { font-size: 1.55rem; }
-      #new-services .service-grid { grid-template-columns: repeat(5, 1fr); gap: 40px; }
+      #new-services .service-grid { grid-template-columns: repeat(4, 1fr); gap: 40px; }
       #new-services .service-tile { min-height: 0; padding: 0; border: 0; background: transparent; box-shadow: none; text-align: center; }
       #new-services .service-tile img { display:block; width:86px; height:86px; margin:0 auto 14px; border:1px solid #d2d2d2; border-radius:50%; object-fit:cover; filter:saturate(.82) contrast(1.02); }
       #new-services .service-tile h3 { margin: 0; color: #171717; font-size: .92rem; }
@@ -2175,8 +2175,12 @@
       .final-google-rating b { display:block; color:#4285f4; font-size:1.1rem; }.final-google-rating span { color:#f2a900; }
       .final-legal { display:flex; justify-content:space-between; max-width:1000px; margin:0 auto; padding:18px 24px; border-top:1px solid #ccc; color:#333; font-size:.78rem; }
       body > footer { display:none; }
+      .topnote { display:block; padding:8px 14px; background:#5d776a; color:#fff; font-size:.86rem; font-weight:700; line-height:1.35; text-align:center; }
+      .topnote a { color:#fff; text-decoration:none; white-space:nowrap; }
 
       @media (max-width: 760px) {
+        .topnote { display:block; padding:7px 10px; font-size:.72rem; }
+        .hero:before { background:linear-gradient(rgba(224,240,248,.66),rgba(224,240,248,.66)),url("../assets/img/shrewsbury-street-background.jpg") center/cover !important; filter:blur(8px); transform:scale(1.06); }
         .treatment-circles { grid-template-columns: repeat(3, 1fr); gap: 20px; }
         #new-results .results-gallery { grid-template-columns: 1fr; }
         #new-results .result-set:nth-child(n+3) { display: none; }
@@ -2190,6 +2194,18 @@
         #new-reviews .review-strip { grid-template-columns: 1fr; }
         #new-process .process-card { min-height: 0; margin-top: 42px; }
         #new-services .service-grid { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+        #new-reviews { padding:38px 0 30px; }
+        #new-reviews .wrap { width:calc(100% - 28px); }
+        #new-reviews .center { margin-bottom:20px; }
+        #new-reviews .center h2 { font-size:1.45rem; line-height:1.2; }
+        #new-reviews .review-strip { gap:14px; }
+        #new-reviews .proof-card { min-height:0; padding:22px 20px; border-radius:10px; text-align:left; box-shadow:0 8px 24px rgba(0,0,0,.07); }
+        #new-reviews .proof-card h3 { margin-bottom:12px; font-size:1rem; }
+        #new-reviews .proof-card p { min-height:0; font-size:.9rem; line-height:1.55; }
+        #new-reviews .review-foot { margin-top:15px; padding-top:14px; }
+        #new-reviews .review-avatar { width:34px; height:34px; font-size:1rem; }
+        #new-reviews .stars { font-size:.9rem; letter-spacing:1px; white-space:nowrap; }
+        .google-review-summary { padding-top:20px; }.google-review-summary strong { font-size:2.2rem; }.google-review-summary small { font-size:.78rem; text-align:center; }
         .final-quote-actions { flex-direction:column; gap:14px; }
         .final-site-footer { grid-template-columns:72px 1fr; }.final-site-footer img { width:68px; height:60px; }.final-google-rating { grid-column:1 / -1; }
         .final-legal { flex-direction:column; gap:8px; text-align:center; }
@@ -2198,7 +2214,7 @@
   </head>
   <body>
     <div class="topnote">
-      Professional carpet care across Shrewsbury · Call Paul on 07802 563213
+      Professional carpet care across Shrewsbury · <a href="tel:07802563213">Call Paul on 07802 563213</a>
     </div>
     <header>
       <div class="wrap nav">
@@ -2429,7 +2445,6 @@
           <article class="service-tile"><img src="../assets/img/hero-carpet-cleaning.webp" alt="Carpet cleaning"><h3>Carpet<br>Cleaning</h3></article>
           <article class="service-tile"><img src="../assets/img/upholstery-cleaning.webp" alt="Upholstery cleaning"><h3>Upholstery</h3></article>
           <article class="service-tile"><img src="../assets/img/commercial-carpet-cleaning.webp" alt="Commercial carpet cleaning"><h3>Commercial<br>Cleaning</h3></article>
-          <article class="service-tile"><img src="../assets/img/stain-removal.webp" alt="Mattress and fabric cleaning"><h3>Mattress<br>Cleaning</h3></article>
           <article class="service-tile"><img src="../assets/img/rug-cleaning.webp" alt="Rug and stain treatment"><h3>Rug &amp; Stain<br>Treatment</h3></article>
         </div></div></div>
 
@@ -3148,7 +3163,7 @@ Hi Paul, I’d like some help with carpet cleaning.</textarea
             <div class="field wide"><label>What type of building is this for? *</label><select name="building_type" required><option value="">Please choose</option><option>Private home or residence</option><option>Commercial premises</option><option>Other</option></select></div>
             <div class="field"><label>How many rooms need cleaning? *</label><select name="rooms" required><option value="">Please choose</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6-8</option><option>9 or more rooms</option><option>Other</option></select></div>
             <div class="field"><label>What kind of stains need cleaning? *</label><select name="stains" required><option value="">Please choose</option><option>No stains</option><option>Dirt</option><option>Food / drink stains</option><option>Makeup</option><option>Oil / Grease stains</option><option>Paint</option><option>Pet stains</option><option>Combination of above</option><option>Other</option></select></div>
-            <div class="field wide"><span class="extras-label">Extras Required?</span><div class="extras-grid"><label class="extra-check"><input type="checkbox" name="extras" value="Stairs">Stairs</label><label class="extra-check"><input type="checkbox" name="extras" value="Hallway">Hallway</label><label class="extra-check"><input type="checkbox" name="extras" value="Upholstery">Upholstery</label><label class="extra-check"><input type="checkbox" name="extras" value="Curtains">Curtains</label><label class="extra-check"><input type="checkbox" name="extras" value="Mattresses">Mattresses</label><label class="extra-check"><input type="checkbox" name="extras" value="Landing">Landing</label></div></div>
+            <div class="field wide"><span class="extras-label">Extras Required?</span><div class="extras-grid"><label class="extra-check"><input type="checkbox" name="extras" value="Stairs">Stairs</label><label class="extra-check"><input type="checkbox" name="extras" value="Hallway">Hallway</label><label class="extra-check"><input type="checkbox" name="extras" value="Upholstery">Upholstery</label><label class="extra-check"><input type="checkbox" name="extras" value="Curtains">Curtains</label><label class="extra-check"><input type="checkbox" name="extras" value="Landing">Landing</label></div></div>
             <div class="field wide"><button class="button" type="submit" style="width:100%">Get Your Carpet Cleaning Quote</button></div>
           </div>
           <p class="privacy">Step 1 of 2 · No contact details needed until the next page.</p>
