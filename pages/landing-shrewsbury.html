@@ -1979,7 +1979,13 @@
       .hero-proof figure:last-child b { background: #333; }
       .hero-proof-caption { margin: 26px 24px 0; padding: 20px 24px; border-radius: 3px; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,.1); }
       .hero-review p { font-size: .9rem; }
-      .guarantee-badge { top: -70px; right: calc(50% - 72px); width: 144px; height: 144px; border: 3px solid var(--reference-sky); color: var(--reference-sky); font-size: 1rem; box-shadow: none; }
+      .guarantee-badge { isolation:isolate; top:-30px; right:calc(50% - 68px); width:136px; height:136px; padding:15px; border:6px solid #d8ad3f; outline:3px solid rgba(255,255,255,.92); outline-offset:-10px; background:radial-gradient(circle at 50% 38%,#294982 0,#172b53 58%,#0d1d3d 100%); color:#fff; font-size:1rem; box-shadow:0 12px 25px rgba(10,28,54,.35); transform:rotate(-3deg); }
+      .guarantee-badge:before { content:""; position:absolute; z-index:-1; inset:5px; border:1px solid rgba(230,193,94,.9); border-radius:50%; }
+      .guarantee-badge span,.guarantee-badge strong,.guarantee-badge small { display:block; }
+      .guarantee-badge .badge-stars { margin-bottom:2px; color:#f2c85c; font-size:.64rem; letter-spacing:2px; }
+      .guarantee-badge strong { color:#fff; font:900 1.72rem/.9 Arial,sans-serif; letter-spacing:-1px; }
+      .guarantee-badge .badge-word { margin-top:5px; color:#f5d678; font:900 .68rem/1 Arial,sans-serif; letter-spacing:.8px; }
+      .guarantee-badge small { margin-top:3px; color:#fff; font:800 .58rem/1 Arial,sans-serif; letter-spacing:1.2px; }
 
       .hero-photo .quote { width:415px; max-width:100%; padding: 0 29.5px 0; border: 0; border-radius: 0; background: #f5f5f5; box-shadow: 0 5px 15px rgba(0,0,0,.14); }
       .hero-photo .quote-head { box-sizing:border-box; display:flex; height:130px; min-height:130px; margin:0 -29.5px 27px; padding:20px 24px; flex-direction:column; align-items:center; justify-content:center; background:#212d66; }
@@ -2040,7 +2046,10 @@
         .hero h1 { font-size: 1.95rem; }
         .hero .lead { font-size: 1rem; margin-bottom: 64px; }
         .hero-proof-images { height: 300px; }
-        .guarantee-badge { top: -53px; right: 18px; width: 108px; height: 108px; font-size: .76rem; }
+        .guarantee-badge { top:-28px; right:16px; width:108px; height:108px; padding:11px; border-width:5px; }
+        .guarantee-badge strong { font-size:1.38rem; }
+        .guarantee-badge .badge-word { font-size:.54rem; }
+        .guarantee-badge small { font-size:.48rem; }
         .hero-proof-caption { padding: 17px 18px; }
         .hero-photo .quote { width:100%; padding:0 18px; }
         .hero-photo .quote-head { min-height:116px; margin:0 -18px 22px; }
@@ -2195,7 +2204,7 @@
               and odours—leaving your carpets smelling fresh and looking beautifully revived.
             </p>
             <div class="hero-proof" aria-label="Genuine carpet cleaning before and after result">
-              <div class="guarantee-badge">100% satisfaction promise</div>
+              <div class="guarantee-badge" aria-label="100% satisfaction guarantee"><span class="badge-stars">★ ★ ★</span><strong>100%</strong><span class="badge-word">SATISFACTION</span><small>GUARANTEE</small></div>
               <div class="hero-proof-images">
                 <figure><img src="../assets/img/carpet-before-genuine.png" alt="Heavily soiled carpet before professional cleaning" /><b>BEFORE</b></figure>
                 <figure><img src="../assets/img/carpet-after-genuine.png" alt="The same carpet after professional deep cleaning" /><b>AFTER</b></figure>
