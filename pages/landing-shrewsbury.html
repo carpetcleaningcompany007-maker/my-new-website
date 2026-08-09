@@ -1962,10 +1962,10 @@
       .hero { padding: 54px 0 0; background: #d8edf8; }
       .hero:before {
         background:
-          linear-gradient(rgba(217,237,248,.76), rgba(230,241,246,.82)),
-          url("https://s0.geograph.org.uk/geophotos/08/30/20/8302004_b40df6b5.jpg") center/cover;
-        filter: blur(5px);
-        transform: scale(1.045);
+          linear-gradient(rgba(216,235,246,.58), rgba(232,241,246,.72)),
+          url("../assets/shrewsbury-homes-blurred.png") center/cover;
+        filter: blur(1.5px) saturate(.9);
+        transform: scale(1.025);
       }
       .hero-grid { grid-template-columns: 505px 415px; gap: 0 22px; max-width: 942px; }
       .hero h1 { margin: 0 auto 12px; color: #1d1d1d; font-size: 2.25rem; font-weight: 800; letter-spacing: -.018em; }
@@ -2000,8 +2000,8 @@
       .reference-rating:before { content:""; position:absolute; top:10px; left:50%; width:126px; height:4px; transform:translateX(-50%); background:linear-gradient(90deg,#26aeda 0 58%,#e7e7e7 58%); }
       .reference-rating strong { color:#4285f4; font-size:1.05rem; }
       .reference-rating span { color:#ff9f00; letter-spacing:1px; }
-      .reference-guarantee { display:grid; grid-template-columns:136px 1fr; align-items:center; gap:16px; min-height:154px; padding:10px 22px 11px 14px; background:#e7e7e7; color:#333; font-size:.78rem; line-height:1.48; }
-      .guarantee-seal { display:block; width:123px; height:133px; overflow:visible; transform:rotate(-2deg); filter:drop-shadow(0 4px 3px rgba(0,0,0,.2)); }
+      .reference-guarantee { display:grid; grid-template-columns:148px 1fr; align-items:center; gap:14px; min-height:154px; padding:10px 18px 11px 10px; background:#e7e7e7; color:#333; font-size:.78rem; line-height:1.48; }
+      .guarantee-seal { display:block; width:148px; height:128px; object-fit:contain; }
       .photo-credit { opacity: .7; }
       .trust-ribbon { margin-top: 0; border-top: 1px solid #eee; background: #f8f8f8; }
       .trust-ribbon span { padding: 18px 10px; color: #202020; font-size: .88rem; }
@@ -2354,7 +2354,7 @@
                   <small>Genuine customer reviews</small>
                 </div>
                 <div class="reference-guarantee">
-                  <svg class="guarantee-seal" viewBox="0 0 123 133" role="img" aria-label="100% satisfaction guarantee"><polygon points="5,3 118,3 121,101 61.5,130 2,101" fill="#d9281d"/><polygon points="13,12 110,12 112,95 61.5,119 11,95" fill="#fff"/><text x="61.5" y="43" text-anchor="middle" fill="#111" font-family="Arial,sans-serif" font-size="29" font-weight="900">100%</text><rect x="8" y="50" width="107" height="38" rx="1" fill="#171717"/><text x="61.5" y="67" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="11.5" font-weight="900" letter-spacing=".2">SATISFACTION</text><text x="61.5" y="81" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="11.5" font-weight="900" letter-spacing=".4">GUARANTEE</text></svg>
+                  <img class="guarantee-seal" src="../assets/satisfaction-guarantee.png" alt="100% customer satisfaction guaranteed" />
                   <span>We inspect the finished work with you and want you to be delighted with the result.</span>
                 </div>
               </div>
@@ -3116,7 +3116,7 @@ Hi Paul, I’d like some help with carpet cleaning.</textarea
           <p class="privacy">Step 1 of 2 · No contact details needed until the next page.</p>
           <div class="reference-proof" aria-label="Quote reassurance">
             <div class="reference-rating"><strong>G</strong><div><b>Google Rating 5.0</b><br><span>★★★★★</span></div><small>Genuine customer reviews</small></div>
-            <div class="reference-guarantee"><svg class="guarantee-seal" viewBox="0 0 123 133" role="img" aria-label="100% satisfaction guarantee"><polygon points="5,3 118,3 121,101 61.5,130 2,101" fill="#d9281d"/><polygon points="13,12 110,12 112,95 61.5,119 11,95" fill="#fff"/><text x="61.5" y="43" text-anchor="middle" fill="#111" font-family="Arial,sans-serif" font-size="29" font-weight="900">100%</text><rect x="8" y="50" width="107" height="38" rx="1" fill="#171717"/><text x="61.5" y="67" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="11.5" font-weight="900" letter-spacing=".2">SATISFACTION</text><text x="61.5" y="81" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="11.5" font-weight="900" letter-spacing=".4">GUARANTEE</text></svg><span>We inspect the finished work with you and want you to be delighted with the result.</span></div>
+            <div class="reference-guarantee"><img class="guarantee-seal" src="../assets/satisfaction-guarantee.png" alt="100% customer satisfaction guaranteed"><span>We inspect the finished work with you and want you to be delighted with the result.</span></div>
           </div>
         `;
         trackingKeys.forEach((key) => {
