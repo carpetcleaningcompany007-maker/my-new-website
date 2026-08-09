@@ -1967,7 +1967,7 @@
         filter: blur(5px);
         transform: scale(1.045);
       }
-      .hero-grid { grid-template-columns: 510px 410px; gap: 0 22px; max-width: 942px; }
+      .hero-grid { grid-template-columns: 505px 415px; gap: 0 22px; max-width: 942px; }
       .hero h1 { margin: 0 auto 12px; color: #1d1d1d; font-size: 2.25rem; font-weight: 800; letter-spacing: -.018em; }
       .hero .lead { max-width: 780px; margin-bottom: 36px; color: #272727; font-size: 1.23rem; line-height: 1.45; }
       .hero-proof { padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
@@ -1981,20 +1981,22 @@
       .hero-review p { font-size: .9rem; }
       .guarantee-badge { top: -70px; right: calc(50% - 72px); width: 144px; height: 144px; border: 3px solid var(--reference-sky); color: var(--reference-sky); font-size: 1rem; box-shadow: none; }
 
-      .hero-photo .quote { padding: 0 28px 22px; border: 0; border-radius: 0; background: #f6f6f6; box-shadow: 0 5px 15px rgba(0,0,0,.14); }
-      .hero-photo .quote-head { margin: 0 -28px 24px; padding: 22px 18px 20px; background: var(--reference-navy); }
+      .hero-photo .quote { width:415px; max-width:100%; padding: 0 29.5px 0; border: 0; border-radius: 0; background: #f5f5f5; box-shadow: 0 5px 15px rgba(0,0,0,.14); }
+      .hero-photo .quote-head { box-sizing:border-box; display:flex; height:130px; min-height:130px; margin:0 -29.5px 27px; padding:20px 24px; flex-direction:column; align-items:center; justify-content:center; background:#212d66; }
       .hero-photo .quote-head h2 { font-size: 1.85rem; }
-      .hero-photo .quote-head span { color: #fff; font-size: 1rem; }
-      .hero-photo .fields { gap: 14px; }
-      .hero-photo .field label, .extras-label { color: #1a1a1a; font-size: .92rem; font-weight: 700; }
-      .hero-photo select, .hero-photo input { min-height: 43px; border: 1px solid #bdbdbd; border-radius: 0; color: #222; font-size: .97rem; }
-      .extras-grid { grid-template-columns: 1fr; gap: 3px; }
-      .extra-check { min-height: 22px; padding: 0; border: 0; background: transparent; font-size: .9rem; font-weight: 400; }
-      .extra-check input { width: 14px; min-height: 14px; }
-      .hero-photo .button { min-height: 63px; margin-top: 14px; border-radius: 999px; background: var(--reference-red); font-size: 1.05rem; box-shadow: none; }
-      .hero-photo .privacy { margin: 8px 0 0; font-size: .68rem; }
-      .reference-proof { margin: 14px -28px -22px; }
-      .reference-rating { position:relative; display:flex; align-items:center; justify-content:center; gap:12px; min-height:72px; padding-top:10px; border-top:1px solid #ddd; background:#fff; color:#343434; font-size:.78rem; }
+      .hero-photo .quote-head span { max-width:340px; color: #fff; font-size: 1rem; line-height:1.35; }
+      .hero-photo form { font-family:Arial,sans-serif; font-size:14px; line-height:17px; }
+      .hero-photo .fields { display:grid; gap:18px; }
+      .hero-photo .field { display:grid; gap:5px; }
+      .hero-photo .field label, .extras-label { box-sizing:border-box; display:block; height:17px; margin:0; color:#111; font-family:Arial,sans-serif; font-size:14px; line-height:17px; font-weight:700; }
+      .hero-photo select { width:100%; height:42px; min-height:42px; padding:3px 12px; border:1px solid #bbb; border-radius:0; background:#fff; color:#000; font:16px Arial,sans-serif; }
+      .extras-grid { display:grid; grid-template-columns:1fr; gap:0; }
+      .extra-check { box-sizing:border-box; display:flex; height:23.5px; min-height:23.5px; margin:0; padding:0; border:0; align-items:center; gap:7px; background:transparent; font:14px/17px Arial,sans-serif; font-weight:400; }
+      .extra-check input { width:13px; height:13px; min-height:13px; margin:0; }
+      .hero-photo .button { width:100%; height:63px; min-height:63px; margin:0; border-radius:100px; background:#ed260d; font:600 18px/22px Poppins,Arial,sans-serif; box-shadow:none; }
+      .hero-photo .privacy { display:none; }
+      .reference-proof { margin:13px -29.5px 0; }
+      .reference-rating { box-sizing:border-box; position:relative; display:flex; height:83px; min-height:83px; padding-top:12px; align-items:center; justify-content:center; gap:12px; border-top:1px solid #ddd; background:#fff; color:#343434; font-size:.78rem; }
       .reference-rating:before { content:""; position:absolute; top:10px; left:50%; width:126px; height:4px; transform:translateX(-50%); background:linear-gradient(90deg,#26aeda 0 58%,#e7e7e7 58%); }
       .reference-rating strong { color:#4285f4; font-size:1.05rem; }
       .reference-rating span { color:#ff9f00; letter-spacing:1px; }
@@ -2041,9 +2043,9 @@
         .hero-proof-images { height: 300px; }
         .guarantee-badge { top: -53px; right: 18px; width: 108px; height: 108px; font-size: .76rem; }
         .hero-proof-caption { padding: 17px 18px; }
-        .hero-photo .quote { padding: 0 18px 20px; }
-        .hero-photo .quote-head { margin: 0 -18px 20px; }
-        .reference-proof { margin: 14px -18px -20px; }
+        .hero-photo .quote { width:100%; padding:0 18px; }
+        .hero-photo .quote-head { min-height:116px; margin:0 -18px 22px; }
+        .reference-proof { margin:13px -18px 0; }
         .trust-ribbon { grid-template-columns: 1fr 1fr; }
       }
 
@@ -2244,7 +2246,7 @@
                 <div class="eyebrow">Free, no-obligation quotation</div>
                 <h2>Carpet Cleaning Quote</h2>
               </div>
-              <span>Tell us about what you need cleaned—we’ll send you a fast quote</span>
+              <span>Tell us about what you need cleaned we'll send you an instant quote</span>
             </div>
             <form
               action="https://carpet-cleaning-crm.onrender.com/api/website-form"
@@ -3107,8 +3109,8 @@ Hi Paul, I’d like some help with carpet cleaning.</textarea
           <input type="hidden" name="landing_area" value="Shrewsbury">
           <div class="fields">
             <div class="field wide"><label>What type of building is this for? *</label><select name="building_type" required><option value="">Please choose</option><option>Private home or residence</option><option>Commercial premises</option><option>Other</option></select></div>
-            <div class="field"><label>How many rooms need cleaning? *</label><select name="rooms" required><option value="">Please choose</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6–8</option><option>9 or more</option><option>Other</option></select></div>
-            <div class="field"><label>What kind of stains need cleaning? *</label><select name="stains" required><option value="">Please choose</option><option>No stains</option><option>Dirt</option><option>Food / drink stains</option><option>Makeup</option><option>Oil / grease stains</option><option>Paint</option><option>Pet stains</option><option>Combination of above</option><option>Other</option></select></div>
+            <div class="field"><label>How many rooms need cleaning? *</label><select name="rooms" required><option value="">Please choose</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6-8</option><option>9 or more rooms</option><option>Other</option></select></div>
+            <div class="field"><label>What kind of stains need cleaning? *</label><select name="stains" required><option value="">Please choose</option><option>No stains</option><option>Dirt</option><option>Food / drink stains</option><option>Makeup</option><option>Oil / Grease stains</option><option>Paint</option><option>Pet stains</option><option>Combination of above</option><option>Other</option></select></div>
             <div class="field wide"><span class="extras-label">Extras Required?</span><div class="extras-grid"><label class="extra-check"><input type="checkbox" name="extras" value="Stairs">Stairs</label><label class="extra-check"><input type="checkbox" name="extras" value="Hallway">Hallway</label><label class="extra-check"><input type="checkbox" name="extras" value="Upholstery">Upholstery</label><label class="extra-check"><input type="checkbox" name="extras" value="Curtains">Curtains</label><label class="extra-check"><input type="checkbox" name="extras" value="Mattresses">Mattresses</label><label class="extra-check"><input type="checkbox" name="extras" value="Landing">Landing</label></div></div>
             <div class="field wide"><button class="button" type="submit" style="width:100%">Get Your Carpet Cleaning Quote</button></div>
           </div>
