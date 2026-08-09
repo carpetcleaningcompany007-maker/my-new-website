@@ -1979,6 +1979,9 @@
       .hero-review p { font-size: .9rem; }
       .guarantee-badge { display:none !important; }
       .hero-guarantee-image { position:absolute; z-index:4; top:-55px; left:50%; width:128px; height:auto !important; max-height:112px; object-fit:contain !important; transform:translateX(-50%); filter:drop-shadow(0 7px 10px rgba(0,0,0,.22)); }
+      .hero-promise-circle { box-sizing:border-box; display:flex; height:128px !important; max-height:none; flex-direction:column; align-items:center; justify-content:center; border:4px solid #36aae1; border-radius:50%; background:#fff; color:#36aae1; font-weight:800; line-height:1.2; text-align:center; filter:drop-shadow(0 5px 8px rgba(0,0,0,.12)); }
+      .hero-promise-circle strong { font-size:1.15rem; }
+      .hero-promise-circle span { font-size:.84rem; }
 
       .hero-photo .quote { width:415px; max-width:100%; padding: 0 29.5px 0; border: 0; border-radius: 0; background: #f5f5f5; box-shadow: 0 5px 15px rgba(0,0,0,.14); }
       .hero-photo .quote-head { box-sizing:border-box; display:flex; height:130px; min-height:130px; margin:0 -29.5px 27px; padding:20px 24px; flex-direction:column; align-items:center; justify-content:center; background:#212d66; }
@@ -2232,8 +2235,8 @@
           background:#e73517; color:#fff; font:700 11px/1.2 Poppins,Arial,sans-serif;
         }
         .topnote { font-size:0; }
-        .topnote a { font-size:11px; }
-        .topnote a:before { content:"Call Now: "; }
+        .topnote a { font-size:0; }
+        .topnote a:before { content:"Call Now: 07802 563213"; font-size:11px; }
         header { position:relative; z-index:20; background:#fff; box-shadow:none; }
         header .nav { display:grid; grid-template-columns:90px minmax(0,1fr); width:100%; max-width:390px; align-items:center; min-height:70px; padding:7px 10px; }
         header .brand span, header .header-phone, header .links { display:none !important; }
@@ -2244,19 +2247,21 @@
 
         .hero { padding:20px 0 0; background-position:center !important; }
         .hero:before {
-          background-image:linear-gradient(rgba(225,240,248,.43),rgba(225,240,248,.48)),url("../assets/img/shrewsbury-street-background.jpg") !important;
+          background-image:linear-gradient(rgba(230,244,252,.63),rgba(230,244,252,.67)),url("../assets/img/shrewsbury-street-background.jpg") !important;
           background-size:auto 900px !important; background-position:center top !important; background-repeat:repeat-y !important;
           filter:blur(5px); transform:scale(1.055);
         }
         .hero .wrap,.hero-grid { box-sizing:border-box; width:calc(100% - 34px); max-width:100%; min-width:0; }
         .hero-grid > div,.hero-proof,.hero-photo,.hero-photo .quote { box-sizing:border-box; width:100%; max-width:100%; min-width:0; }
-        .hero h1 { max-width:330px; margin:0 auto 8px; font-size:1.42rem; line-height:1.18; }
-        .hero .lead { max-width:330px; margin:0 auto 32px; font-size:.85rem; line-height:1.38; }
+        .hero h1 { max-width:330px; margin:0 auto 10px; font-size:1.34rem; line-height:1.2; }
+        .hero .lead { max-width:325px; margin:0 auto 40px; font-size:.82rem; line-height:1.42; }
         .hero-proof { margin:0 auto 18px; }
-        .hero-proof-images { width:100%; max-width:100%; height:255px; }
+        .hero-proof-images { width:100%; max-width:100%; height:230px; }
         .hero-proof-images figure { min-width:0; }
         .hero-proof-images img { width:100%; max-width:100%; }
-        .hero-guarantee-image { top:-42px; width:92px; max-height:92px; }
+        .hero-guarantee-image { top:-54px; width:112px; height:112px !important; max-height:none; }
+        .hero-promise-circle strong { font-size:1rem; }
+        .hero-promise-circle span { font-size:.75rem; }
         .hero-proof b { left:7px; bottom:7px; padding:5px 8px; font-size:.66rem; }
         .hero-proof-caption { margin:12px 0 17px; padding:13px 14px; border-radius:2px; }
         .hero-review p { margin-bottom:8px; font-size:.72rem; line-height:1.45; }
