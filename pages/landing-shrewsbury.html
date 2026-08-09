@@ -1843,12 +1843,28 @@
       .package-card,.proof-card,.benefit,.service-tile,.process-card { border-radius:15px; }
       .results-gallery { gap:12px; }
       .result-set { border-radius:9px; box-shadow:0 8px 20px rgba(27,70,96,.08); }
+      .hero-review { display:block; padding:17px 18px 15px; }
+      .hero-review p { margin:0 0 11px; color:#425c6d; font-size:.92rem; line-height:1.55; }
+      .hero-review div { display:flex; align-items:center; justify-content:space-between; gap:14px; }
+      .hero-review .review-stars { color:#ffad0a; font-size:1.08rem; letter-spacing:2px; }
+      .trust-ribbon { display:grid; grid-template-columns:repeat(4,1fr); border-bottom:1px solid #e4ebef; background:#f8fafb; }
+      .trust-ribbon span { padding:20px 14px; color:#27465b; text-align:center; font-weight:800; }
+      .trust-ribbon b { margin-right:8px; color:#2aac8b; font-size:1.25rem; }
+      .mid-cta { padding:42px 20px; background:linear-gradient(135deg,#eef8fd,#f8fcfe); text-align:center; }
+      .mid-cta h2 { margin:0 0 9px; color:#123b59; font-size:2rem; }
+      .mid-cta p { margin:0 auto 19px; max-width:680px; color:#5a7180; }
+      .treatment-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+      .treatment-item { padding:22px; border:1px solid #d7e5ed; border-radius:14px; background:#fff; box-shadow:0 9px 22px rgba(26,68,94,.07); }
+      .treatment-item b { display:block; margin-bottom:5px; color:#123b59; font-size:1.08rem; }
+      .treatment-item span { color:#637987; font-size:.9rem; }
       @media(max-width:900px){
         .hero { padding:32px 0 58px; }
         .hero-grid { gap:0; }
         .hero h1 { font-size:clamp(2rem,7vw,2.75rem); }
         .hero-proof { margin-bottom:26px; }
         .guarantee-badge { top:-38px; right:18px; width:104px; height:104px; font-size:.72rem; }
+        .trust-ribbon { grid-template-columns:1fr 1fr; }
+        .treatment-grid { grid-template-columns:1fr 1fr; }
       }
       @media(max-width:600px){
         .hero { padding-top:28px; }
@@ -1858,6 +1874,8 @@
         .hero-proof-caption { align-items:flex-start; flex-direction:column; gap:3px; font-size:.78rem; }
         .hero-photo .quote { padding:0 18px 20px; border-radius:14px; }
         .hero-photo .quote-head { margin:0 -18px 19px; }
+        .hero-review div { align-items:flex-start; flex-direction:column; gap:5px; }
+        .trust-ribbon,.treatment-grid { grid-template-columns:1fr; }
       }
     </style>
   </head>
@@ -1900,7 +1918,7 @@
                 <figure><img src="../assets/img/carpet-before-genuine.png" alt="Heavily soiled carpet before professional cleaning" /><b>BEFORE</b></figure>
                 <figure><img src="../assets/img/carpet-after-genuine.png" alt="The same carpet after professional deep cleaning" /><b>AFTER</b></figure>
               </div>
-              <div class="hero-proof-caption"><strong>Genuine customer result</strong><span>Real work · no stock comparison · results vary</span></div>
+              <div class="hero-proof-caption hero-review"><p>“Paul was punctual, polite and very knowledgeable. My carpets look amazing and smell fresh.”</p><div><strong>Jac P · genuine Google review</strong><span class="review-stars">★★★★★</span></div></div>
             </div>
             <div class="ticks">
               <div class="tick">Residential &amp; commercial work</div>
@@ -2056,11 +2074,14 @@
         </div>
       </section>
       <section class="reference-content">
+        <div class="trust-ribbon" aria-label="Service promises"><span><b>✓</b>Always punctual</span><span><b>✓</b>Clear quotations</span><span><b>✓</b>Friendly local service</span><span><b>✓</b>Satisfaction promise</span></div>
         <div class="block" id="new-reviews"><div class="wrap"><div class="center"><div class="eyebrow">Genuine customer feedback</div><h2>What our customers say</h2><p>Real feedback from customers who chose The Carpet Cleaning Company.</p></div><div class="review-strip">
           <article class="proof-card"><div class="stars">★★★★★</div><p>“Paul was punctual, polite and very knowledgeable. My carpets look amazing and smell fresh. I would definitely recommend him.”</p><strong>Jac P · Google review</strong></article>
           <article class="proof-card"><div class="stars">★★★★★</div><p>“Superb service from start to finish. On time, polite and hardworking. Everything looks brand new!”</p><strong>Suzanne Powell · Google review</strong></article>
           <article class="proof-card"><div class="stars">★★★★★</div><p>“A professional, trustworthy and highly effective service. Thank you very much indeed!”</p><strong>Ross Doodson · Google review</strong></article>
         </div></div></div>
+
+        <div class="mid-cta"><h2>Get an honest cleaning quotation</h2><p>Tell Paul what needs cleaning and receive friendly, no-obligation advice about the most suitable process.</p><a class="button" href="#quote">Get Your Carpet Cleaning Quote</a></div>
 
         <div class="block alt"><div class="wrap"><div class="center"><div class="eyebrow">Professional local service</div><h2>Punctual, trustworthy, quality carpet cleaning</h2></div><div class="benefit-grid">
           <article class="benefit"><b>✓</b><h3>Satisfaction promise</h3><p>We inspect the finished work with you and want you to be delighted with the result.</p></article>
@@ -2094,6 +2115,15 @@
             <tr><td>Optional carpet protector</td><td>—</td><td class="optional">Available</td><td class="optional">Available</td></tr>
           </tbody>
         </table></div><p class="package-note">No invented fixed prices: every quotation reflects room sizes, fibre, condition and treatment required.</p></div></div>
+
+        <div class="block alt"><div class="wrap"><div class="center"><div class="eyebrow">Deep, thorough cleaning</div><h2>Targeted treatment for everyday carpet problems</h2><p>Every carpet is inspected first. Treatment and likely improvement depend on the fibre, condition and cause of the mark.</p></div><div class="treatment-grid">
+          <article class="treatment-item"><b>Pet marks and odours</b><span>Targeted treatment selected for the contamination and carpet type.</span></article>
+          <article class="treatment-item"><b>Food and drink</b><span>Careful spot treatment followed by professional extraction where suitable.</span></article>
+          <article class="treatment-item"><b>Oil and grease</b><span>Specialist treatment with an honest assessment before work begins.</span></article>
+          <article class="treatment-item"><b>Dirt and traffic lanes</b><span>Pre-spray and mechanical agitation help release embedded soil.</span></article>
+          <article class="treatment-item"><b>Paint and ink</b><span>Assessed individually because fibre and product type affect the result.</span></article>
+          <article class="treatment-item"><b>Make-up and cosmetics</b><span>Targeted products and controlled treatment reduce the risk of fibre damage.</span></article>
+        </div></div></div>
 
         <div class="block alt" id="new-results"><div class="wrap"><div class="center"><div class="eyebrow">Genuine customer work</div><h2>Our Customer Before &amp; Afters</h2><p>Real customer-work photographs—never stock comparisons or artificially enhanced results.</p></div><div class="results-gallery">
           <article class="result-set"><figure><img src="../assets/img/carpet-before-genuine.png" alt="Heavily soiled lounge carpet before professional cleaning"><b>Before</b></figure><figure><img src="../assets/img/carpet-after-genuine.png" alt="The same lounge carpet after professional cleaning"><b>After</b></figure></article>
