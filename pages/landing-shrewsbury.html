@@ -1967,7 +1967,7 @@
         transform:scale(1.04);
       }
       .hero-grid { grid-template-columns: 505px 415px; gap: 0 22px; max-width: 942px; }
-      .hero h1 { margin: 0 auto 12px; color: #1d1d1d; font-size: 2.25rem; font-weight: 800; letter-spacing: -.018em; }
+      .hero h1 { margin: 0 auto 12px; color: #1d1d1d; font-family:"DM Sans",Arial,sans-serif; font-size: 2.25rem; font-weight: 700; letter-spacing: -.035em; }
       .hero .lead { max-width:780px; margin-bottom:72px; color:#272727; font-size:1.23rem; line-height:1.45; }
       .hero-proof { padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
       .hero-proof-images { height: 352px; gap: 2px; border-radius: 0; }
@@ -2182,7 +2182,7 @@
       .hero-photo .quote-head { min-height:130px; padding:22px 25px; }
       .hero-photo .quote-head .eyebrow,
       .hero-photo .quote-head > span { display:none; }
-      .hero-photo .quote-head h2 { max-width:360px; margin:0 auto; font-size:1.85rem; line-height:1.08; text-align:center; }
+      .hero-photo .quote-head h2 { max-width:360px; margin:0 auto; font-family:"DM Sans",Arial,sans-serif; font-size:1.85rem; font-weight:700; letter-spacing:-.025em; line-height:1.08; text-align:center; }
       .hero-photo .fields { grid-template-columns:1fr; gap:15px; }
       .hero-photo .field,
       .hero-photo .field.wide,
@@ -2550,7 +2550,7 @@
             <div class="quote-head">
               <div>
                 <div class="eyebrow">Free, no-obligation quotation</div>
-                <h2>Last Step, Where Should We Send Your Quote?</h2>
+                <h2>First Step: Tell Us What You Need Cleaned</h2>
               </div>
               <span>Tell us about what you need cleaned we'll send you an instant quote</span>
             </div>
@@ -4060,6 +4060,31 @@ Hi Paul, I’d like some help with carpet cleaning.</textarea
               video_title: "Genuine customer reaction"
             });
           }
+        });
+      })();
+    </script>
+    <script>
+      (() => {
+        const pageAnchorSelector = '.links a[href^="#"], a.button[href^="#"], .literal-process-cta[href^="#"]';
+        document.addEventListener("click", (event) => {
+          const link = event.target.closest(pageAnchorSelector);
+          if (!link || link.closest("#helpPrompt, #simpleWelcome, #quickChat")) return;
+          const hash = link.getAttribute("href");
+          if (!hash || hash === "#") return;
+          let target = document.querySelector(hash);
+          if (!target) return;
+          if (hash === "#new-process" && getComputedStyle(target).display === "none") {
+            target = document.querySelector(".literal-process-wrap") || target;
+          }
+          event.preventDefault();
+          const moveToTarget = () => {
+            const top = target.getBoundingClientRect().top + window.scrollY - 16;
+            window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+          };
+          history.replaceState(null, "", hash);
+          moveToTarget();
+          setTimeout(moveToTarget, 400);
+          setTimeout(moveToTarget, 1200);
         });
       })();
     </script>
