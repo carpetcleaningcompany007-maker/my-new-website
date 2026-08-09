@@ -2165,19 +2165,24 @@
       .post-form-review .post-form-avatar { display:grid; width:38px; height:38px; flex:0 0 38px; place-items:center; border-radius:50%; background:#8255cf; color:#fff; }
       .post-form-review strong { color:#222; font-size:.82rem; }
       .post-form-review .stars { margin-left:auto; color:#ffad0a; letter-spacing:2px; white-space:nowrap; }
-      .customer-reaction-section { order:4; padding:54px 20px 60px; background:#edf6f1; text-align:center; }
-      .customer-reaction-section .reaction-wrap { max-width:760px; margin:0 auto; }
-      .customer-reaction-section .eyebrow { color:#b9686b; }
-      .customer-reaction-section h2 { margin:7px 0 10px; color:#27332f; font-size:2.1rem; }
-      .customer-reaction-section p { max-width:600px; margin:0 auto 25px; color:#64736d; }
-      .customer-reaction-player { box-sizing:border-box; width:100%; max-width:520px; padding:14px; border:1px solid #e4c1bc; border-radius:22px; background:#fffaf7; box-shadow:0 18px 45px rgba(43,66,56,.16); }
-      .customer-reaction-preview { position:relative; display:grid; min-height:285px; overflow:hidden; place-items:center; border-radius:14px; background:linear-gradient(rgba(25,42,35,.25),rgba(25,42,35,.58)),url("../assets/video/genuine-customer-reaction-poster.jpg") center 44%/cover; }
+      .customer-reaction-section { order:4; padding:64px 24px; background:linear-gradient(135deg,#172f57,#263474); color:#fff; }
+      .customer-reaction-section .reaction-wrap { display:grid; grid-template-columns:minmax(0,.9fr) minmax(420px,1.1fr); max-width:1060px; margin:0 auto; align-items:center; gap:58px; }
+      .customer-reaction-copy { text-align:left; }
+      .customer-reaction-section .eyebrow { display:inline-flex; align-items:center; gap:8px; padding:7px 12px; border:1px solid rgba(255,255,255,.25); border-radius:999px; color:#ffd9d4; font-size:.72rem; letter-spacing:.08em; }
+      .customer-reaction-section .eyebrow:before { content:"✓"; display:grid; width:20px; height:20px; place-items:center; border-radius:50%; background:#2aac8b; color:#fff; }
+      .customer-reaction-section h2 { margin:18px 0 13px; color:#fff; font-size:2.65rem; line-height:1.05; }
+      .customer-reaction-section p { max-width:470px; margin:0 0 22px; color:#dce7f4; font-size:1.05rem; line-height:1.6; }
+      .reaction-stars { display:flex; align-items:center; gap:12px; color:#ffbd18; font-size:1.35rem; letter-spacing:3px; }
+      .reaction-stars small { color:#fff; font-size:.78rem; font-weight:700; letter-spacing:0; }
+      .customer-reaction-player { box-sizing:border-box; width:100%; margin:0 auto; padding:12px; border:1px solid rgba(255,255,255,.3); border-radius:24px; background:#fff; box-shadow:0 24px 55px rgba(0,0,0,.3); }
+      .customer-reaction-preview { position:relative; display:grid; min-height:310px; overflow:hidden; place-items:center; border-radius:16px; background:linear-gradient(rgba(13,29,44,.12),rgba(13,29,44,.56)),url("../assets/video/genuine-customer-reaction-poster.jpg") center 44%/cover; }
+      .customer-reaction-preview:before { content:"REAL CUSTOMER VIDEO"; position:absolute; top:16px; left:16px; padding:7px 11px; border-radius:999px; background:rgba(14,36,57,.82); color:#fff; font:800 .65rem/1 Arial,sans-serif; letter-spacing:.08em; }
       .customer-reaction-preview[hidden], .customer-reaction-player video[hidden] { display:none; }
-      .customer-reaction-watch { display:inline-flex; max-width:310px; min-height:58px; align-items:center; justify-content:center; gap:10px; padding:14px 22px; border:2px solid #fff; border-radius:999px; background:#ed2b0b; box-shadow:0 9px 24px rgba(0,0,0,.28); color:#fff; font:800 1rem/1.2 Arial,sans-serif; cursor:pointer; }
+      .customer-reaction-watch { display:inline-flex; max-width:310px; min-height:58px; align-items:center; justify-content:center; gap:12px; padding:13px 23px 13px 13px; border:2px solid #fff; border-radius:999px; background:#ed2b0b; box-shadow:0 9px 24px rgba(0,0,0,.28); color:#fff; font:800 1rem/1.2 Arial,sans-serif; cursor:pointer; }
       .customer-reaction-watch:hover { background:#c92108; transform:translateY(-1px); }
-      .customer-reaction-watch span { display:grid; width:30px; height:30px; place-items:center; border-radius:50%; background:#fff; color:#ed2b0b; font-size:.85rem; }
+      .customer-reaction-watch span { display:grid; width:38px; height:38px; flex:0 0 38px; place-items:center; border-radius:50%; background:#fff; color:#ed2b0b; font-size:.9rem; }
       .customer-reaction-player video { display:block; width:100%; aspect-ratio:9/16; border-radius:14px; background:#111; object-fit:cover; }
-      .customer-reaction-note { display:block; margin-top:13px; color:#8a5b5d; font-size:.82rem; font-weight:700; }
+      .customer-reaction-note { display:block; padding:12px 6px 2px; color:#6b7075; font-size:.76rem; font-weight:700; text-align:center; }
       .google-review-summary { display:flex; flex-direction:column; align-items:center; gap:2px; padding:24px 0 0; }
       .google-review-summary strong { font-size:2.55rem; line-height:1; letter-spacing:-.08em; font-weight:600; }
       .google-review-summary strong .g-blue { color:#4285f4; }.google-review-summary strong .g-red { color:#ea4335; }.google-review-summary strong .g-yellow { color:#fbbc05; }.google-review-summary strong .g-green { color:#34a853; }
@@ -2298,11 +2303,15 @@
         .literal-form-footer { margin:10px -14px 0; }
         .post-form-review { width:320px; max-width:100%; margin:22px auto 0; padding:20px 18px; }
         .post-form-review p { font-size:.8rem; line-height:1.5; }
-        .customer-reaction-section { padding:38px 17px 44px; }
-        .customer-reaction-section h2 { font-size:1.55rem; }
-        .customer-reaction-section p { margin-bottom:20px; font-size:.82rem; line-height:1.45; }
-        .customer-reaction-player { max-width:340px; padding:10px; border-radius:17px; }
-        .customer-reaction-preview { min-height:230px; }
+        .customer-reaction-section { padding:42px 17px 46px; }
+        .customer-reaction-section .reaction-wrap { grid-template-columns:1fr; gap:27px; }
+        .customer-reaction-copy { text-align:center; }
+        .customer-reaction-section .eyebrow { justify-content:center; }
+        .customer-reaction-section h2 { margin-top:14px; font-size:1.85rem; }
+        .customer-reaction-section p { margin:0 auto 16px; font-size:.86rem; line-height:1.5; }
+        .reaction-stars { justify-content:center; }
+        .customer-reaction-player { max-width:340px; margin-right:auto; margin-left:auto; padding:10px; border-radius:17px; }
+        .customer-reaction-preview { min-height:240px; }
         .customer-reaction-watch { max-width:260px; min-height:54px; padding:12px 17px; font-size:.9rem; }
 
         .trust-ribbon { grid-template-columns:1fr 1fr; padding:16px 24px; gap:12px 18px; font-size:.72rem; }
@@ -2614,9 +2623,12 @@
         <div class="trust-ribbon" aria-label="Service promises"><span><b>✓</b>Always punctual</span><span><b>✓</b>Clear quotations</span><span><b>✓</b>Friendly local service</span><span><b>✓</b>Satisfaction promise</span></div>
         <section class="customer-reaction-section" id="customer-reaction" aria-labelledby="customer-reaction-title">
           <div class="reaction-wrap">
-            <div class="eyebrow">A real customer. A real result.</div>
-            <h2 id="customer-reaction-title">Genuine customer reaction</h2>
-            <p>Hear a customer’s spontaneous reaction after seeing the finished carpet-cleaning result.</p>
+            <div class="customer-reaction-copy">
+              <div class="eyebrow">Verified genuine customer moment</div>
+              <h2 id="customer-reaction-title">See the reaction real results create</h2>
+              <p>No actors and no stock footage—just a customer’s spontaneous reaction after seeing her freshly cleaned carpet.</p>
+              <div class="reaction-stars" aria-label="Five star customer result">★★★★★ <small>Genuine customer result</small></div>
+            </div>
             <div class="customer-reaction-player">
               <div class="customer-reaction-preview" id="customerReactionPreview">
                 <button class="customer-reaction-watch" id="customerReactionWatch" type="button"><span aria-hidden="true">▶</span>Click here to watch the video</button>
