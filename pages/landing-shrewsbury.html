@@ -2192,10 +2192,13 @@
       .hero-photo input,
       .hero-photo select { height:44px; min-height:44px; border:1px solid #aaa; border-radius:0; font-size:.95rem; }
       .hero-photo .extras-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin-top:5px; }
-      .hero-photo .extra-check { box-sizing:border-box; display:flex; width:100%; height:auto; min-height:39px; margin:0; padding:8px 10px; align-items:center; gap:8px; border:1px solid #ccd3d8; border-radius:6px; background:#fff; color:#26343b; font-size:.84rem; line-height:1.15; font-weight:700; cursor:pointer; transition:border-color .15s ease,background .15s ease,box-shadow .15s ease; }
+      .hero-photo .extra-check { box-sizing:border-box; display:flex; width:100%; height:auto; min-height:39px; margin:0; padding:8px 10px; align-items:center; gap:9px; border:1px solid #ccd3d8; border-radius:6px; background:#fff; color:#26343b; font-size:.84rem; line-height:17px; font-weight:700; cursor:pointer; transition:border-color .15s ease,background .15s ease,box-shadow .15s ease; }
       .hero-photo .extra-check:hover { border-color:#20a766; box-shadow:0 2px 8px rgba(32,167,102,.12); }
       .hero-photo .extra-check:has(input:checked) { border-color:#20a766; background:#effbf5; box-shadow:inset 0 0 0 1px #20a766; }
-      .hero-photo .extra-check input[type="checkbox"] { box-sizing:border-box; flex:0 0 17px; width:17px; height:17px; min-height:17px; margin:0; padding:0; accent-color:#20a766; }
+      .hero-photo .extra-check input[type="checkbox"] { appearance:none; -webkit-appearance:none; box-sizing:border-box; display:grid; flex:0 0 17px; width:17px; height:17px; min-height:17px; margin:0; padding:0; place-content:center; align-self:center; border:1.5px solid #7d898f; border-radius:3px; background:#fff; }
+      .hero-photo .extra-check input[type="checkbox"]:before { content:""; width:8px; height:4px; border:solid #fff; border-width:0 0 2px 2px; transform:translateY(-1px) rotate(-45deg) scale(0); transition:transform .12s ease; }
+      .hero-photo .extra-check input[type="checkbox"]:checked { border-color:#20a766; background:#20a766; }
+      .hero-photo .extra-check input[type="checkbox"]:checked:before { transform:translateY(-1px) rotate(-45deg) scale(1); }
       .hero-photo .field.full label { font-size:.76rem; font-weight:500; line-height:1.35; }
       .hero-photo form > .privacy { margin:13px 0 3px; font-size:.68rem; text-align:center; }
       .hero-photo form .fields > .field:last-child { margin-top:5px; }
