@@ -2000,9 +2000,8 @@
       .reference-rating:before { content:""; position:absolute; top:10px; left:50%; width:126px; height:4px; transform:translateX(-50%); background:linear-gradient(90deg,#26aeda 0 58%,#e7e7e7 58%); }
       .reference-rating strong { color:#4285f4; font-size:1.05rem; }
       .reference-rating span { color:#ff9f00; letter-spacing:1px; }
-      .reference-guarantee { display:grid; grid-template-columns:116px 1fr; align-items:center; gap:15px; min-height:128px; padding:12px 22px 15px 12px; background:#e7e7e7; color:#333; font-size:.76rem; line-height:1.45; }
-      .reference-guarantee b { position:relative; isolation:isolate; display:grid; place-items:center; width:108px; height:112px; padding:20px 14px 26px; background:#d5231d; clip-path:polygon(8% 0,92% 0,100% 78%,50% 100%,0 78%); color:#111; text-align:center; font-size:.8rem; font-weight:900; line-height:1.02; transform:rotate(-2deg); filter:drop-shadow(0 3px 2px rgba(0,0,0,.16)); }
-      .reference-guarantee b:before { content:""; position:absolute; z-index:-1; inset:7px; background:#fff; clip-path:polygon(7% 0,93% 0,100% 77%,50% 100%,0 77%); }
+      .reference-guarantee { display:grid; grid-template-columns:136px 1fr; align-items:center; gap:16px; min-height:154px; padding:10px 22px 11px 14px; background:#e7e7e7; color:#333; font-size:.78rem; line-height:1.48; }
+      .guarantee-seal { display:block; width:123px; height:133px; overflow:visible; transform:rotate(-2deg); filter:drop-shadow(0 4px 3px rgba(0,0,0,.2)); }
       .photo-credit { opacity: .7; }
       .trust-ribbon { margin-top: 0; border-top: 1px solid #eee; background: #f8f8f8; }
       .trust-ribbon span { padding: 18px 10px; color: #202020; font-size: .88rem; }
@@ -2355,7 +2354,7 @@
                   <small>Genuine customer reviews</small>
                 </div>
                 <div class="reference-guarantee">
-                  <b>100%<br />SATISFACTION<br />PROMISE</b>
+                  <svg class="guarantee-seal" viewBox="0 0 123 133" role="img" aria-label="100% satisfaction guarantee"><polygon points="5,3 118,3 121,101 61.5,130 2,101" fill="#d9281d"/><polygon points="13,12 110,12 112,95 61.5,119 11,95" fill="#fff"/><text x="61.5" y="43" text-anchor="middle" fill="#111" font-family="Arial,sans-serif" font-size="29" font-weight="900">100%</text><rect x="8" y="50" width="107" height="38" rx="1" fill="#171717"/><text x="61.5" y="67" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="11.5" font-weight="900" letter-spacing=".2">SATISFACTION</text><text x="61.5" y="81" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="11.5" font-weight="900" letter-spacing=".4">GUARANTEE</text><text x="61.5" y="105" text-anchor="middle" fill="#111" font-family="Arial,sans-serif" font-size="8.5" font-weight="800" letter-spacing=".7">QUALITY SERVICE</text></svg>
                   <span>We inspect the finished work with you and want you to be delighted with the result.</span>
                 </div>
               </div>
@@ -3117,7 +3116,7 @@ Hi Paul, I’d like some help with carpet cleaning.</textarea
           <p class="privacy">Step 1 of 2 · No contact details needed until the next page.</p>
           <div class="reference-proof" aria-label="Quote reassurance">
             <div class="reference-rating"><strong>G</strong><div><b>Google Rating 5.0</b><br><span>★★★★★</span></div><small>Genuine customer reviews</small></div>
-            <div class="reference-guarantee"><b>100%<br>SATISFACTION<br>PROMISE</b><span>We inspect the finished work with you and want you to be delighted with the result.</span></div>
+            <div class="reference-guarantee"><svg class="guarantee-seal" viewBox="0 0 123 133" role="img" aria-label="100% satisfaction guarantee"><polygon points="5,3 118,3 121,101 61.5,130 2,101" fill="#d9281d"/><polygon points="13,12 110,12 112,95 61.5,119 11,95" fill="#fff"/><text x="61.5" y="43" text-anchor="middle" fill="#111" font-family="Arial,sans-serif" font-size="29" font-weight="900">100%</text><rect x="8" y="50" width="107" height="38" rx="1" fill="#171717"/><text x="61.5" y="67" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="11.5" font-weight="900" letter-spacing=".2">SATISFACTION</text><text x="61.5" y="81" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="11.5" font-weight="900" letter-spacing=".4">GUARANTEE</text><text x="61.5" y="105" text-anchor="middle" fill="#111" font-family="Arial,sans-serif" font-size="8.5" font-weight="800" letter-spacing=".7">QUALITY SERVICE</text></svg><span>We inspect the finished work with you and want you to be delighted with the result.</span></div>
           </div>
         `;
         trackingKeys.forEach((key) => {
