@@ -49,7 +49,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&family=Poppins:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -1669,8 +1669,8 @@
         --line: #d9e6ef;
         --shadow: 0 20px 50px rgba(32, 79, 110, 0.14);
       }
-      body { background: #fff; font-family: Arial, Helvetica, sans-serif; }
-      h1, h2, h3 { font-family: Arial, Helvetica, sans-serif; }
+      body { background: #fff; font-family: "Poppins", Arial, Helvetica, sans-serif; }
+      h1, h2, h3 { font-family: "Poppins", Arial, Helvetica, sans-serif; }
       .topnote { background: #0879c9; padding: 9px 16px; font-weight: 700; }
       header { background: #fff; border-bottom: 1px solid var(--line); }
       .nav { padding: 13px 0; }
@@ -1877,6 +1877,30 @@
         .hero-review div { align-items:flex-start; flex-direction:column; gap:5px; }
         .trust-ribbon,.treatment-grid { grid-template-columns:1fr; }
       }
+
+      /* Reference-faithful geometry: intentionally simple, square and compact. */
+      .hero { padding:54px 0 66px; }
+      .hero-grid { max-width:1000px; grid-template-columns:minmax(0,1fr) minmax(365px,.82fr); gap:0 20px; }
+      .hero h1 { max-width:none; margin-bottom:10px; font-size:clamp(2rem,3vw,2.65rem); color:#222; letter-spacing:-.015em; }
+      .hero .lead { max-width:790px; margin-bottom:68px; color:#303b42; font-size:1.18rem; line-height:1.4; }
+      .hero-proof { padding:0; border:0; border-radius:0; background:transparent; box-shadow:none; }
+      .hero-proof-images { height:440px; gap:4px; overflow:visible; border-radius:0; }
+      .hero-proof figure,.hero-proof figure:first-child,.hero-proof figure:last-child { border-radius:0; }
+      .hero-proof b { left:12px; bottom:12px; padding:8px 13px; border-width:2px; font-size:.9rem; }
+      .guarantee-badge { right:calc(50% - 74px); top:-64px; width:148px; height:148px; padding:18px; border-width:3px; font-size:1rem; }
+      .hero-review { margin:24px 24px 0; padding:18px 20px; border:1px solid #dedede; border-radius:3px; background:#fff; box-shadow:0 8px 24px rgba(0,0,0,.1); }
+      .hero-photo .quote { overflow:visible; padding:0 28px 25px; border:0; border-radius:0; background:#f5f5f5; box-shadow:none; }
+      .hero-photo .quote-head { margin:0 -28px 22px; padding:22px 20px; border-radius:0; background:#243270; }
+      .hero-photo .quote-head h2 { font-size:1.72rem; }
+      .hero-photo .button { min-height:58px; border-radius:999px; background:#e72b0b; box-shadow:none; }
+      .hero-photo select,.hero-photo input,.hero-photo textarea { border-radius:0; }
+      .trust-ribbon { border-top:1px solid #e8e8e8; background:#fafafa; }
+      @media(max-width:900px){
+        .hero-grid{max-width:720px;grid-template-columns:1fr}.hero .lead{margin-bottom:48px}.hero-proof-images{height:390px}.hero-review{margin:18px 0 24px}.guarantee-badge{top:-48px;right:calc(50% - 58px);width:116px;height:116px;font-size:.78rem}
+      }
+      @media(max-width:600px){
+        .hero{padding-top:34px}.hero h1{font-size:2rem}.hero-proof-images{height:300px}.hero-photo .quote{padding:0 18px 20px}.hero-photo .quote-head{margin:0 -18px 19px}.hero-review{padding:15px}
+      }
     </style>
   </head>
   <body>
@@ -1961,9 +1985,9 @@
             <div class="quote-head">
               <div>
                 <div class="eyebrow">Free, no-obligation quotation</div>
-                <h2>Get Your Free Carpet Cleaning Quote</h2>
+                <h2>Carpet Cleaning Quote</h2>
               </div>
-              <span>Tell us what you need cleaned and we’ll prepare your free quote</span>
+              <span>Tell us about what you need cleaned—we’ll send you a quote</span>
             </div>
             <form
               action="https://carpet-cleaning-crm.onrender.com/api/website-form"
