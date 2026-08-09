@@ -1923,6 +1923,127 @@
       .treatment-cta { margin-top:28px; text-align:center; }
       .treatment-cta .button { border-radius:999px; background:#e72b0b; }
       @media(max-width:780px){.treatment-circles{grid-template-columns:repeat(3,1fr);gap:22px 12px}.treatment-circle img{width:74px;height:74px}}
+      /* Close visual match to the approved reference landing page. The
+         business identity, photographs, reviews and promises remain ours. */
+      :root {
+        --reference-navy: #273573;
+        --reference-sky: #3eb3df;
+        --reference-red: #ee260d;
+        --reference-mint: #55bea2;
+      }
+      body {
+        color: #161616;
+        background: #fff;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      h1, h2, h3,
+      .button,
+      .links,
+      .header-phone,
+      .google-rating,
+      .field label,
+      .extras-label,
+      .extra-check {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .wrap { width: min(1000px, calc(100% - 34px)); }
+      header { border: 0; box-shadow: none; }
+      .nav { min-height: 101px; padding: 12px 0; }
+      .brand img { width: 100px; height: 72px; border-radius: 0; }
+      .links { gap: 44px; }
+      .links a { padding: 10px 0; color: #171717; font-size: .95rem; font-weight: 500; }
+      .links a:first-child { border-top: 4px solid #55c172; }
+      .header-proof { gap: 27px; margin-left: 30px; }
+      .google-rating { padding: 7px 10px; border-top: 4px solid #55c172; box-shadow: 0 2px 6px rgba(0,0,0,.15); }
+      .google-rating b { font-size: 1.65rem; }
+      .header-phone small { color: #151515; font-size: .9rem; }
+      .header-phone a { color: #101010; font-size: 1.8rem; }
+
+      .hero { padding: 54px 0 0; background: #d8edf8; }
+      .hero:before {
+        background:
+          linear-gradient(rgba(217,237,248,.76), rgba(230,241,246,.82)),
+          url("https://s0.geograph.org.uk/geophotos/08/30/20/8302004_b40df6b5.jpg") center/cover;
+        filter: blur(5px);
+        transform: scale(1.045);
+      }
+      .hero-grid { grid-template-columns: 510px 410px; gap: 0 22px; max-width: 942px; }
+      .hero h1 { margin: 0 auto 12px; color: #1d1d1d; font-size: 2.25rem; font-weight: 800; letter-spacing: -.018em; }
+      .hero .lead { max-width: 780px; margin-bottom: 36px; color: #272727; font-size: 1.23rem; line-height: 1.45; }
+      .hero-proof { padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+      .hero-proof-images { height: 352px; gap: 2px; border-radius: 0; }
+      .hero-proof figure,
+      .hero-proof figure:first-child,
+      .hero-proof figure:last-child { border-radius: 0; }
+      .hero-proof b { left: 12px; bottom: 10px; border: 2px solid #fff; border-radius: 999px; background: #333; font-size: .9rem; }
+      .hero-proof figure:last-child b { background: #333; }
+      .hero-proof-caption { margin: 26px 24px 0; padding: 20px 24px; border-radius: 3px; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,.1); }
+      .hero-review p { font-size: .9rem; }
+      .guarantee-badge { top: -70px; right: calc(50% - 72px); width: 144px; height: 144px; border: 3px solid var(--reference-sky); color: var(--reference-sky); font-size: 1rem; box-shadow: none; }
+
+      .hero-photo .quote { padding: 0 28px 22px; border: 0; border-radius: 0; background: #f6f6f6; box-shadow: 0 5px 15px rgba(0,0,0,.14); }
+      .hero-photo .quote-head { margin: 0 -28px 24px; padding: 22px 18px 20px; background: var(--reference-navy); }
+      .hero-photo .quote-head h2 { font-size: 1.85rem; }
+      .hero-photo .quote-head span { color: #fff; font-size: 1rem; }
+      .hero-photo .fields { gap: 14px; }
+      .hero-photo .field label, .extras-label { color: #1a1a1a; font-size: .92rem; font-weight: 700; }
+      .hero-photo select, .hero-photo input { min-height: 43px; border: 1px solid #bdbdbd; border-radius: 0; color: #222; font-size: .97rem; }
+      .extras-grid { grid-template-columns: 1fr; gap: 3px; }
+      .extra-check { min-height: 22px; padding: 0; border: 0; background: transparent; font-size: .9rem; font-weight: 400; }
+      .extra-check input { width: 14px; min-height: 14px; }
+      .hero-photo .button { min-height: 63px; margin-top: 14px; border-radius: 999px; background: var(--reference-red); font-size: 1.05rem; box-shadow: none; }
+      .hero-photo .privacy { margin: 8px 0 0; font-size: .68rem; }
+      .reference-proof { margin: 14px -28px -22px; }
+      .reference-rating { display:flex; align-items:center; justify-content:center; gap:12px; min-height:58px; border-top:1px solid #ddd; background:#fff; color:#343434; font-size:.78rem; }
+      .reference-rating strong { color:#4285f4; font-size:1.05rem; }
+      .reference-rating span { color:#ff9f00; letter-spacing:1px; }
+      .reference-guarantee { display:grid; grid-template-columns:92px 1fr; align-items:center; gap:12px; min-height:105px; padding:13px 18px; background:#ededed; color:#333; font-size:.76rem; line-height:1.45; }
+      .reference-guarantee b { display:grid; place-items:center; width:82px; height:82px; padding:9px; border:5px solid #d12b20; background:#fff; color:#171717; text-align:center; font-size:.83rem; line-height:1.03; transform:rotate(-2deg); }
+      .photo-credit { opacity: .7; }
+      .trust-ribbon { margin-top: 0; border-top: 1px solid #eee; background: #f8f8f8; }
+      .trust-ribbon span { padding: 18px 10px; color: #202020; font-size: .88rem; }
+      .trust-ribbon b { color: var(--reference-mint); }
+
+      .reference-content .block { padding: 58px 0; }
+      .reference-content .block.alt { background: #effbff; }
+      .reference-content .center { margin-bottom: 28px; }
+      .reference-content .center h2 { color: #111; font-size: 1.65rem; letter-spacing: 0; }
+      .reference-content .center p { color: #333; font-size: .95rem; }
+      .eyebrow { color: #32aeda; letter-spacing: .02em; text-transform: none; }
+      .proof-card, .benefit, .service-tile, .process-card { border-radius: 0; box-shadow: none; }
+      .mid-cta { background: #fff; }
+      .mid-cta h2 { color: #111; }
+      .package-table { border-radius: 0; box-shadow: none; }
+      .package-table th { padding: 13px 10px; background: var(--reference-navy); font-size: .85rem; }
+      .package-table th:nth-child(3) { background: var(--reference-navy); }
+      .package-table td { padding: 10px; font-size: .82rem; }
+      .package-table tbody tr:nth-child(odd) td { background: #e7f8ff; }
+      .package-table .yes { color: #62be0b; }
+      .button { border-radius: 999px; background: var(--reference-red); box-shadow: none; }
+      .results-gallery { gap: 8px; }
+      .result-set { border-radius: 0; box-shadow: none; }
+
+      @media (max-width: 900px) {
+        .wrap { width: min(100% - 28px, 720px); }
+        .hero-grid { grid-template-columns: 1fr; max-width: 680px; }
+        .hero-proof-images { height: 390px; }
+        .hero-proof-caption { margin: 18px 0 24px; }
+        .links, .header-proof { display: none; }
+      }
+      @media (max-width: 600px) {
+        .nav { min-height: 74px; }
+        .brand img { width: 72px; height: 56px; }
+        .hero { padding-top: 30px; }
+        .hero h1 { font-size: 1.95rem; }
+        .hero .lead { font-size: 1rem; margin-bottom: 64px; }
+        .hero-proof-images { height: 300px; }
+        .guarantee-badge { top: -53px; right: 18px; width: 108px; height: 108px; font-size: .76rem; }
+        .hero-proof-caption { padding: 17px 18px; }
+        .hero-photo .quote { padding: 0 18px 20px; }
+        .hero-photo .quote-head { margin: 0 -18px 20px; }
+        .reference-proof { margin: 14px -18px -20px; }
+        .trust-ribbon { grid-template-columns: 1fr 1fr; }
+      }
     </style>
   </head>
   <body>
@@ -2111,8 +2232,16 @@
                 Your details are used only to answer your enquiry. We will
                 contact you from 07802 563213.
               </p>
-              <div class="instant-trust" aria-label="Quote reassurance">
-                <span>✓ No pressure</span><span>✓ Upfront advice</span><span>✓ Local service</span>
+              <div class="reference-proof" aria-label="Quote reassurance">
+                <div class="reference-rating">
+                  <strong>G</strong>
+                  <div><b>Google Rating 5.0</b><br /><span>★★★★★</span></div>
+                  <small>Genuine customer reviews</small>
+                </div>
+                <div class="reference-guarantee">
+                  <b>100%<br />SATISFACTION<br />PROMISE</b>
+                  <span>We inspect the finished work with you and want you to be delighted with the result.</span>
+                </div>
               </div>
               <div class="status" role="status" aria-live="polite"></div>
             </form>
