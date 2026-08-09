@@ -2006,7 +2006,8 @@
       .literal-form-submit { position:absolute; z-index:2; top:6%; left:7.4%; width:85.8%; height:20.5%; margin:0; padding:0; border:0; border-radius:999px; opacity:0; cursor:pointer; }
       .reference-rating { box-sizing:border-box; position:relative; display:grid; grid-template-columns:1.15fr .85fr; min-height:104px; padding:28px 20px 12px; align-items:center; gap:18px; border-top:1px solid #ddd; background:#fff; color:#343434; font:13px/1.25 Poppins,Arial,sans-serif; }
       .reference-rating:before { content:""; position:absolute; top:10px; left:50%; width:278px; height:6px; transform:translateX(-50%); border:1px solid #bbb; background:linear-gradient(90deg,#009bd4 0 50%,#fff 50%); }
-      .local-trust-mark { display:grid; justify-items:start; line-height:1; }
+      .local-trust-mark { position:relative; display:grid; min-height:48px; padding:8px 10px 8px 46px; justify-items:start; align-content:center; border:1px solid #b8dfcc; border-radius:8px; background:linear-gradient(135deg,#f5fff9,#fff); line-height:1; box-shadow:0 3px 10px rgba(20,104,68,.08); }
+      .local-trust-mark:before { content:"✓"; position:absolute; left:10px; top:50%; display:grid; width:27px; height:27px; transform:translateY(-50%); place-items:center; border-radius:50%; background:#20a766; color:#fff; font:900 18px/1 Arial,sans-serif; }
       .local-trust-mark small { margin-bottom:2px; color:#59666d; font-size:8px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; }
       .local-trust-mark strong { color:#123b67; font-size:25px; font-weight:900; letter-spacing:-1.2px; }
       .local-trust-mark strong span { color:#20a766; }
@@ -2015,6 +2016,7 @@
       .reference-rating p strong { display:block; color:#123b67; font-size:13px; }
       .reference-rating p .rating-stars { color:#f5a400; font-size:14px; letter-spacing:.5px; white-space:nowrap; }
       .reference-guarantee { display:grid; grid-template-columns:118px 1fr; align-items:center; gap:16px; min-height:140px; padding:10px 23px 11px 15px; background:#e1e1e1; color:#222; font:12px/1.5 Poppins,Arial,sans-serif; }
+      .money-back-badge { width:118px; height:134px; margin:-10px 0 -11px -15px; background:url('../assets/form-footer-reference.png?v=83df66f') left bottom/415px 309px no-repeat; filter:drop-shadow(0 3px 2px rgba(0,0,0,.16)); }
       .promise-shield { position:relative; isolation:isolate; display:grid; width:112px; height:126px; padding:20px 14px 28px; place-items:center; align-content:center; background:#d4251b; clip-path:polygon(3% 0,97% 0,100% 78%,50% 100%,0 78%); color:#171717; text-align:center; filter:drop-shadow(0 3px 2px rgba(0,0,0,.18)); transform:rotate(-2deg); }
       .promise-shield:before { content:""; position:absolute; z-index:-1; inset:7px; background:#f4f4f4; clip-path:polygon(3% 0,97% 0,100% 77%,50% 100%,0 77%); }
       .promise-shield strong { display:block; font:900 24px/.88 Arial,sans-serif; letter-spacing:-1px; }
@@ -2330,11 +2332,15 @@
         .hero-photo .button { height:50px; min-height:50px; font-size:14px; }
         .reference-rating { grid-template-columns:1.1fr .9fr; min-height:98px; padding:27px 12px 10px; gap:10px; }
         .local-trust-mark strong { font-size:20px; letter-spacing:-.8px; }
+        .local-trust-mark { min-height:43px; padding:7px 6px 7px 38px; }
+        .local-trust-mark:before { left:7px; width:24px; height:24px; font-size:16px; }
         .local-trust-mark small { font-size:7px; }
         .local-trust-mark em { font-size:7.5px; }
         .reference-rating p { font-size:9px; }
         .reference-rating p strong { font-size:11px; }
         .reference-rating p .rating-stars { font-size:12px; }
+        .reference-guarantee { grid-template-columns:104px 1fr; gap:10px; padding-right:12px; }
+        .money-back-badge { width:104px; background-size:366px auto; }
         .literal-form-footer { margin:10px -14px 0; }
         .post-form-review { width:320px; max-width:100%; margin:12px auto 0; padding:20px 18px; }
         .post-form-review p { font-size:.8rem; line-height:1.5; }
@@ -2646,7 +2652,7 @@
                   <p><strong>Google Rating 5.0</strong><span class="rating-stars">★★★★★</span><br>Over 50 genuine customer reviews</p>
                 </div>
                 <div class="reference-guarantee">
-                  <div class="promise-shield" aria-label="100% money back promise"><strong>100%</strong><span>MONEY BACK<br>PROMISE</span></div>
+                  <div class="money-back-badge" role="img" aria-label="100% money back guarantee badge"></div>
                   <span>We only expect payment once the job is done. If you are not happy, we will return and reclean your carpets free of charge.</span>
                 </div>
               </div>
@@ -3437,7 +3443,7 @@ Hi Paul, I’d like some help with carpet cleaning.</textarea
           <p class="privacy">Step 1 of 2 · No contact details needed until the next page.</p>
           <div class="reference-proof" aria-label="Quote reassurance">
             <div class="reference-rating"><div class="local-trust-mark"><small>Proudly serving your area</small><strong><span>Trusted</span> Local</strong><em>Professional carpet cleaning service</em></div><p><strong>Google Rating 5.0</strong><span class="rating-stars">★★★★★</span><br>Over 50 genuine customer reviews</p></div>
-            <div class="reference-guarantee"><div class="promise-shield" aria-label="100% money back promise"><strong>100%</strong><span>MONEY BACK<br>PROMISE</span></div><span>We only expect payment once the job is done. If you are not happy, we will return and reclean your carpets free of charge.</span></div>
+            <div class="reference-guarantee"><div class="money-back-badge" role="img" aria-label="100% money back guarantee badge"></div><span>We only expect payment once the job is done. If you are not happy, we will return and reclean your carpets free of charge.</span></div>
           </div>
           <div class="literal-form-footer" aria-label="Quote reassurance and customer promise"><img src="../assets/form-footer-reference.png?v=83df66f" alt="Quote button, review rating and 100% customer promise"><button class="literal-form-submit" type="submit" aria-label="Get Your Carpet Cleaning Quote">Get Your Carpet Cleaning Quote</button></div>
         `;
