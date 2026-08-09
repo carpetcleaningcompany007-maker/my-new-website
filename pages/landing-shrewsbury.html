@@ -2222,6 +2222,122 @@
         .final-site-footer { grid-template-columns:72px 1fr; }.final-site-footer img { width:68px; height:60px; }.final-google-rating { grid-column:1 / -1; }
         .final-legal { flex-direction:column; gap:8px; text-align:center; }
       }
+
+      /* Mobile composition matched to the supplied full-page reference set. */
+      @media (max-width: 600px) {
+        body { background:#fff; }
+        .topnote {
+          position:sticky; top:0; z-index:90; padding:9px 10px;
+          background:#ed2b0b; color:#fff; font:700 12px/1.2 Poppins,Arial,sans-serif;
+        }
+        .topnote { font-size:0; }
+        .topnote a { font-size:12px; }
+        .topnote a:before { content:"Call Now: "; }
+        header { position:relative; z-index:20; background:#fff; box-shadow:none; }
+        header .nav { min-height:72px; padding:7px 12px 4px; }
+        header .brand span, header .header-phone, header .links { display:none !important; }
+        header .brand img { width:66px; height:54px; }
+        header .header-proof { margin-left:auto; }
+        header .google-rating { padding:5px 8px; transform:scale(.92); transform-origin:right center; }
+
+        .hero { padding:20px 0 0; background-position:center !important; }
+        .hero:before {
+          background-image:linear-gradient(rgba(225,240,248,.68),rgba(225,240,248,.68)),url("../assets/img/shrewsbury-street-background.jpg") !important;
+          background-size:cover !important; background-position:center !important;
+          filter:blur(7px); transform:scale(1.07);
+        }
+        .hero .wrap { width:calc(100% - 34px); }
+        .hero h1 { max-width:330px; margin:0 auto 8px; font-size:1.42rem; line-height:1.18; }
+        .hero .lead { max-width:330px; margin:0 auto 32px; font-size:.85rem; line-height:1.38; }
+        .hero-proof { margin:0 auto 18px; }
+        .hero-proof-images { height:255px; }
+        .hero-guarantee-image { top:-42px; width:92px; max-height:92px; }
+        .hero-proof b { left:7px; bottom:7px; padding:5px 8px; font-size:.66rem; }
+        .hero-proof-caption { margin:12px 0 17px; padding:13px 14px; border-radius:2px; }
+        .hero-review p { margin-bottom:8px; font-size:.72rem; line-height:1.45; }
+        .hero-review div { flex-direction:row; align-items:center; gap:8px; font-size:.68rem; }
+        .hero-photo .quote { padding:0 14px; box-shadow:0 6px 16px rgba(0,0,0,.13); }
+        .hero-photo .quote-head { min-height:104px; margin:0 -14px 16px; padding:14px; }
+        .hero-photo .quote-head h2 { font-size:1.3rem; }
+        .hero-photo .quote-head span { font-size:.76rem; line-height:1.3; }
+        .hero-photo form { font-size:12px; }
+        .hero-photo .fields { gap:11px; }
+        .hero-photo .field label,.extras-label { height:auto; font-size:12px; line-height:14px; }
+        .hero-photo select { height:37px; min-height:37px; font-size:13px; }
+        .hero-photo .button { height:50px; min-height:50px; font-size:14px; }
+        .literal-form-footer { margin:10px -14px 0; }
+
+        .trust-ribbon { grid-template-columns:1fr 1fr; padding:14px 18px; gap:8px 12px; font-size:.72rem; }
+        #new-packages { padding:32px 0 6px; }
+        #new-packages .wrap { width:calc(100% - 28px); }
+        #new-packages .literal-packages-image { display:none; }
+        #new-packages .package-recreation { display:block; }
+        #new-packages .center { margin-bottom:18px; }
+        #new-packages .center .eyebrow { font-size:.68rem; }
+        #new-packages .center h2 { font-size:1.25rem; line-height:1.18; }
+        #new-packages .center p { font-size:.75rem; line-height:1.4; }
+        #new-packages .packages { overflow:visible; }
+        #new-packages .package-table { min-width:0; table-layout:fixed; font-size:.62rem; }
+        #new-packages .package-table th { padding:10px 4px; font-size:.62rem; }
+        #new-packages .package-table th:first-child { width:42%; }
+        #new-packages .package-table th small { display:none; }
+        #new-packages .package-table td { padding:8px 4px; font-size:.61rem; line-height:1.18; }
+        #new-packages .package-table .yes { font-size:.95rem; }
+
+        #new-treatments { padding:18px 0 28px; }
+        #new-treatments .treatment-circles { gap:14px 8px; }
+        #new-treatments .treatment-circle img { width:58px; height:58px; }
+        #new-treatments .treatment-circle figcaption { font-size:.65rem; }
+        #new-treatments .treatment-cta { margin-top:18px; }
+        #new-treatments .button { padding:13px 20px; font-size:.78rem; }
+
+        #new-results { padding:30px 0 36px; }
+        #new-results .wrap { width:calc(100% - 34px); }
+        #new-results .center h2 { font-size:1.25rem; }
+        #new-results .results-gallery { gap:4px; }
+        #new-results .result-set { gap:3px; }
+        #new-results .result-set figure { height:220px; }
+
+        .reference-content > .big-cta.literal-process-wrap {
+          order:4; display:block; min-height:0; padding:26px 24px 28px;
+          background:#263474 !important; color:#fff; text-align:center;
+        }
+        .reference-content > .big-cta.literal-process-wrap .literal-process-panel { display:none; }
+        .reference-content > .big-cta.literal-process-wrap > h2,
+        .reference-content > .big-cta.literal-process-wrap > p,
+        .reference-content > .big-cta.literal-process-wrap > .button { display:block; }
+        .reference-content > .big-cta.literal-process-wrap h2 { font-size:1.25rem; }
+        .reference-content > .big-cta.literal-process-wrap p { font-size:.76rem; }
+        .reference-content > .big-cta.literal-process-wrap .button { width:max-content; min-width:0; margin:16px auto 0; padding:13px 18px; font-size:.75rem; }
+        #new-process { order:5; display:block; padding:38px 0 34px; }
+        #new-process .wrap { width:calc(100% - 44px); }
+        #new-process .center { margin-bottom:40px; }
+        #new-process .center h2 { font-size:1.25rem; line-height:1.2; }
+        #new-process .process-grid { gap:52px; }
+        #new-process .process-card { margin:0; padding:44px 22px 20px; text-align:left; }
+        #new-process .process-card .num { top:-35px; left:calc(50% - 34px); width:68px; height:68px; font-size:1.25rem; }
+        #new-process .process-card h3 { font-size:1rem; }
+        #new-process .process-card p { font-size:.78rem; }
+
+        #new-services { order:6; padding:28px 0 34px; }
+        #new-services .service-grid { grid-template-columns:repeat(2,1fr); gap:24px 14px; }
+        #new-services .service-tile img { width:70px; height:70px; }
+        #new-services .service-tile h3 { font-size:.78rem; }
+        .reference-content > .mid-cta { order:7; padding:25px 20px; background:#263474 !important; }
+        .reference-content > .mid-cta h2 { font-size:1.2rem; }
+        .reference-content > .mid-cta p { font-size:.75rem; }
+        .reference-content > .mid-cta .button { width:max-content; margin:15px auto 0; padding:13px 18px; font-size:.75rem; }
+
+        #new-reviews { order:8; padding:34px 0 26px; }
+        #new-reviews .proof-card { text-align:center; border-radius:0; box-shadow:none; }
+        #new-reviews .proof-card p { font-size:.78rem; line-height:1.55; }
+        #new-reviews .review-foot { font-size:.7rem; }
+        .final-quote-banner { min-height:245px; padding:34px 20px; background-position:center; }
+        .final-reference-cta h2 { font-size:1.5rem; }
+        .final-reference-cta p { margin-bottom:22px; font-size:.86rem; }
+        .final-quote-actions .button { padding:14px 18px; font-size:.78rem; }
+        .final-quote-actions strong,.final-quote-actions strong a { font-size:.9rem; }
+      }
     </style>
   </head>
   <body>
