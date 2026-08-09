@@ -2102,9 +2102,8 @@
       #new-results .center p,
       #new-results .results-note { display: none; }
       #new-results .center h2 { font-size: 1.55rem; }
-      #new-results .results-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; max-width: 900px; margin: 0 auto; }
+      #new-results .results-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; max-width: 1080px; margin: 0 auto; }
       #new-results .result-set { gap: 3px; }
-      #new-results .result-set:nth-child(n+3) { display: none; }
       #new-results .result-set figure { height: 360px; }
       #new-results .result-set img { transform: none; object-position: center; }
       #new-results .result-set b { left: 6px; bottom: 7px; padding: 4px 7px; font-size: .68rem; }
@@ -2171,7 +2170,12 @@
       .customer-reaction-section .eyebrow { color:#b9686b; }
       .customer-reaction-section h2 { margin:7px 0 10px; color:#27332f; font-size:2.1rem; }
       .customer-reaction-section p { max-width:600px; margin:0 auto 25px; color:#64736d; }
-      .customer-reaction-player { box-sizing:border-box; width:100%; max-width:390px; padding:14px; border:1px solid #e4c1bc; border-radius:22px; background:#fffaf7; box-shadow:0 18px 45px rgba(43,66,56,.16); }
+      .customer-reaction-player { box-sizing:border-box; width:100%; max-width:520px; padding:14px; border:1px solid #e4c1bc; border-radius:22px; background:#fffaf7; box-shadow:0 18px 45px rgba(43,66,56,.16); }
+      .customer-reaction-preview { position:relative; display:grid; min-height:285px; overflow:hidden; place-items:center; border-radius:14px; background:linear-gradient(rgba(25,42,35,.25),rgba(25,42,35,.58)),url("../assets/video/genuine-customer-reaction-poster.jpg") center 44%/cover; }
+      .customer-reaction-preview[hidden], .customer-reaction-player video[hidden] { display:none; }
+      .customer-reaction-watch { display:inline-flex; max-width:310px; min-height:58px; align-items:center; justify-content:center; gap:10px; padding:14px 22px; border:2px solid #fff; border-radius:999px; background:#ed2b0b; box-shadow:0 9px 24px rgba(0,0,0,.28); color:#fff; font:800 1rem/1.2 Arial,sans-serif; cursor:pointer; }
+      .customer-reaction-watch:hover { background:#c92108; transform:translateY(-1px); }
+      .customer-reaction-watch span { display:grid; width:30px; height:30px; place-items:center; border-radius:50%; background:#fff; color:#ed2b0b; font-size:.85rem; }
       .customer-reaction-player video { display:block; width:100%; aspect-ratio:9/16; border-radius:14px; background:#111; object-fit:cover; }
       .customer-reaction-note { display:block; margin-top:13px; color:#8a5b5d; font-size:.82rem; font-weight:700; }
       .google-review-summary { display:flex; flex-direction:column; align-items:center; gap:2px; padding:24px 0 0; }
@@ -2213,7 +2217,6 @@
         .hero:before { background-image:linear-gradient(rgba(224,240,248,.5),rgba(224,240,248,.5)),url("../assets/img/shrewsbury-street-background.jpg") !important; background-position:center !important; background-size:100% 100% !important; background-repeat:no-repeat !important; filter:blur(6px); transform:scale(1.035); }
         .treatment-circles { grid-template-columns: repeat(3, 1fr); gap: 20px; }
         #new-results .results-gallery { grid-template-columns: 1fr; }
-        #new-results .result-set:nth-child(n+3) { display: none; }
         #new-results .result-set figure { height: 290px; }
         .reference-content > .big-cta,
         .reference-content > .mid-cta { display: block; text-align: center; }
@@ -2298,7 +2301,9 @@
         .customer-reaction-section { padding:38px 17px 44px; }
         .customer-reaction-section h2 { font-size:1.55rem; }
         .customer-reaction-section p { margin-bottom:20px; font-size:.82rem; line-height:1.45; }
-        .customer-reaction-player { max-width:320px; padding:10px; border-radius:17px; }
+        .customer-reaction-player { max-width:340px; padding:10px; border-radius:17px; }
+        .customer-reaction-preview { min-height:230px; }
+        .customer-reaction-watch { max-width:260px; min-height:54px; padding:12px 17px; font-size:.9rem; }
 
         .trust-ribbon { grid-template-columns:1fr 1fr; padding:16px 24px; gap:12px 18px; font-size:.72rem; }
         .trust-ribbon span { display:flex; min-width:0; align-items:center; justify-content:flex-start; gap:7px; text-align:left; }
@@ -2613,7 +2618,10 @@
             <h2 id="customer-reaction-title">Genuine customer reaction</h2>
             <p>Hear a customer’s spontaneous reaction after seeing the finished carpet-cleaning result.</p>
             <div class="customer-reaction-player">
-              <video id="customerReactionVideo" controls playsinline preload="metadata" poster="../assets/video/genuine-customer-reaction-poster.jpg">
+              <div class="customer-reaction-preview" id="customerReactionPreview">
+                <button class="customer-reaction-watch" id="customerReactionWatch" type="button"><span aria-hidden="true">▶</span>Click here to watch the video</button>
+              </div>
+              <video id="customerReactionVideo" controls playsinline preload="none" poster="../assets/video/genuine-customer-reaction-poster.jpg" hidden>
                 <source src="../assets/video/genuine-customer-reaction-clean.mp4" type="video/mp4" />
                 Your browser does not support the video player.
               </video>
@@ -2677,7 +2685,8 @@
         <div class="block alt" id="new-results"><div class="wrap"><div class="center"><div class="eyebrow">Genuine customer work</div><h2>Our Customer Before &amp; Afters</h2><p>Real customer-work photographs—never stock comparisons or artificially enhanced results.</p></div><div class="results-gallery">
           <article class="result-set"><figure><img src="../assets/img/carpet-before-genuine.png" alt="Heavily soiled lounge carpet before professional cleaning"><b>Before</b></figure><figure><img src="../assets/img/carpet-after-genuine.png" alt="The same lounge carpet after professional cleaning"><b>After</b></figure></article>
           <article class="result-set"><figure><img src="../assets/img/facebook-before-after-1.jpg" alt="Kitchen entrance carpet before professional cleaning"><b>Before</b></figure><figure><img src="../assets/img/facebook-before-after-2.jpg" alt="The same kitchen entrance carpet after professional cleaning"><b>After</b></figure></article>
-        </div><p class="results-note">Two genuine customer transformations shown as full-room and close-detail comparisons.</p></div></div>
+          <article class="result-set"><figure><img src="../assets/img/grey-carpet-before-2.jpg" alt="Marked grey lounge carpet before professional cleaning"><b>Before</b></figure><figure><img src="../assets/img/grey-carpet-after-2.jpg" alt="The grey lounge carpet after professional cleaning"><b>After</b></figure></article>
+        </div><p class="results-note">Three genuine customer transformations shown as full-room and close-detail comparisons.</p></div></div>
 
         <div class="big-cta literal-process-wrap"><div class="literal-process-panel"><img src="../assets/how-it-works-reference.png" alt="Instant carpet cleaning quotation and three-step service process"><a class="literal-process-phone" href="tel:07802563213" aria-label="Call Paul on 07802 563213">07802 563213</a><a class="literal-process-cta" href="#quote" aria-label="Get your carpet cleaning quote">Get Your Carpet Cleaning Quote</a></div><h2>Get your free Shrewsbury cleaning quote</h2><p>Tell us what needs cleaning and receive friendly, no-obligation advice directly from Paul.</p><a class="button" href="#quote">Get Your Carpet Cleaning Quote</a><a class="button alt" style="color:#fff;border-color:#fff" href="tel:07802563213">Call 07802 563213</a></div>
       </section>
@@ -3961,7 +3970,14 @@ Hi Paul, I’d like some help with carpet cleaning.</textarea
     <script>
       (() => {
         const video = document.getElementById("customerReactionVideo");
-        if (!video) return;
+        const preview = document.getElementById("customerReactionPreview");
+        const watch = document.getElementById("customerReactionWatch");
+        if (!video || !preview || !watch) return;
+        watch.addEventListener("click", () => {
+          preview.hidden = true;
+          video.hidden = false;
+          video.play().catch(() => {});
+        });
         let recorded = false;
         video.addEventListener("play", () => {
           if (recorded) return;
