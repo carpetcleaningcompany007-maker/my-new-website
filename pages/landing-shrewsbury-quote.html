@@ -45,13 +45,13 @@
         <form class="form-body" action="https://carpet-cleaning-crm.onrender.com/api/website-form" method="post" id="warmQuote">
           <input type="hidden" name="_redirect" value="https://www.thecarpetcleaningcrew.co.uk/thank-you.html"><input type="hidden" name="_subject" value="New Shrewsbury Quote Request - The Carpet Cleaning Company"><input type="hidden" name="_format" value="plain"><input type="hidden" name="landing_area" value="Shrewsbury"><input type="hidden" name="landing_page" value="landing-shrewsbury-quote.html"><div id="carryFields"></div>
           <div class="field"><label for="name">Your First Name *</label><input id="name" name="name" autocomplete="given-name" placeholder="Jane" required></div>
-          <div class="field"><label for="email">Your Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="j.smith@gmail.com"></div>
-          <div class="field"><label for="phone">Phone Number</label><input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="07912 345678"></div>
+          <div class="field"><label for="email">Your Email *</label><input id="email" name="email" type="email" autocomplete="email" placeholder="j.smith@gmail.com" required></div>
+          <div class="field"><label for="phone">Phone Number *</label><input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="07912 345678" required></div>
           <div class="field"><label for="postcode">Postcode *</label><input id="postcode" name="postcode" autocomplete="postal-code" placeholder="e.g. SY2" required></div>
           <div class="field"><label for="message">Additional Comments <small>(optional)</small></label><textarea id="message" name="message" placeholder="Anything useful Paul should know?"></textarea></div>
           <label class="consent"><input name="contact_consent" type="checkbox" value="Yes" required><span>I consent to The Carpet Cleaning Company contacting me about this enquiry by phone, text or email.</span></label>
           <button class="button" type="submit">Get Your Carpet Cleaning Quote</button>
-          <p class="privacy">Please give either a telephone number or email address. Your details are used only to answer this enquiry. Paul will contact you from 07802 563213.</p><div class="status" role="status" aria-live="polite"></div>
+          <p class="privacy">Your details are used only to answer this enquiry. Paul will contact you from 07802 563213.</p><div class="status" role="status" aria-live="polite"></div>
           <div class="trust-block"><div class="progress"></div><div class="trust-row"><div class="trusted"><small>Proudly serving your area</small><strong><span>Trusted</span> Local</strong><em>Professional carpet cleaning service</em></div><div class="rating"><strong>Google Rating 5.0</strong><span>★★★★★</span><small>Over 50 genuine customer reviews</small></div></div><div class="guarantee"><div class="money-badge" role="img" aria-label="100% money back guarantee badge"></div><p>We only expect payment once the job is done. If you are not happy, we will return and reclean your carpets free of charge.</p></div></div>
         </form>
       </section>
@@ -83,12 +83,12 @@
       const button = form.querySelector('button[type="submit"]');
       const phone = form.elements.phone.value.trim();
       const email = form.elements.email.value.trim();
-      if (!phone && !email) {
-        status.textContent = 'Please enter either your telephone number or email address.';
-        form.elements.phone.focus();
+      if (!phone || !email) {
+        status.textContent = 'Please complete both your telephone number and email address.';
+        (!phone ? form.elements.phone : form.elements.email).focus();
         return;
       }
-      if (email && !form.elements.email.checkValidity()) {
+      if (!form.elements.email.checkValidity()) {
         form.elements.email.reportValidity();
         return;
       }
