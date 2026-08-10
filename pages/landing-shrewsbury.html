@@ -27,6 +27,12 @@
       function gtag() {
         dataLayer.push(arguments);
       }
+      gtag("consent", "default", {
+        ad_storage: "denied",
+        analytics_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+      });
       (function () {
         let loaded = false;
         function loadTracking() {
@@ -37,8 +43,8 @@
           s.src = "https://www.googletagmanager.com/gtag/js?id=G-R9CFDLD03L";
           document.head.appendChild(s);
           gtag("js", new Date());
-          gtag("config", "G-R9CFDLD03L");
-          gtag("config", "AW-17385772946");
+          gtag("config", "G-R9CFDLD03L", { allow_google_signals: false });
+          gtag("config", "AW-17385772946", { allow_google_signals: false });
         }
         if ("requestIdleCallback" in window) {
           requestIdleCallback(loadTracking, { timeout: 2500 });

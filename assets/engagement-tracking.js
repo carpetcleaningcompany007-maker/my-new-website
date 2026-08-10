@@ -1,177 +1,153 @@
 (function () {
   "use strict";
 
-  const form =
-    document.getElementById("warmQuote") ||
-    document.getElementById("quoteStepOne");
-  const field = (name) => form && form.querySelector(`[name="${name}"]`);
-  const area = field("landing_area") ? field("landing_area").value : "";
-  const page = field("landing_page")
-    ? field("landing_page").value
-    : location.pathname.split("/").pop();
-  const recorded = new Set();
+  const endpoint = "https://carpet-cleaning-crm.onrender.com/api/website-analytics";
   const productionHost = "www.thecarpetcleaningcrew.co.uk";
-  const sessionKey = "ccc_engagement_session";
-  const alertedKey = "ccc_engagement_alert_sent";
-  let visitorSession = sessionStorage.getItem(sessionKey);
-  if (!visitorSession) {
-    visitorSession = `${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 14)}`;
-    sessionStorage.setItem(sessionKey, visitorSession);
-  }
-  const eligibleAt = Date.now() + 30000;
-  let pendingAlert = "";
+  const recorded = new Set();
+  const startedAt = Date.now();
+  let visibleSeconds = 0;
+  let boundForm = null;
+  let scrollQueued = false;
+  const visitorSession = window.crypto && crypto.randomUUID
+    ? crypto.randomUUID().replace(/-/g, "")
+    : `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 16)}`;
 
-  function sendEngagementAlert(trigger) {
-    if (location.hostname !== productionHost || sessionStorage.getItem(alertedKey)) return;
-    if (Date.now() < eligibleAt) {
-      pendingAlert = pendingAlert || trigger;
-      setTimeout(() => sendEngagementAlert(pendingAlert), eligibleAt - Date.now() + 50);
-      return;
-    }
-    sessionStorage.setItem(alertedKey, "1");
+  function currentForm() {
+    return document.getElementById("warmQuote") || document.getElementById("quoteStepOne");
+  }
+
+  function fieldValue(name) {
+    const form = currentForm();
+    const field = form && form.querySelector(`[name="${name}"]`);
+    return field ? field.value : "";
+  }
+
+  function trafficSource() {
     const query = new URLSearchParams(location.search);
-    const payload = new URLSearchParams({
+    if (query.get("gclid") || query.get("gbraid") || query.get("wbraid")) return "Google Ads";
+    if (query.get("utm_source")) return query.get("utm_source").slice(0, 80);
+    if (!document.referrer) return "Direct / unknown";
+    try {
+      const host = new URL(document.referrer).hostname.toLowerCase();
+      if (/google\./.test(host)) return "Google organic";
+      if (/facebook\.|instagram\./.test(host)) return "Facebook / Instagram";
+      return "Website referral";
+    } catch (_) {
+      return "Website referral";
+    }
+  }
+
+  function payload(eventName, eventValue) {
+    const query = new URLSearchParams(location.search);
+    return {
       session_id: visitorSession,
-      landing_area: area,
-      landing_page: page,
-      trigger,
-      utm_source: query.get("utm_source") || "",
-      gclid: query.get("gclid") || "",
-      gbraid: query.get("gbraid") || "",
-      wbraid: query.get("wbraid") || "",
+      landing_area: fieldValue("landing_area") || "Shrewsbury",
+      landing_page: fieldValue("landing_page") || location.pathname.split("/").pop(),
+      page_variant: "shrewsbury-new-landing-2026-08-10",
+      event_name: eventName,
+      event_value: Math.max(0, Math.round(Number(eventValue) || 0)),
+      traffic_source: trafficSource(),
+      click_id_present: query.get("gclid") || query.get("gbraid") || query.get("wbraid") ? 1 : 0,
+      device_type: innerWidth < 600 ? "mobile" : innerWidth < 1024 ? "tablet" : "desktop",
       company_website: "",
-    });
-    fetch("https://carpet-cleaning-crm.onrender.com/api/website-engagement", {
+    };
+  }
+
+  function send(eventName, eventValue, onceKey) {
+    const key = onceKey || eventName;
+    if (recorded.has(key)) return;
+    recorded.add(key);
+    if (location.hostname !== productionHost) return;
+    fetch(endpoint, {
       method: "POST",
       mode: "cors",
-      body: payload,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload(eventName, eventValue)),
       keepalive: true,
-    }).catch(() => sessionStorage.removeItem(alertedKey));
+    }).catch(function () {});
   }
 
-  function record(eventName, details, onceKey) {
-    if (onceKey && recorded.has(onceKey)) return;
-    if (onceKey) recorded.add(onceKey);
-    const payload = Object.assign(
-      { landing_area: area, landing_page: page },
-      details || {},
-    );
-    if (typeof window.gtag === "function") {
-      window.gtag("event", eventName, payload);
+  send("page_view");
+
+  setInterval(function () {
+    if (document.visibilityState !== "visible") return;
+    visibleSeconds += 1;
+    [10, 20, 60, 120].forEach(function (seconds) {
+      if (visibleSeconds >= seconds) send(`time_${seconds}`);
+    });
+  }, 1000);
+
+  function checkScroll() {
+    scrollQueued = false;
+    const available = document.documentElement.scrollHeight - innerHeight;
+    if (available <= 0) return;
+    const percent = ((scrollY + innerHeight) / document.documentElement.scrollHeight) * 100;
+    [25, 50, 75, 90].forEach(function (depth) {
+      if (percent >= depth) send(`scroll_${depth}`);
+    });
+    if (scrollY + innerHeight >= document.documentElement.scrollHeight - 30) send("scroll_bottom");
+  }
+  addEventListener("scroll", function () {
+    if (!scrollQueued) {
+      scrollQueued = true;
+      requestAnimationFrame(checkScroll);
     }
+  }, { passive: true });
+  checkScroll();
+
+  function bindForm() {
+    const form = currentForm();
+    if (!form || form === boundForm) return;
+    boundForm = form;
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(function (entries) {
+        if (entries.some(function (entry) { return entry.isIntersecting; })) send("form_view");
+      }, { threshold: 0.25 });
+      observer.observe(form);
+    }
+    const usable = Array.from(form.querySelectorAll("input,select,textarea")).filter(function (el) {
+      return !["hidden", "submit", "button"].includes((el.type || "").toLowerCase());
+    });
+    form.addEventListener("focusin", function (event) {
+      send("form_start");
+      const index = usable.indexOf(event.target);
+      if (index < 0 || !usable.length) return;
+      const progress = (index + 1) / usable.length;
+      if (progress >= 0.5) send("form_midpoint");
+      if (progress >= 0.8) send("form_final");
+    });
+    form.addEventListener("submit", function () { send("form_submit"); });
   }
+  bindForm();
+  new MutationObserver(bindForm).observe(document.documentElement, { childList: true, subtree: true });
 
-  [25, 50, 75, 90].forEach((depth) => {
-    window.addEventListener(
-      "scroll",
-      () => {
-        const available = document.documentElement.scrollHeight - innerHeight;
-        if (available > 0 && (scrollY / available) * 100 >= depth) {
-          record("scroll_depth", { percent_scrolled: depth }, `scroll:${depth}`);
-          if (depth >= 75) sendEngagementAlert("deep_scroll");
-        }
-      },
-      { passive: true },
-    );
-  });
-
-  if (form) {
-    form.addEventListener("focusin", () => {
-      record("form_start", {}, "form:start");
-      sendEngagementAlert("form_started");
-    });
-  }
-
-  if ("IntersectionObserver" in window) {
-    const sectionObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            record(
-              "section_view",
-              { section_name: entry.target.id },
-              `section:${entry.target.id}`,
-            );
-            if (entry.target.id === "reviews") sendEngagementAlert("reviews_viewed");
-          }
-        });
-      },
-      { threshold: 0.35 },
-    );
-    ["quote", "results", "reviews", "faq"].forEach((id) => {
-      const section = document.getElementById(id);
-      if (section) sectionObserver.observe(section);
-    });
-
-    const videoObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const frame = entry.target;
-          record(
-            "video_embed_visible",
-            { video_title: frame.title || "Facebook cleaning video" },
-            `video-visible:${frame.src || frame.title}`,
-          );
-        });
-      },
-      { threshold: 0.5 },
-    );
-    document
-      .querySelectorAll(".video-embed iframe")
-      .forEach((frame) => videoObserver.observe(frame));
-  }
-
-  let hoveredFrame = null;
-  document.querySelectorAll(".video-embed iframe").forEach((frame) => {
-    frame.addEventListener("pointerenter", () => {
-      hoveredFrame = frame;
-    });
-    frame.addEventListener("pointerleave", () => {
-      hoveredFrame = null;
-    });
-    frame.addEventListener(
-      "touchstart",
-      () =>
-        (record("video_embed_interaction", {
-          video_title: frame.title || "Facebook cleaning video",
-          interaction_precision: "embed interaction; play cannot be verified",
-        }),
-        sendEngagementAlert("video_interaction")),
-      { passive: true },
-    );
-  });
-  window.addEventListener("blur", () => {
-    const frame = document.activeElement;
-    if (hoveredFrame && frame === hoveredFrame) {
-      record("video_embed_interaction", {
-        video_title: frame.title || "Facebook cleaning video",
-        interaction_precision: "embed interaction; play cannot be verified",
+  const video = document.getElementById("customerReactionVideo");
+  if (video) {
+    video.addEventListener("play", function () { send("video_start"); });
+    video.addEventListener("timeupdate", function () {
+      if (!video.duration) return;
+      const progress = video.currentTime / video.duration;
+      [25, 50, 75].forEach(function (percent) {
+        if (progress >= percent / 100) send(`video_${percent}`);
       });
-      sendEngagementAlert("video_interaction");
-    }
-  });
+    });
+    video.addEventListener("ended", function () { send("video_complete"); });
+  }
 
-  document.addEventListener("click", (event) => {
-    const target = event.target.closest("a,button,summary");
+  document.addEventListener("click", function (event) {
+    const target = event.target.closest("a,button");
     if (!target) return;
     const href = target.getAttribute("href") || "";
-    const label = (
-      target.textContent ||
-      target.getAttribute("aria-label") ||
-      ""
-    )
-      .trim()
-      .slice(0, 80);
-    if (/facebook\.com/i.test(href)) {
-      record("facebook_outbound_click", { link_text: label });
-    }
-    if (target.matches("#reviews summary, #reviews button, [data-review-toggle]")) {
-      record("reviews_interaction", { action_label: label });
-    }
-    if (target.matches("summary")) record("faq_open", { question: label });
-    if (href.startsWith("#")) {
-      record("internal_cta_click", { destination: href, link_text: label });
-    }
+    if (href.startsWith("tel:")) send("phone_click");
+    else if (href.startsWith("mailto:")) send("email_click");
+    else if (/wa\.me|whatsapp/i.test(href)) send("whatsapp_click");
+    else if (/quote|#contact|#form/i.test(href) || /quote|price|book/i.test(target.textContent || "")) send("quote_click");
+  });
+
+  addEventListener("pagehide", function () {
+    if (location.hostname !== productionHost || recorded.has("page_exit")) return;
+    recorded.add("page_exit");
+    const body = new Blob([JSON.stringify(payload("page_exit", Math.max(visibleSeconds, (Date.now() - startedAt) / 1000)))], { type: "application/json" });
+    navigator.sendBeacon(endpoint, body);
   });
 })();
