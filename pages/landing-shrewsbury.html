@@ -2193,14 +2193,18 @@
       .google-review-kicker { position:relative; z-index:1; display:flex; align-items:center; gap:9px; margin:0 0 14px; }
       .google-review-kicker .google-g { display:grid; width:30px; height:30px; place-items:center; border-radius:50%; background:#fff; box-shadow:0 1px 5px rgba(0,0,0,.18); }
       .google-review-kicker .google-g img { display:block; width:22px; height:22px; object-fit:contain; }
+      .google-review-kicker .facebook-f { display:grid; width:30px; height:30px; place-items:center; border-radius:50%; background:#1877f2; color:#fff; font:900 22px/1 Arial,sans-serif; box-shadow:0 1px 5px rgba(0,0,0,.18); }
       .google-review-kicker strong { color:#34515d; font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; }
       .post-form-review p { position:relative; z-index:1; margin:0 0 19px; font-size:.93rem; line-height:1.58; }
       .post-form-review .reviewer-row { display:flex; position:relative; z-index:1; align-items:center; gap:10px; padding-top:15px; border-top:1px solid #e7ecef; }
       .post-form-review .post-form-avatar { display:grid; width:38px; height:38px; flex:0 0 38px; place-items:center; border-radius:50%; background:#8255cf; color:#fff; }
       .post-form-review .post-form-avatar img { display:block; width:100%; height:100%; border-radius:50%; object-fit:cover; }
+      .post-form-review .post-form-avatar.review-source-avatar { position:relative; overflow:hidden; background:#eef3f8; }
+      .post-form-review .post-form-avatar.review-source-avatar img { position:absolute; top:-12px; left:-8px; width:665px; max-width:none; height:203px; border-radius:0; object-fit:fill; }
       .post-form-review .reviewer-name { display:flex; flex-direction:column; color:#222; font-size:.84rem; }
       .post-form-review .reviewer-name small { margin-top:2px; color:#6b747a; font-size:.64rem; font-weight:600; }
       .post-form-review .stars { margin-left:auto; color:#fbbc04; font-size:1.08rem; letter-spacing:2px; white-space:nowrap; text-shadow:0 1px 1px rgba(0,0,0,.08); }
+      .post-form-review .recommend-mark { margin-left:auto; color:#1877f2; font-size:.72rem; font-weight:800; white-space:nowrap; }
       .hero-proof .post-form-review { margin:18px 0 0; text-align:left; }
       .hero-proof .post-form-review p { color:#26343b; }
       .mobile-form-review { display:none; }
@@ -2529,10 +2533,10 @@
                 <figure><img src="../assets/img/main-room-before.jpg" alt="Heavily marked lounge carpet before professional cleaning" /><b>BEFORE</b></figure>
                 <figure><img src="../assets/img/main-room-after.jpg" alt="The same lounge carpet after professional deep cleaning" /><b>AFTER</b></figure>
               </div>
-              <article class="post-form-review hero-review-card" aria-label="Five star Google customer review">
-                <div class="google-review-kicker"><span class="google-g" aria-hidden="true"><img src="../assets/img/google-g-logo.png" alt=""></span><strong>5 star Google review</strong></div>
-                <p>“Paul was punctual, polite and very knowledgeable. My carpets look amazing and smell fresh. I would definitely recommend him.”</p>
-                <div class="reviewer-row"><span class="post-form-avatar"><img src="../assets/img/jac-p-representative-avatar.webp" alt="Representative customer portrait"></span><strong class="reviewer-name">Jackie P<small>Genuine Google customer review</small></strong><span class="stars" aria-label="Five stars">★★★★★</span></div>
+              <article class="post-form-review hero-review-card" aria-label="Genuine Facebook customer recommendation">
+                <div class="google-review-kicker"><span class="facebook-f" aria-hidden="true">f</span><strong>Genuine Facebook recommendation</strong></div>
+                <p>“I've used The Carpet Cleaning Company twice for different jobs. Outstanding quality of work and service both times, I will use again. Not just top quality equipment, but also the knowledge and experience that ensures the right process is used for each job. Highly recommended.”</p>
+                <div class="reviewer-row"><span class="post-form-avatar review-source-avatar" aria-label="Alex Whittles profile photo"><img src="../assets/img/alex-whittles-facebook-review.png" alt=""></span><strong class="reviewer-name">Alex Whittles<small>Genuine Facebook customer</small></strong><span class="recommend-mark">Recommends ✓</span></div>
               </article>
             </div>
             <div class="ticks">
@@ -2705,10 +2709,10 @@
               </div>
               <div class="status" role="status" aria-live="polite"></div>
             </form>
-            <article class="post-form-review mobile-form-review" aria-label="Five star Google customer review">
-              <div class="google-review-kicker"><span class="google-g" aria-hidden="true"><img src="../assets/img/google-g-logo.png" alt=""></span><strong>5 star Google review</strong></div>
-              <p>“Paul was punctual, polite and very knowledgeable. My carpets look amazing and smell fresh. I would definitely recommend him.”</p>
-              <div class="reviewer-row"><span class="post-form-avatar"><img src="../assets/img/jac-p-representative-avatar.webp" alt="Representative customer portrait"></span><strong class="reviewer-name">Jackie P<small>Genuine Google customer review</small></strong><span class="stars" aria-label="Five stars">★★★★★</span></div>
+            <article class="post-form-review mobile-form-review" aria-label="Genuine Facebook customer recommendation">
+              <div class="google-review-kicker"><span class="facebook-f" aria-hidden="true">f</span><strong>Genuine Facebook recommendation</strong></div>
+              <p>“I've used The Carpet Cleaning Company twice for different jobs. Outstanding quality of work and service both times, I will use again. Not just top quality equipment, but also the knowledge and experience that ensures the right process is used for each job. Highly recommended.”</p>
+              <div class="reviewer-row"><span class="post-form-avatar review-source-avatar" aria-label="Alex Whittles profile photo"><img src="../assets/img/alex-whittles-facebook-review.png" alt=""></span><strong class="reviewer-name">Alex Whittles<small>Genuine Facebook customer</small></strong><span class="recommend-mark">Recommends ✓</span></div>
             </article>
           </div>
         </div>
