@@ -147,7 +147,6 @@
   addEventListener("pagehide", function () {
     if (location.hostname !== productionHost || recorded.has("page_exit")) return;
     recorded.add("page_exit");
-    const body = new Blob([JSON.stringify(payload("page_exit", Math.max(visibleSeconds, (Date.now() - startedAt) / 1000)))], { type: "application/json" });
-    navigator.sendBeacon(endpoint, body);
+    navigator.sendBeacon(endpoint, new URLSearchParams(payload("page_exit", Math.max(visibleSeconds, (Date.now() - startedAt) / 1000))));
   });
 })();
