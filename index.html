@@ -501,6 +501,7 @@
 <input name="_redirect" type="hidden" value="https://www.thecarpetcleaningcrew.co.uk/thank-you.html"/>
 <input name="_subject" type="hidden" value="New Quote Request - The Carpet Cleaning Company">
 <input name="_format" type="hidden" value="plain"/>
+<input aria-hidden="true" autocomplete="off" name="_company_website" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden" tabindex="-1" type="text" value=""/>
 <div class="space-y-4">
 <div class="grid sm:grid-cols-2 gap-4">
 <label class="block">
@@ -887,6 +888,7 @@
 <a aria-label="WhatsApp" class="h-14 w-14 rounded-full shadow-card bg-[#25D366] grid place-items-center text-white text-2xl lift" href="https://wa.me/447802563213?text=Hi%20Paul%2C%20I%E2%80%99d%20like%20a%20quote%20please.%0AMy%20postcode%3A%20____%0AWhat%20needs%20cleaning%3A%20____" rel="noopener" target="_blank">💬</a>
 <a aria-label="Call" class="h-14 w-14 rounded-full shadow-card bg-brand-300 grid place-items-center text-slate-950 text-2xl lift" href="tel:07802563213">☎</a>
 </div>
+<script src="./assets/form-spam-guard.js"></script>
 <script>
     document.getElementById("year").textContent = new Date().getFullYear();
     window.addEventListener("load", () => document.documentElement.classList.add("is-ready"));
@@ -953,6 +955,10 @@
 
       try {
         const payload = new FormData(form);
+        if (window.websiteFormLooksLikeSpam && window.websiteFormLooksLikeSpam(payload)) {
+          window.location.href = "pages/thank-you.html";
+          return;
+        }
         const rooms = form.querySelector('[name="areas"], [name="rooms"], [name="number_rooms"]');
         if (rooms && rooms.value) payload.set("rooms_or_items", rooms.value);
         const res = await fetch(form.action, {

@@ -6,6 +6,7 @@
   <meta name="robots" content="noindex,follow">
   <title>Complete Your Shrewsbury Cleaning Quote | The Carpet Cleaning Company</title>
   <meta name="description" content="Complete your free Shrewsbury carpet or upholstery cleaning quotation request.">
+  <script src="../assets/form-spam-guard.js"></script>
   <script>
     window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
     (function(){const s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-R9CFDLD03L';document.head.appendChild(s);gtag('js',new Date());gtag('config','G-R9CFDLD03L');gtag('config','AW-17385772946')})();
@@ -43,7 +44,7 @@
       <section class="quote">
         <div class="quote-head"><h2>Last Step, Where Should We Send Your Quote?</h2></div>
         <form class="form-body" action="https://carpet-cleaning-crm.onrender.com/api/website-form" method="post" id="warmQuote">
-          <input type="hidden" name="_redirect" value="https://www.thecarpetcleaningcrew.co.uk/thank-you.html"><input type="hidden" name="_subject" value="New Shrewsbury Quote Request - The Carpet Cleaning Company"><input type="hidden" name="_format" value="plain"><input type="hidden" name="landing_area" value="Shrewsbury"><input type="hidden" name="landing_page" value="landing-shrewsbury-quote.html"><div id="carryFields"></div>
+          <input type="hidden" name="_redirect" value="https://www.thecarpetcleaningcrew.co.uk/thank-you.html"><input type="hidden" name="_subject" value="New Shrewsbury Quote Request - The Carpet Cleaning Company"><input type="hidden" name="_format" value="plain"><input type="text" name="_company_website" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden"><input type="hidden" name="landing_area" value="Shrewsbury"><input type="hidden" name="landing_page" value="landing-shrewsbury-quote.html"><div id="carryFields"></div>
           <div class="field"><label for="name">Your First Name *</label><input id="name" name="name" autocomplete="given-name" placeholder="Jane" required></div>
           <div class="field"><label for="email">Your Email *</label><input id="email" name="email" type="email" autocomplete="email" placeholder="j.smith@gmail.com" required></div>
           <div class="field"><label for="phone">Phone Number *</label><input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="07912 345678" required></div>
@@ -98,6 +99,10 @@
       button.textContent = 'Sending...';
       status.textContent = 'Sending your enquiry securely...';
       const data = new FormData(form);
+      if (window.websiteFormLooksLikeSpam && window.websiteFormLooksLikeSpam(data)) {
+        location.href = '/thank-you.html';
+        return;
+      }
 
       try {
         const response = await fetch(form.action, {

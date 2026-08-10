@@ -309,6 +309,7 @@
 <input name="_redirect" type="hidden" value="https://www.thecarpetcleaningcrew.co.uk/thank-you.html"/>
 <input name="_subject" type="hidden" value="New Quote Request - Instant Quote Page"/>
 <input name="_format" type="hidden" value="plain"/>
+<input aria-hidden="true" autocomplete="off" name="_company_website" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden" tabindex="-1" type="text" value=""/>
 <div class="grid2">
 <label><span>Name</span><input name="name" placeholder="Your name" required="" type="text"/></label>
 <label><span>Phone</span><input name="phone" placeholder="07..." required="" type="tel"/></label>
@@ -428,6 +429,7 @@
 <a class="mobile-cta-wa" href="https://wa.me/447802563213?text=Hi%2C%20I%E2%80%99d%20like%20a%20quote%20please.%20My%20postcode%20is%20____%20and%20I%20need%20____%20cleaned." rel="noreferrer" target="_blank">WhatsApp</a>
 </div>
 <script defer="" src="./assets/app.js"></script>
+<script src="./assets/form-spam-guard.js"></script>
 <script>
 async function submitQuote(e, form){
   e.preventDefault();
@@ -436,6 +438,10 @@ async function submitQuote(e, form){
   if (btn){ btn.disabled = true; btn.textContent = 'Sending...'; }
   try {
     const payload = new FormData(form);
+    if (window.websiteFormLooksLikeSpam && window.websiteFormLooksLikeSpam(payload)) {
+      window.location.href = './thank-you.html';
+      return;
+    }
     const rooms = form.querySelector('[name="areas"], [name="rooms_or_areas"], [name="rooms_or_items"], [name="number_rooms"]');
     if (rooms && rooms.value) payload.set('rooms_or_items', rooms.value);
     const res = await fetch(form.action, {

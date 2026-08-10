@@ -2591,6 +2591,14 @@
                 name="_subject"
                 value="New Shrewsbury Quote Request - The Carpet Cleaning Company"
               /><input type="hidden" name="_format" value="plain" /><input
+                type="text"
+                name="_company_website"
+                value=""
+                tabindex="-1"
+                autocomplete="off"
+                aria-hidden="true"
+                style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden"
+              /><input
                 type="hidden"
                 name="landing_area"
                 value="Shrewsbury"
@@ -3998,6 +4006,10 @@ Hi Paul, I’d like some help with carpet cleaning.</textarea
           b.textContent = "Sending…";
           s.textContent = "Sending your enquiry securely…";
           const d = new FormData(f);
+          if (window.websiteFormLooksLikeSpam && window.websiteFormLooksLikeSpam(d)) {
+            location.href = "/thank-you.html";
+            return;
+          }
           d.set("rooms_or_items", String(d.get("areas") || ""));
           addClickData(d);
           try {
@@ -4201,7 +4213,8 @@ Hi Paul, I’d like some help with carpet cleaning.</textarea
       );
       chatObserver.observe(document.getElementById("faq"));
     </script>
-    <script src="../assets/engagement-tracking.js" defer></script>
+      <script src="../assets/form-spam-guard.js"></script>
+      <script src="../assets/engagement-tracking.js" defer></script>
     <script>
       (() => {
         const video = document.getElementById("customerReactionVideo");
