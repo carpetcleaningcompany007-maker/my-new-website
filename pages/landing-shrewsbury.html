@@ -2498,25 +2498,6 @@
         .photo-credit { display:none; }
         main,.reference-content,.final-reference-cta { padding-bottom:0 !important; margin-bottom:0 !important; }
       }
-      .mobile-contact-bar { display:none; }
-      @media (max-width:760px) {
-        body { padding-bottom:62px; }
-        .mobile-contact-bar {
-          position:fixed; z-index:90; bottom:10px; left:50%; width:min(330px,calc(100% - 24px));
-          display:flex; gap:5px; padding:4px; border:1px solid rgba(18,31,72,.11);
-          border-radius:13px; background:rgba(255,255,255,.95);
-          box-shadow:0 6px 20px rgba(18,31,72,.19); backdrop-filter:blur(8px);
-          transform:translate(-50%,calc(100% + 24px)); opacity:0; pointer-events:none;
-          transition:transform .22s ease,opacity .22s ease;
-        }
-        .mobile-contact-bar.is-visible { transform:translate(-50%,0); opacity:1; pointer-events:auto; }
-        .mobile-contact-bar a {
-          flex:1; display:flex; min-height:38px; align-items:center; justify-content:center;
-          border-radius:9px; color:#fff; font-size:.76rem; font-weight:900; text-decoration:none;
-        }
-        .mobile-contact-call { background:#ef2a0b; }
-        .mobile-contact-whatsapp { background:#168f4d; }
-      }
     </style>
   </head>
   <body>
@@ -4245,25 +4226,6 @@ Hi Paul, I’d like some help with carpet cleaning.</textarea
       );
       chatObserver.observe(document.getElementById("faq"));
     </script>
-      <nav class="mobile-contact-bar" id="mobileContactBar" aria-label="Quick contact options">
-        <a class="mobile-contact-call" href="tel:07802563213">☎ Call Paul</a>
-        <a class="mobile-contact-whatsapp" href="https://wa.me/447802563213?text=Hi%20Paul%2C%20I%27d%20like%20a%20carpet%20cleaning%20quote." target="_blank" rel="noopener">WhatsApp</a>
-      </nav>
-      <script>
-        (() => {
-          const bar = document.getElementById("mobileContactBar");
-          const quote = document.getElementById("quote");
-          if (!bar || !quote) return;
-          let quoteVisible = false;
-          const update = () => bar.classList.toggle("is-visible", scrollY > 420 && !quoteVisible);
-          new IntersectionObserver((entries) => {
-            quoteVisible = entries.some((entry) => entry.isIntersecting);
-            update();
-          }, { threshold:0.15 }).observe(quote);
-          addEventListener("scroll", update, { passive:true });
-          update();
-        })();
-      </script>
       <script src="../assets/form-spam-guard.js"></script>
       <script src="../assets/engagement-tracking.js" defer></script>
     <script>
