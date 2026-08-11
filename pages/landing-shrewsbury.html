@@ -2500,19 +2500,19 @@
       }
       .mobile-contact-bar { display:none; }
       @media (max-width:760px) {
-        body { padding-bottom:76px; }
+        body { padding-bottom:62px; }
         .mobile-contact-bar {
-          position:fixed; z-index:90; right:10px; bottom:10px; left:10px;
-          display:flex; gap:8px; padding:7px; border:1px solid rgba(18,31,72,.13);
-          border-radius:16px; background:rgba(255,255,255,.96);
-          box-shadow:0 8px 28px rgba(18,31,72,.24); backdrop-filter:blur(8px);
-          transform:translateY(calc(100% + 24px)); opacity:0; pointer-events:none;
+          position:fixed; z-index:90; bottom:10px; left:50%; width:min(330px,calc(100% - 24px));
+          display:flex; gap:5px; padding:4px; border:1px solid rgba(18,31,72,.11);
+          border-radius:13px; background:rgba(255,255,255,.95);
+          box-shadow:0 6px 20px rgba(18,31,72,.19); backdrop-filter:blur(8px);
+          transform:translate(-50%,calc(100% + 24px)); opacity:0; pointer-events:none;
           transition:transform .22s ease,opacity .22s ease;
         }
-        .mobile-contact-bar.is-visible { transform:translateY(0); opacity:1; pointer-events:auto; }
+        .mobile-contact-bar.is-visible { transform:translate(-50%,0); opacity:1; pointer-events:auto; }
         .mobile-contact-bar a {
-          flex:1; display:flex; min-height:46px; align-items:center; justify-content:center;
-          border-radius:11px; color:#fff; font-size:.86rem; font-weight:900; text-decoration:none;
+          flex:1; display:flex; min-height:38px; align-items:center; justify-content:center;
+          border-radius:9px; color:#fff; font-size:.76rem; font-weight:900; text-decoration:none;
         }
         .mobile-contact-call { background:#ef2a0b; }
         .mobile-contact-whatsapp { background:#168f4d; }
