@@ -4201,7 +4201,7 @@ Hi Paul, I’d like some help with carpet cleaning.</textarea
           quickChatMessage.focus();
         }),
       );
-      document.getElementById("quickChatSend").addEventListener("click", () => {
+      document.getElementById("quickChatSend")?.addEventListener("click", () => {
         const message =
           quickChatMessage.value.trim() ||
           "Hi Paul, I’d like some help with carpet or upholstery cleaning.";

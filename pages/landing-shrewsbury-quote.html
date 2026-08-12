@@ -93,6 +93,12 @@
         form.elements.email.reportValidity();
         return;
       }
+      const phoneDigits = phone.replace(/\D/g, '').replace(/^44/, '0');
+      if (phone && !/^0\d{9,10}$/.test(phoneDigits) && !email) {
+        status.textContent = 'Please check your telephone number, or enter an email address instead.';
+        form.elements.phone.focus();
+        return;
+      }
 
       const originalText = button.textContent;
       button.disabled = true;
@@ -110,7 +116,12 @@
           body: data,
           headers: { Accept: 'application/json' }
         });
-        if (!response.ok) throw new Error('CRM submission failed: ' + response.status);
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok) {
+          const error = new Error(result.error || 'Your enquiry could not be sent.');
+          error.isSubmissionError = true;
+          throw error;
+        }
 
         const tracker = new URLSearchParams();
         ['name','phone','email','postcode','message','building_type','rooms','stains','landing_area','landing_page','gclid','gbraid','wbraid','utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(key => {
@@ -135,7 +146,9 @@
         setTimeout(() => { location.href = '/thank-you.html'; }, 500);
       } catch (error) {
         console.error(error);
-        status.textContent = 'Sorry, it did not send. Please call 07802 563213 and we will help.';
+        status.textContent = error.isSubmissionError
+          ? error.message
+          : 'The connection was interrupted and your enquiry was not sent. Please try again or call 07802 563213.';
         button.disabled = false;
         button.textContent = originalText;
       }
