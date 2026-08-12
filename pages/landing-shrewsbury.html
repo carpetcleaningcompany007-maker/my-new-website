@@ -4003,10 +4003,6 @@ Hi Paul, I’d like some help with carpet cleaning.</textarea
           b.textContent = "Sending…";
           s.textContent = "Sending your enquiry securely…";
           const d = new FormData(f);
-          if (window.websiteFormLooksLikeSpam && window.websiteFormLooksLikeSpam(d)) {
-            location.href = "/thank-you.html";
-            return;
-          }
           d.set("rooms_or_items", String(d.get("areas") || ""));
           addClickData(d);
           try {
@@ -4216,7 +4212,6 @@ Hi Paul, I’d like some help with carpet cleaning.</textarea
       );
       chatObserver.observe(document.getElementById("faq"));
     </script>
-      <script src="../assets/form-spam-guard.js"></script>
       <script src="../assets/engagement-tracking.js" defer></script>
     <script>
       (() => {
