@@ -2627,14 +2627,12 @@
                 </div>
                 <div class="field">
                   <label
-                    >Email address
-                    <small>(phone or email required)</small></label
+                    >Email address</label
                   ><input name="email" type="email" autocomplete="email" placeholder="j.smith@gmail.com" />
                 </div>
                 <div class="field">
                   <label
-                    >Phone number
-                    <small>(phone or email required)</small></label
+                    >Phone number</label
                   ><input
                     name="phone"
                     type="tel"
@@ -2663,26 +2661,6 @@
                     <option>Stain treatment</option>
                     <option>Commercial carpet cleaning</option>
                   </select>
-                </div>
-                <div class="field full">
-                  <label
-                    style="display: flex; align-items: flex-start; gap: 10px"
-                    ><input
-                      name="contact_consent"
-                      type="checkbox"
-                      value="Yes"
-                      required
-                      style="
-                        width: 22px;
-                        height: 22px;
-                        margin-top: 2px;
-                        flex: 0 0 auto;
-                      "
-                    /><span
-                      >I consent to The Carpet Cleaning Company contacting me
-                      about this enquiry by phone, text or email.</span
-                    ></label
-                  >
                 </div>
                 <div class="field full">
                   <p class="contact-error" id="contactError">
@@ -4015,6 +3993,12 @@ Hi Paul, I’d like some help with carpet cleaning.</textarea
             return;
           }
           contactError.classList.remove("show");
+          const phoneDigits = phone.value.replace(/\D/g, "").replace(/^44/, "0");
+          if (phone.value.trim() && !/^0\d{9,10}$/.test(phoneDigits) && !emailOk) {
+            s.textContent = "Please check your telephone number, or enter an email address instead.";
+            phone.focus();
+            return;
+          }
           b.disabled = true;
           b.textContent = "Sending…";
           s.textContent = "Sending your enquiry securely…";
@@ -4031,7 +4015,12 @@ Hi Paul, I’d like some help with carpet cleaning.</textarea
               body: d,
               headers: { Accept: "application/json" },
             });
-            if (!r.ok) throw new Error("Submission failed " + r.status);
+            const result = await r.json().catch(() => ({}));
+            if (!r.ok) {
+              const error = new Error(result.error || "Your enquiry could not be sent.");
+              error.isSubmissionError = true;
+              throw error;
+            }
             const t = addClickData(new URLSearchParams()),
               service = String(d.get("service") || ""),
               areas = parseInt(String(d.get("areas") || "0"), 10) || 0;
@@ -4065,8 +4054,9 @@ Hi Paul, I’d like some help with carpet cleaning.</textarea
             setTimeout(() => (location.href = "./thank-you.html"), 700);
           } catch (x) {
             console.error(x);
-            s.textContent =
-              "Sorry, it did not send. Please call 07802 563213 and we will help.";
+            s.textContent = x.isSubmissionError
+              ? x.message
+              : "The connection was interrupted and your enquiry was not sent. Please try again or call 07802 563213.";
             b.disabled = false;
             b.textContent = old;
           }
