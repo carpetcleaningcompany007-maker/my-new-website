@@ -133,11 +133,8 @@
         tracker.set('notes', String(data.get('message') || ''));
         tracker.set('status', 'New lead');
 
-        try {
-          await fetch(trackerUrl, { method: 'POST', mode: 'no-cors', body: tracker });
-        } catch (trackerError) {
-          console.warn('Lead tracker backup failed', trackerError);
-        }
+        fetch(trackerUrl, { method: 'POST', mode: 'no-cors', body: tracker })
+          .catch(trackerError => console.warn('Lead tracker backup failed', trackerError));
 
         if (typeof gtag === 'function') {
           gtag('event', 'quote_form_submit_success', { landing_area: 'Shrewsbury' });
