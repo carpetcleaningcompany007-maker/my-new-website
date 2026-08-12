@@ -4177,7 +4177,7 @@ Hi Paul, I’d like some help with carpet cleaning.</textarea
         quickChatMessage = document.getElementById("quickChatMessage");
       document
         .querySelector(".mobile-contact .wa")
-        .addEventListener("click", (e) => {
+        ?.addEventListener("click", (e) => {
           e.preventDefault();
           quickChat.hidden = false;
           quickChatMessage.focus();
