@@ -64,7 +64,7 @@
     const carry = document.getElementById('carryFields');
     const form = document.getElementById('warmQuote');
     const trackerUrl = 'https://script.google.com/macros/s/AKfycbxlgw9Fbb5DAx1gBeoK7F84MACP6S1N-_i9HKH1fSsasPS8QEzfJSLwIT9g60kNN0y9/exec';
-    const carriedKeys = ['building_type','rooms','stains','extras','gclid','gbraid','wbraid','utm_source','utm_medium','utm_campaign','utm_term','utm_content'];
+    const carriedKeys = ['building_type','rooms','stains','extras','visit_id','gclid','gbraid','wbraid','utm_source','utm_medium','utm_campaign','utm_term','utm_content'];
 
     carriedKeys.forEach(key => {
       params.getAll(key).filter(Boolean).forEach(value => {
@@ -135,6 +135,7 @@
         if (typeof gtag === 'function') {
           gtag('event', 'quote_form_submit_success', { landing_area: 'Shrewsbury' });
         }
+        document.dispatchEvent(new CustomEvent('analytics:form-submit-success'));
         status.textContent = 'Thank you. Your enquiry has been sent.';
         setTimeout(() => { location.href = '/thank-you.html'; }, 500);
       } catch (error) {

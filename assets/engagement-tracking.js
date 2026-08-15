@@ -8,9 +8,12 @@
   let visibleSeconds = 0;
   let boundForm = null;
   let scrollQueued = false;
-  const visitorSession = window.crypto && crypto.randomUUID
-    ? crypto.randomUUID().replace(/-/g, "")
-    : `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 16)}`;
+  const visitParam = new URLSearchParams(location.search).get("visit_id") || "";
+  const visitorSession = /^[A-Za-z0-9_-]{12,80}$/.test(visitParam)
+    ? visitParam
+    : window.crypto && crypto.randomUUID
+      ? crypto.randomUUID().replace(/-/g, "")
+      : `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 16)}`;
 
   function currentForm() {
     return document.getElementById("warmQuote") || document.getElementById("quoteStepOne");
@@ -116,10 +119,24 @@
       if (progress >= 0.5) send("form_midpoint");
       if (progress >= 0.8) send("form_final");
     });
-    form.addEventListener("submit", function () { send("form_submit"); });
+    if (form.id === "quoteStepOne") {
+      form.addEventListener("submit", function () {
+        let visitField = form.querySelector('[name="visit_id"]');
+        if (!visitField) {
+          visitField = document.createElement("input");
+          visitField.type = "hidden";
+          visitField.name = "visit_id";
+          form.appendChild(visitField);
+        }
+        visitField.value = visitorSession;
+      });
+    }
   }
   bindForm();
   new MutationObserver(bindForm).observe(document.documentElement, { childList: true, subtree: true });
+  document.addEventListener("analytics:form-submit-success", function () {
+    send("form_submit");
+  });
 
   const video = document.getElementById("customerReactionVideo");
   if (video) {
