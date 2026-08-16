@@ -40,7 +40,7 @@
     }
   }
 
-  function payload(eventName, eventValue) {
+  function payload(eventName, eventValue, eventDetail) {
     const query = new URLSearchParams(location.search);
     return {
       session_id: visitorSession,
@@ -49,6 +49,7 @@
       page_variant: "shrewsbury-new-landing-2026-08-10",
       event_name: eventName,
       event_value: Math.max(0, Math.round(Number(eventValue) || 0)),
+      event_detail: String(eventDetail || "").slice(0, 160),
       traffic_source: trafficSource(),
       click_id_present: query.get("gclid") || query.get("gbraid") || query.get("wbraid") ? 1 : 0,
       device_type: innerWidth < 600 ? "mobile" : innerWidth < 1024 ? "tablet" : "desktop",
@@ -56,7 +57,7 @@
     };
   }
 
-  function send(eventName, eventValue, onceKey) {
+  function send(eventName, eventValue, onceKey, eventDetail) {
     const key = onceKey || eventName;
     if (recorded.has(key)) return;
     recorded.add(key);
@@ -65,7 +66,18 @@
       method: "POST",
       mode: "cors",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload(eventName, eventValue)),
+      body: JSON.stringify(payload(eventName, eventValue, eventDetail)),
+      keepalive: true,
+    }).catch(function () {});
+  }
+
+  function sendDetailed(eventName, eventValue, eventDetail) {
+    if (location.hostname !== productionHost) return;
+    fetch(endpoint, {
+      method: "POST",
+      mode: "cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload(eventName, eventValue, eventDetail)),
       keepalive: true,
     }).catch(function () {});
   }
@@ -111,16 +123,51 @@
     const usable = Array.from(form.querySelectorAll("input,select,textarea")).filter(function (el) {
       return !["hidden", "submit", "button"].includes((el.type || "").toLowerCase());
     });
+    const safeChoiceFields = new Set(["building_type", "rooms", "stains", "extras", "service"]);
+    const privateFields = new Set(["name", "email", "phone", "postcode", "message"]);
+    function fieldLabel(field) {
+      const names = {
+        building_type: "Building type", rooms: "Rooms", stains: "Stains", extras: "Extra",
+        service: "Service", name: "Name", email: "Email", phone: "Phone",
+        postcode: "Postcode", message: "Additional comments",
+      };
+      return names[field.name] || "Form field";
+    }
+    function recordField(field) {
+      if (!field || !field.name) return;
+      const name = field.name;
+      if (safeChoiceFields.has(name)) {
+        const detail = field.type === "checkbox"
+          ? `${fieldLabel(field)}: ${field.value} ${field.checked ? "selected" : "removed"}`
+          : `${fieldLabel(field)}: ${field.value || "not selected"}`;
+        sendDetailed(`field_${name}`, 1, detail);
+      } else if (privateFields.has(name)) {
+        const completed = String(field.value || "").trim().length > 0;
+        sendDetailed(`field_${name}`, completed ? 1 : 0, `${fieldLabel(field)} ${completed ? "completed" : "left empty"}`);
+      }
+    }
     form.addEventListener("focusin", function (event) {
       send("form_start");
+      if (event.target && event.target.name) {
+        send("field_focus", 1, `field_focus_${event.target.name}`, `${fieldLabel(event.target)} opened`);
+      }
       const index = usable.indexOf(event.target);
       if (index < 0 || !usable.length) return;
       const progress = (index + 1) / usable.length;
       if (progress >= 0.5) send("form_midpoint");
       if (progress >= 0.8) send("form_final");
     });
+    form.addEventListener("change", function (event) { recordField(event.target); });
+    form.addEventListener("focusout", function (event) {
+      if (privateFields.has(event.target && event.target.name)) recordField(event.target);
+    });
+    form.addEventListener("invalid", function (event) {
+      if (!event.target || !event.target.name) return;
+      sendDetailed("form_validation_error", 1, `${fieldLabel(event.target)} required or invalid`);
+    }, true);
     if (form.id === "quoteStepOne") {
       form.addEventListener("submit", function () {
+        send("form_step_one_complete", 1, "form_step_one_complete", "Completed step 1 and continued to contact details");
         let visitField = form.querySelector('[name="visit_id"]');
         if (!visitField) {
           visitField = document.createElement("input");
