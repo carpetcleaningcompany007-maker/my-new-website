@@ -65,7 +65,7 @@
     const carry = document.getElementById('carryFields');
     const form = document.getElementById('warmQuote');
     const trackerUrl = 'https://script.google.com/macros/s/AKfycbxlgw9Fbb5DAx1gBeoK7F84MACP6S1N-_i9HKH1fSsasPS8QEzfJSLwIT9g60kNN0y9/exec';
-    const carriedKeys = ['building_type','rooms','stains','extras','visit_id','gclid','gbraid','wbraid','utm_source','utm_medium','utm_campaign','utm_term','utm_content'];
+    const carriedKeys = ['building_type','rooms','stains','extras','visit_id','gclid','gbraid','wbraid','utm_source','utm_medium','utm_campaign','utm_term','utm_content','campaignid','adgroupid','keyword','matchtype','creative','device','network','placement','targetid','loc_physical_ms','loc_interest_ms'];
 
     carriedKeys.forEach(key => {
       params.getAll(key).filter(Boolean).forEach(value => {
@@ -122,7 +122,7 @@
         }
 
         const tracker = new URLSearchParams();
-        ['name','phone','email','postcode','message','building_type','rooms','stains','landing_area','landing_page','gclid','gbraid','wbraid','utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(key => {
+        ['name','phone','email','postcode','message','building_type','rooms','stains','landing_area','landing_page','gclid','gbraid','wbraid','utm_source','utm_medium','utm_campaign','utm_term','utm_content','campaignid','adgroupid','keyword','matchtype','creative','device','network','placement','targetid','loc_physical_ms','loc_interest_ms'].forEach(key => {
           tracker.set(key, String(data.get(key) || ''));
         });
         tracker.set('extras', data.getAll('extras').join(', '));

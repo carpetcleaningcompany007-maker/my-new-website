@@ -3463,7 +3463,11 @@ Hi Paul, I’d like some help with carpet cleaning.</textarea
         form.action = "landing-shrewsbury-quote.html";
         form.id = "quoteStepOne";
         const current = new URLSearchParams(location.search);
-        const trackingKeys = ["gclid","gbraid","wbraid","utm_source","utm_medium","utm_campaign","utm_term","utm_content"];
+        const trackingKeys = [
+          "gclid","gbraid","wbraid","utm_source","utm_medium","utm_campaign","utm_term","utm_content",
+          "campaignid","adgroupid","keyword","matchtype","creative","device","network","placement",
+          "targetid","loc_physical_ms","loc_interest_ms"
+        ];
         form.innerHTML = `
           <input type="hidden" name="landing_area" value="Shrewsbury">
           <input type="hidden" name="landing_page" value="landing-shrewsbury.html">
@@ -3909,6 +3913,17 @@ Hi Paul, I’d like some help with carpet cleaning.</textarea
         "utm_campaign",
         "utm_term",
         "utm_content",
+        "campaignid",
+        "adgroupid",
+        "keyword",
+        "matchtype",
+        "creative",
+        "device",
+        "network",
+        "placement",
+        "targetid",
+        "loc_physical_ms",
+        "loc_interest_ms",
       ];
       function addClickData(target) {
         const q = new URLSearchParams(location.search);
