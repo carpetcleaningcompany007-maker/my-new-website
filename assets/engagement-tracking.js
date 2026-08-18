@@ -42,6 +42,7 @@
 
   function payload(eventName, eventValue, eventDetail) {
     const query = new URLSearchParams(location.search);
+    const googleClickId = query.get("gclid") || query.get("gbraid") || query.get("wbraid") || "";
     return {
       session_id: visitorSession,
       landing_area: fieldValue("landing_area") || "Shrewsbury",
@@ -51,7 +52,13 @@
       event_value: Math.max(0, Math.round(Number(eventValue) || 0)),
       event_detail: String(eventDetail || "").slice(0, 160),
       traffic_source: trafficSource(),
-      click_id_present: query.get("gclid") || query.get("gbraid") || query.get("wbraid") ? 1 : 0,
+      click_id_present: googleClickId ? 1 : 0,
+      google_click_id: googleClickId,
+      matched_keyword: query.get("utm_term") || query.get("keyword") || "",
+      utm_campaign: query.get("utm_campaign") || query.get("campaignid") || "",
+      utm_content: query.get("utm_content") || query.get("adgroupid") || "",
+      match_type: query.get("matchtype") || "",
+      ad_network: query.get("network") || "",
       device_type: innerWidth < 600 ? "mobile" : innerWidth < 1024 ? "tablet" : "desktop",
       company_website: "",
     };
