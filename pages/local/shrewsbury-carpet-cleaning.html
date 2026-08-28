@@ -2589,9 +2589,9 @@
             <div class="quote-head">
               <div>
                 <div class="eyebrow">Free, no-obligation quotation</div>
-                <h2>First Step: Tell Us What You Need Cleaned</h2>
+                <h2>Get Your Free Cleaning Quote</h2>
               </div>
-              <span>Tell us about what you need cleaned we'll send you an instant quote</span>
+              <span>Choose a service and leave your details. Paul will contact you to discuss exactly what needs cleaning.</span>
             </div>
             <form
               action="https://carpet-cleaning-crm.onrender.com/api/website-form"
@@ -2660,10 +2660,16 @@
                     <option>Carpet cleaning</option>
                     <option>Upholstery cleaning</option>
                     <option>Carpets and upholstery</option>
+                    <option>Hard floor cleaning</option>
+                    <option>Multiple services</option>
                     <option>Rug cleaning</option>
                     <option>Stain treatment</option>
                     <option>Commercial carpet cleaning</option>
                   </select>
+                </div>
+                <div class="field wide">
+                  <label>Briefly tell us what you would like cleaned <small>(optional)</small></label>
+                  <textarea name="message" placeholder="For example: lounge carpet and a three-seat sofa"></textarea>
                 </div>
                 <div class="field full">
                   <p class="contact-error" id="contactError">
@@ -3460,47 +3466,6 @@ Hi Paul, I’d like some help with carpet cleaning.</textarea
     </aside>
     <script>
       (function () {
-        const form = document.getElementById("warmQuote");
-        if (!form) return;
-        form.method = "get";
-        form.action = "../landing-shrewsbury-quote.html";
-        form.id = "quoteStepOne";
-        const current = new URLSearchParams(location.search);
-        const trackingKeys = [
-          "gclid","gbraid","wbraid","utm_source","utm_medium","utm_campaign","utm_term","utm_content",
-          "campaignid","adgroupid","keyword","matchtype","creative","device","network","placement",
-          "targetid","loc_physical_ms","loc_interest_ms"
-        ];
-        form.innerHTML = `
-          <input type="hidden" name="landing_area" value="Shrewsbury">
-          <input type="hidden" name="landing_page" value="organic-shrewsbury-carpet-cleaning.html">
-          <div class="fields">
-            <div class="field wide"><label>What type of building is this for? *</label><select name="building_type" required><option value="">Please choose</option><option>Private home or residence</option><option>Commercial premises</option><option>Other</option></select></div>
-            <div class="field"><label>How many rooms need cleaning? *</label><select name="rooms" required><option value="">Please choose</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6-8</option><option>9 or more rooms</option><option>Other</option></select></div>
-            <div class="field"><label>What kind of stains need cleaning? *</label><select name="stains" required><option value="">Please choose</option><option>No stains</option><option>Dirt</option><option>Food / drink stains</option><option>Makeup</option><option>Oil / Grease stains</option><option>Paint</option><option>Pet stains</option><option>Combination of above</option><option>Other</option></select></div>
-            <div class="field wide"><span class="extras-label">Extras Required?</span><div class="extras-grid"><label class="extra-check"><input type="checkbox" name="extras" value="Stairs">Stairs</label><label class="extra-check"><input type="checkbox" name="extras" value="Upholstery">Upholstery</label><label class="extra-check"><input type="checkbox" name="extras" value="Landing">Landing</label><label class="extra-check"><input type="checkbox" name="extras" value="Hard floor cleaning">Hard floor</label></div></div>
-            <div class="field wide"><button class="button" type="submit" style="width:100%">Continue to Your Contact Details</button></div>
-          </div>
-          <p class="privacy"><strong>Step 1 of 2</strong> · Next, tell us where to send your quotation.</p>
-          <div class="reference-proof" aria-label="Quote reassurance">
-            <div class="reference-rating"><div class="local-trust-mark"><small>Proudly serving your area</small><strong><span>Trusted</span> Local</strong><em>Professional carpet cleaning service</em></div><p><strong>Google Rating 5.0</strong><span class="rating-stars">★★★★★</span><br>Over 50 genuine customer reviews</p></div>
-            <div class="reference-guarantee"><div class="money-back-badge" role="img" aria-label="100% money back guarantee badge"></div><span>We only expect payment once the job is done. If you are not happy, we will return and reclean your carpets free of charge.</span></div>
-          </div>
-          <div class="literal-form-footer" aria-label="Quote reassurance and customer promise"><img src="../../assets/form-footer-reference.png?v=83df66f" alt="Quote button, review rating and 100% customer promise"><button class="literal-form-submit" type="submit" aria-label="Continue to your contact details">Continue to Your Contact Details</button></div>
-        `;
-        trackingKeys.forEach((key) => {
-          if (!current.get(key)) return;
-          const input = document.createElement("input");
-          input.type = "hidden";
-          input.name = key;
-          input.value = current.get(key);
-          form.appendChild(input);
-        });
-        form.addEventListener("submit", () => {
-          if (typeof gtag === "function") gtag("event", "quote_step_one_complete", { landing_area: "Shrewsbury" });
-        });
-      })();
-      (function () {
         const quoteBand = document.querySelector(".quote-band");
         const quoteCard = quoteBand && quoteBand.querySelector(".quote");
         const heroPanel = document.querySelector(".hero-photo");
@@ -4048,6 +4013,7 @@ Hi Paul, I’d like some help with carpet cleaning.</textarea
               "landing_page",
               "contact_consent",
             ].forEach((k) => t.set(k, String(d.get(k) || "")));
+            t.set("notes", String(d.get("message") || ""));
             t.set("rooms", /carpet/i.test(service) ? String(areas) : "0");
             t.set("status", "New lead");
             try {
@@ -4065,7 +4031,7 @@ Hi Paul, I’d like some help with carpet cleaning.</textarea
                 service,
               });
             s.textContent = "Thank you — your enquiry has been sent.";
-            setTimeout(() => (location.href = "./thank-you.html"), 700);
+            setTimeout(() => (location.href = "/thank-you.html"), 700);
           } catch (x) {
             console.error(x);
             s.textContent = x.isSubmissionError
