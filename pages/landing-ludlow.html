@@ -2521,6 +2521,30 @@
         .hero-photo .button { width:100%; min-height:50px; height:auto; padding:13px 16px; }
         .hero-photo .privacy { margin:9px 2px 0; font-size:.72rem; line-height:1.4; }
       }
+      .floating-call-button {
+        position: fixed;
+        right: max(14px, env(safe-area-inset-right));
+        bottom: max(14px, env(safe-area-inset-bottom));
+        z-index: 1100;
+        width: 58px;
+        height: 58px;
+        border: 2px solid rgba(255, 255, 255, 0.9);
+        border-radius: 999px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, #ef2f14, #c91e0a);
+        color: #fff;
+        font-size: 27px;
+        line-height: 1;
+        text-decoration: none;
+        box-shadow: 0 14px 34px rgba(22, 31, 38, 0.3);
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
+      }
+      .floating-call-button:hover,
+      .floating-call-button:focus-visible {
+        transform: translateY(-2px) scale(1.04);
+        box-shadow: 0 18px 40px rgba(22, 31, 38, 0.36);
+      }
     </style>
   </head>
   <body>
@@ -4263,5 +4287,6 @@ Hi Paul, I’d like some help with carpet cleaning.</textarea
         });
       })();
     </script>
+    <a class="floating-call-button" href="tel:07802563213" aria-label="Call The Carpet Cleaning Company on 07802 563213" title="Call 07802 563213">☎</a>
   </body>
 </html>
