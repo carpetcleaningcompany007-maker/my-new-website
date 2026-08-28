@@ -2671,10 +2671,6 @@
                     <option>Commercial carpet cleaning</option>
                   </select>
                 </div>
-                <div class="field wide">
-                  <label>Briefly tell us what you would like cleaned <small>(optional)</small></label>
-                  <textarea name="message" placeholder="For example: lounge carpet and a three-seat sofa"></textarea>
-                </div>
                 <div class="field full">
                   <p class="contact-error" id="contactError">
                     Please enter a phone number or email address.
@@ -4017,7 +4013,6 @@ Hi Paul, I’d like some help with carpet cleaning.</textarea
               "landing_page",
               "contact_consent",
             ].forEach((k) => t.set(k, String(d.get(k) || "")));
-            t.set("notes", String(d.get("message") || ""));
             t.set("rooms", /carpet/i.test(service) ? String(areas) : "0");
             t.set("status", "New lead");
             try {
