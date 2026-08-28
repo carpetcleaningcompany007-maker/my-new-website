@@ -4046,6 +4046,7 @@ Hi Paul, I’d like some help with carpet cleaning.</textarea
                 landing_area: "Ludlow",
                 service,
               });
+            document.dispatchEvent(new Event("analytics:form-submit-success"));
             s.textContent = "Thank you — your enquiry has been sent.";
             setTimeout(() => (location.href = "/thank-you.html"), 700);
           } catch (x) {
