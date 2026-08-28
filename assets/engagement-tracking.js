@@ -47,7 +47,7 @@
       session_id: visitorSession,
       landing_area: fieldValue("landing_area") || "Shrewsbury",
       landing_page: fieldValue("landing_page") || location.pathname.split("/").pop(),
-      page_variant: "shrewsbury-new-landing-2026-08-10",
+      page_variant: (fieldValue("landing_area") || "unknown").toLowerCase().replace(/[^a-z0-9]+/g, "-") + "-landing-2026-08-28",
       event_name: eventName,
       event_value: Math.max(0, Math.round(Number(eventValue) || 0)),
       event_detail: String(eventDetail || "").slice(0, 160),
