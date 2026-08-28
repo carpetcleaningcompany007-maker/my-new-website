@@ -1969,9 +1969,9 @@
       .header-phone small { color: #151515; font-size: .9rem; }
       .header-phone a { color: #101010; font-size: 1.8rem; }
 
-      .hero { padding: 54px 0 0; background:linear-gradient(rgba(224,240,248,.2),rgba(224,240,248,.2)),url("../../assets/img/shrewsbury-darwin-square-background.png") center/cover scroll; }
+      .hero { padding: 54px 0 0; background:linear-gradient(rgba(224,240,248,.2),rgba(224,240,248,.2)),url("../../assets/img/shrewsbury-street-background.jpg") center/cover scroll; }
       .hero:before {
-        background:linear-gradient(rgba(224,240,248,.40),rgba(224,240,248,.40)),url("../../assets/img/shrewsbury-darwin-square-background.png") center/cover;
+        background:linear-gradient(rgba(224,240,248,.66),rgba(224,240,248,.66)),url("../../assets/img/shrewsbury-street-background.jpg") center/cover;
         filter:blur(9px);
         transform:scale(1.04);
       }
@@ -2296,7 +2296,7 @@
         header .header-phone a { margin-top:2px; color:#000; font-size:.95rem; white-space:nowrap; }
         header .links { order:3; display:flex !important; width:100%; margin:5px 0 0; padding-top:4px; border-top:1px solid #e1e6e9; justify-content:space-between; gap:2px; overflow:visible; }
         header .links a { flex:1 1 auto; padding:7px 2px; border:0 !important; color:#000; font-size:.65rem; font-weight:600; text-align:center; white-space:nowrap; }
-        .hero:before { background-image:linear-gradient(rgba(224,240,248,.37),rgba(224,240,248,.37)),url("../../assets/img/shrewsbury-darwin-square-background.png") !important; background-position:center !important; background-size:cover !important; background-repeat:no-repeat !important; filter:blur(6px); transform:scale(1.035); }
+        .hero:before { background-image:linear-gradient(rgba(224,240,248,.5),rgba(224,240,248,.5)),url("../../assets/img/shrewsbury-street-background.jpg") !important; background-position:center !important; background-size:100% 100% !important; background-repeat:no-repeat !important; filter:blur(6px); transform:scale(1.035); }
         .treatment-circles { grid-template-columns: repeat(3, 1fr); gap: 20px; }
         #new-results .results-gallery { grid-template-columns: 1fr; }
         #new-results .result-set figure { height: 290px; }
@@ -2347,8 +2347,8 @@
 
         .hero { padding:20px 0 0; background-position:center !important; }
         .hero:before {
-          background-image:linear-gradient(rgba(230,244,252,.39),rgba(230,244,252,.42)),url("../../assets/img/shrewsbury-darwin-square-background.png") !important;
-          background-size:cover !important; background-position:center top !important; background-repeat:no-repeat !important;
+          background-image:linear-gradient(rgba(230,244,252,.63),rgba(230,244,252,.67)),url("../../assets/img/shrewsbury-street-background.jpg") !important;
+          background-size:auto 900px !important; background-position:center top !important; background-repeat:repeat-y !important;
           filter:blur(5px); transform:scale(1.055);
         }
         .hero .wrap,.hero-grid { box-sizing:border-box; width:calc(100% - 28px); max-width:100%; min-width:0; }
@@ -2505,6 +2505,20 @@
         .photo-credit { display:none; }
         main,.reference-content,.final-reference-cta { padding-bottom:0 !important; margin-bottom:0 !important; }
       }
+      @media (max-width: 600px) {
+        .hero-photo .quote { padding:0 14px 18px; }
+        .hero-photo .quote-head { margin:0 -14px 16px; padding:20px 14px; }
+        .hero-photo .fields { grid-template-columns:minmax(0,1fr); gap:12px; }
+        .hero-photo .field,
+        .hero-photo .field.wide,
+        .hero-photo .field.full { grid-column:1; width:100%; min-width:0; }
+        .hero-photo input,
+        .hero-photo select,
+        .hero-photo textarea { box-sizing:border-box; display:block; width:100%; max-width:none; min-height:46px; padding:10px 12px; font-size:16px; }
+        .hero-photo select { height:46px; min-height:46px; }
+        .hero-photo .button { width:100%; min-height:50px; height:auto; padding:13px 16px; }
+        .hero-photo .privacy { margin:9px 2px 0; font-size:.72rem; line-height:1.4; }
+      }
     </style>
   </head>
   <body>
@@ -2585,7 +2599,7 @@
             </div>
           </div>
         </div>
-        <span class="photo-credit">Darwin Square, Shrewsbury town centre</span>
+        <span class="photo-credit">Shrewsbury</span>
       </section>
       <section class="quote-band" id="quote">
         <div class="wrap">
