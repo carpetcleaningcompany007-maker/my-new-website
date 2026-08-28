@@ -45,9 +45,45 @@
 .contact-list a{display:block;padding:10px 0}
 .local-pill{position:relative;z-index:2}
 .local-pill-row a,.hero-actions a,.local-quick-card,.local-cta-big{touch-action:manipulation}
+.shrewsbury-conversion{background:linear-gradient(135deg,#eef9fc 0%,#fff 48%,#f6fbff 100%);padding:64px 0 0;color:#183744}
+.conversion-grid{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(340px,.88fr);gap:44px;align-items:center}
+.conversion-eyebrow{display:inline-flex;padding:8px 13px;border-radius:999px;background:#dff4f8;color:#126275;font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.conversion-copy h1{margin:17px 0 15px;color:#153b49;font-size:clamp(2.35rem,5vw,4.5rem);line-height:.98;letter-spacing:-.05em}
+.conversion-lead{max-width:680px;margin:0;color:#4f6973;font-size:1.1rem;line-height:1.7}
+.conversion-points{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin:24px 0}
+.conversion-points span{display:flex;gap:9px;align-items:center;color:#274e5b;font-weight:750}
+.conversion-points span:before{content:'\2713';display:grid;width:24px;height:24px;flex:0 0 24px;place-items:center;border-radius:50%;background:#19a66a;color:#fff;font-size:.8rem}
+.conversion-actions{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.conversion-actions a{display:inline-flex;min-height:52px;padding:0 19px;align-items:center;justify-content:center;border-radius:13px;text-decoration:none;font-weight:850}
+.conversion-actions .primary{background:#ef476f;color:#fff;box-shadow:0 12px 28px rgba(239,71,111,.24)}
+.conversion-actions .secondary{background:#fff;color:#153b49;border:1px solid #cfe0e5}
+.conversion-proof{display:grid;grid-template-columns:88px 1fr;gap:14px;align-items:center}
+.conversion-seal{width:88px;height:88px;object-fit:contain}
+.before-after{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.before-after figure{position:relative;margin:0;overflow:hidden;border-radius:15px;background:#dce8eb}
+.before-after img{display:block;width:100%;height:128px;object-fit:cover}
+.before-after b{position:absolute;left:8px;bottom:8px;padding:5px 8px;border-radius:7px;background:rgba(13,45,56,.86);color:#fff;font-size:.68rem;letter-spacing:.08em}
+.conversion-photo{position:relative}
+.conversion-photo>img{display:block;width:100%;min-height:520px;object-fit:cover;border-radius:28px;box-shadow:0 24px 55px rgba(13,52,66,.18)}
+.conversion-rating{position:absolute;right:16px;bottom:16px;max-width:235px;padding:15px 17px;border-radius:17px;background:rgba(255,255,255,.96);box-shadow:0 12px 30px rgba(13,52,66,.18)}
+.conversion-rating strong,.conversion-rating span{display:block}.conversion-rating span{color:#f4a81c;letter-spacing:.08em}
+.quote-band-organic{margin-top:58px;padding:38px 0;background:#123f50}
+.organic-quote{display:grid;grid-template-columns:.8fr 1.2fr;gap:32px;align-items:start;color:#fff}
+.organic-quote h2{margin:8px 0 12px;color:#fff;font-size:clamp(1.8rem,3.5vw,2.8rem)}
+.organic-quote p{color:#d8e8ed;line-height:1.65}
+.organic-form{padding:24px;border-radius:22px;background:#fff;color:#183744;box-shadow:0 20px 45px rgba(0,0,0,.18)}
+.organic-fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.organic-field{display:grid;gap:6px}.organic-field.wide{grid-column:1/-1}
+.organic-field label{font-size:.82rem;font-weight:800;color:#294e5a}
+.organic-field input,.organic-field select{width:100%;min-height:48px;padding:10px 12px;border:1px solid #cbdde2;border-radius:10px;background:#fff;color:#183744;font:inherit}
+.organic-submit{width:100%;min-height:52px;border:0;border-radius:12px;background:#ef476f;color:#fff;font:800 1rem Inter,sans-serif;cursor:pointer}
+.organic-privacy{margin:12px 0 0!important;color:#647c84!important;font-size:.78rem;text-align:center}
+.organic-trust{display:flex;gap:12px;align-items:center;margin-top:17px;padding-top:17px;border-top:1px solid #e2ecef;color:#385e69;font-size:.88rem}
+.organic-avatar{width:42px;height:42px;border-radius:50%;object-fit:cover}
 @media (max-width:760px){
   .local-cta-panel{padding:18px}
   .local-cta-panel h3{font-size:22px}
+  .shrewsbury-conversion{padding-top:38px}.conversion-grid,.organic-quote{grid-template-columns:1fr}.conversion-photo>img{min-height:300px}.conversion-points{grid-template-columns:1fr}.quote-band-organic{margin-top:38px}.organic-fields{grid-template-columns:1fr}.organic-field.wide{grid-column:auto}.before-after img{height:105px}
 }
 </style>
 <style>
@@ -198,7 +234,38 @@
 </div>
 </div>
 </header>
-<section class="hero inner-hero" style="background-image:linear-gradient(90deg, rgba(4,16,30,.86) 0%, rgba(4,16,30,.60) 48%, rgba(4,16,30,.24) 100%), url('../../assets/img/hero-carpet-cleaning.webp')"><div class="container hero-grid"><div class="hero-copy reveal"><span class="kicker">Shrewsbury</span><h1>Professional carpet cleaning in Shrewsbury</h1><p>Professional carpet cleaning in Shrewsbury for homes, hotels, offices, rental properties and managed buildings. We deep clean carpets using professional extraction equipment, removing dirt, stains and odours to leave carpets fresh, cleaner and more presentable.</p><div class="map-actions"><a class="btn btn-primary" href="../carpet-cleaning-quote.html">Get a Shrewsbury quote</a><a class="btn btn-secondary" href="../service-areas.html">View all service areas</a></div></div><div class="contact-panel reveal"><h3 style="margin-top:0">Related Shrewsbury pages</h3><div class="contact-list"><a href="shrewsbury-upholstery-cleaning.html">Upholstery Cleaning</a><a href="shrewsbury-stain-removal.html">Advanced Stain Removal</a><a href="shrewsbury-rug-cleaning.html">Professional Rug Cleaning</a><a href="shrewsbury-hard-floor-cleaning.html">Hard Floor Cleaning</a><a href="shrewsbury-moth-treatment.html">Moth Treatment</a><a href="shrewsbury-commercial-carpet-cleaning.html">Commercial Cleaning</a></div></div></div></section>
+<section class="shrewsbury-conversion">
+<div class="container conversion-grid">
+<div class="conversion-copy">
+<span class="conversion-eyebrow">Professional local cleaning · Shrewsbury</span>
+<h1>Fast &amp; affordable carpet and upholstery cleaning in Shrewsbury</h1>
+<p class="conversion-lead">Professional carpet and upholstery cleaning that safely and effectively removes dirt, stains and odours, leaving your home smelling fresh and looking beautifully revived.</p>
+<div class="conversion-points"><span>Residential &amp; commercial</span><span>Family and pet considerate</span><span>Powerful professional equipment</span><span>Honest, upfront quotations</span></div>
+<div class="conversion-actions"><a class="primary" href="#shrewsbury-quote">Get my free quote</a><a class="secondary" href="tel:07802563213">Call 07802 563213</a><a class="secondary" href="https://wa.me/447802563213?text=Hello%20Paul%2C%20I%27d%20like%20a%20carpet%20cleaning%20quote%20in%20Shrewsbury." rel="noopener" target="_blank">WhatsApp us</a></div>
+<div class="conversion-proof">
+<img class="conversion-seal" src="../../assets/satisfaction-seal-blue.png" alt="100% satisfaction or your money back guarantee"/>
+<div class="before-after" aria-label="Genuine carpet cleaning before and after result"><figure><img src="../../assets/img/main-room-before.jpg" alt="Marked lounge carpet before professional cleaning"/><b>BEFORE</b></figure><figure><img src="../../assets/img/main-room-after.jpg" alt="The lounge carpet after professional deep cleaning"/><b>AFTER</b></figure></div>
+</div>
+</div>
+<div class="conversion-photo"><img src="../../assets/img/hero-carpet-cleaning.webp" alt="A bright living room with freshly cleaned carpet"/><div class="conversion-rating"><span>★★★★★</span><strong>Google Rating 5.0</strong><small>Friendly local service and careful workmanship</small></div></div>
+</div>
+<div class="quote-band-organic" id="shrewsbury-quote">
+<div class="container organic-quote">
+<div><span class="conversion-eyebrow">Free, no-obligation quotation</span><h2>Tell us what you need cleaned</h2><p>Give us a few details and we will contact you with a clear quote. This form is for customers who found us through our Shrewsbury website page.</p><div class="organic-trust"><img class="organic-avatar" src="../../assets/img/alex-whittles-facebook-review.png" alt=""/><span><strong>Recommended by local customers</strong><br/>Over 50 genuine customer reviews</span></div></div>
+<form class="organic-form" action="https://carpet-cleaning-crm.onrender.com/api/website-form" method="post">
+<input type="hidden" name="_redirect" value="https://www.thecarpetcleaningcrew.co.uk/thank-you.html"/><input type="hidden" name="_subject" value="New Organic Shrewsbury Quote Request - The Carpet Cleaning Company"/><input type="hidden" name="_format" value="plain"/><input type="text" name="_company_website" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden"/><input type="hidden" name="landing_area" value="Shrewsbury"/><input type="hidden" name="landing_page" value="organic-shrewsbury-carpet-cleaning.html"/>
+<div class="organic-fields">
+<div class="organic-field"><label for="organic-name">Your first name *</label><input id="organic-name" name="name" autocomplete="given-name" required/></div>
+<div class="organic-field"><label for="organic-phone">Phone number *</label><input id="organic-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required/></div>
+<div class="organic-field"><label for="organic-email">Email address</label><input id="organic-email" name="email" type="email" autocomplete="email"/></div>
+<div class="organic-field"><label for="organic-postcode">Postcode *</label><input id="organic-postcode" name="postcode" autocomplete="postal-code" placeholder="e.g. SY2" required/></div>
+<div class="organic-field wide"><label for="organic-service">What would you like cleaned? *</label><select id="organic-service" name="service" required><option value="">Choose a service</option><option>Carpet cleaning</option><option>Upholstery cleaning</option><option>Carpets and upholstery</option><option>Rug cleaning</option><option>Stain treatment</option><option>Commercial carpet cleaning</option></select></div>
+<div class="organic-field wide"><button class="organic-submit" type="submit">Get your carpet cleaning quote</button></div>
+</div><p class="organic-privacy">Your details are used only to answer your enquiry. We will contact you from 07802 563213.</p>
+</form>
+</div>
+</div>
+</section>
 <section class="section"><div class="container seo-copy"><h2>Deep carpet cleaning in Shrewsbury</h2><p>We cover Shrewsbury, Bayston Hill, Baschurch, Bicton, Atcham, Pontesbury and surrounding villages. Whether you need a single room cleaned or a full property deep clean, we provide a reliable service using professional equipment including the Airflex, Enforcer 400, Fusion heat system and power wand setup.</p><p>Our work in Shrewsbury includes homes, apartments, hotels, guest houses, offices, estate agent properties and practical commercial jobs where presentation matters. If the booking also needs stain removal, upholstery cleaning, rug cleaning or moth treatment, we can price the work together and keep the visit straightforward.</p></div></section>
 <section class="section alt"><div class="container seo-copy"><h2>Areas we cover around Shrewsbury</h2><p>We provide this service across Shrewsbury along with Bayston Hill, Baschurch, Bicton, Atcham, Pontesbury, Battlefield and surrounding villages. If you need help with multiple items or multiple services, we can build a practical quote around the work required.</p><div class="map-actions" style="margin-top:22px"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&amp;query=Shrewsbury+Shropshire" rel="noreferrer" target="_blank">Open Shrewsbury map</a><a class="btn btn-secondary" href="../carpet-cleaning.html">Main service page</a></div></div></section>
 <section class="section shrewsbury-seo-upgrade">
