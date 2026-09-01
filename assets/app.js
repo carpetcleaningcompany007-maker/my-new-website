@@ -12,11 +12,22 @@
   window.gtag('config', 'AW-17385772946');
 })();
 
-// Pricing is temporarily private. Hide public links and redirect direct visits.
+// The homepage now contains the live quote form. Remove obsolete landing/pricing
+// navigation and route every legacy quote call-to-action back to that form.
 (() => {
-  document.querySelectorAll('a[href$="pricing.html"]').forEach(link => link.remove());
-  if (/\/pages\/pricing\.html$/.test(window.location.pathname)) {
-    window.location.replace('/carpet-cleaning-quote.html');
+  document.querySelectorAll('a').forEach(link => {
+    const label = (link.textContent || '').trim().toLowerCase();
+    const href = link.getAttribute('href') || '';
+    if (label === 'landing page' || label === 'pricing') {
+      link.remove();
+      return;
+    }
+    if (/carpet-cleaning-quote\.html|choose-carpet-cleaning-package\.html|pricing\.html/i.test(href)) {
+      link.setAttribute('href', '/#quote');
+    }
+  });
+  if (/\/(?:pages\/)?(?:pricing|carpet-cleaning-quote|choose-carpet-cleaning-package)\.html$/.test(window.location.pathname)) {
+    window.location.replace('/#quote');
   }
 })();
 
