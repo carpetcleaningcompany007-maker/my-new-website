@@ -1,9 +1,14 @@
 (function () {
   "use strict";
 
-  const forms = document.querySelectorAll('form[action*="carpet-cleaning-crm.onrender.com/api/website-form"]');
-  forms.forEach(function (form) {
-    form.addEventListener("submit", async function (event) {
+  const formSelector = 'form[action*="carpet-cleaning-crm.onrender.com/api/website-form"]';
+
+  // Listen at document level because the React homepage can render its forms
+  // after this script has loaded. This prevents a native form navigation to
+  // the CRM JSON response even when rendering is delayed.
+  document.addEventListener("submit", async function (event) {
+      const form = event.target;
+      if (!(form instanceof HTMLFormElement) || !form.matches(formSelector)) return;
       event.preventDefault();
       const button = form.querySelector('button[type="submit"]');
       const status = form.querySelector(".status");
@@ -41,6 +46,5 @@
         if (status) status.textContent = "The connection was interrupted and your enquiry was not sent. Please try again or call 07802 563213.";
         if (button) { button.disabled = false; button.textContent = oldText; }
       }
-    });
-  });
+  }, true);
 })();
