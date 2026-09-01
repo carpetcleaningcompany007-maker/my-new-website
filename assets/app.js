@@ -22,11 +22,11 @@
       link.remove();
       return;
     }
-    if (/carpet-cleaning-quote\.html|choose-carpet-cleaning-package\.html|pricing\.html/i.test(href)) {
+    if (/carpet-cleaning-quote\.html|choose-carpet-cleaning-package\.html|pricing\.html|contact\.html/i.test(href)) {
       link.setAttribute('href', '/#quote');
     }
   });
-  if (/\/(?:pages\/)?(?:pricing|carpet-cleaning-quote|choose-carpet-cleaning-package)\.html$/.test(window.location.pathname)) {
+  if (/\/(?:pages\/)?(?:pricing|contact|carpet-cleaning-quote|choose-carpet-cleaning-package)\.html$/.test(window.location.pathname)) {
     window.location.replace('/#quote');
   }
 })();
