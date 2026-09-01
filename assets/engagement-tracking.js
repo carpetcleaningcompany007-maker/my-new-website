@@ -46,9 +46,9 @@
     const googleClickId = query.get("gclid") || query.get("gbraid") || query.get("wbraid") || "";
     return {
       session_id: visitorSession,
-      landing_area: fieldValue("landing_area") || "Ludlow and Shrewsbury",
-      landing_page: fieldValue("landing_page") || (location.pathname === "/" ? "homepage" : location.pathname.split("/").pop()),
-      page_variant: "integrated-homepage-2026-09-02",
+      landing_area: document.documentElement.dataset.landingArea || fieldValue("landing_area") || "Ludlow and Shrewsbury",
+      landing_page: document.documentElement.dataset.landingPage || fieldValue("landing_page") || (location.pathname === "/" ? "homepage" : location.pathname.split("/").pop()),
+      page_variant: document.documentElement.dataset.landingSlug ? `integrated-${document.documentElement.dataset.landingSlug}-ads-2026-09-02` : "integrated-homepage-2026-09-02",
       event_name: eventName,
       event_value: Math.max(0, Math.round(Number(eventValue) || 0)),
       event_detail: String(eventDetail || "").slice(0, 160),

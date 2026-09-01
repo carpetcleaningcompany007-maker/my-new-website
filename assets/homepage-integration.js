@@ -26,6 +26,12 @@
       if (button) { button.disabled = true; button.textContent = "Sending…"; }
       if (status) status.textContent = "Sending your enquiry securely…";
       const data = new FormData(form);
+      const landingPage = document.documentElement.dataset.landingPage;
+      const landingArea = document.documentElement.dataset.landingArea;
+      if (landingPage && landingArea) {
+        data.set("landing_page", landingPage);
+        data.set("landing_area", landingArea);
+      }
       if (!data.get("name")) data.set("name", String(data.get("first_name") || ""));
       if (!data.get("rooms_or_items")) data.set("rooms_or_items", String(data.get("notes") || data.get("service") || ""));
       data.set("visit_id", String(window.__websiteAnalyticsSession || ""));
@@ -39,7 +45,7 @@
         const result = await response.json().catch(function () { return {}; });
         if (!response.ok) throw new Error(result.error || "Your enquiry could not be sent.");
         document.dispatchEvent(new Event("analytics:form-submit-success"));
-        if (typeof window.gtag === "function") window.gtag("event", "generate_lead", { landing_area: "Ludlow and Shrewsbury", service: String(data.get("service") || "") });
+        if (typeof window.gtag === "function") window.gtag("event", "generate_lead", { landing_area: String(data.get("landing_area") || "Ludlow and Shrewsbury"), landing_page: String(data.get("landing_page") || "homepage"), service: String(data.get("service") || "") });
         if (status) status.textContent = "Thank you — your enquiry has been sent.";
         setTimeout(function () { location.href = "/thank-you.html"; }, 700);
       } catch (error) {
