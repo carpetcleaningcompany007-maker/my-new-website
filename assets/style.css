@@ -115,8 +115,7 @@ button,input,textarea,select{font:inherit}
 .footer p,.footer a{color:#b8c7d8}
 .footer-links{display:grid;gap:8px}
 .copy{border-top:1px solid rgba(255,255,255,.10);margin-top:26px;padding-top:20px;font-size:14px;color:#93a8bf}
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease, transform .55s ease}
-.reveal.in-view{opacity:1;transform:none}
+.reveal,.reveal.in-view{opacity:1;transform:none;transition:none}
 .gallery-grid img{height:280px;object-fit:cover;border-radius:22px;box-shadow:var(--shadow)}
 .blog-card h3{font-size:22px}
 .notice{background:linear-gradient(135deg,#edf4ff,#f8fbff);border:1px solid #d8e5fb;border-radius:22px;padding:20px;color:var(--text)}

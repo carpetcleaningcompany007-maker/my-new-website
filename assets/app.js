@@ -179,12 +179,9 @@
     }, 35);
   });
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('in-view');
-    });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  // Keep content permanently visible. The previous intersection-based reveal
+  // effect caused unstable scrolling on some mobile browsers.
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('in-view'));
 
   document.querySelectorAll('.faq-item button').forEach(btn => {
     btn.addEventListener('click', () => {
