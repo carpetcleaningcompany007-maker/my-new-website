@@ -14,9 +14,10 @@
     : window.crypto && crypto.randomUUID
       ? crypto.randomUUID().replace(/-/g, "")
       : `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 16)}`;
+  window.__websiteAnalyticsSession = visitorSession;
 
   function currentForm() {
-    return document.getElementById("warmQuote") || document.getElementById("quoteStepOne");
+    return document.getElementById("quote") || document.querySelector(".active-quote") || document.getElementById("warmQuote") || document.getElementById("quoteStepOne");
   }
 
   function fieldValue(name) {
@@ -45,9 +46,9 @@
     const googleClickId = query.get("gclid") || query.get("gbraid") || query.get("wbraid") || "";
     return {
       session_id: visitorSession,
-      landing_area: fieldValue("landing_area") || "Shrewsbury",
-      landing_page: fieldValue("landing_page") || location.pathname.split("/").pop(),
-      page_variant: (fieldValue("landing_area") || "unknown").toLowerCase().replace(/[^a-z0-9]+/g, "-") + "-landing-2026-08-28",
+      landing_area: fieldValue("landing_area") || "Ludlow and Shrewsbury",
+      landing_page: fieldValue("landing_page") || (location.pathname === "/" ? "homepage" : location.pathname.split("/").pop()),
+      page_variant: "integrated-homepage-2026-09-02",
       event_name: eventName,
       event_value: Math.max(0, Math.round(Number(eventValue) || 0)),
       event_detail: String(eventDetail || "").slice(0, 160),
@@ -68,6 +69,9 @@
     const key = onceKey || eventName;
     if (recorded.has(key)) return;
     recorded.add(key);
+    if (eventName !== "page_view" && typeof window.gtag === "function") {
+      window.gtag("event", eventName, { event_value: Math.max(0, Math.round(Number(eventValue) || 0)), event_detail: String(eventDetail || "").slice(0, 100) });
+    }
     if (location.hostname !== productionHost) return;
     fetch(endpoint, {
       method: "POST",
@@ -79,6 +83,9 @@
   }
 
   function sendDetailed(eventName, eventValue, eventDetail) {
+    if (typeof window.gtag === "function") {
+      window.gtag("event", eventName, { event_value: Math.max(0, Math.round(Number(eventValue) || 0)), event_detail: String(eventDetail || "").slice(0, 100) });
+    }
     if (location.hostname !== productionHost) return;
     fetch(endpoint, {
       method: "POST",
@@ -131,12 +138,12 @@
       return !["hidden", "submit", "button"].includes((el.type || "").toLowerCase());
     });
     const safeChoiceFields = new Set(["building_type", "rooms", "stains", "extras", "service"]);
-    const privateFields = new Set(["name", "email", "phone", "postcode", "message"]);
+    const privateFields = new Set(["name", "first_name", "email", "phone", "postcode", "message", "notes"]);
     function fieldLabel(field) {
       const names = {
         building_type: "Building type", rooms: "Rooms", stains: "Stains", extras: "Extra",
         service: "Service", name: "Name", email: "Email", phone: "Phone",
-        postcode: "Postcode", message: "Additional comments",
+        postcode: "Postcode", message: "Additional comments", notes: "Additional comments", first_name: "Name",
       };
       return names[field.name] || "Form field";
     }
@@ -212,8 +219,21 @@
     if (href.startsWith("tel:")) send("phone_click");
     else if (href.startsWith("mailto:")) send("email_click");
     else if (/wa\.me|whatsapp/i.test(href)) send("whatsapp_click");
-    else if (/quote|#contact|#form/i.test(href) || /quote|price|book/i.test(target.textContent || "")) send("quote_click");
+    else if (/quote|#contact|#form/i.test(href) || /quote|price|book/i.test(target.textContent || "")) sendDetailed("quote_click", 1, (target.textContent || href).trim().slice(0, 120));
+    else if (/\/pages\//i.test(href)) sendDetailed("internal_link_click", 1, `${(target.textContent || "Internal link").trim().slice(0, 80)} | ${href}`);
   });
+
+  if ("IntersectionObserver" in window) {
+    const sectionObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        const section = entry.target;
+        const name = section.id || Array.from(section.classList).slice(0, 2).join("-") || "section";
+        send("section_view", 1, `section_view_${name}`, name);
+      });
+    }, { threshold: 0.35 });
+    document.querySelectorAll("main section").forEach(function (section) { sectionObserver.observe(section); });
+  }
 
   addEventListener("pagehide", function () {
     if (location.hostname !== productionHost || recorded.has("page_exit")) return;
