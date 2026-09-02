@@ -9,6 +9,7 @@
   if (!config) return;
 
   const replacements = [
+    [/Carpet,\s*Upholstery and Hard Floor Cleaning/gi, "Carpet and Upholstery Cleaning"],
     [/Ludlow\s*&\s*Shrewsbury/gi, config.area],
     [/Ludlow,\s*Shrewsbury and surrounding areas/gi, config.area],
     [/Ludlow and Shrewsbury/gi, config.area],
