@@ -63,6 +63,11 @@
       try { url = new URL(href, location.href); } catch (_) { return; }
       if (url.hostname !== location.hostname || !/^\/(?:pages\/)?/.test(url.pathname)) return;
 
+      if (link.closest("header nav") && /gallery|service-areas/.test(url.pathname)) {
+        link.remove();
+        return;
+      }
+
       if (url.pathname === "/" || /\/about\.html$/.test(url.pathname)) link.setAttribute("href", "#top");
       else if (/gallery/.test(url.pathname)) link.setAttribute("href", "#results");
       else if (/reviews/.test(url.pathname)) link.setAttribute("href", "#reviews");
