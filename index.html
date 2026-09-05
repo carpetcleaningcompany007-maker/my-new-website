@@ -44,6 +44,25 @@
     </script>
     <script type="module" crossorigin src="/assets/index-BE8rSa1J.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-C59QHEY1.css">
+    <style>
+      @media (max-width: 600px) {
+        .site-header .mobile-site-menu {
+          max-height: calc(100dvh - 140px);
+          overflow-y: auto;
+          overscroll-behavior: contain;
+          -webkit-overflow-scrolling: touch;
+          z-index: 100;
+        }
+
+        .site-header .mobile-site-menu a[href="/"] {
+          order: -2;
+        }
+
+        .site-header .mobile-site-menu a[href="/pages/service-areas.html"] {
+          order: -1;
+        }
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
