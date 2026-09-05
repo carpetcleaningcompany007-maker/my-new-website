@@ -31,55 +31,20 @@
   }
 })();
 
-// === MOBILE_MENU_BUTTON_AND_TOP_LAYER_FIX_20260427B ===
 (() => {
-  document.querySelectorAll('nav.nav-links').forEach(menu => {
-    const header = menu.closest('header') || document.querySelector('header');
-    if (!header) return;
-    let btn = header.querySelector('.mobile-toggle');
-    if (!btn) {
-      btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'mobile-toggle';
-      btn.setAttribute('aria-expanded', 'false');
-      btn.setAttribute('aria-label', 'Open menu');
-      btn.textContent = 'Menu';
-      menu.insertAdjacentElement('beforebegin', btn);
-    }
-    if (btn.dataset.mobileMenuReady === '1') return;
-    btn.dataset.mobileMenuReady = '1';
-    btn.addEventListener('click', (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      const open = !menu.classList.contains('is-open');
-      menu.classList.toggle('is-open', open);
-      menu.classList.toggle('open', open);
-      header.classList.toggle('nav-open', open);
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-  });
-})();
-// === END MOBILE_MENU_BUTTON_AND_TOP_LAYER_FIX_20260427B ===
-// === MOBILE_MENU_BUTTON_INJECT_V1 ===
-(() => {
-  document.querySelectorAll('nav.nav-links').forEach(menu => {
-    const header = menu.closest('header') || document.querySelector('header');
-    if (!header || header.querySelector('.mobile-toggle')) return;
-    const btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = 'mobile-toggle';
-    btn.setAttribute('aria-expanded', 'false');
-    btn.setAttribute('aria-label', 'Open menu');
-    btn.textContent = 'Menu';
-    menu.insertAdjacentElement('beforebegin', btn);
-  });
-})();
-// === END MOBILE_MENU_BUTTON_INJECT_V1 ===
-
-(() => {
-  const toggle = document.querySelector('.mobile-toggle');
   const menu = document.querySelector('.nav-links');
-  const header = document.querySelector('.site-header');
+  const header = menu?.closest('header') || document.querySelector('.site-header');
+  let toggle = header?.querySelector('.mobile-toggle');
+
+  if (menu && header && !toggle) {
+    toggle = document.createElement('button');
+    toggle.type = 'button';
+    toggle.className = 'mobile-toggle';
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Open menu');
+    toggle.textContent = 'Menu';
+    menu.insertAdjacentElement('beforebegin', toggle);
+  }
 
   const closeAllSubmenus = () => {
     document.querySelectorAll('.nav-item.open').forEach(item => {
@@ -93,6 +58,7 @@
     toggle.addEventListener('click', () => {
       const open = !menu.classList.contains('is-open');
       menu.classList.toggle('is-open', open);
+      menu.classList.toggle('open', open);
       if (header) header.classList.toggle('nav-open', open);
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
       if (!open) closeAllSubmenus();
@@ -102,6 +68,7 @@
       if (!header) return;
       if (!header.contains(event.target)) {
         menu.classList.remove('is-open');
+        menu.classList.remove('open');
         header.classList.remove('nav-open');
         toggle.setAttribute('aria-expanded', 'false');
         closeAllSubmenus();
@@ -133,7 +100,7 @@
       event.preventDefault();
       event.stopPropagation();
       const willOpen = !item.classList.contains('open');
-      if (window.innerWidth <= 760) {
+      if (window.innerWidth <= 1023) {
         document.querySelectorAll('.nav-item.open').forEach(openItem => {
           if (openItem !== item) {
             openItem.classList.remove('open');
@@ -150,6 +117,7 @@
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
       if (menu) menu.classList.remove('is-open');
+      if (menu) menu.classList.remove('open');
       if (header) header.classList.remove('nav-open');
       if (toggle) toggle.setAttribute('aria-expanded', 'false');
       closeAllSubmenus();
@@ -157,8 +125,9 @@
   });
 
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 760) {
+    if (window.innerWidth > 1023) {
       if (menu) menu.classList.remove('is-open');
+      if (menu) menu.classList.remove('open');
       if (header) header.classList.remove('nav-open');
       if (toggle) toggle.setAttribute('aria-expanded', 'false');
       closeAllSubmenus();
