@@ -53,37 +53,10 @@
     });
   }
 
-  function isolateLinks(root) {
-    const links = [];
-    if (root.matches && root.matches("a")) links.push(root);
-    root.querySelectorAll("a").forEach(function (link) { links.push(link); });
-    links.forEach(function (link) {
-      const href = link.getAttribute("href") || "";
-      if (!href || href.startsWith("#") || href.startsWith("tel:") || href.startsWith("mailto:") || /wa\.me|whatsapp/i.test(href)) return;
-      let url;
-      try { url = new URL(href, location.href); } catch (_) { return; }
-      if (url.hostname !== location.hostname || !/^\/(?:pages\/)?/.test(url.pathname)) return;
-
-      if (link.closest("header nav") && /gallery|service-areas/.test(url.pathname)) {
-        link.remove();
-        return;
-      }
-
-      if (url.pathname === "/" || /\/about\.html$/.test(url.pathname)) link.setAttribute("href", "#top");
-      else if (/gallery/.test(url.pathname)) link.setAttribute("href", "#results");
-      else if (/reviews/.test(url.pathname)) link.setAttribute("href", "#reviews");
-      else if (/service-areas|\/local\/|landing-telford/.test(url.pathname)) link.setAttribute("href", "#areas");
-      else if (/privacy/.test(url.pathname)) return;
-      else link.setAttribute("href", "#quote");
-      link.removeAttribute("target");
-    });
-  }
-
   function apply(root) {
     localiseText(root);
     if (root.querySelectorAll) {
       configureForms(root);
-      isolateLinks(root);
     }
   }
 
