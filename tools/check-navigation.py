@@ -29,8 +29,8 @@ for page in pages:
     relative = page.relative_to(ROOT).as_posix()
     parser = Links()
     parser.feed(page.read_text(encoding='utf-8'))
-    # Ludlow's existing alias forwards to its real local page, not the homepage.
-    if relative.startswith('pages/') and relative != 'pages/local/ludlow.html' and parser.redirect:
+    # These two local aliases forward only to their current dedicated area pages.
+    if relative.startswith('pages/') and relative not in ('pages/local/ludlow.html', 'pages/local/shrewsbury-carpet-cleaning.html') and parser.redirect:
         errors.append(f'{relative}: genuine page contains a redirect')
     for target in parser.targets:
         url = urlparse(urljoin(ORIGIN + relative, target))
