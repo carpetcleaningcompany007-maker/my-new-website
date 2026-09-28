@@ -1,0 +1,45 @@
+/* Shrewsbury-only additions: the shared homepage stylesheet stays unchanged. */
+html[data-landing-page="landing-shrewsbury.html"] .areas {
+  display: grid !important;
+  order: 10;
+  width: min(1180px, 100%);
+  padding: 72px 22px;
+  gap: 48px;
+}
+html[data-landing-page="landing-shrewsbury.html"] .areas-copy > p {
+  font-size: 16px;
+}
+html[data-landing-page="landing-shrewsbury.html"] .area-list a {
+  min-height: 64px;
+}
+html[data-landing-page="landing-shrewsbury.html"] .area-list small {
+  font-size: 14px;
+}
+.shrewsbury-fallback {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 48px 24px;
+  color: #132957;
+  font: 16px/1.7 Arial, sans-serif;
+}
+.shrewsbury-fallback h1 { font: 700 clamp(32px, 5vw, 56px)/1.1 Georgia, serif; margin: 24px 0; }
+.shrewsbury-fallback h2 { font-size: 26px; margin: 28px 0 12px; }
+.shrewsbury-fallback a { text-decoration: underline; }
+@media (max-width: 700px) {
+  html[data-landing-page="landing-shrewsbury.html"] .areas {
+    grid-template-columns: 1fr;
+    padding: 48px 20px;
+    gap: 28px;
+  }
+  html[data-landing-page="landing-shrewsbury.html"] .areas h2 { font-size: 32px; }
+  html[data-landing-page="landing-shrewsbury.html"] .area-list a { grid-template-columns: 28px 1fr 20px; }
+  html[data-landing-page="landing-shrewsbury.html"] .area-list small { grid-column: 2; }
+  html[data-landing-page="landing-shrewsbury.html"] .hero-copy > p { font-size: 15px; }
+  html[data-landing-page="landing-shrewsbury.html"] .hero .form-assurance,
+  html[data-landing-page="landing-shrewsbury.html"] .hero .contact-validation { font-size: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html[data-landing-page="landing-shrewsbury.html"] *,
+  html[data-landing-page="landing-shrewsbury.html"] *::before,
+  html[data-landing-page="landing-shrewsbury.html"] *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
